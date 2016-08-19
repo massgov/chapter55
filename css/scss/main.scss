@@ -1,0 +1,276 @@
+@import 'variables';
+@import 'accordion';
+@import 'button';
+// @import 'map-death';
+@import 'map-composite';
+@import 'maps-substance';
+@import 'lines-death';
+@import 'lines-fent';
+@import 'lines-bsas';
+@import 'blocks-gender';
+// @import 'blocks-substance';
+@import 'blocks-substance-pie';
+@import 'bars-age';
+@import 'bars-race';
+// @import 'tree';
+
+/* ============================================================
+  Nav
+============================================================ */
+
+#alert {
+    color: yellow;
+    top: 0;
+    position: absolute;
+}
+
+#navbar-main {
+    /* Added `.affix-top` class css when the element is top */
+    &.affixed-top {
+        background: $color-black;
+    }
+    //Added `.affix` class css when the element is >= 170px (Look: line 8 html)
+    &.affix {
+        background: gray;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    /* Added `.affix-bottom` class css when the element is footer */
+    &.affix-bottom {
+        background: red;
+    }
+}
+
+.navbar-inverse {
+    background-color: $color-primary-darker;
+    border-color: $color-black;
+}
+
+#current-section {
+    display: block;
+}
+
+
+/* ============================================================
+  SECTIONS
+============================================================ */
+
+section.module:last-child {
+    margin-bottom: 0;
+}
+
+section.module h2 {
+    margin-bottom: 40px;
+    font-family: $font-serif;
+    font-size: 30px;
+}
+
+section.module p {
+    margin-bottom: 40px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+section.module p:last-child {
+    margin-bottom: 0;
+}
+
+section.module.content {
+    padding: 40px 0;
+}
+
+section.module.parallax {
+    color: $color-white;
+    padding: 50px 0;
+    background-position: center bottom;
+    background-size: cover;
+}
+
+section.module.parallax h1 {
+    font-size: 38px;
+    line-height: 1;
+    font-weight: 700;
+    text-align: left;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px $color-white;
+}
+
+section.module.parallax-1 {
+    padding: 0;
+    margin: auto;
+    background-color: $color-black;
+}
+
+section.module.parallax-2 {
+    /*  color: $color-black;*/
+    background-image: url("../img/addiction.png");
+}
+
+section.module.parallax-1-1 {
+    background-image: url("../img/chapter55.jpg");
+}
+
+section.module.parallax-3 {
+    background-image: url("../img/prescription.jpg");
+}
+
+section.module.parallax-4 {
+    background-image: url("../img/populations.png");
+}
+
+section.module.parallax-5 {
+    background-image: url("../img/future.jpg");
+}
+
+@media all and (min-width: 600px) {
+    section.module h2 {
+        font-size: 28px;
+    }
+    section.module p {
+        font-size: 20px;
+    }
+    section.module.parallax.parallax-1 {
+        padding: 50px 0;
+    }
+    video {
+        display: block;
+    }
+}
+
+@media all and (min-width: 768px) {
+    section.module.parallax h1 {
+        font-size: 80px;
+    }
+    .navbar-text {
+        float: left;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    #current-section {
+        display: none;
+    }
+}
+
+@media all and (min-width: 960px) {
+    section.module.parallax {
+        padding: 150px 0;
+    }
+    section.module.parallax h1 {
+        font-size: 80px;
+    }
+    #current-section {
+        display: none;
+    }
+}
+
+@media all and (min-width: 1440px) {
+    section.module.parallax h1 {
+        font-size: 100px;
+    }
+    section.module.parallax {
+        padding: 220px 0;
+    }
+    #current-section {
+        display: none;
+    }
+}
+
+.wrapper {
+    background-color: $color-black;
+}
+
+.content {
+    background-color: $color-white;
+}
+
+.overlay-container {
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    z-index: 1;
+}
+
+.video-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40%;
+    overflow: hidden;
+}
+
+video {
+    /*  height: 500px;*/
+    width: 100%;
+    z-index: -1;
+    margin-bottom: 50px;
+}
+
+.callout {
+    background-color: $color-gray-light;
+    color: $color-white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.callout h2 {
+    padding-bottom: 18px;
+    border-bottom: 1px solid $color-white;
+}
+
+.expandable {
+    padding: 3px 5px;
+    border-bottom: 3px solid $color-gray-light;
+    display: inline;
+    cursor: pointer;
+}
+
+.expandable:hover {
+    background-color: $color-gray-light;
+    color: $color-white;
+}
+
+.space-col {
+    height: 100px;
+    width: 100%;
+}
+
+.neg-space-col {
+    margin-top: -30px;
+}
+
+.neg-space-col-lg {
+    margin-top: -80px;
+}
+
+#svg-infographic {
+    width: 300px;
+    height: 300px;
+}
+
+.center {
+    text-align: center;
+    margin: auto;
+}
+
+
+/* ============================================================
+  Footer
+============================================================ */
+
+#logo {
+    display: block;
+}
+
+#circle {
+    width: 150px;
+    height: 150px;
+    border: 2px solid $color-white;
+    border-radius: 50%;
+}
+
+footer {
+    color: $color-white;
+    padding: 30px;
+    background-color: $color-gray-lighter;
+}

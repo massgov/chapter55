@@ -1,0 +1,72 @@
+/* ============================================================
+  Buttons
+============================================================ */
+
+.btn-primary {
+    color: $color-primary;
+    background-color: $color-white;
+    border-color: $color-primary;
+    margin-top: 5px;
+    padding: 10px;
+}
+
+.btn-primary:focus,
+.btn-primary.focus {
+    color: $color-white;
+    background-color: $color-primary;
+    border-color: $color-primary;
+}
+
+.btn-primary:hover {
+    color: $color-white;
+    background-color: $color-primary;
+    border-color: $color-primary;
+}
+
+.btn-primary:active:hover,
+.btn-primary.active:hover,
+.open > .dropdown-toggle.btn-primary:hover,
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.open > .dropdown-toggle.btn-primary:focus,
+.btn-primary:active.focus,
+.btn-primary.active.focus,
+.open > .dropdown-toggle.btn-primary.focus {
+    color: $color-white;
+    background-color: $color-primary;
+    border-color: $color-primary;
+}
+
+
+/* ============================================================
+  Pills
+============================================================ */
+
+.nav-pills > li > a {
+    border-radius: 4px;
+    border: 1px solid $color-primary;
+}
+
+.nav-pills > li > a:hover {
+    color: $color-white;
+    background-color: $color-primary;
+    border-color: $color-primary;
+}
+
+.nav-pills > li + li {
+    margin-left: 2px;
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+    color: $color-white;
+    background-color: $color-primary;
+}
+
+.list-group-item.active > .badge,
+.nav-pills > .active > a > .badge {
+    color: $color-primary;
+    background-color: $color-white;
+    border: 1px solid $color-primary;
+}

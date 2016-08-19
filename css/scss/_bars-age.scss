@@ -1,0 +1,39 @@
+/* ============================================================
+ Bar Chart by Age Groups
+============================================================ */
+
+.malFocus,
+.bar.malFocus,
+.dots.malFocus {
+    fill: $color-male-alt;
+}
+
+.femFocus,
+.bar.femFocus,
+.dots.femFocus {
+    fill: $color-female-alt;
+}
+
+// .bar {
+//   &.malFocus:hover {
+//     fill: #08306b;
+//   }
+//   &.femFocus:hover {
+//     fill: #980043;
+//   }
+//   &.hoverFocus {
+//     fill: #52524E;
+//     opacity: 1;
+//   }
+// }
+.dots.hoverFocus {
+    fill: #52524E;
+    opacity: 1;
+}
+
+.labels {
+    font-family: Roboto;
+    font-size: 11px;
+    font-weight: bold;
+    fill: #525252;
+}

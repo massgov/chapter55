@@ -1,0 +1,22 @@
+/* ============================================================
+ Block Chart by Substance
+============================================================ */
+.type_substance0 {
+  background: $color-secondary;
+}
+
+.type_substance1 {
+  background: $color-gray-lighter;
+}
+
+#timeline_blocks{
+  &::-webkit-slider-thumb {
+    background: $color-secondary;
+  }
+}
+
+#table_substance{
+	td{
+		width: 50%;
+	}
+}

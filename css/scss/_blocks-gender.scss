@@ -1,0 +1,84 @@
+/* ============================================================
+ Block Chart by Gender
+============================================================ */
+
+.controls {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.table {
+    th {
+        text-align: center;
+    }
+    td {
+        text-align: center;
+        color: white;
+    }
+}
+
+.people-blocks{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.group {
+    display: inline-block;
+}
+
+.block-chart {
+    height: 300px;
+    // overflow: hidden;
+    margin: 20px;
+    position: relative;
+    width: 300px;
+    display: inline-block;
+}
+
+.block {
+    -webkit-mask: url(../img/person.svg) no-repeat 50% 50%;
+    mask: url(../img/person.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    float: left;
+    height: 9%;
+    width: 9%;
+    margin: 0.5%;
+    position: relative;
+    opacity: 1;
+    &:after {
+        content: attr(data-index);
+    }
+}
+
+.type_gender0 {
+    background: $color-male-light;
+    // fill: $color-male;;
+}
+
+.type_gender2 {
+    background: $color-male;
+    fill: $color-male;
+    ;
+}
+
+.type_gender1 {
+    background: $color-male-alt;
+    fill: $color-male-alt;
+}
+
+.type_gender3 {
+    background: $color-female;
+    fill: $color-female;
+}
+
+.type_gender4 {
+    background: $color-female-alt;
+    fill: $color-female-alt;
+}
+
+.type_gender5 {
+    background: $color-female-light;
+    // fill: $color-male;;
+}

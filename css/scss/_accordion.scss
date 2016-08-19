@@ -1,0 +1,19 @@
+/* ============================================================
+  Accordion
+============================================================ */
+
+.ui-icon {
+    float: right;
+    width: 18px;
+    height: 18px;
+    background-size: 18px;
+    margin-top: 2px;
+}
+
+.ui-icon.iconOpen {
+    background: url(../img/minus.png) no-repeat;
+}
+
+.ui-icon.iconClosed {
+    background: url(../img/plus.png) no-repeat;
+}

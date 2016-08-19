@@ -1,0 +1,77 @@
+/* ============================================================
+  Map
+============================================================ */
+
+#fromYear,
+#toYear {
+    color: $color-primary;
+}
+
+.year {
+    font-weight: bolder;
+}
+
+.title {
+    color: $color-gray-dark;
+    font-weight: normal;
+}
+
+.label {
+    font-size: 2em;
+}
+
+@mixin label {
+    color: $color-gray-lighter;
+    position: absolute;
+    top: -10px;
+}
+
+#from {
+    @include label;
+    left: -10px;
+}
+
+#to {
+    @include label;
+    right: -10px;
+}
+
+#map {
+    padding: 0;
+    margin-left: -150px;
+}
+
+.note {
+    font-size: 12px;
+    text-align: left;
+    padding-top: 10px;
+}
+
+input {
+  position: relative;
+  &[type=range] {
+    -webkit-appearance: none;
+    &::-webkit-slider-runnable-track {
+      width: 50px;
+      height: 5px;
+      background: $color-gray-lighter;
+      border: none;
+      border-radius: 3px;
+    }
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      border: 1px solid white;
+      border-radius: 50%;
+      height: 16px;
+      width: 16px;
+      background: $color-primary;
+      margin-top: -5px;
+    }
+    &:focus {
+      outline: none;
+      &::-webkit-slider-runnable-track {
+        background: $color-gray-light;
+      }
+    }
+  }
+}

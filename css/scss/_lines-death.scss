@@ -1,0 +1,107 @@
+/* ============================================================
+    Lines Death
+============================================================ */
+svg g text.label,
+svg g text.ylabel {
+    color: $color-gray;
+}
+
+.axis-death path,
+.axis-death line {
+    fill: none;
+    stroke: #D3D3D3;
+    stroke-width: 1px;
+}
+
+.line-death {
+    stroke: #B1B5B4;
+    fill: none;
+    stroke-opacity: 40%;
+    stroke-width: 1px;
+    stroke-dasharray: 1, 1;
+}
+
+.usa {
+    color: $color-black;
+    stroke: $color-black;
+    stroke-width: 2.5px;
+    stroke-opacity: 75%;
+    stroke-dasharray: 3, 3;
+}
+
+.massachusetts {
+    color: $color-primary;
+    stroke: $color-primary;
+    stroke-width: 2.5px;
+    stroke-opacity: 100%;
+    stroke-dasharray: 0, 0;
+}
+
+.unfocused {
+    stroke-opacity: 20% !important;
+    stroke-width: 0.5px;
+}
+
+.focused {
+    stroke-width: 4px !important;
+    stroke-opacity: 100%;
+    stroke-dasharray: 0, 0, 0, 0 !important;
+}
+
+.MDG {
+    stroke: #2A2A2A;
+    fill: none;
+    stroke-opacity: 100%;
+    stroke-width: 1px;
+}
+
+.axis-death text {
+    font-family: sans-serif;
+    font-size: 11px;
+}
+
+.aside-ma {
+    @extend .axis-death;
+    fill: $color-primary !important;
+}
+
+.aside-usa {
+    @extend .axis-death;
+    fill: $color-black !important;
+}
+
+.header {
+    width: 70%;
+    margin-left: 16px;
+}
+
+.note1 {
+    @extend .note;
+    margin-left: 30px;
+}
+
+#sources {
+    a {
+        font-size: 12px;
+        font-style: italic;
+        color: $color-primary;
+        font-style: italic;
+    }
+}
+
+.lines-tooltip {
+    position: absolute;
+    z-index: 10;
+    p {
+        background-color: rgba(255, 255, 255, .8);
+        padding: .5em 1em;
+        font-size: 12px;
+        line-height: 17px;
+        color: black;
+    }
+}
+
+.lines-tooltipHeader {
+    font-weight: 700;
+    font-size: 12.5px;
+}

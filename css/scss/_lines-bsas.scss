@@ -1,0 +1,137 @@
+/* ============================================================
+    Lines BSAS
+============================================================ */
+
+.ui-autocomplete-input {
+    padding: 10px;
+    border: 1px solid $color-primary;
+    border-radius: 5px;
+}
+
+#lines-bsas {
+    .axis_bsas path,
+    .axis_bsas line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+    }
+    .axis_bsas text {
+        font-size: 13px;
+    }
+    .y.axis_bsas path {
+        display: none;
+    }
+    .y.axis_bsas line {
+        stroke: #e0e0e0;
+        stroke-width: 1px;
+        stroke-dasharray: 2, 2;
+    }
+    path.domain {
+        stroke-width: 2px;
+    }
+    path.line {
+        fill: none;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+        stroke-width: 1.5px;
+        stroke-opacity: 0.5;
+    }
+    path.alcohol {
+        stroke: #F98229;
+    }
+    path.marijuana {
+        stroke: #018571;
+    }
+    path.none {
+        stroke: #005a32;
+    }
+    path.opioids {
+        stroke: #99000d;
+    }
+    path.other {
+        stroke: #762a83;
+    }
+    // .baseline line {
+    //     stroke: #000;
+    //     stroke-width: 1.5px;
+    // }
+    // line.annotation {
+    //     stroke: #ccc;
+    //     stroke-dasharray: 5, 2;
+    //     stroke-width: 1.2px;
+    // }
+    // text.annotation,
+    // #line-chart .agehighlight text {
+    //     font-size: 12px;
+    //     font: red !important;
+    //     text-anchor: end;
+    //     text-shadow: 0 3px 0 #fff, 3px 0 0 #fff, 0 -3px 0 #fff, -3px 0 0 #fff;
+    // }
+    .overlay {
+        fill: none;
+        pointer-events: all;
+    }
+    .focus.age line {
+        stroke-width: 1px;
+        stroke: #e0e0e0;
+    }
+    .focus.alcohol circle {
+        fill: #e08214;
+        stroke: #b35806;
+    }
+    .focus.alcohol {
+        fill: #b35806;
+    }
+    .circle.alcohol {
+        fill: #e08214;
+        fill-opacity: 0.75;
+    }
+    .focus.marijuana circle {
+        fill: #80cdc1;
+        stroke: #018571;
+    }
+    .focus.marijuana {
+        fill: #018571;
+    }
+    .circle.marijuana {
+        fill: #80cdc1;
+        fill-opacity: 0.75;
+    }
+    .focus.none circle {
+        fill: #238b45;
+        stroke: #005a32;
+    }
+    .focus.none {
+        fill: #005a32;
+    }
+    .circle.none {
+        fill: #238b45;
+        fill-opacity: 0.75;
+    }
+    .focus.opioids circle {
+        fill: #cb181d;
+        stroke: #99000d;
+    }
+    .focus.opioids {
+        fill: #99000d;
+    }
+    .circle.opioids {
+        fill: #cb181d;
+        fill-opacity: 0.75;
+    }
+    .focus.other circle {
+        fill: #9970ab;
+        stroke: #762a83;
+    }
+    .focus.other {
+        fill: #762a83;
+    }
+    .circle.other {
+        fill: #9970ab;
+        fill-opacity: 0.75;
+    }
+    .focus text {
+        font-size: 11px;
+        font-weight: bolder;
+    }
+}
