@@ -2,16 +2,20 @@
   Map
 ============================================================ */
 
+.range {
+    position: relative;
+    width: 90%;
+}
+
 #fromYear1,
 #toYear1 {
     color: $color-primary;
 }
 
 #fromYear2,
-#toYear2{
-  color: $color-female;
+#toYear2 {
+    color: $color-female;
 }
-
 
 .year {
     font-weight: bolder;
@@ -49,34 +53,33 @@
 }
 
 input {
-  position: relative;
-  &[type=range] {
-    -webkit-appearance: none;
-    &::-webkit-slider-runnable-track {
-      width: 50px;
-      height: 3px;
-      background: $color-gray-lighter;
-      border: none;
-      border-radius: 3px;
+    position: relative;
+    &[type=range] {
+        -webkit-appearance: none;
+        &::-webkit-slider-runnable-track {
+            width: 50px;
+            height: 3px;
+            background: $color-gray-lighter;
+            border: none;
+            border-radius: 3px;
+        }
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            border: 1px solid white;
+            border-radius: 50%;
+            height: 16px;
+            width: 16px;
+            background: $color-primary;
+            margin-top: -7px;
+        }
+        &:focus {
+            outline: none;
+            &::-webkit-slider-runnable-track {
+                background: $color-gray-light;
+            }
+        }
     }
-    &::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      border: 1px solid white;
-      border-radius: 50%;
-      height: 16px;
-      width: 16px;
-      background: $color-primary;
-      margin-top: -7px;
-    }
-    &:focus {
-      outline: none;
-      &::-webkit-slider-runnable-track {
-        background: $color-gray-light;
-      }
-    }
-  }
 }
-
 
 div.tooltip {
     color: #222;
@@ -87,9 +90,10 @@ div.tooltip {
     opacity: 0.9;
     position: absolute;
 }
+
 .tooltip.hidden {
-        display: none !important;
-    }
+    display: none !important;
+}
 
 div.tooltip2 {
     color: #222;
@@ -100,6 +104,7 @@ div.tooltip2 {
     opacity: 0.9;
     position: absolute;
 }
+
 .tooltip2.hidden {
-        display: none !important;
-    }
+    display: none !important;
+}

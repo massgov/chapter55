@@ -165,6 +165,7 @@ function generateMap(error, results) {
         currentyear = year;
         var toyear = eval(year) + 1;
         $('#titlePrefix').html('Confirmed Unintentional Opiod Overdose Deaths in Massachusetts from');
+        $('#titlePrefix').html('Opiod Deaths in Massachusetts from');
         $('#fromYear2').html(year);
         $('#titleMidfix').html('to');
         $('#toYear2').html(toyear);
@@ -420,6 +421,7 @@ function generateMap2(error, results) {
         var toyear = eval(year) + 1
 
         $('#titlePrefix2').html('A Composite Indicator of the Impact of the Opioid Epidemic on Massachusetts from');
+        $('#titlePrefix2').html('Opioid Overdose Events in Massachusetts from');
         $('#fromYear1').html(year);
         $('#titleMidfix2').html('to');
         $('#toYear1').html(toyear);

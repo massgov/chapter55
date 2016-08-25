@@ -78,6 +78,10 @@
 /* ============================================================
   Map
 ============================================================ */
+.range {
+  position: relative;
+  width: 90%; }
+
 #fromYear1,
 #toYear1 {
   color: #0071bc; }
@@ -861,8 +865,11 @@ video {
 .neg-space-col {
   margin-top: -30px; }
 
+.neg-space-col-md {
+  margin-top: -100px; }
+
 .neg-space-col-lg {
-  margin-top: -80px; }
+  margin-top: -150px; }
 
 #svg-infographic {
   width: 300px;

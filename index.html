@@ -75,7 +75,7 @@
             <!-- intro -->
             <section class="module content">
                 <div class="container">
-                    <div class="col-md-6">
+                    <div class="col-md-7">
                         <div class="range">
                             <div class="label"><span id="from">2000</span><span id="to">2015</span></div>
                             <input id="timeline" type="range" min="2000" max="2014" value="2000">
@@ -96,8 +96,8 @@
                                 <option>2013</option>
                                 <option>2014</option>
                             </datalist>
+                            <hr>
                         </div>
-                        <hr>
                         <h3>
                             <span id="titlePrefix" class="title">from</span>
                             <span id="fromYear1" class="year"></span>
@@ -105,42 +105,25 @@
                             <span id="toYear1" class="year"></span>
                         </h3>
                         <div id="legend"></div>
-                        <div id="map" class="neg-space-col-lg"></div>
+                        <div id="map" class="neg-space-col-md"></div>
+                        <!-- Map Death -->
                         <h3>
                             <span id="titlePrefix2" class="title"></span>
                             <span id="fromYear2" class="year"></span>
                             <span id="titleMidfix2" class="title"></span>
-                            <span id="toYear2" class="year"></span>
+                            <span id="toYear2" class="year"></span><span>*</span>
+                            <span class="note">*Fatal and non-fatal overdoses, ambulance trips, emergency room admissions, narcan use, etc.</span>
                         </h3>
                         <div id="legend2"></div>
-                        <div id="map2" class="neg-space-col-lg"></div>
-                        <div class="note neg-space-col-lg">Explain the dataset and the composited index values here.
-                            <br />Data Sources: U.S. Census Bureau; Executive Office of Health and Human Services
-                            <br/>(Registry of Vital Records and Statistics, Massachusetts Department of Public Health)</div>
-                        <!-- Map Death -->
-                        <!-- <h3>
-                            <span id="titlePrefix" class="title"></span>
-                            <span id="fromYear" class="year"></span>
-                            <span id="titleMidfix" class="title"></span>
-                            <span id="toYear" class="year"></span>
-                        </h3>
-                        <div id="legend_death"></div>
-                        <div id="map_death"></div>
-                         <div class="note">2014 death data ONLY include up through September are provisional and are subject to updates. Case reviews of deaths are evaluated and updated on an ongoing basis. A large number of death certificates have yet to be received from the municipalities and some have yet to be assigned cause-of-death codes. Data updated on 04/22/2015.</div>
-                        <div class="note">Data Sources: U.S. Census Bureau; Executive Office of Health and Human Services (Registry of Vital Records and Statistics, MDPH)</div>
+                        <div id="map2" class="neg-space-col-md"></div>
+                        <div class="note neg-space-col-lg">
+                            <br />Data Sources: U.S. Census Bureau;
+                            <br />Executive Office of Health and Human Services
+                            <br />(Registry of Vital Records and Statistics,
+                            <br />Massachusetts Department of Public Health)</div>
                         <!-- Map Composite -->
-                        <!-- <h3>
-                            <span id="titlePrefix2" class="title"></span>
-                            <span id="fromYear" class="year"></span>
-                            <span id="titleMidfix" class="title"></span>
-                            <span id="toYear" class="year"></span>
-                        </h3>
-                        <div id="legend2"></div>
-                        <div id="map_comp"></div>
-                        <div class="note">Explain the dataset and the composited index values here.</div>
-                        <div class="note">Data Sources: U.S. Census Bureau; Executive Office of Health and Human Services (Registry of Vital Records and Statistics, Massachusetts Department of Public Health)</div> -->
                     </div>
-                    <div class="col-md-5 pull-right">
+                    <div class="col-md-4 pull-right">
                         <h2>A Deadly Problem</h2>
                         <p>Opioid use and abuse in Massachusetts has grown to the point where people are calling it an opioid epidemic.</p>
                         <p>Opioid-related deaths In Massachusetts were four times higher in <a class="controls controls-map" data-select="2014">2015</a> than in <a class="controls controls-map" data-select="2000">2000</a>. This recent rate of increase is several times faster than anything seen here before. In <a class="controls controls-map" data-select="2013">2013-2014</a> alone, opioid-related deaths were recorded in two-thirds of the cities and towns in Massachusetts.</p>
