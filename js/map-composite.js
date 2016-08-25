@@ -107,6 +107,7 @@ function generateMap(error, results) {
             tooltip.classed('hidden', false)
                 .attr('style', 'left:' + (mouse[0] + 15) +
                     'px !important; top:' + (mouse[1] + 75) + 'px !important')
+                    'px !important; top:' + (mouse[1] + 100) + 'px !important')
                 .html("<b>" + toTitleCase(d.properties.TOWN) + "</b> | " + currentrate);
         })
 
@@ -354,6 +355,7 @@ function generateMap2(error, results) {
             tooltip2.classed('hidden', false)
                 .attr('style', 'left:' + (mouse[0] + 15) +
                     'px !important; top:' + (mouse[1] + 725) + 'px !important')
+                    'px !important; top:' + (mouse[1] + 625) + 'px !important')
                 .html("<b>" + toTitleCase(d.properties.TOWN) + "</b> | " + currentrate);
         })
         .on('mouseover', function(d, i) {
