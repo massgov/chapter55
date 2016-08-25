@@ -1,18 +1,45 @@
 /* ============================================================
   Accordion
 ============================================================ */
-.ui-icon {
-  float: right;
-  width: 18px;
-  height: 18px;
-  background-size: 18px;
-  margin-top: 2px; }
+/* ============================================================
+  Pills
+============================================================ */
+.nav-pills > li > a {
+  border-radius: 4px;
+  border: 1px solid #0071bc; }
 
-.ui-icon.iconOpen {
-  background: url(../img/minus.png) no-repeat; }
+.nav-pills > li > a:hover {
+  color: #fff;
+  background-color: #0071bc;
+  border-color: #0071bc; }
 
-.ui-icon.iconClosed {
-  background: url(../img/plus.png) no-repeat; }
+.nav-pills > li + li {
+  margin-left: 2px; }
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  color: #fff;
+  background-color: #0071bc; }
+
+.list-group-item.active > .badge,
+.nav-pills > .active > a > .badge {
+  color: #0071bc;
+  background-color: #fff;
+  border: 1px solid #0071bc; }
+
+.tab-content > .tab-pane > p,
+.tab-content > .tab-pane > p > li {
+  font-size: 1.2em;
+  font-weight: 300; }
+
+.tab-content > .tab-pane > ul {
+  font-size: 1.2em;
+  font-weight: 300; }
+
+.tab-content {
+  height: 190px;
+  overflow-x: hidden; }
 
 /* ============================================================
   Buttons

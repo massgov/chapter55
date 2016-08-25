@@ -123,18 +123,26 @@ $('a[href*=#]:not([href=#])').click(function() {
 
 
 /////////////////////////////Accordion
-$(function() {
-    var icons = {
-        header: "iconClosed",
-        activeHeader: "iconOpen",
-        hoverHeader: 'iconHover'
+// $(function() {
+//     var icons = {
+//         header: "iconClosed",
+//         activeHeader: "iconOpen",
+//         hoverHeader: 'iconHover'
 
-    };
-    $("#accordion").accordion({
-        icons: icons,
-        heightStyle: "content"
-    });
+//     };
+//     $("#accordion").accordion({
+//         icons: icons,
+//         heightStyle: "content"
+//     });
+// });
+
+/////////////////////////////Pills
+
+$('#pills-first a').click(function(e) {
+    e.preventDefault()
+    $(this).tab('show')
 });
+
 
 /////////////////////////////Video Links
 $('#play1').click(function() {
