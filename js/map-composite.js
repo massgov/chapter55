@@ -106,7 +106,6 @@ function generateMap(error, results) {
 
             tooltip.classed('hidden', false)
                 .attr('style', 'left:' + (mouse[0] + 15) +
-                    'px !important; top:' + (mouse[1] + 75) + 'px !important')
                     'px !important; top:' + (mouse[1] + 100) + 'px !important')
                 .html("<b>" + toTitleCase(d.properties.TOWN) + "</b> | " + currentrate);
         })
@@ -165,11 +164,10 @@ function generateMap(error, results) {
         var szAttr = 'yr' + year;
         currentyear = year;
         var toyear = eval(year) + 1;
-        $('#titlePrefix').html('Confirmed Unintentional Opiod Overdose Deaths in Massachusetts from');
         $('#titlePrefix').html('Opiod Deaths in Massachusetts from');
-        $('#fromYear2').html(year);
+        $('#fromYear').html(year);
         $('#titleMidfix').html('to');
-        $('#toYear2').html(toyear);
+        $('#toYear').html(toyear);
 
         svgContainer.selectAll("path")
             .transition()
@@ -354,7 +352,6 @@ function generateMap2(error, results) {
 
             tooltip2.classed('hidden', false)
                 .attr('style', 'left:' + (mouse[0] + 15) +
-                    'px !important; top:' + (mouse[1] + 725) + 'px !important')
                     'px !important; top:' + (mouse[1] + 625) + 'px !important')
                 .html("<b>" + toTitleCase(d.properties.TOWN) + "</b> | " + currentrate);
         })
@@ -422,11 +419,16 @@ function generateMap2(error, results) {
         currentyear = year
         var toyear = eval(year) + 1
 
-        $('#titlePrefix2').html('A Composite Indicator of the Impact of the Opioid Epidemic on Massachusetts from');
         $('#titlePrefix2').html('Opioid Overdose Events in Massachusetts from');
-        $('#fromYear1').html(year);
+        $('#fromYear2').html(year);
         $('#titleMidfix2').html('to');
-        $('#toYear1').html(toyear);
+        $('#toYear2').html(toyear).append('<span>*</span>');
+        $('#map2-note').html('*Fatal and nonfatal overdoses, ambulance trips, emergency room admissions, narcan use, etc.');
+        $('#map2-source').html('Data Sources: U.S. Census Bureau;' +
+                            '<br />Executive Office of Health and Human Services'+
+                            '<br />(Registry of Vital Records and Statistics,' +
+                            '<br />Massachusetts Department of Public Health)');
+
 
 
         svgContainer.selectAll("path")
