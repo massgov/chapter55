@@ -75,19 +75,6 @@ svg g text.ylabel {
     margin-left: 16px;
 }
 
-.note1 {
-    @extend .note;
-    margin-left: 30px;
-}
-
-#sources {
-    a {
-        font-size: 12px;
-        font-style: italic;
-        color: $color-primary;
-        font-style: italic;
-    }
-}
 
 .lines-tooltip {
     position: absolute;

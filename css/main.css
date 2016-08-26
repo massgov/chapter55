@@ -120,10 +120,6 @@
 .year {
   font-weight: bolder; }
 
-.title {
-  color: #455A64;
-  font-weight: normal; }
-
 .label {
   font-size: 2em; }
 
@@ -138,11 +134,6 @@
   position: absolute;
   top: -10px;
   right: -10px; }
-
-.note, .note1 {
-  font-size: 12px;
-  text-align: left;
-  padding-top: 10px; }
 
 input {
   position: relative; }
@@ -226,16 +217,6 @@ div.tooltip2 {
     font-family: Helvetica, Arial;
     text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; }
 
-#title {
-  text-align: center;
-  font-size: 20px;
-  font-family: Helvetica, Arial; }
-
-.subtitle {
-  font-size: 12px;
-  font-weight: 400;
-  font-family: Helvetica, Arial; }
-
 /* ============================================================
     Lines Death
 ============================================================ */
@@ -300,15 +281,6 @@ svg g text.ylabel {
 .header {
   width: 70%;
   margin-left: 16px; }
-
-.note1 {
-  margin-left: 30px; }
-
-#sources a {
-  font-size: 12px;
-  font-style: italic;
-  color: #0071bc;
-  font-style: italic; }
 
 .lines-tooltip {
   position: absolute;
@@ -579,6 +551,7 @@ svg g text.ylabel {
   background-color: #b71c1c; }
 
 .red {
+  font-weight: bold;
   color: #b71c1c; }
 
 /* ============================================================
@@ -905,6 +878,24 @@ video {
 .center {
   text-align: center;
   margin: auto; }
+
+.title {
+  color: #455A64;
+  font-weight: normal; }
+
+.subtitle {
+  color: #455A64;
+  font-size: 12px;
+  font-weight: normal; }
+
+.source {
+  color: #607D8B;
+  font-size: 12px;
+  text-align: left;
+  padding-top: 10px; }
+  .source a {
+    font-style: italic;
+    color: #0071bc; }
 
 /* ============================================================
   Footer

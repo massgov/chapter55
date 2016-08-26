@@ -257,6 +257,28 @@ video {
     margin: auto;
 }
 
+.title {
+    color: $color-gray-dark;
+    font-weight: normal;
+}
+
+.subtitle {
+    color: $color-gray-dark;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.source {
+    color: $color-gray;
+    font-size: 12px;
+    text-align: left;
+    padding-top: 10px;
+    a {
+        font-style: italic;
+        color: $color-primary;
+    }
+}
+
 
 /* ============================================================
   Footer
