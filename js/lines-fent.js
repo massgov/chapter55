@@ -25,9 +25,9 @@ directive('d3LocationTrendChart', function($parse) {
                     }
                 }
 
-                var seriesColors = ["#b71c1c", "#0071bc", "#ffffff", "#ffffff"];
-                var seriesLineStrokes = ["3.5px", "3.5px", "1.5px", "1.5px"];
-                var seriesLineDash = ["0,0,0,0", "0,0,0,0", "2,2,2,2", "1,1,1,1"]
+                var seriesColors = ["#ffffff", "#b71c1c", "#0071bc", "#ffffff" ];
+                var seriesLineStrokes = ["1.5px", "3.5px", "3.5px", "1.5px"];
+                var seriesLineDash = ["2,2,2,2", "0,0,0,0", "0,0,0,0", "1,1,1,1"]
                 var seriesPointShapes = ["circle", "circle", "circle", "circle"];
                 var seriesPointWidth = ["1.5px", "1px", "1px", "1px"];
                 var seriesPointFill = ["#a50f15", "#08519c", "#636363", "#636363"];
@@ -40,8 +40,8 @@ directive('d3LocationTrendChart', function($parse) {
                     left: 30
                 };
 
-                var width = 500;
-                var height = 300;
+                var width = 300;
+                var height = 550;
 
                 var canvasWidth = d3.select(element[0]).attr("width");
                 var canvasHeight = d3.select(element[0]).attr("height");
@@ -107,7 +107,7 @@ directive('d3LocationTrendChart', function($parse) {
                 var yAxis_fent = d3.svg.axis()
                     .scale(y)
                     .orient("left")
-                    .ticks(4)
+                    .ticks(5)
                     .tickSize(5, 0)
                     .tickPadding(3);
 
@@ -243,44 +243,44 @@ directive('d3LocationTrendChart', function($parse) {
 
                 $lines_fent.append("text")
                     .attr("class", "aside-note")
-                    .attr("x", width + 10)
-                    .attr("y", y(chartData[8].Cocaine) - 7)
+                    .attr("x", width + 5)
+                    .attr("y", y(chartData[8].FentanylHeroin) - 5)
                     .attr("dy", "1em")
                     .style("text-anchor", "start")
-                    .text("Cocaine")
+                    .text("Fentanyl & Heroin")
                     .style("fill", "$color-white")
                     .style("font-weight", "normal");
 
                 $lines_fent.append("text")
                     .attr("class", "aside-note")
-                    .attr("x", width + 10)
-                    .attr("y", y(chartData[8].Benzodiazepine) - 7)
+                    .attr("x", width + 5)
+                    .attr("y", y(chartData[8].Methadone) - 7)
                     .attr("dy", "1em")
                     .style("text-anchor", "start")
-                    .text("Benzodiazepine")
+                    .text("Methadone")
                     .style("fill", "$color-white")
                     .style("font-weight", "normal");
 
                 $lines_fent.append("text")
                     .attr("class", "aside-note")
-                    .attr("x", width + 10)
-                    .attr("y", y(chartData[8].Heroin) - 7)
+                    .attr("x", width + 5)
+                    .attr("y", y(chartData[8].Heroin) - 10)
                     .attr("dy", "1em")
                     .style("text-anchor", "start")
                     .text("Heroin")
                     //.style("fill", "#08519c")
                     .style("fill", "#fff")
-                    .style("font-size", "15px")
+                    .style("font-size", "14px")
                    // .style("font-weight", "bold");
 
                 $lines_fent.append("text")
                     .attr("class", "aside-note")
-                    .attr("x", width + 10)
-                    .attr("y", y(chartData[8].Fentanyl) - 7)
+                    .attr("x", width + 5)
+                    .attr("y", y(chartData[8].Fentanyl) - 10)
                     .attr("dy", "1em")
                     .style("text-anchor", "start")
                     .text("Fentanyl")
-                    .style("font-size", "15px")
+                    .style("font-size", "14px")
                     //.style("fill", "#f44336")
                     .style("fill", "#fff")
                    // .style("font-weight", "bold");
@@ -415,58 +415,58 @@ function Ctrl($scope) {
     //alert(date);
     var chartData = [{
         "date": date,
-        "Fentanyl": "42",
-        "Heroin": "59",
-        "Benzodiazepine": "62",
-        "Cocaine": "30"
+        "FentanylHeroin": "19",
+        "Fentanyl": "22",
+        "Heroin": "41",
+        "Methadone": "10"
     }, {
         "date": date2,
-        "Fentanyl": "38",
-        "Heroin": "69",
-        "Benzodiazepine": "60",
-        "Cocaine": "40"
+        "FentanylHeroin": "18",
+        "Fentanyl": "19",
+        "Heroin": "49",
+        "Methadone": "7"
     }, {
         "date": date3,
-        "Fentanyl": "30",
-        "Heroin": "68",
-        "Benzodiazepine": "58",
-        "Cocaine": "28"
+        "FentanylHeroin": "14",
+        "Fentanyl": "14",
+        "Heroin": "53",
+        "Methadone": "10"
     }, {
         "date": date4,
-        "Fentanyl": "55",
-        "Heroin": "58",
-        "Benzodiazepine": "50",
-        "Cocaine": "24"
+        "FentanylHeroin": "22",
+        "Fentanyl": "27",
+        "Heroin": "35",
+        "Methadone": "6"
     }, {
         "date": date5,
-        "Fentanyl": "61",
-        "Heroin": "53",
-        "Benzodiazepine": "51",
-        "Cocaine": "27"
+        "FentanylHeroin": "19",
+        "Fentanyl": "40",
+        "Heroin": "30",
+        "Methadone": "4"
     }, {
         "date": date6,
-        "Fentanyl": "63",
-        "Heroin": "56",
-        "Benzodiazepine": "55",
-        "Cocaine": "28"
+        "FentanylHeroin": "24",
+        "Fentanyl": "38",
+        "Heroin": "29",
+        "Methadone": "5"
     }, {
         "date": date7,
-        "Fentanyl": "58",
-        "Heroin": "50",
-        "Benzodiazepine": "53",
-        "Cocaine": "38"
+        "FentanylHeroin": "19",
+        "Fentanyl": "40",
+        "Heroin": "30",
+        "Methadone": "6"
     }, {
         "date": date8,
-        "Fentanyl": "65",
-        "Heroin": "48",
-        "Benzodiazepine": "52",
-        "Cocaine": "28"
+        "FentanylHeroin": "22",
+        "Fentanyl": "43",
+        "Heroin": "24",
+        "Methadone": "5"
     }, {
         "date": date9,
-        "Fentanyl": "67",
-        "Heroin": "42",
-        "Benzodiazepine": "51",
-        "Cocaine": "28"
+        "FentanylHeroin": "15",
+        "Fentanyl": "50",
+        "Heroin": "17",
+        "Methadone": "4"
     }];
 
     $scope.myData = chartData;
