@@ -98,7 +98,7 @@ function generateMap(error, results) {
             var currentrate
 
             if (d.properties[currentvalue] > 0) {
-                currentrate = d3.format(".1f")(d.properties[currentvalue]);
+                currentrate = d3.format(".0f")(d.properties[currentvalue]);
             } else if (d.properties[currentvalue] == 0) {
                 currentrate = d3.format(".0f")(d.properties[currentvalue]);
             } else {
