@@ -100,7 +100,7 @@ $(document).ready(function() {
         return blockArray;
     }
 
-})
+});
 
 
 // var $block = document.getElementByClassName('block');
