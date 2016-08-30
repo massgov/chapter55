@@ -84,6 +84,7 @@ function generateMap(error, results) {
         .data(maTowns.features)
         .enter()
         .append("path")
+        .classed("deathmap", true)
         .attr("d", function(d, i) {
             return geoPath(d);
         })
@@ -120,7 +121,7 @@ function generateMap(error, results) {
     })
         .on('mouseout', function(d, i) {
             tooltip.classed('hidden', true);
-            d3.selectAll('path')
+            d3.selectAll('path.deathmap')
                 .style("fill-opacity", 1)
                 .style("stroke", "#2f363d")
         		.style("stroke-width", "0.1px");
@@ -173,7 +174,7 @@ function generateMap(error, results) {
         $('#map1-source').html('Sources: Massachusetts Department of Public Health,' +
                              '<br>Massachusetts Registry of Vital Records and Statistics</>');
 
-        svgContainer.selectAll("path")
+        svgContainer.selectAll("path.deathmap")
             .transition()
             .duration(500)
             .style("fill", function(d, i) {
