@@ -7,10 +7,10 @@
 function app() {
     queue()
     //should be town polym data
-    .defer(d3.json, "js/data/TOWN.geo.json")
+    .defer(d3.json, "js/data/opioid_count_by_town.geo.json")
     //.defer(d3.json, "us_states_5m.geo.json")
     //should be opioid death data
-    .defer(d3.json, "js/data/TOWN.geo.json")
+    .defer(d3.json, "js/data/opioid_count_by_town.geo.json")
     //.defer(d3.csv, "us_pop.csv")
     .awaitAll(generateMap)
 }
@@ -49,8 +49,8 @@ function generateMap(error, results) {
         .attr('class', 'hidden tooltip');
 
     var opChgScale = d3.scale.threshold()
-        .domain([0.01, 6.9, 15.9, 31.5, Infinity])
-        .range(colorbrewer.Blues[5]);
+        .domain([0.01, 1.01, 5.01, 15.01, 33.01, 64.01, Infinity])
+        .range(["#eff3ff","#c6dbef","#9ecae1","#6baed6","#3182bd","#08519c"]);
     opChgScale.domainStrings = function() {
         return (['< 0.01', '0.01-6.9', '6.9-15.9',
             '15.9-31.5', '>31.5'
