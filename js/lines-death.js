@@ -221,16 +221,16 @@ d3.csv("js/data/death_states.csv", function(data) {
         .attr("y2", yScale(MDG));*/
     $lines_death.append("text")
         .attr("class", "aside-ma")
-        .attr("x", width - margin.left - 10)
-        .attr("y", yScale(9.8) - 6)
+        .attr("x", width - margin.left - 15)
+        .attr("y", yScale(23.8) - 6)
         .attr("dy", "1em")
         .style("text-anchor", "start")
         .text("MA");
 
     $lines_death.append("text")
         .attr("class", "aside-usa")
-        .attr("x", width - margin.left - 10)
-        .attr("y", yScale(5.9) - 6)
+        .attr("x", width - margin.left - 45)
+        .attr("y", yScale(10.0) - 6)
         .attr("dy", "1em")
         .style("text-anchor", "start")
         .text("USA");
