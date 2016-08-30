@@ -44,11 +44,12 @@ gulp.task('javascript', function () {
     ])
     .pipe(sourcemaps.init())
     .pipe(concat('main.js'))
-    // .pipe(gulp.dest('js/dist'))
+    .pipe(gulp.dest('js/dist'))
     .pipe(uglify({
       compress: {
-	drop_debugger: false
-      }
+       drop_debugger: false,
+	     drop_console: false
+      },
     }))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('js/dist'));
