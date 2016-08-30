@@ -50,10 +50,9 @@ function generateMap(error, results) {
 
     var opChgScale = d3.scale.threshold()
         .domain([0.01, 1.01, 5.01, 15.01, 33.01, 64.01, Infinity])
-        .range(["#eff3ff","#c6dbef","#9ecae1","#6baed6","#3182bd","#08519c"]);
+        .range(["#eff3ff","#c6dbef","#9ecae1","#6baed6","#4292c6","#2171b5", "#084594"]);
     opChgScale.domainStrings = function() {
-        return (['< 0.01', '0.01-6.9', '6.9-15.9',
-            '15.9-31.5', '>31.5'
+        return (['0', '1', '2-5', '6-15', '16-33', '34-64', '>64' 
         ]);
     };
 
@@ -191,11 +190,11 @@ function generateMap(error, results) {
 
         // Create data array.
         var legendData = [];
-        legendData.push({
-            d: -9999,
-            r: '#f1f1f1',
-            s: 'N/A'
-        });
+        //legendData.push({
+            //d: -9999,
+            //r: '#f1f1f1',
+            //s: 'N/A'
+        //});
         var i;
         for (i = 0; i < scale.domain().length; i++) {
             legendData.push({
