@@ -173,7 +173,7 @@ d3.csv("js/data/death_states.csv", function(data) {
     var margin = {
         top: 20,
         right: 20,
-        bottom: 50,
+        bottom: 20,
         left: 50,
     };
 
@@ -185,11 +185,11 @@ d3.csv("js/data/death_states.csv", function(data) {
     $lines_death.append("g")
         .attr("class", "x axis-death")
         // .attr("transform", "translate(0," + (height - margin.bottom) + ")")
-        .attr("transform", "translate(0," + (height - margin.bottom - margin.top / 2) + ")")
+        .attr("transform", "translate(0," + (height - margin.bottom - margin.top - margin.top) + ")")
         .call(xAxis_death)
         .append("text")
         .attr("x", width - margin.left)
-        .attr("y", margin.bottom / 2)
+        .attr("y", margin.bottom+10)
         .attr("dy", "1em")
         .style("text-anchor", "end")
         .attr("class", "label")
@@ -207,7 +207,7 @@ d3.csv("js/data/death_states.csv", function(data) {
         .attr("dy", "1em")
         .style("text-anchor", "end")
         .attr("class", "label")
-        .text("Opioid Related Death Rate per 100,000 People");
+        .text("Age-Adjusted Opioid Death Rate per 100,000 People");
 
     /*======================================================================
       MDG line
@@ -221,16 +221,16 @@ d3.csv("js/data/death_states.csv", function(data) {
         .attr("y2", yScale(MDG));*/
     $lines_death.append("text")
         .attr("class", "aside-ma")
-        .attr("x", width - margin.left - 10)
-        .attr("y", yScale(9.8) - 6)
+        .attr("x", width - margin.left - 15)
+        .attr("y", yScale(23.8) - 6)
         .attr("dy", "1em")
         .style("text-anchor", "start")
         .text("MA");
 
     $lines_death.append("text")
         .attr("class", "aside-usa")
-        .attr("x", width - margin.left - 10)
-        .attr("y", yScale(5.9) - 6)
+        .attr("x", width - margin.left - 45)
+        .attr("y", yScale(10.0) - 6)
         .attr("dy", "1em")
         .style("text-anchor", "start")
         .text("USA");
@@ -261,11 +261,20 @@ d3.csv("js/data/death_states.csv", function(data) {
 
     }
 
+     var coordinates = [0, 0];
+
     function mousemoveFunc(d) {
-        //console.log("events", window.event, d3.event);
+
+        coordinates = d3.mouse(this);
+        var x = coordinates[0];
+        var y = coordinates[1];
+        
+
         tooltip_death
-            .style("top", (d3.event.pageY / 3 - 400) + "px")
-            .style("left", (d3.event.pageX / 3 - 400) + "px");
+            .style("top", y + "px")
+            .style("left", x + "px")
+            .style('position', 'absolute')
+            .style('z-index', 1001);
     }
 
 
