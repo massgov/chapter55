@@ -7,10 +7,10 @@
 function app() {
     queue()
     //should be town polym data
-    .defer(d3.json, "js/data/TOWN.geo.json")
+    .defer(d3.json, "js/data/opioid_count_by_town.geo.json")
     //.defer(d3.json, "us_states_5m.geo.json")
     //should be opioid death data
-    .defer(d3.json, "js/data/TOWN.geo.json")
+    .defer(d3.json, "js/data/opioid_count_by_town.geo.json")
     //.defer(d3.csv, "us_pop.csv")
     .awaitAll(generateMap)
 }
@@ -48,12 +48,13 @@ function generateMap(error, results) {
     var tooltip = d3.select('#map').append('div')
         .attr('class', 'hidden tooltip');
 
+    //#eff3ff    
+
     var opChgScale = d3.scale.threshold()
-        .domain([0.01, 6.9, 15.9, 31.5, Infinity])
-        .range(colorbrewer.Blues[5]);
+        .domain([0.01, 1.01, 5.01, 15.01, 33.01, 64.01, Infinity])
+        .range(["#f1f1f1","#c6dbef","#9ecae1","#6baed6","#4292c6","#2171b5", "#084594"]);
     opChgScale.domainStrings = function() {
-        return (['< 0.01', '0.01-6.9', '6.9-15.9',
-            '15.9-31.5', '>31.5'
+        return (['0', '1', '2-5', '6-15', '16-33', '34-64', '>64' 
         ]);
     };
 
@@ -97,7 +98,7 @@ function generateMap(error, results) {
             var currentrate
 
             if (d.properties[currentvalue] > 0) {
-                currentrate = d3.format(".1f")(d.properties[currentvalue]);
+                currentrate = d3.format(".0f")(d.properties[currentvalue]);
             } else if (d.properties[currentvalue] == 0) {
                 currentrate = d3.format(".0f")(d.properties[currentvalue]);
             } else {
@@ -148,7 +149,7 @@ function generateMap(error, results) {
     ];
     var index = 0;
     getYear();
-    generateLegend(opChgScale, 'legend', 'Unintentional Opioid Deaths per 100,000 people');
+    generateLegend(opChgScale, 'legend', 'Count of Opioid Related Deaths by Municipality');
 
     function getYear() {
         setSymbology(2000);
@@ -164,10 +165,10 @@ function generateMap(error, results) {
         var szAttr = 'yr' + year;
         currentyear = year;
         var toyear = eval(year) + 1;
-        $('#titlePrefix').html('Opiod Deaths in Massachusetts from');
+        $('#titlePrefix').html('Count of Opiod Related Deaths in Massachusetts in');
         $('#fromYear').html(year);
-        $('#titleMidfix').html('to');
-        $('#toYear').html(toyear);
+        //$('#titleMidfix').html('to');
+        //$('#toYear').html(toyear);
 
         svgContainer.selectAll("path")
             .transition()
@@ -191,11 +192,11 @@ function generateMap(error, results) {
 
         // Create data array.
         var legendData = [];
-        legendData.push({
-            d: -9999,
-            r: '#f1f1f1',
-            s: 'N/A'
-        });
+        //legendData.push({
+            //d: -9999,
+            //r: '#f1f1f1',
+            //s: 'N/A'
+        //});
         var i;
         for (i = 0; i < scale.domain().length; i++) {
             legendData.push({
