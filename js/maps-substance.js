@@ -78,6 +78,7 @@ var Vis = (function(d3) {
             .attr('class', function(d) {
                 return d.properties.TOWN.toLowerCase()
             })
+            .attr('id', 'bsasmap')
             .on('mouseenter', function(d, i) {
                 notify('.' + d.properties.TOWN.toLowerCase(), 'select');
                 // var currentState = this;
@@ -106,7 +107,7 @@ var Vis = (function(d3) {
             })
             .on('unselect', function(self) {
                 self.node().parentNode.parentNode.getElementsByTagName('p2')[0].innerHTML = "";
-                d3.selectAll('path').style({ 'fill-opacity': 1 }).style("stroke", "white").style("stroke-width", "0.0px");
+                d3.selectAll('path#bsasmap').style({ 'fill-opacity': 1 }).style("stroke", "white").style("stroke-width", "0.0px");
             })
 
         function notify(selector, eventName) {
