@@ -48,9 +48,11 @@ function generateMap(error, results) {
     var tooltip = d3.select('#map').append('div')
         .attr('class', 'hidden tooltip');
 
+    //#eff3ff    
+
     var opChgScale = d3.scale.threshold()
         .domain([0.01, 1.01, 5.01, 15.01, 33.01, 64.01, Infinity])
-        .range(["#eff3ff","#c6dbef","#9ecae1","#6baed6","#4292c6","#2171b5", "#084594"]);
+        .range(["#f1f1f1","#c6dbef","#9ecae1","#6baed6","#4292c6","#2171b5", "#084594"]);
     opChgScale.domainStrings = function() {
         return (['0', '1', '2-5', '6-15', '16-33', '34-64', '>64' 
         ]);
@@ -147,7 +149,7 @@ function generateMap(error, results) {
     ];
     var index = 0;
     getYear();
-    generateLegend(opChgScale, 'legend', 'Unintentional Opioid Deaths per 100,000 people');
+    generateLegend(opChgScale, 'legend', 'Count of Opioid Related Deaths by Municipality');
 
     function getYear() {
         setSymbology(2000);
@@ -163,10 +165,10 @@ function generateMap(error, results) {
         var szAttr = 'yr' + year;
         currentyear = year;
         var toyear = eval(year) + 1;
-        $('#titlePrefix').html('Opiod Deaths in Massachusetts from');
+        $('#titlePrefix').html('Count of Opiod Related Deaths in Massachusetts in');
         $('#fromYear').html(year);
-        $('#titleMidfix').html('to');
-        $('#toYear').html(toyear);
+        //$('#titleMidfix').html('to');
+        //$('#toYear').html(toyear);
 
         svgContainer.selectAll("path")
             .transition()
