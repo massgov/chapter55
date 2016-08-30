@@ -207,7 +207,7 @@ d3.csv("js/data/death_states.csv", function(data) {
         .attr("dy", "1em")
         .style("text-anchor", "end")
         .attr("class", "label")
-        .text("Opioid Related Death Rate per 100,000 People");
+        .text("Age-Adjusted Opioid Death Rate per 100,000 People");
 
     /*======================================================================
       MDG line
