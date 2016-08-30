@@ -173,7 +173,7 @@ d3.csv("js/data/death_states.csv", function(data) {
     var margin = {
         top: 20,
         right: 20,
-        bottom: 50,
+        bottom: 20,
         left: 50,
     };
 
@@ -185,11 +185,11 @@ d3.csv("js/data/death_states.csv", function(data) {
     $lines_death.append("g")
         .attr("class", "x axis-death")
         // .attr("transform", "translate(0," + (height - margin.bottom) + ")")
-        .attr("transform", "translate(0," + (height - margin.bottom - margin.top / 2) + ")")
+        .attr("transform", "translate(0," + (height - margin.bottom - margin.top - margin.top) + ")")
         .call(xAxis_death)
         .append("text")
         .attr("x", width - margin.left)
-        .attr("y", margin.bottom / 2)
+        .attr("y", margin.bottom+10)
         .attr("dy", "1em")
         .style("text-anchor", "end")
         .attr("class", "label")
