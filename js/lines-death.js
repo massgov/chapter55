@@ -261,11 +261,20 @@ d3.csv("js/data/death_states.csv", function(data) {
 
     }
 
+     var coordinates = [0, 0];
+
     function mousemoveFunc(d) {
-        //console.log("events", window.event, d3.event);
+
+        coordinates = d3.mouse(this);
+        var x = coordinates[0];
+        var y = coordinates[1];
+        
+
         tooltip_death
-            .style("top", (d3.event.pageY / 3 - 400) + "px")
-            .style("left", (d3.event.pageX / 3 - 400) + "px");
+            .style("top", y + "px")
+            .style("left", x + "px")
+            .style('position', 'absolute')
+            .style('z-index', 1001);
     }
 
 
