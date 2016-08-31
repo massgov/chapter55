@@ -32,8 +32,17 @@
 }
 
 .labels {
-    font-family: Roboto;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 11px;
     font-weight: bold;
-    fill: #525252;
+    fill: #333;
+}
+.labels2 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    font-weight: normal;
+    fill: rgb(102, 102, 102);
+}
+.age_bars_legend {
+	fill: rgb(102, 102, 102);
 }

@@ -599,10 +599,19 @@ svg g text.ylabel {
   opacity: 1; }
 
 .labels {
-  font-family: Roboto;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   font-weight: bold;
-  fill: #525252; }
+  fill: #333; }
+
+.labels2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  font-weight: normal;
+  fill: #666666; }
+
+.age_bars_legend {
+  fill: #666666; }
 
 /* ============================================================
  Bar Chart by Race and Ethnicity
@@ -752,6 +761,9 @@ section.module h2 {
   margin-bottom: 40px;
   font-family: "Roboto Slab", "Merriweather", "Georgia", "Times New Roman", serif;
   font-size: 30px; }
+
+#POD, #DR, #NOD {
+  font-size: 8pt; }
 
 section.module p {
   margin-bottom: 40px;
