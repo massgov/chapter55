@@ -64,7 +64,6 @@
 
 
     var yearformat = d3.time.format("%Y");
-    var parseDate = d3.time.format("%Y%m%d").parse;
 
     function quarter (date) {
 	var date2 = new Date();
@@ -88,7 +87,7 @@
 
     var margin = {
 	top: 30,
-	right: 200,
+	   right: 150,
 	bottom: 50,
 	left: 42
     };
@@ -125,7 +124,6 @@
 	.scale(x)
 	.orient("bottom")
 	.ticks(d3.time.months, 3)
-	//.tickSize(5, 0)
 	.tickFormat(quarter);
 
 
@@ -252,7 +250,7 @@
 	.attr("y", -44)
 	.attr("dy", "1em")
 	.style("text-anchor", "end")
-	.style("font","10px sans-serif")
+	   .style("font","13px sans-serif")
 	.style("font-weight", "normal")
 	//.attr("class", "label")
 	.text("Percent Opioid Deaths");
@@ -279,12 +277,14 @@
 	})
 	.style("fill", "none");
 
-    series.append('line')
+
+    series.append("path")
 	.attr("class", "hit-area-ext")
 	.attr("d", function(d) {
 	    return line(d.values);
 	})
-	.attr("style", "stroke:transparent;stroke-width:10px");
+	.attr("style", "stroke:transparent;stroke-width:10px")
+	.style("fill", "none");
 
 
     $lines_fent.append("text")
@@ -293,8 +293,8 @@
 	.attr("y", y(chartData[8].FentanylHeroin) - 5)
 	.attr("dy", "1em")
 	.style("text-anchor", "start")
+	.style("font-size", "16px")
 	.text("Fentanyl & Heroin")
-	.style("fill", "$color-white")
 	.style("font-weight", "normal");
 
     $lines_fent.append("text")
@@ -303,29 +303,28 @@
 	.attr("y", y(chartData[8].Methadone) - 7)
 	.attr("dy", "1em")
 	.style("text-anchor", "start")
+	.style("font-size", "16px")
 	.text("Methadone")
-	.style("fill", "$color-white")
 	.style("font-weight", "normal");
 
     $lines_fent.append("text")
-	.attr("class", "aside-note")
-	.attr("x", width + 5)
-	.attr("y", y(chartData[8].Heroin) - 10)
-	.attr("dy", "1em")
-	.style("text-anchor", "start")
-	.text("Heroin")
-	   .style("fill", "#fff")
-	.style("font-size", "13px")
+        .attr("class", "aside-note")
+        .attr("x", width + 5)
+        .attr("y", y(chartData[8].Heroin) - 10)
+        .attr("dy", "1em")
+        .style("text-anchor", "start")
+        .text("Heroin")
+	.style("font-size", "16px");
 
     $lines_fent.append("text")
-	.attr("class", "aside-note")
-	.attr("x", width + 5)
-	.attr("y", y(chartData[8].Fentanyl) - 10)
-	.attr("dy", "1em")
-	.style("text-anchor", "start")
-	.text("Fentanyl")
-	.style("font-size", "13px")
-	   .style("fill", "#fff");
+        .attr("class", "aside-note")
+        .attr("x", width + 5)
+        .attr("y", y(chartData[8].Fentanyl) - 10)
+        .attr("dy", "1em")
+        .style("text-anchor", "start")
+        .text("Fentanyl")
+	.style("font-size", "16px")
+	.style("fill", "#fff");
 
 
 
