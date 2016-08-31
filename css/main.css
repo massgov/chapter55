@@ -920,13 +920,13 @@ video {
     color: #0071bc; }
 
 .sourcecallout {
-  color: #d5dee2;
+  color: #b7c6cd;
   font-size: 12px;
   text-align: left;
   padding-top: 10px; }
   .sourcecallout a {
     font-style: italic;
-    color: #e4eaec; }
+    color: #d5dee2; }
 
 /* ============================================================
   Footer
