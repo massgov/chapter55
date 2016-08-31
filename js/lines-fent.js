@@ -1,5 +1,5 @@
 angular.module('fentViz', []).
-directive('d3LocationTrendChart', function($parse) {
+directive('d3LocationTrendChart', ['$parse', function($parse) {
     return {
         restrict: 'AE',
         scope: {
@@ -147,7 +147,7 @@ directive('d3LocationTrendChart', function($parse) {
                     .attr("width", width)
                     .attr("fill", "#FFE97F")
                     .attr("height", 50);
-*/
+		*/
                 var varSeries = d3.keys(chartData[0]).filter(function(key) {
                     return key !== xLabel;
                 });
@@ -210,7 +210,7 @@ directive('d3LocationTrendChart', function($parse) {
 
                 //         svg.append("g")
                 // .attr("class", "x axis").append("path")
-                //          .attr("class","line") 
+		//          .attr("class","line")
 
                 $lines_fent.append("g")
                     .attr("class", "y axis_fent")
@@ -221,7 +221,7 @@ directive('d3LocationTrendChart', function($parse) {
                     .enter().append("g")
                     .attr("class", "seriesData");
 
-                //console.log(series);  
+		//console.log(series);
 
                 series.append("path")
                     .attr("class", "line")
@@ -388,11 +388,8 @@ directive('d3LocationTrendChart', function($parse) {
             });
         }
     }
-});
-
-
-
-function Ctrl($scope) {
+}])
+.controller('Ctrl', ['$scope', function($scope) {
     //var date = new Date(2014, 7, 1);
     var date = new Date("01/01/2014");
     //var date2 = new Date(2014, 10, 1);
@@ -470,4 +467,4 @@ function Ctrl($scope) {
     }];
 
     $scope.myData = chartData;
-}
+}]);
