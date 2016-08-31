@@ -64,15 +64,13 @@
 
 
     var yearformat = d3.time.format("%Y");
+    var parseDate = d3.time.format("%Y%m%d").parse;
 
-    var quarter = function(date, i) {
-	var i = 0;
-	if (i >= 0) {
-	    var date2 = new Date();
-	    date2.setMonth(date.getMonth() - 10);
-	    var q = Math.ceil((date2.getMonth()) / 3);
-	    return "Q" + q;
-        }
+    function quarter (date) {
+	var date2 = new Date();
+	date2.setMonth(date.getMonth() - 10);
+	var q = Math.ceil((date2.getMonth()) / 3);
+	return "Q" + q;
     }
 
     var seriesColors = ["#ffffff", "#b71c1c", "#0071bc", "#ffffff"];
@@ -83,6 +81,11 @@
     var seriesPointFill = ["#a50f15", "#08519c", "#636363", "#636363"];
     var xLabel = "date";
 
+
+
+
+    // Dimensions
+
     var margin = {
 	top: 30,
 	right: 200,
@@ -90,29 +93,12 @@
 	left: 42
     };
 
-    var width = 300;
-    var height = 340;
+    var width = 540;
+    var height = 300;
 
-    var yearformat = d3.time.format("%Y");
-
-    var parseDate = d3.time.format("%Y%m%d").parse;
-
-    var bisectDate = d3.bisector(function(d) {
-	return d.date;
-    }).left;
-
-    var end = parseDate("20160101");
 
     var x = d3.scale.ordinal().rangePoints([0, width]);
     var x2 = d3.scale.ordinal().rangePoints([0, width]);
-
-    //var x = d3.time.scale()
-    //         .domain([chartData[0].date, chartData[chartDataCount].date])
-    //    .range([0, 91]);
-
-    //var x2 = d3.time.scale()
-    //         .domain([chartData[0].date, chartData[chartDataCount].date])
-    //    .range([0, 91]);
 
     var y = d3.scale.linear()
 	.range([height, 0]);
@@ -179,26 +165,15 @@
 	});
 
 
-    var $lines_fent = d3.select(document.querySelector(rootSelector)).append("svg")
-	.attr("width", width + margin.left + margin.right)
-	.attr("height", height + margin.top + margin.bottom)
+    var $lines_fent = d3.select(document.querySelector(rootSelector))
+	.append("svg")
+	.attr("preserveAspectRatio", "xMinYMin meet")
+	.attr("viewBox", "0 0 "+(width + margin.left + margin.right) +" "+(height + margin.top + margin.bottom))
+	//class to make it responsive
+	.classed("svg-content-responsive", true)
 	.append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    /*  var benchMark = svg.append("rect")
-    .attr("x", 0)
-    .attr("y", 0)
-    .attr("width", width)
-    .attr("fill", "#C2EBC9")
-    .attr("height", 120);
-
-    var threshold = svg.append("rect")
-    .attr("x", 0)
-    .attr("y", 120)
-    .attr("width", width)
-    .attr("fill", "#FFE97F")
-    .attr("height", 50);
-     */
     var varSeries = d3.keys(chartData[0]).filter(function(key) {
 	return key !== xLabel;
     });
@@ -267,9 +242,6 @@
 	.attr("class", "label")
 	.text("Quarter");
 
-    //         svg.append("g")
-    // .attr("class", "x axis").append("path")
-    //          .attr("class","line")
 
     $lines_fent.append("g")
 	.attr("class", "y axis_fent")
@@ -290,7 +262,6 @@
 	.enter().append("g")
 	.attr("class", "seriesData");
 
-    //console.log(series);
 
     series.append("path")
 	.attr("class", "line")
@@ -308,6 +279,12 @@
 	})
 	.style("fill", "none");
 
+    series.append('line')
+	.attr("class", "hit-area-ext")
+	.attr("d", function(d) {
+	    return line(d.values);
+	})
+	.attr("style", "stroke:transparent;stroke-width:10px");
 
 
     $lines_fent.append("text")
@@ -337,10 +314,8 @@
 	.attr("dy", "1em")
 	.style("text-anchor", "start")
 	.text("Heroin")
-    //.style("fill", "#08519c")
-    .style("fill", "#fff")
+	   .style("fill", "#fff")
 	.style("font-size", "13px")
-    // .style("font-weight", "bold");
 
     $lines_fent.append("text")
 	.attr("class", "aside-note")
@@ -350,33 +325,9 @@
 	.style("text-anchor", "start")
 	.text("Fentanyl")
 	.style("font-size", "13px")
-    //.style("fill", "#f44336")
-    .style("fill", "#fff")
-    // .style("font-weight", "bold");
+	   .style("fill", "#fff");
 
 
-
-    //add point to line
-    // series.selectAll(".point")
-    //     .data(function(d) {
-    //         return d.values;
-    //         console.log(d.values);
-    //     })
-    //     .enter().append("path")
-    //     .attr("transform", function(d) {
-    //         return "translate(" + x(d.label) + "," + y(d.value) + ")";
-    //     })
-    //     .attr("d", d3.svg.symbol().type("circle").size(15))
-    //  .attr("class", "point")
-    //     .style("fill", function(d) {
-    //         return pointFill(d.name);
-    //     })
-    //     .style("stroke", function(d) {
-    //         return color(d.name);
-    //     })
-    //     .style("stroke-width", function(d) {
-    //         return lineStroke(d.name);
-    //     });
 
     /*======================================================================
      Mouse Functions
@@ -386,13 +337,9 @@
 	.style("display", "none");
 
     focus.append("circle")
+	.style("stroke-width", 1)
 	.attr("r", 6)
-	.style("stroke-width", 1);
-    //.transition()
-    //.duration(500)
-    //.attr("r", 50)
-    //.transition(500)
-    //.attr("r",500);
+	.attr('pointer-events', 'none');
 
     d3.selectAll("g.seriesData")
 	.on("mouseover", mouseoverFunc)
