@@ -232,7 +232,7 @@
             .remove();
 
         numberFormat = d3.format(".0f");
-        percentageFormat = d3.format(".2f");
+        percentageFormat = d3.format(".1f");
         rateFormat = d3.format(".2f");
 
         labels.transition()
@@ -244,7 +244,10 @@
             })
             .text(function(d) {
                 // console.log(column);
-                if (column == "percentOpiodDeaths") {
+                if (column == "percentOpiodDeaths" && d.age == '64+') {
+                    return "<1%";
+                }
+                if (column == "percentOpiodDeaths" && d.age != '64+') {
                     return percentageFormat(d[column]) + "%";
                 }
                 if (column == "numberOpioidDeaths") {
