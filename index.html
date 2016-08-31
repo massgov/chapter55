@@ -10,16 +10,8 @@
     <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
-    <!-- js -->
-    <script src="js/vendor/modernizr.js"></script>
-    <script src="js/vendor/jquery-1.11.1.min.js"></script>
-    <script src="js/vendor/jquery-ui.js"></script>
-    <script src="js/vendor/bootstrap.js"></script>
-    <script src="js/vendor/d3.min.js"></script>
-    <!--     <script src= 'js/vendor/d3.tip.js' type="text/javascript"></script> -->
-    <script src="js/vendor/colorbrewer.js"></script>
-    <script src="js/vendor/angular.min.js"></script>
-    <script src="js/queue.js"></script>
+    <script src="js/dist/vendor.js"></script>
+
 </head>
 
 <body>
@@ -113,7 +105,7 @@
                             <span id="titlePrefix2" class="title"></span>
                             <span id="fromYear2" class="year"></span>
                             <span id="titleMidfix2" class="title"></span>
-                            <span id="toYear2" class="year"></span>  
+			    <span id="toYear2" class="year"></span>
                         </h3>
                         <div id='map2-note' class="subtitle"></div>
                         <div id="legend2"></div>
@@ -225,7 +217,7 @@
             <h1>Addiction</h1>
         </div>
         <!--       <video autoplay poster="video/header-video-poster.png">
-                        WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button 
+			WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
                         <source src="video/precriptions-short.mp4" type="video/mp4">
                 </video> -->
     </section>
@@ -577,19 +569,27 @@
     </div>
     <!-- /#wrapper -->
     <!-- js -->
+    <script src="js/dist/main.js"></script>
+<!--
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="js/vendor/jquery-1.11.1.min.js"></script>
+    <script src="js/vendor/jquery-ui.js"></script>
+    <script src="js/vendor/bootstrap.js"></script>
+    <script src="js/vendor/d3.min.js"></script>
+    <script src="js/vendor/colorbrewer.js"></script>
+    <script src="js/vendor/angular.min.js"></script>
+    <script src="js/queue.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/map-death.js"></script>
     <script src="js/map-composite.js"></script>
-    <script src='js/maps-substance.js'></script>
     <script src="js/lines-death.js"></script>
     <script src="js/lines-fent.js"></script>
-    <script type="text/javascript" src="js/lines-bsas.js"></script>
-    <!-- <script src="js/blocks-substance.js"></script> -->
+    <script src="js/lines-bsas.js"></script>
     <script src="js/blocks-substance-pie.js"></script>
     <script src="js/blocks-gender.js"></script>
     <script src="js/bars-age.js"></script>
-    <script src="js/bars-race.js"></script>
-    <!-- <script src="js/tree.js"></script> -->
+    <script src="js/bars-race.js"></script> -->
+
 </body>
 
 </html>

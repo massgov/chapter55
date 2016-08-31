@@ -225,9 +225,7 @@ svg g text.ylabel {
   color: #607D8B; }
 
 .axis-death path, .aside-ma path, .aside-usa path,
-.axis-death line,
-.aside-ma line,
-.aside-usa line {
+.axis-death line, .aside-ma line, .aside-usa line {
   fill: none;
   stroke: #D3D3D3;
   stroke-width: 1px; }
@@ -389,78 +387,106 @@ svg g text.ylabel {
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges; }
+
 #lines-bsas .axis_bsas text {
   font-size: 13px; }
+
 #lines-bsas .y.axis_bsas path {
   display: none; }
+
 #lines-bsas .y.axis_bsas line {
   stroke: #e0e0e0;
   stroke-width: 1px;
   stroke-dasharray: 2, 2; }
+
 #lines-bsas path.domain {
   stroke-width: 2px; }
+
 #lines-bsas path.line {
   fill: none;
   stroke-linejoin: round;
   stroke-linecap: round;
   stroke-width: 1.5px;
   stroke-opacity: 0.5; }
+
 #lines-bsas path.alcohol {
   stroke: #F98229; }
+
 #lines-bsas path.marijuana {
   stroke: #018571; }
+
 #lines-bsas path.none {
   stroke: #005a32; }
+
 #lines-bsas path.opioids {
   stroke: #99000d; }
+
 #lines-bsas path.other {
   stroke: #762a83; }
+
 #lines-bsas .overlay {
   fill: none;
   pointer-events: all; }
+
 #lines-bsas .focus.age line {
   stroke-width: 1px;
   stroke: #e0e0e0; }
+
 #lines-bsas .focus.alcohol circle {
   fill: #e08214;
   stroke: #b35806; }
+
 #lines-bsas .focus.alcohol {
   fill: #b35806; }
+
 #lines-bsas .circle.alcohol {
   fill: #e08214;
   fill-opacity: 0.75; }
+
 #lines-bsas .focus.marijuana circle {
   fill: #80cdc1;
   stroke: #018571; }
+
 #lines-bsas .focus.marijuana {
   fill: #018571; }
+
 #lines-bsas .circle.marijuana {
   fill: #80cdc1;
   fill-opacity: 0.75; }
+
 #lines-bsas .focus.none circle {
   fill: #238b45;
   stroke: #005a32; }
+
 #lines-bsas .focus.none {
   fill: #005a32; }
+
 #lines-bsas .circle.none {
   fill: #238b45;
   fill-opacity: 0.75; }
+
 #lines-bsas .focus.opioids circle {
   fill: #cb181d;
   stroke: #99000d; }
+
 #lines-bsas .focus.opioids {
   fill: #99000d; }
+
 #lines-bsas .circle.opioids {
   fill: #cb181d;
   fill-opacity: 0.75; }
+
 #lines-bsas .focus.other circle {
   fill: #9970ab;
   stroke: #762a83; }
+
 #lines-bsas .focus.other {
   fill: #762a83; }
+
 #lines-bsas .circle.other {
   fill: #9970ab;
   fill-opacity: 0.75; }
+
 #lines-bsas .focus text {
   font-size: 11px;
   font-weight: bolder; }
@@ -474,6 +500,7 @@ svg g text.ylabel {
 
 .table th {
   text-align: center; }
+
 .table td {
   text-align: center;
   color: white; }
@@ -684,8 +711,8 @@ text {
   /*fill: rgba(146, 197, 222, 0.85) !important;*/
   fill-opacity: 0.75 !important;
   /*stroke-width: 1px;
-shape-rendering: crispEdges;
-stroke: rgba(10, 10, 10, 0.5);*/ }
+  shape-rendering: crispEdges;
+  stroke: rgba(10, 10, 10, 0.5);*/ }
 
 /* ============================================================
   Nav
@@ -775,44 +802,39 @@ section.module.parallax-5 {
 @media all and (min-width: 600px) {
   section.module h2 {
     font-size: 28px; }
-
   section.module p {
     font-size: 20px; }
-
   section.module.parallax.parallax-1 {
     padding: 50px 0; }
-
   video {
     display: block; } }
+
 @media all and (min-width: 768px) {
   section.module.parallax h1 {
     font-size: 80px; }
-
   .navbar-text {
     float: left;
     margin-right: 15px;
     margin-left: 15px; }
-
   #current-section {
     display: none; } }
+
 @media all and (min-width: 960px) {
   section.module.parallax {
     padding: 150px 0; }
-
   section.module.parallax h1 {
     font-size: 80px; }
-
   #current-section {
     display: none; } }
+
 @media all and (min-width: 1440px) {
   section.module.parallax h1 {
     font-size: 100px; }
-
   section.module.parallax {
     padding: 220px 0; }
-
   #current-section {
     display: none; } }
+
 .wrapper {
   background-color: #000000; }
 
@@ -913,5 +935,3 @@ footer {
   color: #ffffff;
   padding: 30px;
   background-color: #B0BEC5; }
-
-/*# sourceMappingURL=main.css.map */
