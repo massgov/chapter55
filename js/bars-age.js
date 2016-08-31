@@ -244,10 +244,10 @@
             })
             .text(function(d) {
                 // console.log(column);
-                if (column == "percentOpiodDeaths" && d.age == '64+') {
+                if (column == "percentOpiodDeaths" && d.age == '65+') {
                     return "<1%";
                 }
-                if (column == "percentOpiodDeaths" && d.age != '64+') {
+                if (column == "percentOpiodDeaths" && d.age != '65+') {
                     return percentageFormat(d[column]) + "%";
                 }
                 if (column == "numberOpioidDeaths") {
