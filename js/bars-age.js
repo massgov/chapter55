@@ -1,7 +1,8 @@
 (function() {
 
     var width = 600;
-    var height = 250;
+    var height = 350;
+    var margin = 50;
     var selected;
 
 
@@ -20,63 +21,63 @@
 
     d3.csv("js/data/bars-age.csv", function(error, data) {
 
-            var selected = "percentOpiodDeaths";
-            //console.log(column);
-            var dataset = drawGraph(data, selected); // you need to finish this function below.
-            //
-            // //console.log(column, dataset);
-            //
-            redraw(dataset, selected);
+        var selected = "percentOpiodDeaths";
+        //console.log(column);
+        var dataset = drawGraph(data, selected); // you need to finish this function below.
+        //
+        // //console.log(column, dataset);
+        //
+        redraw(dataset, selected);
 
-            d3.select("#POD").classed("selected", true);
-            $("#POD").addClass("active");
+        d3.select("#POD").classed("selected", true);
+        $("#POD").addClass("active");
 
-            d3.select("#POD")
-                .on("click", function(d, i) {
-                    selected = "percentOpiodDeaths"
-                    dataset = drawGraph(data, selected);
-                    redraw(dataset, selected);
-                    var thisButton = d3.select(this);
-                    d3.selectAll("#buttons-bar button").classed("selected", false);
-                    $("#buttons-bar button").removeClass("active");
-                    thisButton.classed("selected", true);
-                    $(this).addClass("active");
-                });
-            d3.select("#DR")
-                .on("click", function(d, i) {
-                    selected = "deathRate"
-                    dataset = drawGraph(data, selected);
-                    redraw(dataset, selected);
-                    var thisButton = d3.select(this);
-                    d3.selectAll("#buttons-bar button").classed("selected", false);
-                    $("#buttons-bar button").removeClass("active");
-                    thisButton.classed("selected", true);
-                    $(this).addClass("active");
-                });
-            d3.select("#NOD")
-                .on("click", function(d, i) {
-                    selected = "numberOpioidDeaths"
-                    dataset = drawGraph(data, selected);
-                    redraw(dataset, selected);
-                    var thisButton = d3.select(this);
-                    d3.selectAll("#buttons-bar button").classed("selected", false);
-                    $("#buttons-bar button").removeClass("active");
-                    thisButton.classed("selected", true);
-                    $(this).addClass("active");
+        d3.select("#POD")
+            .on("click", function(d, i) {
+                selected = "percentOpiodDeaths"
+                dataset = drawGraph(data, selected);
+                redraw(dataset, selected);
+                var thisButton = d3.select(this);
+                d3.selectAll("#buttons-bar button").classed("selected", false);
+                $("#buttons-bar button").removeClass("active");
+                thisButton.classed("selected", true);
+                $(this).addClass("active");
+            });
+        d3.select("#DR")
+            .on("click", function(d, i) {
+                selected = "deathRate"
+                dataset = drawGraph(data, selected);
+                redraw(dataset, selected);
+                var thisButton = d3.select(this);
+                d3.selectAll("#buttons-bar button").classed("selected", false);
+                $("#buttons-bar button").removeClass("active");
+                thisButton.classed("selected", true);
+                $(this).addClass("active");
+            });
+        d3.select("#NOD")
+            .on("click", function(d, i) {
+                selected = "numberOpioidDeaths"
+                dataset = drawGraph(data, selected);
+                redraw(dataset, selected);
+                var thisButton = d3.select(this);
+                d3.selectAll("#buttons-bar button").classed("selected", false);
+                $("#buttons-bar button").removeClass("active");
+                thisButton.classed("selected", true);
+                $(this).addClass("active");
 
-                });
+            });
 
 
-            //setup our ui -- requires access to data variable, so inside csv
-            // d3.select("#menu select")
-            //     .on("change", function() {
-            //         column = d3.select("#menu select").property("value");
-            //         dataset = drawGraph(data, column);
-            //         //console.log(column, dataset);
-            //         redraw(dataset, column);
-            // });
+        //setup our ui -- requires access to data variable, so inside csv
+        // d3.select("#menu select")
+        //     .on("change", function() {
+        //         column = d3.select("#menu select").property("value");
+        //         dataset = drawGraph(data, column);
+        //         //console.log(column, dataset);
+        //         redraw(dataset, column);
+        // });
 
-        }) // end csv
+    }) // end csv
 
     //make the bars for the first data set.  They will be red at first.
 
@@ -141,7 +142,7 @@
             })
             .attr("height", yScale.rangeBand())
             .attr("transform", function(d, i) {
-                return "translate(" + [0, yScale(i)] + ")";
+                return "translate(" + [(0 + margin), yScale(i)] + ")";
             })
             .attr("class", function(d, i) {
                 if (d.gender === 'Male') {
@@ -159,30 +160,52 @@
                 return d.gender_age
             }); // key function!
 
+        var labels2 = $bars_age.selectAll("text.labels2")
+            .data(data, function(d) {
+                return d.gender_age
+            });
+
 
         // everything gets a class and a text field.  But we assign attributes in the transition.
         labels.enter()
             .append("text")
             .attr("class", "labels");
-
-
         labels.exit()
             .remove();
+
+        labels2.enter()
+            .append("text")
+            .attr("class", "labels2");
+        labels2.exit()
+            .remove();
+
 
         labels.transition()
             .duration(500)
             .attr("transform", function(d, i) {
-                return "translate(" + xScale(+d[column]) + "," + yScale(i) + ")"
+                console.log(xScale(+d[column]) + 50);
+                console.log(d[column]);
+                return "translate(" + (xScale(+d[column]) + margin + 35) + "," + (yScale(i) + 4) + ")"
             })
             .text(function(d) {
-               // console.log(column);
-                if(column == "percentOpiodDeaths") {
-                    return d.age + " (" + (d[column]) + "%)";
-                }
-                else {
-                    return d.age + " (" + (d[column]) + ")";
+                // console.log(column);
+                if (column == "percentOpiodDeaths") {
+                    return "(" + (d[column]) + "%)";
+                } else {
+                    return "(" + (d[column]) + ")";
                 }
             })
+            .attr("dy", "1.2em")
+            .attr("dx", "5px")
+            .attr("text-anchor", "end");
+
+        labels2.transition()
+            .duration(500)
+            .attr("transform", function(d, i) {
+                //return "translate(" + xScale(+d[column]) + "," + yScale(i) + ")"
+                return "translate(" + 0 + "," + (yScale(i) + 5) + ")"
+            })
+            .text(function(d) { return d.age;}
             .attr("dy", "1.2em")
             .attr("dx", "5px")
             .attr("text-anchor", "start");
