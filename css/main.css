@@ -919,6 +919,15 @@ video {
     font-style: italic;
     color: #0071bc; }
 
+.sourcecallout {
+  color: #b7c6cd;
+  font-size: 12px;
+  text-align: left;
+  padding-top: 10px; }
+  .sourcecallout a {
+    font-style: italic;
+    color: #d5dee2; }
+
 /* ============================================================
   Footer
 ============================================================ */
