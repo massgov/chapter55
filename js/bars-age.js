@@ -11,7 +11,7 @@
 
     var $bars_age = d3.select("#changing_bars").append("svg")
         .attr("width", width + 100)
-        .attr("height", height + 100); // adding some random padding
+        .attr("height", height + 10); // adding some random padding
     $bars_age.append("rect")
         .attr("width", "100%")
         .attr("height", "100%")
