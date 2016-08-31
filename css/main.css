@@ -105,6 +105,22 @@
 /* ============================================================
   Map
 ============================================================ */
+#map.svg-container {
+  padding-bottom: 70%; }
+
+#map1-source {
+  margin-top: -4em; }
+  @media all and (max-width: 768px) {
+    #map1-source {
+      margin-top: -2em; } }
+
+@media all and (min-width: 768px) {
+  #legend {
+    max-width: 60%; } }
+
+/* ============================================================
+  Map
+============================================================ */
 .range {
   position: relative;
   width: 90%; }
@@ -722,6 +738,21 @@ text {
   /*stroke-width: 1px;
   shape-rendering: crispEdges;
   stroke: rgba(10, 10, 10, 0.5);*/ }
+
+.svg-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  /* aspect ratio */
+  vertical-align: top;
+  overflow: hidden; }
+
+.svg-content-responsive {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 0; }
 
 /* ============================================================
   Nav
