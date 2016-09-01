@@ -17,8 +17,7 @@ gulp.task('vendorJS', function() {
       "js/vendor/jquery-ui.js",
       "js/vendor/bootstrap.js",
       "js/vendor/d3.min.js",
-      "js/vendor/colorbrewer.js",
-      "js/vendor/angular.min.js"
+      "js/vendor/colorbrewer.js"
     ])
     .pipe(sourcemaps.init())
     .pipe(concat('vendor.js'))
