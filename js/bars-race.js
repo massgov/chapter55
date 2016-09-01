@@ -34,7 +34,7 @@ var yAxis_bars = d3.svg.axis()
     .orient("left")
     .tickFormat(d3.format(".0f"));
 
-var divtooltip_raceeth = d3.select("#race_ethnicity_chart").append("div").attr("class", "tooltip_raceeth");
+var divtooltip_raceeth = d3.select("#race_ethnicity_chart").append("div").classed("vis-tooltip hidden", true);
 
 
 var $bars_race = d3.select("#race_ethnicity_chart").append("svg")
@@ -119,7 +119,7 @@ bar.selectAll("rect")
     });
 
 //bar.on(
-//"mouseover", function(){ 
+//"mouseover", function(){
 //d3.select(this).attr("fill","red !important");
 //});
 
@@ -127,7 +127,7 @@ bar
     .on("mousemove", function(d) {
         divtooltip_raceeth.style("left", d3.event.pageX - $("#race_ethnicity_chart").offset().left + "px");
         divtooltip_raceeth.style("top", d3.event.pageY - $("#race_ethnicity_chart").offset().top + "px");
-        divtooltip_raceeth.style("display", "inline-block");
+	divtooltip_raceeth.classed("hidden", false);
         var x = d3.event.pageX,
             y = d3.event.pageY
         var elements = document.querySelectorAll(':hover');
@@ -141,7 +141,7 @@ bar
 
 bar
     .on("mouseout", function(d) {
-        divtooltip_raceeth.style("display", "none");
+	divtooltip_raceeth.classed("hidden", true);
     });
 
 

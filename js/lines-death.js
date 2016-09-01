@@ -50,7 +50,7 @@ var yAxis_death = d3.svg.axis()
 // add a tooltip to the page - not to the svg itself!
 var tooltip_death = d3.select("#deathLines")
     .append("div")
-    .attr("class", "lines-tooltip");
+    .attr("class", "vis-tooltip");
 
 //Configure line
 // each line dataset must have a d.year and a d.rate for this to work.
@@ -246,7 +246,7 @@ d3.csv("js/data/death_states.csv", function(data) {
     function mouseoutFunc() {
 
         d3.selectAll("path.line-death").classed("unfocused", false).classed("focused", false);
-        tooltip_death.style("display", "none"); // this sets it to invisible!
+	tooltip_death.classed("hidden", true);
     }
 
     function mouseoverFunc(d, i) {
@@ -254,8 +254,8 @@ d3.csv("js/data/death_states.csv", function(data) {
         d3.selectAll("path.line").classed("unfocused", true);
         d3.select(this).select("path.line-death").classed("unfocused", false).classed("focused", true);
         tooltip_death
-            .style("display", "block") // this removes the display none setting from it
-            .html("<p><span class='lines-tooltipHeader sans'>" + d.FullName + "</span></p>");
+	    .classed("hidden", false)
+	    .html(d.FullName);
         //console.log(d.FullName);
         // console.log(d.rates[i]);
 
@@ -268,7 +268,6 @@ d3.csv("js/data/death_states.csv", function(data) {
         coordinates = d3.mouse(this);
         var x = coordinates[0];
         var y = coordinates[1];
-
 
         tooltip_death
             .style("top", y + "px")

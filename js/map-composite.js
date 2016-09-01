@@ -66,7 +66,7 @@
 	    .style("border", "0px solid steelblue");
 
 	var tooltip = d3.select('#odMap_map').append('div')
-	    .attr('class', 'hidden tooltip');
+	    .attr('class', 'hidden vis-tooltip');
 
 	//#eff3ff
 
@@ -108,7 +108,7 @@
 		// Add transformation based on where the mouse is (top, bottom, left, right) to keep it in view
 		var transformX= mouse[0] > mapWidth/2 ? '-160%' : 0,
 		    transformY= mouse[1] > mapHeight/2 ? '-100%' : 0;
-		style += 'transform: translate('+transformX+','+transformY+');white-space:nowrap;';
+		style += 'transform: translate('+transformX+','+transformY+');';
 
 		var string_base = "yr";
 		var currentvalue = string_base.concat(currentyear);
@@ -124,7 +124,7 @@
 
 		tooltip.classed('hidden', false)
 		    .attr('style', style)
-		    .html("<b>" + toTitleCase(d.properties.TOWN) + "</b> | " + currentrate);
+		    .html("<strong>" + toTitleCase(d.properties.TOWN) + "</strong> | " + currentrate);
 	    })
 
 	    .on('mouseover', function(d, i) {

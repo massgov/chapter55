@@ -61,30 +61,6 @@
     stroke-dasharray: 0, 0, 0, 0 !important;
 }
 
-.tooltipFent {
-    position: absolute;
-    z-index: 10;
-}
-
-.tooltipFent p {
-    background-color: rgba(255, 255, 255, .5);
-    padding: .5em 1em;
-    font-size: 12px;
-    line-height: 17px;
-    color: $color-black;
-}
-
-.tooltipFentHeader {
-    font-weight: 700;
-    font-size: 12.5px;
-}
-
-// .overlay {
-//     fill: none;
-//     pointer-events: all;
-//     color: $color-black;
-// }
-
 .focus circle {
     fill: $color-white;
     fill-opacity: 1;

@@ -151,7 +151,7 @@
     // add a tooltipFent to the page - not to the svg itself!
     var tooltipFent = d3.select("body")
 	.append("div")
-	.attr("class", "tooltipFent");
+	.attr("class", "vis-tooltip");
 
     var line = d3.svg.line()
 	//.interpolate("monotone")
@@ -333,7 +333,7 @@
     ======================================================================*/
     var focus = $lines_fent.append("g")
 	.attr("class", "focus")
-	.style("display", "none");
+	.classed("hidden", true);
 
     focus.append("circle")
 	.style("stroke-width", 1)
@@ -349,8 +349,8 @@
 
 	d3.selectAll("path.line").classed("unfocused", false).classed("focused", false);
 	d3.selectAll("path.point").classed("unfocused", false).classed("focused", false).attr("d", d3.svg.symbol().type("circle").size(15)).style("fill-opacity", "1");
-	tooltipFent.style("display", "none"); // this sets it to invisible!
-	focus.style("display", "none");
+	tooltipFent.classed("hidden", true); // this sets it to invisible!
+	focus.classed("hidden", true);
     }
 
     function mouseoverFunc(d, i) {
@@ -369,14 +369,11 @@
 	var y1 = y.invert(y0);
 	var percentVal = d3.format(".0%")(y1)
 
-	tooltipFent
-	    .style("display", null) // this removes the display none setting from it
-	.html(
-	    "<p><span class='tooltipFentHeader sans'>" + percentVal + "</span></p>"
-	);
+	tooltipFent.classed("hidden", false)
+	.html(percentVal);
 	//console.log(d.rates[i]);
 	//console.log(d3.select(this).select("path.point"));
-	focus.style("display", null);
+	focus.style("hidden", false);
     }
 
     function mousemoveFunc(d) {
@@ -396,8 +393,6 @@
 	tooltipFent
 	    .style("top", (d3.event.pageY - 45) + "px")
 	    .style("left", (d3.event.pageX + 5) + "px")
-	    .html(
-		"<p><span class='tooltipFentHeader sans'>" + percentVal + "</span></p>"
-	);
+	    .html(percentVal);
     }
 })();
