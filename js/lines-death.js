@@ -248,7 +248,7 @@ d3.csv("js/data/death_states.csv", function(data) {
 
     function mouseoverFunc(d, i) {
 
-        d3.selectAll("path.line").classed("unfocused", true);
+        d3.selectAll("path.line-death").classed("unfocused", true);
         d3.select(this).select("path.line-death").classed("unfocused", false).classed("focused", true);
         tooltip_death
 	    .classed("hidden", false)
