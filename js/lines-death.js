@@ -1,5 +1,5 @@
 /*======================================================================
- MultiLines 
+ MultiLines
  ======================================================================*/
 var margin = {
     top: 20,
@@ -48,11 +48,11 @@ var yAxis_death = d3.svg.axis()
 //}
 
 // add a tooltip to the page - not to the svg itself!
-var tooltip_death = d3.select("#lines_death")
+var tooltip_death = d3.select("#deathLines")
     .append("div")
     .attr("class", "lines-tooltip");
 
-//Configure line 
+//Configure line
 // each line dataset must have a d.year and a d.rate for this to work.
 var line_death = d3.svg.line()
     .x(function(d) {
@@ -65,7 +65,7 @@ var line_death = d3.svg.line()
         return yScale(+d.rate); });
 
 //Create the empty SVG image
-var $lines_death = d3.select("#lines_death")
+var $lines_death = d3.select("#deathLines")
     .append("svg")
     .attr("width", width)
     .attr("height", height);
@@ -74,7 +74,7 @@ var $lines_death = d3.select("#lines_death")
    Creating the Multiple Lines from the Data
  ======================================================================*/
 
-//Load data - first is opioid mortality rates. 
+//Load data - first is opioid mortality rates.
 d3.csv("js/data/death_states.csv", function(data) {
     var years = d3.keys(data[0]).slice(1, 65); //
     //console.log(years);
@@ -268,7 +268,7 @@ d3.csv("js/data/death_states.csv", function(data) {
         coordinates = d3.mouse(this);
         var x = coordinates[0];
         var y = coordinates[1];
-        
+
 
         tooltip_death
             .style("top", y + "px")

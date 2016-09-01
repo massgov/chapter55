@@ -7,13 +7,13 @@
     width: 90%;
 }
 
-#fromYear,
-#toYear {
+#odMap_fromYear,
+#odMap_toYear {
     color: $color-primary;
 }
 
-#fromYear2,
-#toYear2 {
+#odMap_fromYear2,
+#odMap_toYear2 {
     color: $color-female;
 }
 
@@ -32,12 +32,12 @@
     top: -10px;
 }
 
-#from {
+#odMap_from {
     @include label;
     left: -10px;
 }
 
-#to {
+#odMap_to {
     @include label;
     right: -10px;
 }
