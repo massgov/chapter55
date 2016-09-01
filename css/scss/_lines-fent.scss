@@ -1,11 +1,8 @@
 /* ============================================================
     Lines Fent
 ============================================================ */
-#fent {
-    margin-left: -10px;
-    font: 14px sans-serif;
+#fentanyl-lines {
     fill: $color-white;
-    // background-color:$color-white;
 }
 
 .domain {
@@ -99,4 +96,9 @@
 
 .heroin_ {
     border-bottom: 4px solid $color-primary;
+}
+
+
+#fentanyl-lines.svg-container {
+    padding-bottom: 60%;
 }
