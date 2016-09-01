@@ -40,6 +40,10 @@
                 var thisButton = d3.select(this);
                 d3.selectAll("#buttons-bar button").classed("selected", false);
                 $("#buttons-bar button").removeClass("active");
+
+                d3.selectAll("#age18to24").classed("selected", false);
+                $("#age18to24").removeClass("active");
+
                 thisButton.classed("selected", true);
                 $(this).addClass("active");
             });
@@ -51,6 +55,10 @@
                 var thisButton = d3.select(this);
                 d3.selectAll("#buttons-bar button").classed("selected", false);
                 $("#buttons-bar button").removeClass("active");
+
+                d3.selectAll("#age18to24").classed("selected", false);
+                $("#age18to24").removeClass("active");
+
                 thisButton.classed("selected", true);
                 $(this).addClass("active");
             });
@@ -62,12 +70,62 @@
                 var thisButton = d3.select(this);
                 d3.selectAll("#buttons-bar button").classed("selected", false);
                 $("#buttons-bar button").removeClass("active");
+
+                d3.selectAll("#age18to24").classed("selected", false);
+                $("#age18to24").removeClass("active");
+
+                thisButton.classed("selected", true);
+                $(this).addClass("active");
+               
+            });
+
+        d3.select("#age18to24")
+            .on("click", function(d, i) {
+                //selected = "18to24"
+                // dataset = drawGraph(data, selected);
+                // redraw(dataset, selected);
+                var thisButton = d3.select(this);
+
+                //d3.selectAll("#buttons-bar button").classed("selected", false);
+                //$("#buttons-bar button").removeClass("active");
                 thisButton.classed("selected", true);
                 $(this).addClass("active");
 
-            });
-       
+                d3.selectAll(".malFocus.age18to24")
+                    .classed("malSelector", true);
+                d3.selectAll(".femFocus.age18to24")
+                    .classed("femSelector", true);
 
+                d3.selectAll(".malFocus.age25to34")
+                    .classed("malSelector", false);
+                d3.selectAll(".femFocus.age25to34")
+                    .classed("femSelector", false);
+
+            });
+
+        d3.select("#age25to34")
+            .on("click", function(d, i) {
+                //lected = "18to24"
+                // dataset = drawGraph(data, selected);
+                // redraw(dataset, selected);
+                var thisButton = d3.select(this);
+
+                //d3.selectAll("#buttons-bar button").classed("selected", false);
+                //$("#buttons-bar button").removeClass("active");
+                thisButton.classed("selected", true);
+                $(this).addClass("active");
+
+                d3.selectAll(".malFocus.age25to34")
+                    .classed("malSelector", true);
+                d3.selectAll(".femFocus.age25to34")
+                    .classed("femSelector", true);
+
+                d3.selectAll(".malFocus.age18to24")
+                    .classed("malSelector", false);
+                d3.selectAll(".femFocus.age18to24")
+                    .classed("femSelector", false);    
+                    
+            });
 
         //setup our ui -- requires access to data variable, so inside csv
         // d3.select("#menu select")
@@ -136,7 +194,7 @@
 
 
         age_bars_legend.append("text")
-            .attr("x", width+4)
+            .attr("x", width + 4)
             .attr("y", 9)
             .attr("dy", ".35em")
             .style("text-anchor", "start")
@@ -175,32 +233,28 @@
             })
             .attr("class", function(d, i) {
                 if (d.gender === 'Male' && d.age === '18 to 24') {
-                    return "bar malFocus 18to24";
+                    return "bar malFocus age18to24";
                 } else if (d.gender === 'Female' && d.age === '18 to 24') {
-                    return "bar femFocus 18to24";
-                }
-                  else if (d.gender === 'Female' && d.age === '25 to 34') {
-                    return "bar femFocus 25to34";
-                }  
-                   else if (d.gender === 'Male' && d.age === '25 to 34') {
-                    return "bar malFocus 25to34";
-                } 
-                  else if (d.gender === 'Female') {
+                    return "bar femFocus age18to24";
+                } else if (d.gender === 'Female' && d.age === '25 to 34') {
+                    return "bar femFocus age25to34";
+                } else if (d.gender === 'Male' && d.age === '25 to 34') {
+                    return "bar malFocus age25to34";
+                } else if (d.gender === 'Female') {
                     return "bar femFocus";
-                }  
-                   else if (d.gender === 'Male') {
+                } else if (d.gender === 'Male') {
                     return "bar malFocus";
-                }    
+                }
             })
-            //.classed("18to24", (d.age === '18 to 24'))
+        //.classed("18to24", (d.age === '18 to 24'))
 
-         //   .attr("class", function (d, i) {
-         //       if (d.age === '18 to 24') {
-         //           return "18to24";
-          //      } else if (d.age === '25 to 34') {
-         //           return "25to34";
-         //       }
-         //   });
+        //   .attr("class", function (d, i) {
+        //       if (d.age === '18 to 24') {
+        //           return "18to24";
+        //      } else if (d.age === '25 to 34') {
+        //           return "25to34";
+        //       }
+        //   });
 
         //add legend
 
