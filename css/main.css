@@ -118,6 +118,52 @@
   text-decoration: underline;
   cursor: pointer; }
 
+.vis-tooltip {
+  position: absolute;
+  white-space: nowrap;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.25);
+  opacity: 0.9;
+  color: #222;
+  background-color: #fff;
+  padding: .5em 1em;
+  border-radius: 2px; }
+
+.vis-caption {
+  font-size: 10px; }
+
+.vis-legend {
+  font-size: 10px; }
+
+.vis-axis,
+.vis-x-axis,
+.vis-y-axis {
+  font-size: 10px; }
+  .vis-axis .tick line,
+  .vis-x-axis .tick line,
+  .vis-y-axis .tick line {
+    stroke: #78909C; }
+    .vis--dark-background .vis-axis .tick line, .vis--dark-background
+    .vis-x-axis .tick line, .vis--dark-background
+    .vis-y-axis .tick line {
+      stroke: #ffffff; }
+
+.vis-y-axis .domain,
+.vis-x-axis .domain {
+  fill: none;
+  stroke: #78909C; }
+  .vis--dark-background .vis-y-axis .domain, .vis--dark-background
+  .vis-x-axis .domain {
+    stroke: #ffffff; }
+
+.vis-x-axis-label,
+.vis-y-axis-label {
+  font-weight: bold;
+  font-size: 12px;
+  text-anchor: end; }
+
+.vis-y-axis-label {
+  transform: rotate(-90deg); }
+
 /* ============================================================
   Map
 ============================================================ */
@@ -133,62 +179,6 @@
 @media all and (min-width: 768px) {
   #odMap_legend {
     max-width: 60%; } }
-
-/* ============================================================
-  Map
-============================================================ */
-.range {
-  position: relative;
-  width: 90%; }
-
-#odMap_fromYear,
-#odMap_toYear {
-  color: #0071bc; }
-
-#odMap_fromYear2,
-#odMap_toYear2 {
-  color: #880E4F; }
-
-.year {
-  font-weight: bolder; }
-
-.label {
-  font-size: 2em; }
-
-#odMap_from {
-  color: #B0BEC5;
-  position: absolute;
-  top: -10px;
-  left: -10px; }
-
-#odMap_to {
-  color: #B0BEC5;
-  position: absolute;
-  top: -10px;
-  right: -10px; }
-
-input {
-  position: relative; }
-  input[type=range] {
-    -webkit-appearance: none; }
-    input[type=range]::-webkit-slider-runnable-track {
-      width: 50px;
-      height: 3px;
-      background: #B0BEC5;
-      border: none;
-      border-radius: 3px; }
-    input[type=range]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      border: 1px solid white;
-      border-radius: 50%;
-      height: 16px;
-      width: 16px;
-      background: #0071bc;
-      margin-top: -7px; }
-    input[type=range]:focus {
-      outline: none; }
-      input[type=range]:focus::-webkit-slider-runnable-track {
-        background: #78909C; }
 
 /* ============================================================
  Multi Maps
@@ -228,16 +218,6 @@ input {
 /* ============================================================
     Lines Death
 ============================================================ */
-svg g text.label,
-svg g text.ylabel {
-  color: #607D8B; }
-
-.axis-death path, .aside-ma path, .aside-usa path,
-.axis-death line, .aside-ma line, .aside-usa line {
-  fill: none;
-  stroke: #D3D3D3;
-  stroke-width: 1px; }
-
 .line-death {
   stroke: #B1B5B4;
   fill: none;
@@ -274,62 +254,18 @@ svg g text.ylabel {
   stroke-opacity: 100%;
   stroke-width: 1px; }
 
-.axis-death text, .aside-ma text, .aside-usa text {
-  font-family: sans-serif;
-  font-size: 11px; }
-
 .aside-ma {
-  fill: #0071bc !important; }
+  fill: #0071bc;
+  font-weight: 500; }
 
 .aside-usa {
-  fill: #000000 !important; }
-
-.header {
-  width: 70%;
-  margin-left: 16px; }
+  font-weight: 500; }
 
 /* ============================================================
     Lines Fent
 ============================================================ */
 #fentanyl-lines {
   fill: #ffffff; }
-
-.domain {
-  fill: none;
-  stroke: #ffffff;
-  stroke-opacity: 1;
-  stroke-width: 0px; }
-
-.y.axis_fent line {
-  fill: none;
-  stroke: #ffffff;
-  stroke-width: 1px;
-  opacity: 1;
-  shape-rendering: crispEdges; }
-
-.x.axis_fent {
-  border-top: 1px;
-  shape-rendering: crispEdges; }
-
-.x.axis_fent .domain {
-  stroke-width: 1px;
-  stroke: #ffffff;
-  shape-rendering: crispEdges; }
-
-.x.axis_fent line {
-  fill: none;
-  stroke: #ffffff;
-  stroke-width: 1px;
-  shape-rendering: crispEdges; }
-
-.x.axis2_fent text {
-  font: 10px sans-serif;
-  fill: #ffffff; }
-
-.y.axis_fent .domain {
-  stroke-width: 1px;
-  stroke: #ffffff;
-  shape-rendering: crispEdges; }
 
 .unfocused {
   stroke-opacity: 100% !important;
@@ -362,32 +298,12 @@ svg g text.ylabel {
   border: 1px solid #0071bc;
   border-radius: 5px; }
 
-#lines-bsas .axis_bsas path,
-#lines-bsas .axis_bsas line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges; }
+#lines-bsas .vis-y-axis line {
+  stroke-width: 0.5px;
+  stroke: #B0BEC5; }
 
-#lines-bsas .axis_bsas text {
-  font-size: 13px; }
-
-#lines-bsas .y.axis_bsas path {
-  display: none; }
-
-#lines-bsas .y.axis_bsas line {
-  stroke: #e0e0e0;
-  stroke-width: 1px;
-  stroke-dasharray: 2, 2; }
-
-#lines-bsas path.domain {
-  stroke-width: 2px; }
-
-#lines-bsas path.line {
-  fill: none;
-  stroke-linejoin: round;
-  stroke-linecap: round;
-  stroke-width: 1.5px;
-  stroke-opacity: 0.5; }
+#lines-bsas path {
+  fill: none; }
 
 #lines-bsas path.alcohol {
   stroke: #F98229; }
@@ -602,74 +518,48 @@ svg g text.ylabel {
 /* ============================================================
  Bar Chart by Race and Ethnicity
 ============================================================ */
-#race_ethnicity_chart {
-  width: 400px;
-  height: 400px; }
-
-#race_ethnicity_chart svg {
-  width: 100%;
-  height: 100%;
-  position: center;
-  padding-left: 10px; }
-
-text {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-
-.rect {
-  stroke-width: 0; }
-
-text {
-  font: 10px sans-serif; }
-
-.x.axis-race text {
-  font: 11px sans-serif;
-  fill: #696969 !important; }
-
-.y.axis-race text {
-  font: 11px sans-serif;
-  fill: #696969 !important;
-  shape-rendering: crispEdges; }
-
-.axis-race path {
-  fill: none;
-  stroke: #7e7e7e !important;
-  shape-rendering: crispEdges;
-  stroke-width: 1; }
-
-.axis-race line {
-  fill: none;
-  stroke: #7e7e7e !important;
-  shape-rendering: crispEdges; }
-
-.axis-race .tick line {
-  stroke-width: 1;
-  stroke: #7e7e7e !important; }
-
-.axisHorizontal path {
-  fill: none;
-  stroke: rgba(0, 0, 0, 0.2) !important;
-  shape-rendering: crispEdges;
-  stroke-width: 1; }
-
-.axisHorizontal line {
-  fill: none;
-  stroke: #7e7e7e !important;
-  shape-rendering: crispEdges;
-  stroke-width: 1; }
-
-.axisHorizontal .tick line {
-  stroke-width: 1;
-  stroke: #7e7e7e !important; }
-
-.x.axis-race path {
-  display: none; }
-
-.rect rect:hover {
-  /*fill: rgba(146, 197, 222, 0.85) !important;*/
-  fill-opacity: 0.75 !important;
-  /*stroke-width: 1px;
-  shape-rendering: crispEdges;
-  stroke: rgba(10, 10, 10, 0.5);*/ }
+.range-slider {
+  position: relative;
+  width: 90%; }
+  .range-slider .from-year,
+  .range-slider .to-year {
+    color: #0071bc; }
+  .range-slider .from-year {
+    color: #B0BEC5;
+    position: absolute;
+    top: -10px;
+    left: -10px; }
+  .range-slider .to-year {
+    color: #B0BEC5;
+    position: absolute;
+    top: -10px;
+    right: -10px; }
+  .range-slider .year {
+    font-weight: bolder; }
+  .range-slider .label {
+    font-size: 2em; }
+  .range-slider input {
+    position: relative; }
+    .range-slider input[type=range] {
+      -webkit-appearance: none; }
+      .range-slider input[type=range]::-webkit-slider-runnable-track {
+        width: 50px;
+        height: 3px;
+        background: #B0BEC5;
+        border: none;
+        border-radius: 3px; }
+      .range-slider input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: 1px solid white;
+        border-radius: 50%;
+        height: 16px;
+        width: 16px;
+        background: #0071bc;
+        margin-top: -7px; }
+      .range-slider input[type=range]:focus {
+        outline: none; }
+        .range-slider input[type=range]:focus::-webkit-slider-runnable-track {
+          background: #78909C; }
 
 .svg-container {
   display: inline-block;
@@ -685,16 +575,6 @@ text {
   position: absolute;
   top: 10px;
   left: 0; }
-
-.vis-tooltip {
-  position: absolute;
-  white-space: nowrap;
-  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.25);
-  opacity: 0.9;
-  color: #222;
-  background-color: #fff;
-  padding: .5em 1em;
-  border-radius: 2px; }
 
 /* ============================================================
   Nav

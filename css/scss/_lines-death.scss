@@ -1,18 +1,6 @@
 /* ============================================================
     Lines Death
 ============================================================ */
-svg g text.label,
-svg g text.ylabel {
-    color: $color-gray;
-}
-
-.axis-death path,
-.axis-death line {
-    fill: none;
-    stroke: #D3D3D3;
-    stroke-width: 1px;
-}
-
 .line-death {
     stroke: #B1B5B4;
     fill: none;
@@ -55,40 +43,10 @@ svg g text.ylabel {
     stroke-width: 1px;
 }
 
-.axis-death text {
-    font-family: sans-serif;
-    font-size: 11px;
-}
-
 .aside-ma {
-    @extend .axis-death;
-    fill: $color-primary !important;
+    fill: $color-primary;
+    font-weight: 500;
 }
-
 .aside-usa {
-    @extend .axis-death;
-    fill: $color-black !important;
+    font-weight: 500;
 }
-
-.header {
-    width: 70%;
-    margin-left: 16px;
-}
-
-
-// .lines-tooltip {
-//     position: absolute;
-//     z-index: 10;
-//     p {
-//         background-color: rgba(255, 255, 255, .8);
-//         padding: .5em 1em;
-//         font-size: 12px;
-//         line-height: 17px;
-//         color: black;
-//     }
-// }
-
-// .lines-tooltipHeader {
-//     font-weight: 700;
-//     font-size: 12.5px;
-// }

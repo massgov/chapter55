@@ -153,9 +153,9 @@ var Vis = (function(d3) {
             .data(legendData)
             .enter().append("rect")
             .attr("height", 20)
-            .attr("width", 50)
+	    .attr("width", 60)
             .attr("x", function(d, i) {
-                return i * 55;
+		return i * 60;
             })
             .attr("y", 20)
             .style("stroke", "black")
@@ -167,17 +167,17 @@ var Vis = (function(d3) {
         $maps_sub_legends.selectAll("text")
             .data(legendData)
             .enter().append("text")
+	    .attr('text-anchor', 'middle')
             .attr("x", function(d, i) {
-                return i * 55;
+		return (i * 60)+30;
             })
             .attr("y", 55)
             .text(function(d, i) {
                 return d.s;
-            })
-            .style("font-size", "12px");
+	    });
 
         $maps_sub_legends.append("text")
-            .attr("class", "caption")
+	    .attr("class", "vis-caption")
             .attr("y", 12)
             .text(szCaption);
     }

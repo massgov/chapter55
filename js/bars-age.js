@@ -76,7 +76,7 @@
 
                 thisButton.classed("selected", true);
                 $(this).addClass("active");
-               
+
             });
 
         d3.select("#age18to24")
@@ -123,8 +123,8 @@
                 d3.selectAll(".malFocus.age18to24")
                     .classed("malSelector", false);
                 d3.selectAll(".femFocus.age18to24")
-                    .classed("femSelector", false);    
-                    
+                    .classed("femSelector", false);
+
             });
 
         //setup our ui -- requires access to data variable, so inside csv
@@ -179,7 +179,7 @@
             .range(["Male", "Female"])
 
         var age_bars_legend = $bars_age.selectAll(".age_bars_legend")
-            .data(options.slice())
+            .data(['2014', '2015'])
             .enter().append("g")
             .attr("class", "age_bars_legend")
             .attr("transform", function(d, i) {

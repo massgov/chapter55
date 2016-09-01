@@ -16,21 +16,21 @@
     <main>
     <section class="module parallax parallax-1 target" id="top">
       <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-md-6 pull-right">
-            <video autoplay poster="video/header-video-poster.png" loop>
-              WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
-              <source src="video/header-video-placeholder.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <div class="alert alert-info">
-              <strong>This is a draft</strong> — Do not distribute.
-            </div>
-            <h1>Opioid Epidemic</h1>
-            <h2>A data visualization of the MA Opioid Epidemic studies under Chapter 55</h2>
-          </div>
-        </div>
+      	<div class="row">
+      	  <div class="col-xs-12 col-md-6 pull-right">
+      	    <video autoplay poster="video/header-video-poster.png" loop>
+      	      WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
+      	      <source src="video/header-video-placeholder.mp4" type="video/mp4">
+      	    </video>
+      	  </div>
+      	  <div class="col-xs-12 col-md-6">
+      	    <div class="alert alert-info">
+      	      <strong>This is a draft</strong> — Do not distribute.
+      	    </div>
+      	    <h1>Opioid Epidemic</h1>
+      	    <h2>A data visualization of the MA Opioid Epidemic studies under Chapter 55</h2>
+      	  </div>
+      	</div>
       </div>
       <div class="target" id="intro" data-index="Intro"></div>
     </section>
@@ -67,8 +67,8 @@
         <div class="row">
           <div class="col-xs-12 col-md-7">
             <div id="odMap">
-              <div class="range">
-                <div class="label"><span id="from">2000</span><span id="to">2015</span></div>
+              <div class="range-slider">
+                <div class="label"><span class="from-year">2000</span><span class="to-year">2015</span></div>
                 <input id="odMap_timeline" type="range" min="2000" max="2015" value="2000">
                 <datalist id="odMap_timelinescale">
                 <option>2000</option>
@@ -239,8 +239,8 @@
             <h4 class='subtitle'>*Clients identify a primary drug of use when they enter treatment for addiction</h4>
             <hr>
             <div id="treatmentMaps">
-              <div id='treatmentMaps_legend'></div>
-              <div id='treatmentMaps_maps'></div>
+              <div id="treatmentMaps_legend" class="vis-legend"></div>
+              <div id="treatmentMaps_maps"></div>
             </div>
           </div>
           <div class="col-xs-12 col-md-7">

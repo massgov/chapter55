@@ -429,7 +429,7 @@
      y.domain([0, .99]);
 
      $lines_bsas.append("g")
-         .attr("class", "x axis_bsas")
+	 .attr("class", "vis-x-axis")
          .attr("transform", "translate(0," + height_bsas + ")")
          .call(xAxis_bsas)
          .append("text")
@@ -439,13 +439,13 @@
          .text("Year");
 
      $lines_bsas.append("g")
-         .attr("class", "y axis_bsas")
+	 .attr("class", "vis-y-axis")
          .call(yAxis_bsas)
          .append("text")
          // .attr("y", -30)
          .style("text-anchor", "start")
          // .text("Substance Abuse");
-     $lines_bsas.selectAll(".y.axis_bsas text").attr("x", -43).attr("dy", 0);
+     $lines_bsas.selectAll(".vis-y-axis text").attr("x", -43).attr("dy", 0);
 
      var legend_pos_text = -40,
          legend_pos_dot = -50;
@@ -529,7 +529,7 @@
 
          if (y_circle_alcohol >= 0) {
 
-             //console.log(groups[current_town+"alcohol"].values[i].age); 
+	     //console.log(groups[current_town+"alcohol"].values[i].age);
              //console.log("circle alcohol y" + groups[current_town + "alcohol"].values[i].age)
 
              $lines_bsas.append("circle")
@@ -556,7 +556,7 @@
 
          if (y_circle_alcohol >= 0) {
 
-             //console.log(groups[current_town+"alcohol"].values[i].age); 
+	     //console.log(groups[current_town+"alcohol"].values[i].age);
              //console.log("circle marijuana y" + groups[current_town + "marijuana"].values[i].age)
 
              $lines_bsas.append("circle")
@@ -583,7 +583,7 @@
 
          if (y_circle_alcohol >= 0) {
 
-             //console.log(groups[current_town+"alcohol"].values[i].age); 
+	     //console.log(groups[current_town+"alcohol"].values[i].age);
              //console.log("circle none y" + groups[current_town + "none"].values[i].age)
 
              $lines_bsas.append("circle")
@@ -610,7 +610,7 @@
 
          if (y_circle_alcohol >= 0) {
 
-             //console.log(groups[current_town+"alcohol"].values[i].age); 
+	     //console.log(groups[current_town+"alcohol"].values[i].age);
              //console.log("circle opioids y" + groups[current_town + "opioids"].values[i].age)
 
              $lines_bsas.append("circle")
@@ -637,7 +637,7 @@
 
          if (y_circle_alcohol >= 0) {
 
-             //console.log(groups[current_town+"alcohol"].values[i].age); 
+	     //console.log(groups[current_town+"alcohol"].values[i].age);
              // console.log("circle other y" + groups[current_town + "other"].values[i].age)
 
              $lines_bsas.append("circle")

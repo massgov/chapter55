@@ -220,7 +220,7 @@
     ]);
 
     $lines_fent.append("g")
-	.attr("class", "x axis_fent")
+	.attr("class", "vis-x-axis")
 	.attr("transform", "translate(0," + height + ")")
 	.call(xAxis_fent)
 	.append("path")
@@ -229,30 +229,25 @@
 	.call(xAxis_fent);
 
     $lines_fent.append("g")
-	.attr("class", "x axis2_fent")
+	.attr("class", "vis-axis")
 	.attr("transform", "translate(0," + (height + 15) + ")")
 	.call(xAxis2_fent)
 	.append("text")
 	.attr("x", width - margin.left)
 	.attr("y", margin.bottom - 32)
 	.attr("dy", "1em")
-	.style("text-anchor", "end")
-	.attr("class", "label")
+	.attr("class", "vis-x-axis-label")
 	.text("Quarter");
 
 
     $lines_fent.append("g")
-	.attr("class", "y axis_fent")
+	.attr("class", "vis-y-axis")
 	.call(yAxis_fent)
 	.append("text")
-	.attr("transform", "rotate(-90)")
 	.attr("x", 0)
 	.attr("y", -44)
 	.attr("dy", "1em")
-	.style("text-anchor", "end")
-	   .style("font","13px sans-serif")
-	.style("font-weight", "normal")
-	//.attr("class", "label")
+	.attr("class", "vis-y-axis-label")
 	.text("Percent Opioid Deaths");
 
     var series = $lines_fent.selectAll(".series")
@@ -288,7 +283,7 @@
 
 
     $lines_fent.append("text")
-	.attr("class", "aside-note")
+	.attr("class", "vis-line-label")
 	.attr("x", width + 5)
 	.attr("y", y(chartData[8].FentanylHeroin) - 5)
 	.attr("dy", "1em")
@@ -298,7 +293,7 @@
 	.style("font-weight", "normal");
 
     $lines_fent.append("text")
-	.attr("class", "aside-note")
+	.attr("class", "vis-line-label")
 	.attr("x", width + 5)
 	.attr("y", y(chartData[8].Methadone) - 7)
 	.attr("dy", "1em")
@@ -308,7 +303,7 @@
 	.style("font-weight", "normal");
 
     $lines_fent.append("text")
-        .attr("class", "aside-note")
+	.attr("class", "vis-line-label")
         .attr("x", width + 5)
         .attr("y", y(chartData[8].Heroin) - 10)
         .attr("dy", "1em")
@@ -317,7 +312,7 @@
 	.style("font-size", "16px");
 
     $lines_fent.append("text")
-        .attr("class", "aside-note")
+	.attr("class", "vis-line-label")
         .attr("x", width + 5)
         .attr("y", y(chartData[8].Fentanyl) - 10)
         .attr("dy", "1em")

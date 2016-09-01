@@ -225,11 +225,10 @@
 	    .attr("y", 55)
             .text(function(d, i) {
                 return d.s;
-            })
-            .style("font-size", "12px");
+	    });
 
         g.append("text")
-            .attr("class", "caption")
+	    .attr("class", "vis-caption")
             .attr("y", 12)
             .text(szCaption);
     } // generateLegend()
@@ -488,11 +487,10 @@
 //             .attr("y", 60)
 //             .text(function(d, i) {
 //                 return d.s;
-//             })
-//             .style("font-size", "12px");
+//             });
 
 //         g.append("text")
-//             .attr("class", "caption")
+//             .attr("class", "vis-caption")
 //             .attr("y", 12)
 //             .text(szCaption);
 //     } // generateLegend2()
