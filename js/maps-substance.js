@@ -25,7 +25,7 @@ var Vis = (function(d3) {
 
     function visualize(error, states, data) {
 
-        var visualizationWrapper = d3.select('#multi-maps');
+        var visualizationWrapper = d3.select('#treatmentMaps_maps');
 
         data.data.forEach(function(data, i) {
             var wrapper = visualizationWrapper
@@ -107,7 +107,7 @@ var Vis = (function(d3) {
             })
             .on('unselect', function(self) {
                 self.node().parentNode.parentNode.getElementsByTagName('p2')[0].innerHTML = "";
-                d3.selectAll('path#bsasmap').style({ 'fill-opacity': 1 }).style("stroke", "white").style("stroke-width", "0.0px");
+                d3.selectAll('#treatmentMaps_maps path').style({ 'fill-opacity': 1 }).style("stroke", "white").style("stroke-width", "0.0px");
             })
 
         function notify(selector, eventName) {
@@ -125,9 +125,9 @@ var Vis = (function(d3) {
             '>35-60%', '>60-100%'
         ]);
     };
-    //popChgScale.domainStrings = function() { return (['< 0.1', '0.25-0.50', '0.50-0.75', '0.75-1.0', '1.0-1.25', 
-    //'1.25-1.50', '1.50-1.75', '1.75-2.0', '> 2.0']); }; 
-    generateLegend_map_sub(opChgScale, 'legend_sub', 'Heroin Primary Substance of Abuse upon Seeking Treatment (%)');
+    //popChgScale.domainStrings = function() { return (['< 0.1', '0.25-0.50', '0.50-0.75', '0.75-1.0', '1.0-1.25',
+    //'1.25-1.50', '1.50-1.75', '1.75-2.0', '> 2.0']); };
+    generateLegend_map_sub(opChgScale, 'treatmentMaps_legend', 'Heroin Primary Substance of Abuse upon Seeking Treatment (%)');
 
     function generateLegend_map_sub(scale, szDivId, szCaption) {
         var width = 550,

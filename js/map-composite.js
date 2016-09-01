@@ -42,7 +42,7 @@
 
 
 	$('.controls-map').click(function() {
-	    $("#timeline").val($(this).data('select'));
+	    $("#odMap_timeline").val($(this).data('select'));
 	    setSymbology($(this).data('select'));
 	});
 
@@ -56,7 +56,7 @@
 	    maTowns.features[i].properties.OPIOIDSTATS = maOpioid.features[i].properties;
 	}
 
-	svgContainer = d3.select("#map")
+	svgContainer = d3.select("#odMap_map")
 	    .classed("svg-container", true) //container class to make it responsive
 	    .append("svg")
 	    .attr("preserveAspectRatio", "xMinYMin meet")
@@ -65,7 +65,7 @@
 	    .classed("svg-content-responsive", true)
 	    .style("border", "0px solid steelblue");
 
-	var tooltip = d3.select('#map').append('div')
+	var tooltip = d3.select('#odMap_map').append('div')
 	    .attr('class', 'hidden tooltip');
 
 	//#eff3ff
@@ -142,14 +142,14 @@
 
 
 	getYear();
-	generateLegend(opChgScale, 'legend', 'Count of Opioid Related Deaths by Municipality');
+	generateLegend(opChgScale, 'odMap_legend', 'Count of Opioid Related Deaths by Municipality');
 
 
     } // generateMap
 
     function getYear() {
         setSymbology(2000);
-        $("#timeline").on('input change', function() {
+        $("#odMap_timeline").on('input change', function() {
             setSymbology($(this).val());
         });
     }
@@ -158,10 +158,10 @@
 
         var szAttr = 'yr' + year;
         currentyear = year;
-        $('#titlePrefix').html('Count of Opiod Related Deaths in Massachusetts in');
-        $('#fromYear').html(year);
+        $('#odMap_titlePrefix').html('Count of Opiod Related Deaths in Massachusetts in');
+        $('#odMap_fromYear').html(year);
 
-        $('#map1-source').html('Sources: Massachusetts Department of Public Health,' +
+        $('#odMap_source').html('Sources: Massachusetts Department of Public Health,' +
                              '<br>Massachusetts Registry of Vital Records and Statistics</>');
 
         svgContainer.selectAll("path.deathmap")

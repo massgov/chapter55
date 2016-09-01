@@ -145,16 +145,17 @@ $('#pills-first a').click(function(e) {
 
 
 /////////////////////////////Video Links
-$('#play1').click(function() {
-    $("#video1").get(0).play();
-});
-$('#play2').click(function() {
-    $("#video2").get(0).play();
+
+$('.js-play-video').click(function() {
+    var $target = $($(this).data('target'));
+    if($target.get(0)) {
+        $target.get(0).play();
+    }
 });
 
 /////////////////////////////SVG Infographic
 $(function() {
-    $("#svg-infographic").load('img/human1.svg', function(response) {
+    $("#odInfographic").load('img/human1.svg', function(response) {
         var val_svg = '2/3';
         asignVal_svg(val_svg);
 
@@ -164,10 +165,10 @@ $(function() {
             if (val == '1/12') {
                 $('.svg-studyperiod').attr("opacity", 0);
                 $('.svg-onemonth').attr("opacity", 1);
-                $('#svg-info').html('Only about '+ '<strong>1 in 12</strong>' +' people who died from opioids had an active opioid prescription a month before they died')
+                $('#odInfographic_details').html('Only about '+ '<strong>1 in 12</strong>' +' people who died from opioids had an active opioid prescription a month before they died')
             } else {
                 $('.svg-studyperiod').attr("opacity", 1);
-                $('#svg-info').html('About '+ '<strong>8 in 12</strong>' +' people who died from opioids had an opioid prescription at some point during the study period')
+                $('#odInfographic_details').html('About '+ '<strong>8 in 12</strong>' +' people who died from opioids had an opioid prescription at some point during the study period')
             }
         }
 
