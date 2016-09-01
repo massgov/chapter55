@@ -102,6 +102,22 @@
   background-color: #ffffff;
   border: 1px solid #0071bc; }
 
+#age18to24 {
+  background: white;
+  border: white;
+  border-width: 0px;
+  color: #337ab7;
+  text-decoration: underline;
+  cursor: pointer; }
+
+#age25to34 {
+  background: white;
+  border: white;
+  border-width: 0px;
+  color: #337ab7;
+  text-decoration: underline;
+  cursor: pointer; }
+
 /* ============================================================
   Map
 ============================================================ */
@@ -629,6 +645,12 @@ svg g text.ylabel {
 
 .age_bars_legend {
   fill: #666666; }
+
+.femSelector {
+  fill: #980043 !important; }
+
+.malSelector {
+  fill: #08306b !important; }
 
 /* ============================================================
  Bar Chart by Race and Ethnicity
