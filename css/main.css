@@ -134,10 +134,15 @@
 .vis-legend {
   font-size: 10px; }
 
+.vis-data-label {
+  text-anchor: start;
+  font-size: 14px; }
+
 .vis-axis,
 .vis-x-axis,
 .vis-y-axis {
-  font-size: 10px; }
+  font-size: 10px;
+  text-anchor: end; }
   .vis-axis .tick line,
   .vis-x-axis .tick line,
   .vis-y-axis .tick line {
@@ -163,6 +168,13 @@
 
 .vis-y-axis-label {
   transform: rotate(-90deg); }
+
+.vis-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: Helvetica, Arial;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; }
 
 /* ============================================================
   Map
@@ -194,16 +206,11 @@
     fill: #e9e9e9;
     stroke: #e9e9e9;
     stroke-width: 1px; }
-  #treatmentMaps_maps p.legend {
+  #treatmentMaps_maps .vis-title {
     width: 60%;
-    text-align: center;
     position: absolute;
     bottom: 50px;
-    left: 0;
-    font-weight: bolder;
-    font-size: 20px;
-    font-family: Helvetica, Arial;
-    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; }
+    left: 0; }
   #treatmentMaps_maps .selection-label {
     width: 60%;
     text-align: center;
@@ -493,18 +500,6 @@
 .dots.hoverFocus {
   fill: #52524E;
   opacity: 1; }
-
-.labels {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 11px;
-  font-weight: bold;
-  fill: #333; }
-
-.labels2 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 10px;
-  font-weight: normal;
-  fill: #666666; }
 
 .age_bars_legend {
   fill: #666666; }

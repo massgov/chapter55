@@ -178,10 +178,10 @@
         var age_bar_label = d3.scale.ordinal()
             .range(["Male", "Female"])
 
-        var age_bars_legend = $bars_age.selectAll(".age_bars_legend")
+        var age_bars_legend = $bars_age.selectAll(".vis-legend")
             .data(['2014', '2015'])
             .enter().append("g")
-            .attr("class", "age_bars_legend")
+            .attr("class", "vis-legend")
             .attr("transform", function(d, i) {
                 return "translate(0," + (height - (margin * 2) + (i * 24)) + ")";
             });
@@ -194,9 +194,9 @@
 
 
         age_bars_legend.append("text")
-            .attr("x", width + 4)
+            .attr("x", width + 10)
             .attr("y", 9)
-            .attr("dy", ".35em")
+            .attr("dy", ".5em")
             .style("text-anchor", "start")
             .text(age_bar_label);
 
@@ -245,7 +245,7 @@
                 } else if (d.gender === 'Male') {
                     return "bar malFocus";
                 }
-            })
+            });
         //.classed("18to24", (d.age === '18 to 24'))
 
         //   .attr("class", function (d, i) {
@@ -261,35 +261,36 @@
 
         //  We are attaching the labels separately, not in a group with the bars...
 
-        var labels = $bars_age.selectAll("text.labels")
+        var dataLabels = $bars_age.selectAll("text.vis-data-label")
             .data(data, function(d) {
                 return d.gender_age
             }); // key function!
 
-        var labels2 = $bars_age.selectAll("text.labels2")
+        var axisLabels = $bars_age
+            .selectAll("text.vis-axis")
             .data(data, function(d) {
                 return d.gender_age
             });
 
 
         // everything gets a class and a text field.  But we assign attributes in the transition.
-        labels.enter()
+        axisLabels.enter()
             .append("text")
-            .attr("class", "labels");
-        labels.exit()
+            .attr("class", "vis-axis");
+        axisLabels.exit()
             .remove();
 
-        labels2.enter()
+        dataLabels.enter()
             .append("text")
-            .attr("class", "labels2");
-        labels2.exit()
+            .attr("class", "vis-data-label");
+        dataLabels.exit()
             .remove();
 
         numberFormat = d3.format(".0f");
         percentageFormat = d3.format(".1f");
         rateFormat = d3.format(".2f");
 
-        labels.transition()
+        dataLabels.transition()
             .duration(500)
             .attr("transform", function(d, i) {
                 console.log(xScale(+d[column]) + 50);
@@ -310,11 +311,10 @@
                     return rateFormat(d[column]);
                 }
             })
-            .attr("dy", "1.2em")
-            .attr("dx", "5px")
-            .attr("text-anchor", "start");
+            .attr("dy", "1em")
+            .attr("dx", "5px");
 
-        labels2.transition()
+        axisLabels.transition()
             .duration(500)
             .attr("transform", function(d, i) {
                 //return "translate(" + xScale(+d[column]) + "," + yScale(i) + ")"
@@ -323,9 +323,8 @@
             .text(function(d) {
                 return d.age;
             })
-            .attr("dy", "1.2em")
-            .attr("dx", "5px")
-            .attr("text-anchor", "start");
+            .attr("dy", "1em")
+            .attr("dx", "40px");
 
 
     } // end of draw function

@@ -20,10 +20,16 @@
   font-size: 10px;
 }
 
+.vis-data-label {
+  text-anchor: start;
+  font-size: 14px;
+}
+
 .vis-axis,
 .vis-x-axis,
 .vis-y-axis {
   font-size: 10px;
+  text-anchor: end;
   // font-weight: normal;
 
   .tick line {
@@ -48,7 +54,6 @@
 }
 // vis-x-axis and vis-y-axis should only be used once each per chart as they add line decoration
 
-
 .vis-x-axis-label,
 .vis-y-axis-label {
   font-weight: bold;
@@ -58,4 +63,13 @@
 
 .vis-y-axis-label {
   transform: rotate(-90deg);
+}
+
+
+.vis-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Helvetica, Arial;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }

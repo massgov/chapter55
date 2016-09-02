@@ -43,10 +43,10 @@ var Vis = (function(d3) {
 
     function createMap(wrapper, geo, data) {
 
-        wrapper.append('p')
+        wrapper.append('span')
             .text(data.key)
-            .attr('class', 'legend');
-	wrapper.append('p')
+            .attr('class', 'vis-title');
+	wrapper.append('span')
             .text("")
 	    .attr('class', 'selection-label');
 
