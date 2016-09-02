@@ -156,6 +156,8 @@ $('.js-play-video').click(function() {
 /////////////////////////////SVG Infographic
 $(function() {
     $("#odInfographic").load('img/human1.svg', function(response) {
+        var $svg = $(this).find('svg');
+        // $svg.attr("preserveAspectRatio", "xMinYMin meet");
         var val_svg = '2/3';
         asignVal_svg(val_svg);
 

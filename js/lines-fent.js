@@ -73,8 +73,8 @@
     }
 
     var seriesColors = ["#ffffff", "#b71c1c", "#0071bc", "#ffffff"];
-    var seriesLineStrokes = ["1.5px", "3.5px", "3.5px", "1.5px"];
-    var seriesLineDash = ["2,2,2,2", "0,0,0,0", "0,0,0,0", "1,1,1,1"];
+    var seriesLineStrokes = ["1.5px", "3.5px", "3.5px", "2px"];
+    var seriesLineDash = ["10,10,10,10", "0,0,0,0", "0,0,0,0", "2,6,0,0"];
     var seriesPointShapes = ["circle", "circle", "circle", "circle"];
     var seriesPointWidth = ["1px", "1.5px", "1.5px", "1px"];
     var seriesPointFill = ["#a50f15", "#08519c", "#636363", "#636363"];
