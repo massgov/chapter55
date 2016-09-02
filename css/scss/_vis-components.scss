@@ -1,0 +1,75 @@
+// tooltip variant for visualizations
+
+
+.vis-tooltip {
+  position: absolute;
+  white-space: nowrap;
+  box-shadow: 0 0 3px 1px rgba(0,0,0,0.25);
+  opacity: 0.9;
+  color: #222;
+  background-color: #fff;
+  padding: .5em 1em;
+  border-radius: 2px;
+}
+
+.vis-caption {
+  font-size: 10px;
+}
+
+.vis-legend {
+  font-size: 10px;
+}
+
+.vis-data-label {
+  text-anchor: start;
+  font-size: 14px;
+}
+
+.vis-axis,
+.vis-x-axis,
+.vis-y-axis {
+  font-size: 10px;
+  text-anchor: end;
+  // font-weight: normal;
+
+  .tick line {
+    stroke: $color-gray-light;
+
+    .vis--dark-background & {
+      stroke: $color-white;
+    }
+  }
+}
+
+
+.vis-y-axis,
+.vis-x-axis {
+  .domain {
+    fill: none;
+    stroke: $color-gray-light;
+    .vis--dark-background & {
+      stroke: $color-white;
+    }
+  }
+}
+// vis-x-axis and vis-y-axis should only be used once each per chart as they add line decoration
+
+.vis-x-axis-label,
+.vis-y-axis-label {
+  font-weight: bold;
+  font-size: 12px;
+  text-anchor: end;
+}
+
+.vis-y-axis-label {
+  transform: rotate(-90deg);
+}
+
+
+.vis-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Helvetica, Arial;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}

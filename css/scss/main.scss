@@ -1,8 +1,8 @@
 @import 'variables';
 @import 'accordion';
 @import 'button';
+@import 'vis-components';
 @import 'map-death';
-@import 'map-composite';
 @import 'maps-substance';
 @import 'lines-death';
 @import 'lines-fent';
@@ -12,6 +12,7 @@
 @import 'blocks-substance-pie';
 @import 'bars-age';
 @import 'bars-race';
+@import 'range-slider';
 @import 'responsive-svg';
 // @import 'tree';
 
@@ -251,8 +252,8 @@ video {
 }
 
 #odInfographic {
-    width: 300px;
-    height: 300px;
+    max-width: 400px;
+    max-height: 400px;
 }
 
 .center {

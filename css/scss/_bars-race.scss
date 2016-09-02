@@ -2,133 +2,83 @@
  Bar Chart by Race and Ethnicity
 ============================================================ */
 
-#race_ethnicity_chart {
-    width: 400px;
-    height: 400px;
-}
+// #race_ethnicity_chart {
+//     width: 400px;
+//     height: 400px;
+// }
 
-#race_ethnicity_chart svg {
-    width: 100%;
-    height: 100%;
-    position: center;
-    padding-left: 10px;
-}
-
-text {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.tooltip_raceeth {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    position: absolute;
-    display: none;
-    width: auto;
-    height: auto;
-    background: none repeat scroll 0 0;
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 0 none;
-    border-radius: 2px 2px 2px 2px;
-    box-shadow: -1px 1px 3px #888888;
-    color: black;
-    font: 12px sans-serif;
-    padding: 5px;
-    text-align: center;
-}
-
-.tooltip_raceeth rate {
-    font-weight: bolder;
-    font-size: 14px;
-    color: #2a2a2a;
-}
-
-.tooltip_raceeth year {
-    font-weight: bold;
-    font-size: 11px;
-    color: black;
-    line-height: 0px;
-    padding-top: 10px;
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
-}
-
-.tooltip_raceeth reth {
-    font-weight: normal;
-    font-size: 10px;
-    color: black;
-    line-height: 0px;
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
-}
+// #race_ethnicity_chart svg {
+//     width: 100%;
+//     height: 100%;
+//     position: center;
+//     padding-left: 10px;
+// }
 
 // .legend {
 //     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 //     font-size: 75%;
 //     fill: #696969;
 // }
-.rect {
-    stroke-width: 0;
-}
+// .rect {
+//     stroke-width: 0;
+// }
 
-text {
-    font: 10px sans-serif;
-}
+// .x.axis-race text {
+//     font: 11px sans-serif;
+//     fill: #696969 !important;
+// }
 
-.x.axis-race text {
-    font: 11px sans-serif;
-    fill: #696969 !important;
-}
+// .y.axis-race text {
+//     font: 11px sans-serif;
+//     fill: #696969 !important;
+//     shape-rendering: crispEdges;
+// }
 
-.y.axis-race text {
-    font: 11px sans-serif;
-    fill: #696969 !important;
-    shape-rendering: crispEdges;
-}
+// .axis-race path {
+//     fill: none;
+//     stroke: #7e7e7e !important;
+//     shape-rendering: crispEdges;
+//     stroke-width: 1;
+// }
 
-.axis-race path {
-    fill: none;
-    stroke: #7e7e7e !important;
-    shape-rendering: crispEdges;
-    stroke-width: 1;
-}
+// .axis-race line {
+//     fill: none;
+//     stroke: #7e7e7e !important;
+//     shape-rendering: crispEdges;
+// }
 
-.axis-race line {
-    fill: none;
-    stroke: #7e7e7e !important;
-    shape-rendering: crispEdges;
-}
+// .axis-race .tick line {
+//     stroke-width: 1;
+//     stroke: #7e7e7e !important;
+// }
 
-.axis-race .tick line {
-    stroke-width: 1;
-    stroke: #7e7e7e !important;
-}
+// .axisHorizontal path {
+//     fill: none;
+//     stroke: rgba(0, 0, 0, 0.2) !important;
+//     shape-rendering: crispEdges;
+//     stroke-width: 1;
+// }
 
-.axisHorizontal path {
-    fill: none;
-    stroke: rgba(0, 0, 0, 0.2) !important;
-    shape-rendering: crispEdges;
-    stroke-width: 1;
-}
+// .axisHorizontal line {
+//     fill: none;
+//     stroke: #7e7e7e !important;
+//     shape-rendering: crispEdges;
+//     stroke-width: 1;
+// }
 
-.axisHorizontal line {
-    fill: none;
-    stroke: #7e7e7e !important;
-    shape-rendering: crispEdges;
-    stroke-width: 1;
-}
+// .axisHorizontal .tick line {
+//     stroke-width: 1;
+//     stroke: #7e7e7e !important;
+// }
 
-.axisHorizontal .tick line {
-    stroke-width: 1;
-    stroke: #7e7e7e !important;
-}
+// .x.axis-race path {
+//     display: none;
+// }
 
-.x.axis-race path {
-    display: none;
-}
-
-.rect rect:hover {
-    /*fill: rgba(146, 197, 222, 0.85) !important;*/
-    fill-opacity: 0.75 !important;
-    /*stroke-width: 1px;
-  shape-rendering: crispEdges;
-  stroke: rgba(10, 10, 10, 0.5);*/
-}
+// .rect rect:hover {
+//     /*fill: rgba(146, 197, 222, 0.85) !important;*/
+//     fill-opacity: 0.75 !important;
+//     /*stroke-width: 1px;
+//   shape-rendering: crispEdges;
+//   stroke: rgba(10, 10, 10, 0.5);*/
+// }

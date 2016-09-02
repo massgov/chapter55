@@ -16,21 +16,21 @@
     <main>
     <section class="module parallax parallax-1 target" id="top">
       <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-md-6 pull-right">
-            <video autoplay poster="video/header-video-poster.png" loop>
-              WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
-              <source src="video/header-video-placeholder.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <div class="alert alert-info">
-              <strong>This is a draft</strong> — Do not distribute.
-            </div>
-            <h1>Opioid Epidemic</h1>
-            <h2>A data visualization of the MA Opioid Epidemic studies under Chapter 55</h2>
-          </div>
-        </div>
+      	<div class="row">
+      	  <div class="col-xs-12 col-md-6 pull-right">
+      	    <video autoplay poster="video/header-video-poster.png" loop>
+      	      WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
+      	      <source src="video/header-video-placeholder.mp4" type="video/mp4">
+      	    </video>
+      	  </div>
+      	  <div class="col-xs-12 col-md-6">
+      	    <div class="alert alert-info">
+      	      <strong>This is a draft</strong> — Do not distribute.
+      	    </div>
+      	    <h1>Opioid Epidemic</h1>
+      	    <h2>A data visualization of the MA Opioid Epidemic studies under Chapter 55</h2>
+      	  </div>
+      	</div>
       </div>
       <div class="target" id="intro" data-index="Intro"></div>
     </section>
@@ -67,8 +67,8 @@
         <div class="row">
           <div class="col-xs-12 col-md-7">
             <div id="odMap">
-              <div class="range">
-                <div class="label"><span id="from">2000</span><span id="to">2015</span></div>
+              <div class="range-slider">
+                <div class="label"><span class="from-year">2000</span><span class="to-year">2015</span></div>
                 <input id="odMap_timeline" type="range" min="2000" max="2015" value="2000">
                 <datalist id="odMap_timelinescale">
                 <option>2000</option>
@@ -97,7 +97,7 @@
               <span id="odMap_toYear" class="year"></span>
               </h3>
 
-              <div id="odMap_legend"></div>
+              <div id="odMap_legend" class="vis-legend"></div>
               <div id="odMap_map"></div>
               <div id='odMap_source' class="source"></div>
             </div>
@@ -239,8 +239,8 @@
             <h4 class='subtitle'>*Clients identify a primary drug of use when they enter treatment for addiction</h4>
             <hr>
             <div id="treatmentMaps">
-              <div id='treatmentMaps_legend'></div>
-              <div id='treatmentMaps_maps'></div>
+              <div id="treatmentMaps_legend" class="vis-legend"></div>
+              <div id="treatmentMaps_maps"></div>
             </div>
           </div>
           <div class="col-xs-12 col-md-7">
@@ -407,7 +407,7 @@
               </video>
               <h2>Fentanyl: Friend or Foe?</h2>
               <p>Fentanyl is an opioid that can be prescribed for pain management. However, it’s also used illegally either on its own or combined with heroin. According to the DEA, illegally produced Fentanyl can be up to 50 times stronger than heroin. Illegally sold and produced Fentanyl is increasingly recognized as a problem across the United States, and particularly in Massachusetts. Toxicology data from recent post-mortem cases indicates <span class="fentanyl_">Fentanyl</span> is adding to the state’s deadly epidemic more than <span class="heroin_">Heroin</span>. In 2015, 57% of toxicology samples tested positive for Fentanyl which is more than double the figure recorded in 2013.</p>
-              <div id="fentanyl-lines" class="svg-container"></div>
+              <div id="fentanyl-lines" class="svg-container vis--dark-background"></div>
             </div>
             <div class="sourcecallout">Sources: Massachusetts Executive Office of Public Safety and Security, Office of the Chief Medical Examiner</div>
           </div>

@@ -50,7 +50,7 @@ var yAxis_death = d3.svg.axis()
 // add a tooltip to the page - not to the svg itself!
 var tooltip_death = d3.select("#deathLines")
     .append("div")
-    .attr("class", "lines-tooltip");
+    .attr("class", "vis-tooltip hidden");
 
 //Configure line
 // each line dataset must have a d.year and a d.rate for this to work.
@@ -183,7 +183,7 @@ d3.csv("js/data/death_states.csv", function(data) {
 
 
     $lines_death.append("g")
-        .attr("class", "x axis-death")
+	.attr("class", "vis-x-axis")
         // .attr("transform", "translate(0," + (height - margin.bottom) + ")")
         .attr("transform", "translate(0," + (height - margin.bottom - margin.top - margin.top) + ")")
         .call(xAxis_death)
@@ -191,22 +191,19 @@ d3.csv("js/data/death_states.csv", function(data) {
         .attr("x", width - margin.left)
         .attr("y", margin.bottom+10)
         .attr("dy", "1em")
-        .style("text-anchor", "end")
-        .attr("class", "label")
+	.attr("class", "vis-x-axis-label")
         .text("Year");
 
     $lines_death.append("g")
-        .attr("class", "y axis-death")
+	.attr("class", "vis-y-axis")
         // .attr("transform", "translate(" + margin.left + ",0)")
         .attr("transform", "translate(" + margin.left + "," + (-margin.top / 2) + ')')
         .call(yAxis_death)
         .append("text")
-        .attr("transform", "rotate(-90)")
         .attr("x", -margin.top)
         .attr("y", -margin.left)
         .attr("dy", "1em")
-        .style("text-anchor", "end")
-        .attr("class", "label")
+	.attr("class", "vis-y-axis-label")
         .text("Age-Adjusted Opioid Death Rate per 100,000 People");
 
     /*======================================================================
@@ -246,16 +243,16 @@ d3.csv("js/data/death_states.csv", function(data) {
     function mouseoutFunc() {
 
         d3.selectAll("path.line-death").classed("unfocused", false).classed("focused", false);
-        tooltip_death.style("display", "none"); // this sets it to invisible!
+	tooltip_death.classed("hidden", true);
     }
 
     function mouseoverFunc(d, i) {
 
-        d3.selectAll("path.line").classed("unfocused", true);
+        d3.selectAll("path.line-death").classed("unfocused", true);
         d3.select(this).select("path.line-death").classed("unfocused", false).classed("focused", true);
         tooltip_death
-            .style("display", "block") // this removes the display none setting from it
-            .html("<p><span class='lines-tooltipHeader sans'>" + d.FullName + "</span></p>");
+	    .classed("hidden", false)
+	    .html(d.FullName);
         //console.log(d.FullName);
         // console.log(d.rates[i]);
 
@@ -268,7 +265,6 @@ d3.csv("js/data/death_states.csv", function(data) {
         coordinates = d3.mouse(this);
         var x = coordinates[0];
         var y = coordinates[1];
-
 
         tooltip_death
             .style("top", y + "px")

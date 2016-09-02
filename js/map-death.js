@@ -27,7 +27,7 @@ function generateMap(error, results) {
 
     var i;
     for (i = 0; i < maTowns.features.length; i++) {
-        //for (i = 0; i < usStates.features.length; i++) {  
+	//for (i = 0; i < usStates.features.length; i++) {
         // Assert test.
         if (maTowns.features[i].properties.town != maOpioid.features[i].TOWN) {
             //if (usStates.features[i].properties.NAME !== usPop[i].State) {
@@ -194,7 +194,7 @@ function generateMap(error, results) {
                 var delta = +d.properties.OPIOIDSTATS[szAttr];
                 //var delta = +d.properties.POPSTATS[szAttr];
                 return (delta === -9999) ? '#f1f1f1' : opChgScale(delta);
-                //return (delta === -9999) ? '#e8e8e8' : popChgScale(delta);    
+		//return (delta === -9999) ? '#e8e8e8' : popChgScale(delta);
             });
     } // setSymbology()
 
@@ -244,7 +244,7 @@ function generateMap(error, results) {
             .style("font-size", "12px");
 
         g.append("text")
-            .attr("class", "caption")
+	    .attr("class", "vis-caption")
             .attr("y", 12)
             .text(szCaption);
     } // generateLegend()
@@ -481,7 +481,7 @@ function generateMap2(error, results) {
             .style("font-size", "12px");
 
         g.append("text")
-            .attr("class", "caption")
+	    .attr("class", "vis-caption")
             .attr("y", 12)
             .text(szCaption);
     } // generateLegend2()

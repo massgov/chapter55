@@ -9,32 +9,39 @@
 }
 
 #lines-bsas {
-    .axis_bsas path,
-    .axis_bsas line {
+    .vis-y-axis line {
+	stroke-width: 0.5px;
+	stroke: $color-gray-lighter;
+    }
+    // .axis_bsas path,
+    // .axis_bsas line {
+    //     fill: none;
+    //     stroke: #000;
+    //     shape-rendering: crispEdges;
+    // }
+    // .axis_bsas text {
+    //     font-size: 13px;
+    // }
+    // .y.axis_bsas path {
+    //     display: none;
+    // }
+    // .y.axis_bsas line {
+    //     stroke: #e0e0e0;
+    //     stroke-width: 1px;
+    //     stroke-dasharray: 2, 2;
+    // }
+    // path.domain {
+    //     stroke-width: 2px;
+    // }
+    // path.line {
+    //     fill: none;
+    //     stroke-linejoin: round;
+    //     stroke-linecap: round;
+    //     stroke-width: 1.5px;
+    //     stroke-opacity: 0.5;
+    // }
+    path {
         fill: none;
-        stroke: #000;
-        shape-rendering: crispEdges;
-    }
-    .axis_bsas text {
-        font-size: 13px;
-    }
-    .y.axis_bsas path {
-        display: none;
-    }
-    .y.axis_bsas line {
-        stroke: #e0e0e0;
-        stroke-width: 1px;
-        stroke-dasharray: 2, 2;
-    }
-    path.domain {
-        stroke-width: 2px;
-    }
-    path.line {
-        fill: none;
-        stroke-linejoin: round;
-        stroke-linecap: round;
-        stroke-width: 1.5px;
-        stroke-opacity: 0.5;
     }
     path.alcohol {
         stroke: #F98229;

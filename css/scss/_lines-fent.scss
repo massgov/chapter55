@@ -5,49 +5,20 @@
     fill: $color-white;
 }
 
-.domain {
-    fill: none;
-    stroke: $color-white;
-    stroke-opacity: 1;
-    stroke-width: 0px;
-}
+// // .domain {
+// //     fill: none;
+// //     stroke: $color-white;
+// //     stroke-opacity: 1;
+// //     stroke-width: 0px;
+// // }
 
-.y.axis_fent line {
-    fill: none;
-    stroke: $color-white;
-    stroke-width: 1px;
-    opacity: 1;
-    shape-rendering: crispEdges;
-}
-
-.x.axis_fent {
-    border-top: 1px;
-    shape-rendering: crispEdges;
-}
-
-.x.axis_fent .domain {
-    stroke-width: 1px;
-    stroke: $color-white;
-    shape-rendering: crispEdges;
-}
-
-.x.axis_fent line {
-    fill: none;
-    stroke: $color-white;
-    stroke-width: 1px;
-    shape-rendering: crispEdges;
-}
-
-.x.axis2_fent text {
-    font: 10px sans-serif;
-    fill: $color-white;
-}
-
-.y.axis_fent .domain {
-    stroke-width: 1px;
-    stroke: $color-white;
-    shape-rendering: crispEdges;
-}
+// .y.axis_fent line {
+//     fill: none;
+//     stroke: $color-white;
+//     stroke-width: 1px;
+//     opacity: 1;
+//     shape-rendering: crispEdges;
+// }
 
 .unfocused {
     stroke-opacity: 100% !important;
@@ -60,30 +31,6 @@
     stroke-opacity: 100%;
     stroke-dasharray: 0, 0, 0, 0 !important;
 }
-
-.tooltipFent {
-    position: absolute;
-    z-index: 10;
-}
-
-.tooltipFent p {
-    background-color: rgba(255, 255, 255, .5);
-    padding: .5em 1em;
-    font-size: 12px;
-    line-height: 17px;
-    color: $color-black;
-}
-
-.tooltipFentHeader {
-    font-weight: 700;
-    font-size: 12.5px;
-}
-
-// .overlay {
-//     fill: none;
-//     pointer-events: all;
-//     color: $color-black;
-// }
 
 .focus circle {
     fill: $color-white;

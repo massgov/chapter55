@@ -43,12 +43,12 @@ var Vis = (function(d3) {
 
     function createMap(wrapper, geo, data) {
 
-        wrapper.append('p')
+        wrapper.append('span')
             .text(data.key)
-            .attr('class', 'legend');
-        wrapper.append('p2')
+            .attr('class', 'vis-title');
+	wrapper.append('span')
             .text("")
-            .attr('class', 'legend');
+	    .attr('class', 'selection-label');
 
         wrapper.append('y');
 
@@ -102,12 +102,14 @@ var Vis = (function(d3) {
 
                 //console.log(town_value);
 
-                self.node().parentNode.parentNode.getElementsByTagName('p2')[0].innerHTML = (geoData[0].properties.TOWN + ":  " + town_value);
+		self.node().parentNode.parentNode.getElementsByClassName('selection-label')[0].innerHTML = (geoData[0].properties.TOWN + ":  " + town_value);
                 d3.select((self.node())).style('fill-opacity', 0.4).style("stroke", "white").style("stroke-width", "1.5px");
             })
             .on('unselect', function(self) {
-                self.node().parentNode.parentNode.getElementsByTagName('p2')[0].innerHTML = "";
-                d3.selectAll('#treatmentMaps_maps path').style({ 'fill-opacity': 1 }).style("stroke", "white").style("stroke-width", "0.0px");
+            //     self.node().parentNode.parentNode.getElementsByTagName('p2')[0].innerHTML = "";
+            //     d3.selectAll('#treatmentMaps_maps path').style({ 'fill-opacity': 1 }).style("stroke", "white").style("stroke-width", "0.0px");
+		self.node().parentNode.parentNode.getElementsByClassName('selection-label')[0].innerHTML = "";
+                d3.selectAll('path#bsasmap').style({ 'fill-opacity': 1 }).style("stroke", "white").style("stroke-width", "0.0px");
             })
 
         function notify(selector, eventName) {
@@ -151,9 +153,9 @@ var Vis = (function(d3) {
             .data(legendData)
             .enter().append("rect")
             .attr("height", 20)
-            .attr("width", 50)
+	    .attr("width", 60)
             .attr("x", function(d, i) {
-                return i * 55;
+		return i * 60;
             })
             .attr("y", 20)
             .style("stroke", "black")
@@ -165,17 +167,17 @@ var Vis = (function(d3) {
         $maps_sub_legends.selectAll("text")
             .data(legendData)
             .enter().append("text")
+	    .attr('text-anchor', 'middle')
             .attr("x", function(d, i) {
-                return i * 55;
+		return (i * 60)+30;
             })
             .attr("y", 55)
             .text(function(d, i) {
                 return d.s;
-            })
-            .style("font-size", "12px");
+	    });
 
         $maps_sub_legends.append("text")
-            .attr("class", "caption")
+	    .attr("class", "vis-caption")
             .attr("y", 12)
             .text(szCaption);
     }
