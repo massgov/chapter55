@@ -300,10 +300,19 @@
 /* ============================================================
     Lines BSAS
 ============================================================ */
-.ui-autocomplete-input {
-  padding: 10px;
-  border: 1px solid #0071bc;
-  border-radius: 5px; }
+.bsas-controls {
+  margin-bottom: 10px; }
+  .bsas-controls .ui-autocomplete-input {
+    padding: 4px;
+    border: 1px solid #B0BEC5;
+    border-radius: 4px; }
+  .bsas-controls > * {
+    vertical-align: middle; }
+  @media screen and (max-width: 500px) {
+    .bsas-controls > * {
+      display: block;
+      text-align: center;
+      margin: 5px auto; } }
 
 #lines-bsas .vis-y-axis line {
   stroke-width: 0.5px;
