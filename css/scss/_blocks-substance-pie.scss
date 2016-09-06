@@ -1,38 +1,63 @@
 /* ============================================================
  Block Chart by Substance
 ============================================================ */
+
 .type_substance0 {
-  background: $color-secondary;
+    background: $color-secondary;
 }
 
 .type_substance1 {
-  background: $color-gray-lighter;
+    background: $color-gray-lighter;
 }
 
-#timeline_blocks{
-  &::-webkit-slider-thumb {
-    background: $color-secondary;
-  }
+#timeline_blocks {
+    &::-webkit-slider-thumb {
+        background: $color-secondary;
+    }
 }
 
-#table_substance{
-	td{
-		width: 50%;
-	}
+#table_substance {
+    td {
+        width: 50%;
+    }
 }
 
-
-.left{
+.left {
     text-align: left;
 }
-
-
 
 #timeline_blocks::-webkit-slider-thumb {
     background-color: #b71c1c;
 }
 
-.red{
+.red {
     font-weight: bold;
-    color:#b71c1c;
+    color: #b71c1c;
+}
+
+
+/* ============================================================
+ Bar
+============================================================ */
+
+#bar {
+    position: relative;
+    // #tooltip {
+    //     position: absolute;
+    //     top: 20;
+    //     left: 0;
+    //     background-color: white .5;
+    //     width: 180px;
+    //     -webkit-border-radius: 10px;
+    //     -moz-border-radius: 10px;
+    //     border-radius: 10px;
+    //     pointer-events: none;
+    // }
+    // #tooltip.hidden {
+    //     display: none;
+    // }
+}
+
+#value{
+  font-size: 12px;
 }

@@ -1,108 +1,109 @@
 <!DOCTYPE html>
+
 <head>
-  <!-- title and meta -->
-  <meta charset="utf-8">
-  <meta content="width=device-width,initial-scale=1.0" name="viewport">
-  <title>Opioid Epidemic</title>
-  <!-- css -->
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Slab">
-  <link rel="stylesheet" href="css/jquery-ui.css">
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/main.css">
-  <script src="js/dist/vendor.js"></script>
+    <!-- title and meta -->
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0" name="viewport">
+    <title>Opioid Epidemic</title>
+    <!-- css -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Slab">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/dist/vendor.js"></script>
 </head>
+
 <body>
-  <div class="wrapper">
-    <main>
-    <section class="module parallax parallax-1 target" id="top">
-      <div class="container">
-      	<div class="row">
-      	  <div class="col-xs-12 col-md-6 pull-right">
-      	    <video autoplay poster="video/header-video-poster.png" loop>
-      	      WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
-      	      <source src="video/header-video-placeholder.mp4" type="video/mp4">
-      	    </video>
-      	  </div>
-      	  <div class="col-xs-12 col-md-6">
-      	    <div class="alert alert-info">
-      	      <strong>This is a draft</strong> — Do not distribute.
-      	    </div>
-      	    <h1>Opioid Epidemic</h1>
-      	    <h2>A data visualization of the MA Opioid Epidemic studies under Chapter 55</h2>
-      	  </div>
-      	</div>
-      </div>
-      <div class="target" id="intro" data-index="Intro"></div>
-    </section>
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse" role="navigation" id="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <span class="navbar-brand" id="current-section">
+    <div class="wrapper">
+        <main>
+            <section class="module parallax parallax-1 target" id="top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6 pull-right">
+                            <video autoplay poster="video/header-video-poster.png" loop>
+                                WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
+                                <source src="video/header-video-placeholder.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="alert alert-info">
+                                <strong>This is a draft</strong> — Do not distribute.
+                            </div>
+                            <h1>Opioid Epidemic</h1>
+                            <h2>A data visualization of the MA Opioid Epidemic studies under Chapter 55</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="target" id="intro" data-index="Intro"></div>
+            </section>
+            <!-- Navigation -->
+            <nav class="navbar navbar-inverse" role="navigation" id="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <span class="navbar-brand" id="current-section">
             Home
           </span>
-          <button type="button" class="btn btn-danger navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">Menu <i class="glyphicon glyphicon-menu-hamburger"></i>
-          </button>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-main-collapse">
-          <ul class="nav navbar-nav">
-            <li id="top1" class="active"><a href="#top">Home</a></li>
-            <li id="intro1"><a href="#intro">Intro</a></li>
-            <li id="chapter551"><a href="#chapter55">Chapter 55</a></li>
-            <li id="prescriptions1"><a href="#prescriptions">Addiction</a></li>
-            <li id="addictions1"><a href="#addictions">Substance Use</a></li>
-            <li id="populations1"><a href="#populations">Demographics</a></li>
-            <li id="future1"><a href="#future">The Future</a></li>
-          </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container -->
-    </nav>
-    <!-- NAV -->
-    <!-- intro -->
-    <section class="module content">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-md-7">
-            <div id="odMap">
-              <div class="range-slider">
-                <div class="label"><span class="from-year">2000</span><span class="to-year">2015</span></div>
-                <input id="odMap_timeline" type="range" min="2000" max="2015" value="2000">
-                <datalist id="odMap_timelinescale">
-                <option>2000</option>
-                <option>2001</option>
-                <option>2002</option>
-                <option>2003</option>
-                <option>2004</option>
-                <option>2005</option>
-                <option>2006</option>
-                <option>2007</option>
-                <option>2008</option>
-                <option>2009</option>
-                <option>2010</option>
-                <option>2011</option>
-                <option>2012</option>
-                <option>2013</option>
-                <option>2014</option>
-                <option>2015</option>
-                </datalist>
-                <hr>
-              </div>
-              <h3>
+                        <button type="button" class="btn btn-danger navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">Menu <i class="glyphicon glyphicon-menu-hamburger"></i>
+                        </button>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-main-collapse">
+                        <ul class="nav navbar-nav">
+                            <li id="top1" class="active"><a href="#top">Home</a></li>
+                            <li id="intro1"><a href="#intro">Intro</a></li>
+                            <li id="chapter551"><a href="#chapter55">Chapter 55</a></li>
+                            <li id="prescriptions1"><a href="#prescriptions">Addiction</a></li>
+                            <li id="addictions1"><a href="#addictions">Substance Use</a></li>
+                            <li id="populations1"><a href="#populations">Demographics</a></li>
+                            <li id="future1"><a href="#future">The Future</a></li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container -->
+            </nav>
+            <!-- NAV -->
+            <!-- intro -->
+            <section class="module content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-7">
+                            <div id="odMap">
+                                <div class="range-slider">
+                                    <div class="label"><span class="from-year">2000</span><span class="to-year">2015</span></div>
+                                    <input id="odMap_timeline" type="range" min="2000" max="2015" value="2000">
+                                    <datalist id="odMap_timelinescale">
+                                        <option>2000</option>
+                                        <option>2001</option>
+                                        <option>2002</option>
+                                        <option>2003</option>
+                                        <option>2004</option>
+                                        <option>2005</option>
+                                        <option>2006</option>
+                                        <option>2007</option>
+                                        <option>2008</option>
+                                        <option>2009</option>
+                                        <option>2010</option>
+                                        <option>2011</option>
+                                        <option>2012</option>
+                                        <option>2013</option>
+                                        <option>2014</option>
+                                        <option>2015</option>
+                                    </datalist>
+                                    <hr>
+                                </div>
+                                <h3>
               <span id="odMap_titlePrefix" class="title"></span>
               <span id="odMap_fromYear" class="year"></span>
               <span id="odMap_titleMidfix" class="title"></span>
               <span id="odMap_toYear" class="year"></span>
               </h3>
-
-              <div id="odMap_legend" class="vis-legend"></div>
-              <div id="odMap_map"></div>
-              <div id='odMap_source' class="source"></div>
-            </div>
-            <!-- Map Composite -->
-            <!--<h3>
+                                <div id="odMap_legend" class="vis-legend"></div>
+                                <div id="odMap_map"></div>
+                                <div id='odMap_source' class="source"></div>
+                            </div>
+                            <!-- Map Composite -->
+                            <!--<h3>
             <span id="titlePrefix2" class="title"></span>
             <span id="fromYear2" class="year"></span>
             <span id="titleMidfix2" class="title"></span>
@@ -113,110 +114,110 @@
             <div id="map2" class="neg-space-col-md"></div>
             <div id='map2-source' class="source neg-space-col-lg"></div>
             Map2 Composite -->
-          </div>
-          <div class="col-xs-12 col-md-4 pull-right">
-            <h2>A Deadly Problem</h2>
-            <p>Opioid use and abuse in Massachusetts has grown to the point where people are calling it an opioid epidemic.</p>
-            <p>Opioid-related deaths in Massachusetts were four times higher in <a class="controls controls-map" data-select="2015">2015</a> than in <a class="controls controls-map" data-select="2000">2000</a>. This recent rate of increase is several times faster than anything seen here before. In <a class="controls controls-map" data-select="2013">2013</a>-<a class="controls controls-map" data-select="2014">2014</a> alone, opioid-related deaths were recorded in two-thirds of the cities and towns in Massachusetts.</p>
-            <p>In one way or another — through deaths, nonfatal overdoses, or disruptions to marriages, families, and neighborhoods — every community in Massachusetts has been impacted by this growing crisis. In fact, the public health threat is so great in the Commonwealth, the death rate in Massachusetts is higher than the national average, with a particularly sharp increase in fatal overdoses during the last two years.</p>
-            <p>Understanding the causes and deadly impacts of this issue can be a challenge. It’s a complex problem that has many layers and no single solution, and often raises more questions than answers. &nbsp;&nbsp;<a class="controls controls-video js-play-video" data-target="#video1"><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> Why do people start - and why don’t they stop – taking opioids?</a> How many people does this affect? What can be done about it and what steps are being taken? What is an Opioid, anyway? </p>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-md-6 pull-right">
-            <p></p>
-            <video id="video1" controls="true" poster="video/ScienceOfAddictition.png">
-              WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
-              <source src="video/ScienceOfAddictition_V01.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <h3 class="title">Learn More About Opioids</h3>
-            <hr>
-            <ul class="nav nav-pills" id="pills-first">
-              <li class="active"><a href="#tab_a">Definition</a></li>
-              <li><a href="#tab_b">Useful Effects</a></li>
-              <li><a href="#tab_c">Side Effects</a></li>
-            </ul>
-            <hr>
-            <div class="tab-content">
-              <div class="tab-pane active" id="tab_a">
-                <h4>What are opioids?</h4>
-                <p>The term Opioid means “opiate-like”. It generally refers to a family of substances that include naturally-derived opiates (like Morphine and Codeine), as well as synthetic and semi-synthetic opioids like Heroin, Oxycodone, and Fentanyl.</p>
-              </div>
-              <div class="tab-pane" id="tab_b">
-                <h4>What do opioids do?</h4>
-                <p>The most common use of opioids is in the treatment of pain across a broad spectrum, from acute post-surgical pain to chronic pain in cancer patients. Unlawful use includes misuse of prescribed medications (examples: taking a higher dosage of your Oxycodone than prescribed, or taking someone else’s Fentanyl) and use of illegal opioids (all uses of Heroin are illegal).</p>
-              </div>
-              <div class="tab-pane" id="tab_c">
-                <h4>What are the effects using opioids?</h4>
-                <p>Short-term side-effects range from simple drowsiness to depressed breathing to euphoria. Long-term usage can trigger the body to develop tolerance, dependence, and perhaps addiction.</p>
-                <ul class="neg-space-col">
-                  <li><strong>Tolerance</strong> is the body’s natural adaptation to the regular presence of a medication, requiring higher doses to achieve the same effect.</li>
-                  <li><strong>Dependence</strong> occurs when the body becomes so accustomed to the presence of a substance that its sudden absence causes withdrawal. For an opioid user, that could also mean that a prescription to address localized pain (a shoulder, a knee, a back) could cause pain all over the body if the prescription ends without tapering off.</li>
-                  <li><strong>Addiction</strong> is a complex brain-body disease, where brain and body responses have changed to negatively, and drastically, affect behavior. This often includes an irresistible compulsion for short-term relief even in the face of both immediate and long-term risk.
-                  </li>
-                </ul>
-                <p>Each side-effect is independent of the others, meaning that any, all, or none may occur in any individual.</p>
-              </div>
-            </div>
-            <hr>
-            <p></p>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-md-6">
-            <p></p>
-            <p>The opioid death rate in Massachusetts has surpassed the national average, with an especially sharp rise in the last two years.
-            </p>
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <h3 class="title">Age-Adjusted Opioid Death Rate by Year</h3>
-            <h4 class="subtitle">Comparing the opioid related death rate of Massachusetts<sup>2</sup> to neighboring states<sup>1</sup> and the nation overall<sup>1</sup>.</h4>
-            <div id="deathLines"></div>
-            <div class="source">Sources: <sup>(1)</sup>Centers for Disease Control and Prevention, National Center for Health Statistics. <a href="http://wonder.cdc.gov/mcd-icd10.html">Multiple Cause of Death 1999-2014 on CDC WONDER Online Database</a>, released 2015. <sup>(2)</sup>Massachusetts Registry of Vital Records and Statistics, Massachusetts Department of Public Health.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- /intro -->
-    <!-- Chapter55 -->
-    <section class="module parallax parallax-1-1 target" id="chapter55" data-index="Chapter 55">
-      <div class="container">
-        <h1>Chapter 55</h1>
-      </div>
-    </section>
-    <section class="module content">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-md-6">
-            <p>In the face of this emergent public-health issue, the Commonwealth of Massachusetts took an unprecedented deep dive into available data on opioid-related deaths to investigate the crisis. As part of a multi-faceted effort, Chapter 55 of the Acts of 2015 was passed by the Legislature and signed into law by Governor Baker in August 2015. </p>
-            <video id="video2" controls="true" poster="video/governor.jpg">
-              WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
-              <source src="video/governor.webm" type="video/webm">
-            </video>
-            <p>This is a placeholder for a potential video — interview with the governor about the opioid crisis.</p>
-            <p>This new law permits the analysis of different government datasets to guide policy decisions and to better understand the opioid epidemic. Recently, a groundbreaking report highlighting the current state of the crisis was released as part of this effort.</p>
-          </div>
-          <div class=col-md-6>
-            <p>Led by the Department of Public Health, the Chapter 55 analysis involved 10 datasets from five different government agencies. In total, 29 groups from government, higher education, and the private sector provided information and expertise. This level of partnership is what makes the Chapter 55 report a milestone achievement in Massachusetts. Before this legislation was passed, such a comprehensive look at the opioid epidemic in the Commonwealth would not have been possible.</p>
-            <p>In addition to providing significant insights into the opioid crisis by answering seven key questions, this project shows how private and public organizations can collaborate to answer complex public-health questions. This new model of cooperative data analysis has the potential to become the standard in Massachusetts and across the United States. The Chapter 55 project represents a process that should be continued, adapted, and refined as new public health challenges and new collaborators emerge.</p>
-            <p>Below are examples of opioid-use trends that were uncovered due to the flexibility provided by Chapter 55. Real, actionable steps to curb the epidemic can be taken as a direct result of this innovative data effort. </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- /Chapter55 -->
-    <!-- addiction -->
-    <section class="module parallax parallax-2 target" id="prescriptions" data-index="Addiction">
-      <div class="container">
-        <h1>Addiction</h1>
-      </div>
-      <!--       <video autoplay poster="video/header-video-poster.png">
+                        </div>
+                        <div class="col-xs-12 col-md-5 pull-right">
+                            <h2>A Deadly Problem</h2>
+                            <p>Opioid use and abuse in Massachusetts has grown to the point where people are calling it an opioid epidemic.</p>
+                            <p>Opioid-related deaths in Massachusetts were four times higher in <a class="controls controls-map" data-select="2015">2015</a> than in <a class="controls controls-map" data-select="2000">2000</a>. This recent rate of increase is several times faster than anything seen here before. In <a class="controls controls-map" data-select="2013">2013</a>-<a class="controls controls-map" data-select="2014">2014</a> alone, opioid-related deaths were recorded in two-thirds of the cities and towns in Massachusetts.</p>
+                            <p>In one way or another — through deaths, nonfatal overdoses, or disruptions to marriages, families, and neighborhoods — every community in Massachusetts has been impacted by this growing crisis. In fact, the public health threat is so great in the Commonwealth, the death rate in Massachusetts is higher than the national average, with a particularly sharp increase in fatal overdoses during the last two years.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <p></p>
+                        <div class="col-xs-12 col-md-6">
+                            <p></p>
+                            <p>Understanding the causes and deadly impacts of this issue can be a challenge. It’s a complex problem that has many layers and no single solution, and often raises more questions than answers. &nbsp;&nbsp;<a class="controls controls-video js-play-video" data-target="#video1"><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> Why do people start - and why don’t they stop – taking opioids?</a> How many people does this affect? What can be done about it and what steps are being taken? What is an Opioid, anyway? </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <video id="video1" controls="true" poster="video/ScienceOfAddictition.png">
+                                WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
+                                <source src="video/ScienceOfAddictition_V01.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p></p>
+                            <p>The opioid death rate in Massachusetts has surpassed the national average, with an especially sharp rise in the last two years.
+                            </p>
+                            <h3 class="title">Learn More About Opioids</h3>
+                            <hr>
+                            <ul class="nav nav-pills" id="pills-first">
+                                <li class="active"><a href="#tab_a">Definition</a></li>
+                                <li><a href="#tab_b">Useful Effects</a></li>
+                                <li><a href="#tab_c">Side Effects</a></li>
+                            </ul>
+                            <hr>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tab_a">
+                                    <h4>What are opioids?</h4>
+                                    <p>The term Opioid means “opiate-like”. It generally refers to a family of substances that include naturally-derived opiates (like Morphine and Codeine), as well as synthetic and semi-synthetic opioids like Heroin, Oxycodone, and Fentanyl.</p>
+                                </div>
+                                <div class="tab-pane" id="tab_b">
+                                    <h4>What do opioids do?</h4>
+                                    <p>The most common use of opioids is in the treatment of pain across a broad spectrum, from acute post-surgical pain to chronic pain in cancer patients. Unlawful use includes misuse of prescribed medications (examples: taking a higher dosage of your Oxycodone than prescribed, or taking someone else’s Fentanyl) and use of illegal opioids (all uses of Heroin are illegal).</p>
+                                </div>
+                                <div class="tab-pane" id="tab_c">
+                                    <h4>What are the effects using opioids?</h4>
+                                    <p>Short-term side-effects range from simple drowsiness to depressed breathing to euphoria. Long-term usage can trigger the body to develop tolerance, dependence, and perhaps addiction.</p>
+                                    <ul class="neg-space-col">
+                                        <li><strong>Tolerance</strong> is the body’s natural adaptation to the regular presence of a medication, requiring higher doses to achieve the same effect.</li>
+                                        <li><strong>Dependence</strong> occurs when the body becomes so accustomed to the presence of a substance that its sudden absence causes withdrawal. For an opioid user, that could also mean that a prescription to address localized pain (a shoulder, a knee, a back) could cause pain all over the body if the prescription ends without tapering off.</li>
+                                        <li><strong>Addiction</strong> is a complex brain-body disease, where brain and body responses have changed to negatively, and drastically, affect behavior. This often includes an irresistible compulsion for short-term relief even in the face of both immediate and long-term risk.
+                                        </li>
+                                    </ul>
+                                    <p>Each side-effect is independent of the others, meaning that any, all, or none may occur in any individual.</p>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <h3 class="title">Age-Adjusted Opioid Death Rate by Year</h3>
+                            <h4 class="subtitle">Comparing the opioid related death rate of Massachusetts<sup>2</sup> to neighboring states<sup>1</sup> and the nation overall<sup>1</sup>.</h4>
+                            <div id="deathLines"></div>
+                            <div class="source">Sources: <sup>(1)</sup>Centers for Disease Control and Prevention, National Center for Health Statistics. <a href="http://wonder.cdc.gov/mcd-icd10.html">Multiple Cause of Death 1999-2014 on CDC WONDER Online Database</a>, released 2015. <sup>(2)</sup>Massachusetts Registry of Vital Records and Statistics, Massachusetts Department of Public Health.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /intro -->
+            <!-- Chapter55 -->
+            <section class="module parallax parallax-1-1 target" id="chapter55" data-index="Chapter 55">
+                <div class="container">
+                    <h1>Chapter 55</h1>
+                </div>
+            </section>
+            <section class="module content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p>In the face of this emergent public-health issue, the Commonwealth of Massachusetts took an unprecedented deep dive into available data on opioid-related deaths to investigate the crisis. As part of a multi-faceted effort, Chapter 55 of the Acts of 2015 was passed by the Legislature and signed into law by Governor Baker in August 2015. </p>
+                            <video id="video2" controls="true" poster="video/governor.jpg">
+                                WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
+                                <source src="video/governor.webm" type="video/webm">
+                            </video>
+                            <p>This is a placeholder for a potential video — interview with the governor about the opioid crisis.</p>
+                            <p>This new law permits the analysis of different government datasets to guide policy decisions and to better understand the opioid epidemic. Recently, a groundbreaking report highlighting the current state of the crisis was released as part of this effort.</p>
+                        </div>
+                        <div class=col-md-6>
+                            <p>Led by the Department of Public Health, the Chapter 55 analysis involved 10 datasets from five different government agencies. In total, 29 groups from government, higher education, and the private sector provided information and expertise. This level of partnership is what makes the Chapter 55 report a milestone achievement in Massachusetts. Before this legislation was passed, such a comprehensive look at the opioid epidemic in the Commonwealth would not have been possible.</p>
+                            <p>In addition to providing significant insights into the opioid crisis by answering seven key questions, this project shows how private and public organizations can collaborate to answer complex public-health questions. This new model of cooperative data analysis has the potential to become the standard in Massachusetts and across the United States. The Chapter 55 project represents a process that should be continued, adapted, and refined as new public health challenges and new collaborators emerge.</p>
+                            <p>Below are examples of opioid-use trends that were uncovered due to the flexibility provided by Chapter 55. Real, actionable steps to curb the epidemic can be taken as a direct result of this innovative data effort. </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /Chapter55 -->
+            <!-- addiction -->
+            <section class="module parallax parallax-2 target" id="prescriptions" data-index="Addiction">
+                <div class="container">
+                    <h1>Addiction</h1>
+                </div>
+                <!--       <video autoplay poster="video/header-video-poster.png">
         WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
         <source src="video/precriptions-short.mp4" type="video/mp4">
       </video> -->
@@ -248,7 +249,7 @@
             <div class="bsas-controls">
               <h3 class="title">Primary Substance of Use When Entering Treatment by Town</h3>
               <hr>
-              <span> Filter by town name </span> <input type='text' title='Tags' id='tags' /> <span> or </span> <button class="btn btn-default btn-sm btn-bsas" data-val="massachusetts">view all of Massachusettes</button>
+              <span> Filter by town name </span> <input type='text' title='Tags' id='tags' /> <span> or </span> <button class="btn btn-primary btn-sm btn-bsas" data-val="massachusetts">view all of Massachusettes</button>
             </div>
             <div id="lines-bsas"></div>
           </div>
@@ -261,323 +262,284 @@
       </div>
     </section>
     <!-- /addiction -->
-    <!-- prescriptions -->
-    <section class="module parallax parallax-3 target" id="addictions" data-index="Substance Use">
-      <div class="container">
-        <h1>Substance Use</h1>
-      </div>
-    </section>
-    <section class="module content">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-md-12">
-            <p>Opioids are incredibly powerful drugs that have transformed the way the health care world treats and manages pain. However, because they are so potent, they can be dangerous if misused. To understand the opioid epidemic, it’s important to realize how both legal prescription medications and illegal substances impact the crisis in Massachusetts. To understand the scope of the penetration of opioids into Massachusetts, we can explore the population of the nearly 3.5 million residents aged 11 and older (“adults” for simplicity) as potential opioid users.</p>
-            <p></p>
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <h3 class="title">Prescription History for Fatal Overdoses</h3>
-            <hr>
-            <div>
-              <button class="btn btn-primary btn-svg" value="2/3">Study Period (2011 – 2014)</button>
-              <button class="btn btn-primary btn-svg" value="1/12">1 Month Before Death</button>
-            </div>
-            <hr>
-            <div id="odInfographic" class="center"></div>
-            <hr>
-            <div class="col-xs-12 col-md-1"></div>
-            <div class="col-xs-12 col-md-11">
-              <p id='odInfographic_details'></p>
-              <p></p>
-            </div>
-            <!-- <img src="img/state-without-stigma-462x231.jpg" class="img-responsive" alt="Responsive image"> -->
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <h2>Prescriptions</h2>
-            <p>The number of opioids prescribed to Massachusetts’s residents has increased roughly 7% annually since 2000. Between 2011 and 2014, 2 in 5 adults had opioids legally prescribed to them. That group averaged more than 6 prescriptions each. Spread out across the adult population of the state, that’s roughly 2.5 prescriptions per person. During that period, about 8.8 million prescriptions were filled in total.</p>
-            <p>Even when people use opioids for legitimate medical reasons, they can become dependent or addicted to the drug. When this happens, the body’s craving for an opioid continues even if a prescription runs out. In these cases, many people continue to use opioids illegally. More than <a class="controls controls-svg" data-select="2/3">two thirds</a> of people who died from an opioid overdose had a legal opioid-prescription at some point. However, only about <a class="controls controls-svg" data-select="1/12">1 in 12</a> had a prescription a month before they died.</p>
-            <p>While opioid-related deaths began increasing sharply in 2012, no similar increase in opioid prescriptions was recorded. This shows how layered and complex the relationship between different opioids and addiction is in Massachusetts.</p>
-            <p></p>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-md-12">
-            <h3 class='title'>Decline in Legal Opioid Prescriptions Before Fatal Overdose</h3>
-            <hr>
-          </div>
-          <div class="col-xs-12 col-md-7">
-            <h4>Primary substance found in toxicology reports</h4>
-            <h4 class="subtitle">Step 1: Select a substance</h4>
-          <svg id="piechart"></svg>
-          <hr>
-          <h4 class="subtitle">Step 2: Select a time period</h4>
-          <!--                     <div class="range">
-            <div id="label_blocks">Study Period</div>
-            <input id="timeline_blocks" type="range" min="0" max="3" value="0">
-            <datalist id="timescale_blocks">
-            <option>during the study period</option>
-            <option>6 month before death</option>
-            <option>3 month before death</option>
-            <option>1 month before death</option>
-            </datalist>
-          </div> -->
-          <div id="buttons-pie" class="neg-space-col">
-            <button class="btn btn-primary btn-time" id="studyperiod" value="0">Study Period</button>
-            <button class="btn btn-primary btn-time" id="6month" value="1">6 Months Before Death</button>
-            <button class="btn btn-primary btn-time" id="3month" value="2">3 Months Before Death</button>
-            <button class="btn btn-primary btn-time" id="1month" value="3">1 Month Before Death</button>
-          </div>
-          <hr>
-        </div>
-        <div class="col-xs-12 col-md-5">
-          <div class="people-blocks">
-            <div class="group">
-              <h4>Individuals with prescription by time and substance</h4>
-              <!-- <h4 class="left">Percentage of individuals with an opioid prescription  <span id="time-perioid" class="red">during the study period</span> who had <span class="substance-type red">prescription opioids</span> in their system</h4> -->
-            </div>
-            <div id="table_substance"></div>
-            <div id="table_substance_legend">
-              <img src="img/person.svg" width="25px" height="25px" /><span>= 1% out of
-                <span id="total">154</span> people who died from <span class="substance-type red">prescription opioids</span></span>
-              </div>
-              <div class="block-chart" id="people"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- <div class="col-xs-12 col-md-5 pull-right">
-        <h2>Proportion of Decedents with History of Substance Use by Category in Study Periods</h2>
-        <div class="people-blocks">
-          <div id="legend">
-            <img src="img/person.svg" width="30px" height="30px" /><span>= 1% of total decendents with one specific substance present in toxicology screen</span>
-          </div>
-          <hr />
-          <select class="form-control" id="options_substance">
-            <option value="prescription" selected>Prescription opioids present</option>
-            <option value="heroin">Heroin present</option>
-            <option value="fentanyl">Fentanyl present</option>
-            <option value="both">Both Fentanyl and Heroin present</option>
-            <option value="methadone">Methadone present</option>
-            <option value="buprenorphine">Buprenorphine present</option>
-          </select>
-          <div id="table_substance"></div>
-          <div class="group">
-            <h3>p</h3>
-            <div class="block-chart" id="people">
-            </div>
-          </div>
-          <div class="range">
-            <div id="label_blocks">Study Period</div>
-            <input id="timeline_blocks" type="range" min="0" max="3" value="0">
-            <datalist id="timescale_blocks">
-            <option>Study Period</option>
-            <option>6 Month</option>
-            <option>3 Month</option>
-            <option>1 Month</option>
-            </datalist>
-          </div>
-        </div>
-      </div> -->
-      <!-- </div> -->
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-md-12">
-            <p></p>
-            <h2>Multiple Prescribers</h2>
-            <p>One risk factor for fatal overdose that was identified was the number of opioid prescribers for an individual. There are legitimate reasons why someone might have multiple prescribers — primary care plus specialists or multi-provider practices — but there is an elevated risk for this group. The fatal overdose rate for individuals with three or more prescribers is 7 times higher than the rate for other people.
-            </p>
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <p></p>
-            <h2>Multiple Substances</h2>
-            <p>Not only is having multiple prescribers a risk factor, but so is using multiple substances together. For example, cocaine showed up in 30% of toxicology screens for opioid-related deaths from 2011-2014. However, an often legally-used substance is found in these reports at an even greater scale: benzodiazepines.</p>
-            <p>Benzodiazepines are a type of tranquilizer, including drugs like Valium, Xanax, and Ativan. They were present in 58% of these toxicology screens. More than half of these cases involved individuals who had a prescription for benzodiazepine during this period, yet only about 1 in 5 had one in the month of death.</p>
-            <p>Although Benzodiazepines were present in 982 toxicology screens, only 495 people ever had a prescription for one. Fewer than 200 had a prescription within a month of death. This suggests that the supply of benzodiazepines involved in overdoses includes both prescribed and diverted pills.</p>
-            <h2>Illegal Drugs</h2>
-            <p>Massachusetts is at the crossroads of an increasingly sinister set of circumstances. For example, some individuals are transitioning from legal to illegal opioid use as dependence and addiction develop beyond prescribed thresholds. At the same time, the availabilty of illegal drugs strengthens across the region. The Drug Enforcement Administration (DEA) surveyed law enforcement officials about the availability of heroin in 8 regions across the country from 2007 to 2013. Each year, New England led all regions in the percentage of respondents who reported high heroin availability.</p>
-            <p>Heroin, perhaps expectedly, is commonly found in toxicology reports for opioid-related deaths. Data from 2011-2014 shows heroin was likely or definitely in the system at the time of death in more than 60% of cases. What might be surprising is the increasingly deadly role Fentanyl is playing in the crisis.</p>
-            <p>While Fentanyl can be available as a legally-prescribed medication, it’s often used illegally. Only about 3% of people who died from an opioid overdose during the study period had a prescription for Fentanyl at the time of death. However, toxicology data shows Heroin, Fentanyl, or both substances were present in 85% of cases.</p>
-          </div>
-          <div class="col-xs-12 col-md-6 pull-right">
-            <div class="space-col"></div>
-            <div class="callout">
-              <video autoplay loop style="border-radius:10px">
-                WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
-                <source src="video/fentanyl.mp4" type="video/mp4">
-              </video>
-              <h2>Fentanyl: Friend or Foe?</h2>
-              <p>Fentanyl is an opioid that can be prescribed for pain management. However, it’s also used illegally either on its own or combined with heroin. According to the DEA, illegally produced Fentanyl can be up to 50 times stronger than heroin. Illegally sold and produced Fentanyl is increasingly recognized as a problem across the United States, and particularly in Massachusetts. Toxicology data from recent post-mortem cases indicates <span class="fentanyl_">Fentanyl</span> is adding to the state’s deadly epidemic more than <span class="heroin_">Heroin</span>. In 2015, 57% of toxicology samples tested positive for Fentanyl which is more than double the figure recorded in 2013.</p>
-              <div id="fentanyl-lines" class="vis--dark-background"></div>
-            </div>
-            <div class="sourcecallout">Sources: Massachusetts Executive Office of Public Safety and Security, Office of the Chief Medical Examiner</div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- /prescriptions -->
-    <!-- populations -->
-    <section class="module parallax parallax-4 target" id="populations" data-index="Demographics">
-      <div class="container">
-        <h1>Demographics</h1>
-      </div>
-    </section>
-    <section class="module content">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-md-12">
-            <p>Opioid addiction doesn’t discriminate. The crisis in Massachusetts impacts people from all backgrounds. The widespread nature of the epidemic makes addressing it an especially challenging task, because opioid addiction has different causes and effects from group to group, demographic to demographic. While definite solutions might still be a mystery, knowing how the epidemic plays out among different sections of society can help Massachusetts find ways to strongly and effectively address this problem.</p>
-            <div class="row">
-              <div class="col-xs-12 col-md-12">
-                <h2>Male and Female Tendencies </h2>
-                <p>Despite the fact more men die from opioid overdoses than women, both genders are at risk, yet in different ways. Toxicology reports show males are more likely to have <a class="controls controls-block" data-select="heroin">heroin</a> in their systems, while <a class="controls controls-block" data-select="prescription">prescription</a> opioids are more likely to be found in women. Part of this discrepancy may be down to a simple fact — women are more likely to use the health care system. Even so, this could present a particular risk for women due to dangers associated with individuals with <a class="controls controls-block" data-select="multi">multiple prescribers</a> mentioned above.</p>
-              </div>
-              <div class="col-xs-12 col-md-7">
-                <p></p>
-                <h3 class="title">Prescriber and Opioid Use Trends by Gender</h3>
-                <hr>
-                <div class="people-blocks">
-                  <div class="group">
-                    <div class="block-chart" id="gender">
+                <!-- prescriptions -->
+            <section class="module parallax parallax-3 target" id="addictions" data-index="Substance Use">
+                <div class="container">
+                    <h1>Substance Use</h1>
+                </div>
+            </section>
+            <section class="module content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <p>Opioids are incredibly powerful drugs that have transformed the way the health care world treats and manages pain. However, because they are so potent, they can be dangerous if misused. To understand the opioid epidemic, it’s important to realize how both legal prescription medications and illegal substances impact the crisis in Massachusetts. To understand the scope of the penetration of opioids into Massachusetts, we can explore the population of the nearly 3.5 million residents aged 11 and older (“adults” for simplicity) as potential opioid users.</p>
+                            <p></p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <h3 class="title">Prescription History for Fatal Overdoses</h3>
+                            <hr>
+                            <div>
+                                <button class="btn btn-primary btn-svg" value="2/3">Study Period (2011 – 2014)</button>
+                                <button class="btn btn-primary btn-svg" value="1/12">1 Month Before Death</button>
+                            </div>
+                            <hr>
+                            <div id="odInfographic" class="center"></div>
+                            <hr>
+                            <div class="col-xs-12 col-md-1"></div>
+                            <div class="col-xs-12 col-md-11">
+                                <p id='odInfographic_details'></p>
+                                <p></p>
+                            </div>
+                            <!-- <img src="img/state-without-stigma-462x231.jpg" class="img-responsive" alt="Responsive image"> -->
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <h2>Prescriptions</h2>
+                            <p>The number of opioids prescribed to Massachusetts’s residents has increased roughly 7% annually since 2000. Between 2011 and 2014, 2 in 5 adults had opioids legally prescribed to them. That group averaged more than 6 prescriptions each. Spread out across the adult population of the state, that’s roughly 2.5 prescriptions per person. During that period, about 8.8 million prescriptions were filled in total.</p>
+                            <p>Even when people use opioids for legitimate medical reasons, they can become dependent or addicted to the drug. When this happens, the body’s craving for an opioid continues even if a prescription runs out. In these cases, many people continue to use opioids illegally. More than <a class="controls controls-svg" data-select="2/3">two thirds</a> of people who died from an opioid overdose had a legal opioid-prescription at some point. However, only about <a class="controls controls-svg" data-select="1/12">1 in 12</a> had a prescription a month before they died.</p>
+                            <p>While opioid-related deaths began increasing sharply in 2012, no similar increase in opioid prescriptions was recorded. This shows how layered and complex the relationship between different opioids and addiction is in Massachusetts.</p>
+                            <p></p>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-              <div class="col-xs-12 col-md-5">
-                <div class="space-col"></div>
-                <!-- <select class="form-control" id="options"> -->
-                <!--      <option value="prescription" selected>Prescription opioids present</option>
-                <option value="heroin">Heroin present</option>
-                <option value="multi">Multiple Prescribers</option> -->
-                <div id="buttons-blocks" class="center">
-                  <button class="btn btn-primary btn-blocks" id="prescription" value='0'>Prescription Opioids</button>
-                  <button class="btn btn-primary btn-blocks" id="heroin" value='1'>Heroin</button>
-                  <button class="btn btn-primary btn-blocks" id="multi" value='2'>Multiple Prescribers</button>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-5 pull-left">
+                            <div class="space-col"></div>
+                            <h2>Multiple Prescribers</h2>
+                            <p>One risk factor for fatal overdose that was identified was the number of opioid prescribers for an individual. There are legitimate reasons why someone might have multiple prescribers — primary care plus specialists or multi-provider practices — but there is an elevated risk for this group. The fatal overdose rate for individuals with three or more prescribers is 7 times higher than the rate for other people.
+                            </p>
+                            <h2>Multiple Substances</h2>
+                            <p>Not only is having multiple prescribers a risk factor, but so is using multiple substances together. For example, cocaine showed up in 30% of toxicology screens for opioid-related deaths from 2011-2014. However, an often legally-used substance is found in these reports at an even greater scale: benzodiazepines.</p>
+                            <p>Benzodiazepines are a type of tranquilizer, including drugs like Valium, Xanax, and Ativan. They were present in 58% of these toxicology screens. More than half of these cases involved individuals who had a prescription for benzodiazepine during this period, yet only about 1 in 5 had one in the month of death.</p>
+                            <p>Although Benzodiazepines were present in 982 toxicology screens, only 495 people ever had a prescription for one. Fewer than 200 had a prescription within a month of death. This suggests that the supply of benzodiazepines involved in overdoses includes both prescribed and diverted pills.</p>
+                        </div>
+                        <p></p>
+                        <div class="col-xs-12 col-md-6 callout pull-right">
+                            <h3>Deadly Trend: Switching from Legal to Illegal Opioids</h3>
+                            <hr>
+                            <p>Most of the people who died from opioids had a legal prescription at some point. However, very few have one by the time they die. At some point, they make the transition from legal to illegal opioid use, driven by the disease of addiction. This deadly trend becomes clear by looking at the amount of people who had a prescription 6 months, 3 months, and 1 month before death. This is found regardless of the substance that caused a fatal overdose.</p>
+                            <h4><span id="total">154</span> people died from <span class="substance-type red">prescription opioid</span> from 2011-2014</h4>
+                            <div class="left">
+                                <button class="btn btn-primary btn-substance btn-sm" value="0">Heroin</button>
+                                <button class="btn btn-primary btn-substance btn-sm" value="1">Fentanyl</button>
+                                <button class="btn btn-primary btn-substance btn-sm" value="2">Heroin &amp; Fentanyl</button>
+                                <button class="btn btn-primary btn-substance btn-sm" value="3">Precription Opioids</button>
+                                <button class="btn btn-primary btn-substance btn-sm" value="4">Methadone</button>
+                                <!-- <button class="btn btn-primary btn-substance btn-sm" value="5">Buprenorpine</button> -->
+                            </div>
+                            <p></p>
+                            <div id="tooltip" class="hidden">
+                                <p><span id="value"></span></p>
+                            </div>
+                            <div id='bar'></div>
+                            <p></p>
+                            <hr>
+                            <h4 class="left">Of those who died of <span class="substance-type red">prescription opioid</span>, XX% had an opioid prescription XX months before death</h4>
+                            <div id="buttons-pie">
+                                <button class="btn btn-primary btn-time btn-sm" id="studyperiod" value="0">2011–2014</button>
+                                <button class="btn btn-primary btn-time btn-sm" id="6month" value="1">6 Month Before Death</button>
+                                <button class="btn btn-primary btn-time btn-sm" id="3month" value="2">3 Month Before Death</button>
+                                <button class="btn btn-primary btn-time btn-sm" id="1month" value="3">1 Month Before Death</button>
+                                <p></p>
+                                <p></p>
+                            </div>
+                            <div class="people-blocks">
+                                <!-- <div class="group"></div> -->
+                                <div id="table_substance"></div>
+                                <div id="legend">
+                                    <img src="img/person.svg" width="25px" height="25px" /> <span>= 1% of people who died from <span class="substance-type red">prescription opioid</span></span>
+                                </div>
+                                <div class="block-chart" id="people"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p></p>
-                <!-- </select> -->
-                <div id="table_gender"></div>
-                <hr>
-                <div id="table_gender_legend">
-                  <img src="img/person.svg" width="25px" height="25px" /><span>= 1% of the total <strong>1,692</strong> Opioid-related Decedents</span>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <div class="space-col"></div>
+                            <div class="callout">
+                                <!--  <video autoplay loop style="border-radius:10px;">
+                                    WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
+                                    <source src="video/fentanyl.mp4" type="video/mp4">
+                                </video> -->
+                                <h2>Fentanyl: Friend or Foe?</h2>
+                                <p>Fentanyl is an opioid that can be prescribed for pain management. However, it’s also used illegally either on its own or combined with heroin. According to the DEA, illegally produced Fentanyl can be up to 50 times stronger than heroin. Illegally sold and produced Fentanyl is increasingly recognized as a problem across the United States, and particularly in Massachusetts. Toxicology data from recent post-mortem cases indicates <span class="fentanyl_">Fentanyl</span> is adding to the state’s deadly epidemic more than <span class="heroin_">Heroin</span>. In 2015, 57% of toxicology samples tested positive for Fentanyl which is more than double the figure recorded in 2013.</p>
+                                <div id="fentanyl-lines" class="vis--dark-background"></div>
+                            </div>
+                            <div class="sourcecallout">Sources: Massachusetts Executive Office of Public Safety and Security, Office of the Chief Medical Examiner</div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 pull-right">
+                            <div class="space-col"></div>
+                            <h2>Illegal Drugs</h2>
+                            <p>Massachusetts is at the crossroads of an increasingly sinister set of circumstances. For example, some individuals are transitioning from legal to illegal opioid use as dependence and addiction develop beyond prescribed thresholds. At the same time, the availabilty of illegal drugs strengthens across the region. The Drug Enforcement Administration (DEA) surveyed law enforcement officials about the availability of heroin in 8 regions across the country from 2007 to 2013. Each year, New England led all regions in the percentage of respondents who reported high heroin availability.</p>
+                            <p>Heroin, perhaps expectedly, is commonly found in toxicology reports for opioid-related deaths. Data from 2011-2014 shows heroin was likely or definitely in the system at the time of death in more than 60% of cases. What might be surprising is the increasingly deadly role Fentanyl is playing in the crisis.</p>
+                            <p>While Fentanyl can be available as a legally-prescribed medication, it’s often used illegally. Only about 3% of people who died from an opioid overdose during the study period had a prescription for Fentanyl at the time of death. However, toxicology data shows Heroin, Fentanyl, or both substances were present in 85% of cases.</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
+            </section>
+            <!-- /prescriptions -->
+
+
+            <!-- populations -->
+            <section class="module parallax parallax-4 target" id="populations" data-index="Demographics">
+                <div class="container">
+                    <h1>Demographics</h1>
+                </div>
+            </section>
+            <section class="module content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <p>Opioid addiction doesn’t discriminate. The crisis in Massachusetts impacts people from all backgrounds. The widespread nature of the epidemic makes addressing it an especially challenging task, because opioid addiction has different causes and effects from group to group, demographic to demographic. While definite solutions might still be a mystery, knowing how the epidemic plays out among different sections of society can help Massachusetts find ways to strongly and effectively address this problem.</p>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-12">
+                                    <h2>Male and Female Tendencies </h2>
+                                    <p>Despite the fact more men die from opioid overdoses than women, both genders are at risk, yet in different ways. Toxicology reports show males are more likely to have <a class="controls controls-block" data-select="heroin">heroin</a> in their systems, while <a class="controls controls-block" data-select="prescription">prescription</a> opioids are more likely to be found in women. Part of this discrepancy may be down to a simple fact — women are more likely to use the health care system. Even so, this could present a particular risk for women due to dangers associated with individuals with <a class="controls controls-block" data-select="multi">multiple prescribers</a> mentioned above.</p>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <p></p>
+                                    <h3 class="title">Prescriber and Opioid Use Trends by Gender</h3>
+                                    <hr>
+                                    <div class="people-blocks">
+                                        <div class="group">
+                                            <div class="block-chart" id="gender">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-5">
+                                    <div class="space-col"></div>
+                                    <div id="buttons-blocks" class="center">
+                                        <button class="btn btn-primary btn-blocks" id="prescription" value='0'>Prescription Opioids</button>
+                                        <button class="btn btn-primary btn-blocks" id="heroin" value='1'>Heroin</button>
+                                        <button class="btn btn-primary btn-blocks" id="multi" value='2'>Multiple Prescribers</button>
+                                    </div>
+                                    <p></p>
+                                    <!-- </select> -->
+                                    <div id="table_gender"></div>
+                                    <hr>
+                                    <div id="table_gender_legend">
+                                        <img src="img/person.svg" width="25px" height="25px" /><span>= 1% of the total <strong>1,692</strong> Opioid-related Decedents</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-4 pull-right">
+                            <p></p>
+                            <h2>Young People</h2>
+                            <p>The fight to curb the opioid epidemic in Massachusetts is also a battle to protect future generations. The percentage of opioid deaths for different age groups shows the young people of Massachusetts are especially at risk. From 2013 to 2014, opioids accounted for more than a quarter of all fatalities in the <a id="age18to24">18 to 24</a> age group. For individuals from <a id="age25to34">25 to 34</a>, opioids were responsible for more than a third of all deaths, rising to more than 40% for men in this group. In 2015, roughly 2 out of every 3 people who died from opioids were younger than 44.</p>
+                            <p>The percentage of opioid deaths for different age groups shows that the young people of Massachusetts are at risk. </p>
+                        </div>
+                        <div class="col-xs-12 col-md-7">
+                            <p></p>
+                            <h3 class="title">Fatal Opioid Overdoses by Age and Gender (2013-2014)</h3>
+                            <hr>
+                            <div id="buttons-bar">
+                                <button class="btn btn-primary btn-sm" id="POD">Percent Opioid Deaths among All Deaths</button>
+                                <button class="btn btn-primary" id="DR">Opioid Death Rate per 10,000 People per Year</button>
+                                <button class="btn btn-primary" id="NOD">Number of Opioid Deaths</button>
+                            </div>
+                            <hr>
+                            <div id="changing_bars"></div>
+                            <div class="source">Sources: Massachusetts Registry of Vital Records and Statistics, Massachusetts Department of Public Health</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-7">
+                            <p></p>
+                            <h2>Race and Ethnicity</h2>
+                            <p>In 2014, the rate of opioid-related fatal overdoses reached 9 per 100,000 persons in the United States, based on data from the Centers for Disease Control and Prevention (CDC). However, the fatal opioid overdose rate in the Commonwealth for 2014 was more than twice the national average. While the death rate within Massachusetts differs for various racial and ethnic groups, people from all background in the Bay State are becoming increasingly caught up in the deadly epidemic.</p>
+                            <p>At least three of the state’s largest racial groups had overdose rates above the national average in 2014 — white non-Hispanic, black non-Hispanic, and Hispanic. What’s more worrying is that reports from 2015 show opioid-related deaths are accelerating for all of these populations.</p>
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                            <p></p>
+                            <!--  <h2>Race and Ethinicity</h2> -->
+                            <h3 class="title">Opioid Deaths by Race</h3>
+                            <hr>
+                            <div id="race_ethnicity_chart"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <p></p>
+                            <h2>Incarcerated Population</h2>
+                            <p>One of the most optimistic trends found in the Massachusetts prison system is that recidivism rates are declining. That means fewer released inmates are reincarnated after rejoining society. Recidivism decreased 12 percentage points from 2008 to 2015 (???), according to the Department of Corrections (DOC).</p>
+                            <p>While this is a positive, the state’s incarcerated population faces a much more dangerous challenge when they are released: opioid-related overdose and death. Of the inmates who were released and died between 2011 and 2014, opioid overdose was the cause of death in 40 percent of the cases. The risk of death is highest in the month following release, when nearly a quarter of deaths occur. Following the age trend noted above, the risk of death for people aged 18-24 is roughly 10 times higher than for individuals 45 older. Overall, the risk of opioid-related death following incarceration is more than 50 times greater than for the general public. Despite these deadly trends, less than a quarter of the deceased received treatment while incarcerated.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /populations -->
+            <!-- future -->
+            <section class="module parallax parallax-5 target" id="future" data-index="The Future">
+                <div class="container">
+                    <h1>The Future</h1>
+                </div>
+            </section>
+            <section class="module content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p>The opioid epidemic won’t be solved overnight, and there’s no easy solution to make this problem disappear. Defeating this crisis requires a dedicated, holistic approach that involves the health care industry, the mind of the public, and the halls of the State House. </p>
+                            <p>However, there are signs of hope and a turning tide. The Chapter 55 report itself marks an unprecedented approach to data analysis that involved the public sector working closely with leading universities in Massachusetts and the private sector. The information, trends, and findings in the report have already provided eye-opening insights to the deadly epidemic. </p>
+                            <p>There is still work to be done, and there are still questions that need answers. Powerful legislation can help combat the crisis, and further studies and monitoring of this issue can continue to provide important information about the epidemic.</p>
+                            <p>While the crisis in Massachusetts is the focus of these efforts, the Bay State can set the example for how to address this issue from all angles for a nation reeling from a spike in opioid abuse and death.</p>
+                        </div>
+                        <div class="col-xs-12 col-md-5 col-md-offset-1">
+                            <video poster="video/jackkelly.jpg" controls>
+                                WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
+                                <source src="video/jackkelly.webm">
+                            </video>
+                            <p>This is a placeholder for a potential video — interview with someone in recovery.</p>
+                            <div class="callout">
+                                <hr>
+                                <ul>
+                                    <li>
+                                        <p>Action Items?</p>
+                                    </li>
+                                    <li>
+                                        <p>Information Links?</p>
+                                    </li>
+                                    <li>
+                                        <p>Outreach?</p>
+                                    </li>
+                                </ul>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /future -->
+        </main>
+        <!-- /main -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4 col-sm-3">
+                        <div class="row">
+                            <div id="logo" class="col-xs-12 col-md-6">
+                                <div id="circle"></div>
+                                <!--  <img src="http://placehold.it/150x150"> -->
+                                <!-- <img src="img/DPHLogo_White.png" class="img-responsive" alt="DPH logo" /> -->
+                            </div>
+                            <div class="col-xs-12 col-md-8"></div>
+                            <div class="col-xs-12 col-md-10">
+                                <h4>Massachusetts XXXXXXXX</h4>
+                                <h5><i class="glyphicon glyphicon-map-marker"></i> placeholder address</h5>
+                                <h5><i class="glyphicon glyphicon-earphone"></i> placeholder contact info</h5>
+                                <hr>
+                                <h4>DPH? And others?</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12 col-md-4 pull-right">
-            <p></p>
-            <h2>Young People</h2>
-            <p>The fight to curb the opioid epidemic in Massachusetts is also a battle to protect future generations. The percentage of opioid deaths for different age groups shows the young people of Massachusetts are especially at risk. From 2013 to 2014, opioids accounted for more than a quarter of all fatalities in the <a id="age18to24">18 to 24</a> age group. For individuals from <a id="age25to34">25 to 34</a>, opioids were responsible for more than a third of all deaths, rising to more than 40% for men in this group. In 2015, roughly 2 out of every 3 people who died from opioids were younger than 44.</p>
-            <p>The percentage of opioid deaths for different age groups shows that the young people of Massachusetts are at risk. </p>
-          </div>
-          <div class="col-xs-12 col-md-7">
-            <p></p>
-            <h3 class="title">Fatal Opioid Overdoses by Age and Gender (2013-2014)</h3>
-            <hr>
-            <div id="buttons-bar">
-              <button class="btn btn-primary btn-sm" id="POD">Percent Opioid Deaths among All Deaths</button>
-              <button class="btn btn-primary" id="DR">Opioid Death Rate per 10,000 People per Year</button>
-              <button class="btn btn-primary" id="NOD">Number of Opioid Deaths</button>
-            </div>
-            <hr>
-            <div id="changing_bars"></div>
-            <div class="source">Sources: Massachusetts Registry of Vital Records and Statistics, Massachusetts Department of Public Health</div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12 col-md-7">
-            <p></p>
-            <h2>Race and Ethnicity</h2>
-            <p>In 2014, the rate of opioid-related fatal overdoses reached 9 per 100,000 persons in the United States, based on data from the Centers for Disease Control and Prevention (CDC). However, the fatal opioid overdose rate in the Commonwealth for 2014 was more than twice the national average. While the death rate within Massachusetts differs for various racial and ethnic groups, people from all background in the Bay State are becoming increasingly caught up in the deadly epidemic.</p>
-            <p>At least three of the state’s largest racial groups had overdose rates above the national average in 2014 — white non-Hispanic, black non-Hispanic, and Hispanic. What’s more worrying is that reports from 2015 show opioid-related deaths are accelerating for all of these populations.</p>
-          </div>
-          <div class="col-xs-12 col-md-4">
-            <p></p>
-            <!--  <h2>Race and Ethinicity</h2> -->
-            <h3 class="title">Opioid Deaths by Race</h3>
-            <hr>
-            <div id="race_ethnicity_chart"></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12 col-md-12">
-            <p></p>
-            <h2>Incarcerated Population</h2>
-            <p>One of the most optimistic trends found in the Massachusetts prison system is that recidivism rates are declining. That means fewer released inmates are reincarnated after rejoining society. Recidivism decreased 12 percentage points from 2008 to 2015 (???), according to the Department of Corrections (DOC).</p>
-            <p>While this is a positive, the state’s incarcerated population faces a much more dangerous challenge when they are released: opioid-related overdose and death. Of the inmates who were released and died between 2011 and 2014, opioid overdose was the cause of death in 40 percent of the cases. The risk of death is highest in the month following release, when nearly a quarter of deaths occur. Following the age trend noted above, the risk of death for people aged 18-24 is roughly 10 times higher than for individuals 45 older. Overall, the risk of opioid-related death following incarceration is more than 50 times greater than for the general public. Despite these deadly trends, less than a quarter of the deceased received treatment while incarcerated.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- /populations -->
-    <!-- future -->
-    <section class="module parallax parallax-5 target" id="future" data-index="The Future">
-      <div class="container">
-        <h1>The Future</h1>
-      </div>
-    </section>
-    <section class="module content">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-md-6">
-            <p>The opioid epidemic won’t be solved overnight, and there’s no easy solution to make this problem disappear. Defeating this crisis requires a dedicated, holistic approach that involves the health care industry, the mind of the public, and the halls of the State House. </p>
-            <p>However, there are signs of hope and a turning tide. The Chapter 55 report itself marks an unprecedented approach to data analysis that involved the public sector working closely with leading universities in Massachusetts and the private sector. The information, trends, and findings in the report have already provided eye-opening insights to the deadly epidemic. </p>
-            <p>There is still work to be done, and there are still questions that need answers. Powerful legislation can help combat the crisis, and further studies and monitoring of this issue can continue to provide important information about the epidemic.</p>
-            <p>While the crisis in Massachusetts is the focus of these efforts, the Bay State can set the example for how to address this issue from all angles for a nation reeling from a spike in opioid abuse and death.</p>
-          </div>
-          <div class="col-xs-12 col-md-5 col-md-offset-1">
-            <video poster="video/jackkelly.jpg" controls>
-              WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
-              <source src="video/jackkelly.webm">
-            </video>
-            <p>This is a placeholder for a potential video — interview with someone in recovery.</p>
-            <div class="callout">
-              <hr>
-              <ul>
-                <li>
-                  <p>Action Items?</p>
-                </li>
-                <li>
-                  <p>Information Links?</p>
-                </li>
-                <li>
-                  <p>Outreach?</p>
-                </li>
-              </ul>
-              <hr>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- /future -->
-    </main>
-    <!-- /main -->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-md-4 col-sm-3">
-            <div class="row">
-              <div id="logo" class="col-xs-12 col-md-6">
-                <div id="circle"></div>
-                <!--  <img src="http://placehold.it/150x150"> -->
-                <!-- <img src="img/DPHLogo_White.png" class="img-responsive" alt="DPH logo" /> -->
-              </div>
-              <div class="col-xs-12 col-md-8"></div>
-              <div class="col-xs-12 col-md-10">
-                <h4>Massachusetts XXXXXXXX</h4>
-                <h5><i class="glyphicon glyphicon-map-marker"></i> placeholder address</h5>
-                <h5><i class="glyphicon glyphicon-earphone"></i> placeholder contact info</h5>
-                <hr>
-                <h4>DPH? And others?</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--             <div class="asides clearfix">
+            <!--             <div class="asides clearfix">
         <aside>
           <nav>
           </nav>
@@ -614,4 +576,5 @@
   <script src="js/bars-age.js"></script>
   <script src="js/bars-race.js"></script> -->
 </body>
+
 </html>
