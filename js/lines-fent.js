@@ -94,7 +94,7 @@
     };
 
     var wrapper_width = 540;
-    var wrapper_height = 500;
+    var wrapper_height = 400;
     var width = wrapper_width - margin.left - margin.right;
     var height = wrapper_height - margin.top - margin.bottom;
 
@@ -430,7 +430,7 @@
         wrapper_height = 300;
         height = wrapper_height - margin.top - margin.bottom;
       } else {
-        wrapper_height = 500;
+        wrapper_height = 400;
         height = wrapper_height - margin.top - margin.bottom;
       }
     }
