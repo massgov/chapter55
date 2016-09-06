@@ -27,7 +27,13 @@
         //
         // //console.log(column, dataset);
         //
+        updateWidth();
         redraw(dataset, selected);
+
+        window.addEventListener('resize', function() {
+            updateWidth();
+            redraw(dataset, selected);
+        });
 
         d3.select("#POD").classed("selected", true);
         $("#POD").addClass("active");
@@ -137,6 +143,17 @@
         // });
 
     }) // end csv
+
+
+    function updateWidth() {
+        width = document.querySelector("#changing_bars").clientWidth - 100;
+        height = 300;
+        margin = 50;
+
+        $bars_age
+            .attr("width", width + 100)
+            .attr("height", height + 10); // adding some random padding
+    }
 
     //make the bars for the first data set.  They will be red at first.
 
