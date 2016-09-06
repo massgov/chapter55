@@ -2,10 +2,28 @@
     Lines BSAS
 ============================================================ */
 
-.ui-autocomplete-input {
-    padding: 10px;
-    border: 1px solid $color-primary;
-    border-radius: 5px;
+
+.bsas-controls {
+    margin-bottom: 10px;
+
+    .ui-autocomplete-input {
+        padding: 4px;
+        border: 1px solid $color-gray-lighter;
+        border-radius: 4px;
+    }
+
+    > * {
+        vertical-align: middle;
+    }
+
+
+    @media screen and (max-width: 500px) {
+        > * {
+            display: block;
+            text-align: center;
+            margin: 5px auto;
+        }
+    }
 }
 
 #lines-bsas {

@@ -9,9 +9,10 @@ $(document).ready(function(){
 
     var color = d3.scale.ordinal()
         .range(["#2166ac", "#92c5de"]);
-    var margin = { top: (parseInt(d3.select('#race_ethnicity_chart').style('width'), 10) / 10), right: (parseInt(d3.select('#race_ethnicity_chart').style('width'), 10) / 20), bottom: (parseInt(d3.select('#race_ethnicity_chart').style('width'), 10) / 5), left: (parseInt(d3.select('#race_ethnicity_chart').style('width'), 10) / 10) },
-        width = parseInt(d3.select('#race_ethnicity_chart').style('width'), 10) - margin.left - margin.right,
-        height = 500 - margin.top - margin.bottom;
+
+    var width, height, margin = {};
+
+    updateWidth();
 
     var x0 = d3.scale.ordinal()
         .rangeRoundBands([0, width], .1);
@@ -39,14 +40,10 @@ $(document).ready(function(){
     var divtooltip_raceeth = d3.select("#race_ethnicity_chart").append("div").classed("vis-tooltip hidden", true);
 
 
-    var $bars_race = d3.select("#race_ethnicity_chart").append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
+    var $svg = d3.select("#race_ethnicity_chart").append("svg")
+    var $bars_race = $svg
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-
-
 
 
     var options = d3.keys(dataset[0]).filter(function(key) {
@@ -69,17 +66,14 @@ $(document).ready(function(){
         });
     })]);
 
-    $bars_race.append("g")
+    var xAxis = $bars_race.append("g")
         .attr("class", "vis-x-axis")
-        .attr("transform", "translate(10," + height + ")")
-        .call(xAxis_bars)
-        .selectAll(".tick text")
-        .call(wrap, x0.rangeBand());
+        .attr("transform", "translate(10," + height + ")");
 
-    $bars_race.append("g")
-        .attr("class", "vis-y-axis")
-        .call(yAxis_bars)
-        .append("text")
+    var yAxis = $bars_race.append("g")
+        .attr("class", "vis-y-axis");
+
+    yAxis.append("text")
         .attr("y", -35)
         .attr("dy", ".71em")
         .attr("class", "vis-y-axis-label")
@@ -94,11 +88,13 @@ $(document).ready(function(){
         });
 
 
-    bar.selectAll("rect")
+    var bars = bar.selectAll("rect")
         .data(function(d) {
             return d.values;
         })
-        .enter().append("rect")
+        .enter().append("rect");
+
+    bars
         .attr("width", x1.rangeBand())
         .attr("x", function(d) {
             return x1(d.name) + 5;
@@ -152,13 +148,13 @@ $(document).ready(function(){
             return "translate(0," + i * 20 + ")";
         });
 
-    legend.append("rect")
+    var legendRect = legend.append("rect")
         .attr("x", width - 18)
         .attr("width", 18)
         .attr("height", 18)
         .style("fill", color);
 
-    legend.append("text")
+    var legendText = legend.append("text")
         .attr("x", width - 24)
         .attr("y", 9)
         .attr("dy", ".35em")
@@ -190,4 +186,69 @@ $(document).ready(function(){
             }
         });
     }
+
+
+    function render () {
+        updateWidth();
+
+        x1.rangeRoundBands([0, x0.rangeBand()]);
+
+        x0.rangeRoundBands([0, width], .1);
+        y.range([height, 0]);
+
+        xAxis_bars.scale(x0);
+        yAxis_bars.scale(y);
+
+        $svg.attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom)
+
+        xAxis
+            .attr("transform", "translate(10," + height + ")")
+            .call(xAxis_bars)
+            .selectAll(".tick text")
+            .call(wrap, x0.rangeBand());
+
+        yAxis.call(yAxis_bars);
+        legendRect.attr("x", width - 18);
+        legendText.attr("x", width - 24);
+
+        bar.attr("transform", function(d) {
+            return "translate(" + (x0(d.raceth) - 10) + ",0)";
+        });
+
+        bars.attr("width", x1.rangeBand())
+            .attr("x", function(d) {
+                return x1(d.name) + 20;
+            })
+            .attr("y", function(d) {
+                return y(d.value);
+            })
+            .attr("value", function(d) {
+                return d.name;
+            })
+            .attr("height", function(d) {
+                return height - y(d.value);
+            });
+
+    }
+
+    function updateWidth () {
+        var w = document.querySelector('#race_ethnicity_chart').clientWidth;
+        margin = {
+            top: 50,
+            right: 10,
+            bottom: 60,
+            left: 50
+        },
+        width = w - margin.left - margin.right;
+
+        if(w < 500) {
+            height = 350 - margin.top - margin.bottom;
+        } else {
+            height = 500 - margin.top - margin.bottom;
+        }
+
+    }
+
+    render();
+    window.addEventListener('resize', render);
 });

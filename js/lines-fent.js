@@ -3,62 +3,63 @@
     "use strict";
 
     var rootSelector = '#fentanyl-lines';
+    var rootNode = document.querySelector("#fentanyl-lines");
 
     var chartData = [{
-  	"date": new Date("01/01/2014"),
-  	"FentanylHeroin": "0.19",
-  	"Fentanyl": "0.22",
-  	"Heroin": "0.41",
-  	"Methadone": "0.10"
-  	}, {
-  	"date": new Date("04/01/2014"),
-  	"FentanylHeroin": "0.18",
-  	"Fentanyl": "0.19",
-  	"Heroin": "0.49",
-  	"Methadone": "0.07"
-  	}, {
-  	"date": new Date("07/01/2014"),
-  	"FentanylHeroin": "0.14",
-  	"Fentanyl": "0.14",
-  	"Heroin": "0.53",
-  	"Methadone": "0.10"
-  	}, {
-  	"date": new Date("10/01/2014"),
-  	"FentanylHeroin": "0.22",
-  	"Fentanyl": "0.27",
-  	"Heroin": "0.35",
-  	"Methadone": "0.06"
-  	}, {
-  	"date": new Date("01/01/2015"),
-  	"FentanylHeroin": "0.19",
-  	"Fentanyl": "0.40",
-  	"Heroin": "0.30",
-  	"Methadone": "0.04"
-  	}, {
-  	"date": new Date("04/01/2015"),
-  	"FentanylHeroin": "0.24",
-  	"Fentanyl": "0.38",
-  	"Heroin": "0.29",
-  	"Methadone": "0.05"
-  	}, {
-  	"date": new Date("07/01/2015"),
-  	"FentanylHeroin": "0.19",
-  	"Fentanyl": "0.40",
-  	"Heroin": "0.30",
-  	"Methadone": "0.06"
-  	}, {
-  	"date": new Date("10/01/2015"),
-  	"FentanylHeroin": "0.22",
-  	"Fentanyl": "0.43",
-  	"Heroin": "0.24",
-  	"Methadone": "0.05"
-  	}, {
-  	"date": new Date("01/01/2016"),
-  	"FentanylHeroin": "0.15",
-  	"Fentanyl": "0.50",
-  	"Heroin": "0.17",
-  	"Methadone": "0.04"
-	}];
+    	"date": new Date("01/01/2014"),
+    	"FentanylHeroin": "0.19",
+    	"Fentanyl": "0.22",
+    	"Heroin": "0.41",
+    	"Methadone": "0.10"
+    	}, {
+    	"date": new Date("04/01/2014"),
+    	"FentanylHeroin": "0.18",
+    	"Fentanyl": "0.19",
+    	"Heroin": "0.49",
+    	"Methadone": "0.07"
+    	}, {
+    	"date": new Date("07/01/2014"),
+    	"FentanylHeroin": "0.14",
+    	"Fentanyl": "0.14",
+    	"Heroin": "0.53",
+    	"Methadone": "0.10"
+    	}, {
+    	"date": new Date("10/01/2014"),
+    	"FentanylHeroin": "0.22",
+    	"Fentanyl": "0.27",
+    	"Heroin": "0.35",
+    	"Methadone": "0.06"
+    	}, {
+    	"date": new Date("01/01/2015"),
+    	"FentanylHeroin": "0.19",
+    	"Fentanyl": "0.40",
+    	"Heroin": "0.30",
+    	"Methadone": "0.04"
+    	}, {
+    	"date": new Date("04/01/2015"),
+    	"FentanylHeroin": "0.24",
+    	"Fentanyl": "0.38",
+    	"Heroin": "0.29",
+    	"Methadone": "0.05"
+    	}, {
+    	"date": new Date("07/01/2015"),
+    	"FentanylHeroin": "0.19",
+    	"Fentanyl": "0.40",
+    	"Heroin": "0.30",
+    	"Methadone": "0.06"
+    	}, {
+    	"date": new Date("10/01/2015"),
+    	"FentanylHeroin": "0.22",
+    	"Fentanyl": "0.43",
+    	"Heroin": "0.24",
+    	"Methadone": "0.05"
+    	}, {
+    	"date": new Date("01/01/2016"),
+    	"FentanylHeroin": "0.15",
+    	"Fentanyl": "0.50",
+    	"Heroin": "0.17",
+    	"Methadone": "0.04"
+   }];
 
 
 
@@ -86,14 +87,16 @@
     // Dimensions
 
     var margin = {
-      top: 30,
-      right: 150,
+      top: 60, // space for the legend
+      right: 10,
       bottom: 50,
       left: 42
     };
 
-    var width = 540;
-    var height = 300;
+    var wrapper_width = 540;
+    var wrapper_height = 400;
+    var width = wrapper_width - margin.left - margin.right;
+    var height = wrapper_height - margin.top - margin.bottom;
 
 
     var x = d3.scale.ordinal().rangePoints([0, width]);
@@ -152,14 +155,9 @@
               	    return y(d.value);
               	});
 
-
-    var $lines_fent = d3.select(document.querySelector(rootSelector))
-    	.append("svg")
-    	.attr("preserveAspectRatio", "xMinYMin meet")
-    	.attr("viewBox", "0 0 "+(width + margin.left + margin.right) +" "+(height + margin.top + margin.bottom))
-    	//class to make it responsive
-    	.classed("svg-content-responsive", true)
-    	.append("g")
+    var $svg = d3.select(document.querySelector(rootSelector))
+      .append("svg");
+    var $lines_fent = $svg.append("g")
     	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     var varSeries = d3.keys(chartData[0]).filter(function(key) {
@@ -209,19 +207,21 @@
       })
     ]);
 
-    $lines_fent.append("g")
+    var x_axis = $lines_fent.append("g")
     	.attr("class", "vis-x-axis")
     	.attr("transform", "translate(0," + height + ")")
-    	.call(xAxis_fent)
-    	.append("path")
+    	.call(xAxis_fent);
+
+    var x_axis_lines = x_axis.append("path")
     	.attr("class", "line")
     	.style("stroke-width", "1.5px")
     	.call(xAxis_fent);
 
-    $lines_fent.append("g")
+    var x_axis2 = $lines_fent.append("g")
     	.attr("class", "vis-axis")
     	.attr("transform", "translate(0," + (height + 15) + ")")
     	.call(xAxis2_fent)
+    var x_axis2_text = x_axis2
     	.append("text")
     	.attr("x", width - margin.left)
     	.attr("y", margin.bottom - 32)
@@ -230,7 +230,7 @@
     	.text("Quarter");
 
 
-    $lines_fent.append("g")
+    var y_axis = $lines_fent.append("g")
     	.attr("class", "vis-y-axis")
     	.call(yAxis_fent)
     	.append("text")
@@ -246,7 +246,7 @@
     	.attr("class", "seriesData");
 
 
-    series.append("path")
+    var $lines = series.append("path")
     	.attr("class", "line")
     	.attr("d", function(d) {
     	    return line(d.values);
@@ -263,7 +263,7 @@
     	.style("fill", "none");
 
 
-    series.append("path")
+    var $lines_hit_area = series.append("path")
     	.attr("class", "hit-area-ext")
     	.attr("d", function(d) {
     	    return line(d.values);
@@ -272,33 +272,33 @@
     	.style("fill", "none");
 
 
-    $lines_fent.append("text")
-    	.attr("class", "vis-data-label")
-    	.attr("x", width + 5)
-    	.attr("y", y(chartData[8].FentanylHeroin) - 5)
-    	.attr("dy", "1em")
-    	.text("Fentanyl & Heroin");
+    // var x_axis_label_fh = $lines_fent.append("text")
+    // 	.attr("class", "vis-data-label")
+    // 	.attr("x", width + 5)
+    // 	.attr("y", y(chartData[8].FentanylHeroin) - 5)
+    // 	.attr("dy", "1em")
+    // 	.text("Fentanyl & Heroin");
 
-    $lines_fent.append("text")
-    	.attr("class", "vis-data-label")
-    	.attr("x", width + 5)
-    	.attr("y", y(chartData[8].Methadone) - 7)
-    	.attr("dy", "1em")
-    	.text("Methadone");
+    // var x_axis_label_m = $lines_fent.append("text")
+    // 	.attr("class", "vis-data-label")
+    // 	.attr("x", width + 5)
+    // 	.attr("y", y(chartData[8].Methadone) - 7)
+    // 	.attr("dy", "1em")
+    // 	.text("Methadone");
 
-    $lines_fent.append("text")
-    	.attr("class", "vis-data-label")
-      .attr("x", width + 5)
-      .attr("y", y(chartData[8].Heroin) - 10)
-      .attr("dy", "1em")
-      .text("Heroin");
+    // var x_axis_label_h = $lines_fent.append("text")
+    // 	.attr("class", "vis-data-label")
+    //   .attr("x", width + 5)
+    //   .attr("y", y(chartData[8].Heroin) - 10)
+    //   .attr("dy", "1em")
+    //   .text("Heroin");
 
-    $lines_fent.append("text")
-    	.attr("class", "vis-data-label")
-      .attr("x", width + 5)
-      .attr("y", y(chartData[8].Fentanyl) - 10)
-      .attr("dy", "1em")
-      .text("Fentanyl");
+    // var x_axis_label_f = $lines_fent.append("text")
+    // 	.attr("class", "vis-data-label")
+    //   .attr("x", width + 5)
+    //   .attr("y", y(chartData[8].Fentanyl) - 10)
+    //   .attr("dy", "1em")
+    //   .text("Fentanyl");
 
 
 
@@ -367,4 +367,124 @@
     	    .style("left", (d3.event.pageX + 5) + "px")
     	    .html(percentVal);
     }
+
+
+
+    function render () {
+      updateWidth(rootNode.clientWidth);
+
+      x.rangePoints([0, width]);
+      x2.rangePoints([0, width]);
+      y.range([height, 0]);
+      xAxis_fent.scale(x);
+      xAxis2_fent.scale(x);
+      yAxis_fent.scale(y);
+      // update lines
+      line.x(function(d) {
+          return x(d.label);
+        })
+        .y(function(d) {
+            return y(d.value);
+        });
+
+       x_axis
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis_fent);
+
+      x_axis2
+        .attr("transform", "translate(0," + (height + 15) + ")")
+        .call(xAxis2_fent);
+
+      x_axis2_text
+      .attr("x", width - margin.left)
+      .attr("y", margin.bottom - 32);
+
+
+      y_axis.call(yAxis_fent);
+
+      $svg.attr("width", wrapper_width).attr("height", wrapper_height);
+
+      // x_axis_label_fh.attr("x", width + 5).attr("y", y(chartData[8].FentanylHeroin) - 5);
+
+      // x_axis_label_m.attr("x", width + 5).attr("y", y(chartData[8].Methadone) - 7);
+
+      // x_axis_label_h.attr("x", width + 5).attr("y", y(chartData[8].Heroin) - 10);
+
+      // x_axis_label_f.attr("x", width + 5).attr("y", y(chartData[8].Fentanyl) - 10);
+
+      $lines.attr("d", function(d) {
+          return line(d.values);
+      });
+
+      $lines_hit_area.attr("d", function(d) {
+        return line(d.values);
+      });
+
+    }
+
+    function updateWidth(componentWidth) {
+      wrapper_width = componentWidth;
+      width = wrapper_width - margin.left - margin.right;
+
+      if(componentWidth < 500) {
+        wrapper_height = 300;
+        height = wrapper_height - margin.top - margin.bottom;
+      } else {
+        wrapper_height = 400;
+        height = wrapper_height - margin.top - margin.bottom;
+      }
+    }
+
+    function renderLegend() {
+      var legendItems = [
+        "FentanylHeroin",
+        "Fentanyl",
+        "Heroin",
+        "Methadone"
+      ];
+      var legendItemsTranslate = [
+        "Fentanyl & Heroin",
+        "Fentanyl",
+        "Heroin",
+        "Methadone"
+      ];
+      var $legend = $svg.append("g")
+        .attr("class", "vis-legend")
+        .attr("transform", "translate("+margin.left+",0)");
+      var lineHeight = 15;
+      var seriesColors = ["#ffffff", "#b71c1c", "#0071bc", "#ffffff"];
+      var seriesLineStrokes = ["1.5px", "3.5px", "3.5px", "2px"];
+      var seriesLineDash = ["10,10,10,10", "0,0,0,0", "0,0,0,0", "2,6,0,0"];
+
+      legendItems.forEach(function(item, i) {
+        var $item = $legend.append("g")
+          .attr("class", "legend-item-"+item)
+          .attr("transform", "translate(0,"+(i*lineHeight)+")");
+
+        $item.append("svg:line")
+          .attr("class", "legend-item-"+item)
+          .attr("x1", 0)
+          .attr("y1", 5)
+          .attr("x2", 30)
+          .attr("y2", 5)
+          .style("stroke", seriesColors[i])
+          .style("stroke-dasharray", seriesLineDash[i])
+          .style("stroke-width", seriesLineStrokes[i]);
+
+        $item.append("text")
+          .attr("class", "legend-item-"+item)
+          .attr("x", 40)
+          .attr("y", 10)
+          .text(legendItemsTranslate[i]);
+      });
+    }
+
+
+    render();
+    renderLegend();
+
+    window.addEventListener('resize', render);
+
+
+
 })();

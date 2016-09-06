@@ -17,7 +17,37 @@
         .attr("height", "100%")
         .attr("fill", "none");
 
+    var age_bar_color = d3.scale.ordinal()
+        .range(["#64B5F6", "#FF80AB"]);
+    var age_bar_label = d3.scale.ordinal()
+        .range(["Male", "Female"]);
 
+    var ages_label = $bars_age.append('text')
+            .text("Age")
+            .attr("class", "vis-x-axis-label")
+            .style("text-anchor", "start")
+            .attr("y", 10)
+            .attr("x", 10);
+
+    var chart_title = $bars_age.append('text');
+
+    var age_bars_legend = $bars_age.selectAll(".vis-legend")
+        .data(['2014', '2015'])
+        .enter().append("g");
+
+    age_bars_legend.append("rect")
+        .attr("x", 0)
+        .attr("width", 20)
+        .attr("height", 20)
+        .style("fill", age_bar_color);
+
+
+    age_bars_legend.append("text")
+        .attr("x", 25)
+        .attr("y", 9)
+        .attr("dy", ".5em")
+        .style("text-anchor", "start")
+        .text(age_bar_label);
 
     d3.csv("js/data/bars-age.csv", function(error, data) {
 
@@ -27,7 +57,15 @@
         //
         // //console.log(column, dataset);
         //
+
+
+        updateWidth();
         redraw(dataset, selected);
+
+        window.addEventListener('resize', function() {
+            updateWidth();
+            redraw(dataset, selected);
+        });
 
         d3.select("#POD").classed("selected", true);
         $("#POD").addClass("active");
@@ -138,6 +176,17 @@
 
     }) // end csv
 
+
+    function updateWidth() {
+        width = document.querySelector("#changing_bars").clientWidth - 100;
+        height = 300;
+        margin = 50;
+
+        $bars_age
+            .attr("width", width + 100)
+            .attr("height", height + 10); // adding some random padding
+    }
+
     //make the bars for the first data set.  They will be red at first.
 
     function drawGraph(data, column) {
@@ -152,6 +201,12 @@
 
     function redraw(data, column) {
 
+        chart_title.text(toTitle(column))
+            .attr("class", "vis-label")
+            .style("text-anchor", "end")
+            .attr("y", 12)
+            .attr("x", width + margin + margin);
+
         var max = d3.max(data, function(d) {
             return +d[column];
         });
@@ -162,7 +217,7 @@
 
         yScale = d3.scale.ordinal()
             .domain(d3.range(data.length))
-            .rangeBands([0, height], .2);
+            .rangeBands([20, height], .2);
 
         // yScale = function calc(e){return i[((u.get(e)||("range"===t.t?u.set(e,n.push(e)):0/0))-1)%i.length]};
 
@@ -173,32 +228,13 @@
             }); // key function!
 
 
-        var age_bar_color = d3.scale.ordinal()
-            .range(["#64B5F6", "#FF80AB"]);
-        var age_bar_label = d3.scale.ordinal()
-            .range(["Male", "Female"])
 
-        var age_bars_legend = $bars_age.selectAll(".vis-legend")
-            .data(['2014', '2015'])
-            .enter().append("g")
+        age_bars_legend
             .attr("class", "vis-legend")
             .attr("transform", function(d, i) {
-                return "translate(0," + (height - (margin * 2) + (i * 24)) + ")";
+                return "translate("+(width - 10)+"," + (height - (margin * 2) + (i * 24)) + ")";
             });
 
-        age_bars_legend.append("rect")
-            .attr("x", width - 18)
-            .attr("width", 20)
-            .attr("height", 20)
-            .style("fill", age_bar_color);
-
-
-        age_bars_legend.append("text")
-            .attr("x", width + 10)
-            .attr("y", 9)
-            .attr("dy", ".5em")
-            .style("text-anchor", "start")
-            .text(age_bar_label);
 
         //update -- existing bars get blue when we "redraw". We don't change labels.
         // bars
@@ -328,4 +364,14 @@
 
 
     } // end of draw function
+
+
+    function toTitle(key) {
+        var titleLookup = {
+            percentOpiodDeaths: 'Percent Opioid Deaths among All Deaths',
+            deathRate: 'Opioid Death Rate per 10,000 People per Year',
+            numberOpioidDeaths: 'Number of Opioid Deaths'
+        };
+        return titleLookup[key];
+    }
 })();

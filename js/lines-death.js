@@ -1,278 +1,302 @@
-/*======================================================================
- MultiLines
- ======================================================================*/
-var margin = {
-    top: 20,
-    right: 20,
-    bottom: 50,
-    left: 50,
-};
+/* global d3 */
 
-var width = 600;
-var height = 400;
+(function() {
+    "use strict";
 
-var MDG = 29;
+    var selector = '#deathLines';
+    var rootNode = document.querySelector(selector);
 
-var Massachusetts = ["MA"];
-var UnitedStates = ["USA"];
-
-//Set up date formatting and years
-var dateFormat = d3.time.format("%Y");
-
-//Set up scales
-var xScale = d3.time.scale()
-    .range([margin.left, width - margin.right - margin.left]);
-
-var yScale = d3.scale.sqrt()
-    .range([margin.top, height - margin.bottom]);
-
-//Configure axis generators
-var xAxis_death = d3.svg.axis()
-    .scale(xScale)
-    .orient("bottom")
-    .ticks(15)
-    .tickFormat(function(d) {
-        return dateFormat(d);
-    })
-    .innerTickSize([8]);
-
-var yAxis_death = d3.svg.axis()
-    .scale(yScale)
-    .orient("left")
-    .innerTickSize([8]);
-
-//defines a function to be used to append the title to the tooltip.  you can set how you want it to display here.
-//var maketip = function(d) {
-//    var tip = '<p class="tip3">' + d.name + '<p class="tip1">' + NumbType(d.value) + '</p> <p class="tip3">' + formatDate(d.date) + '</p>';
-//    return tip;
-//}
-
-// add a tooltip to the page - not to the svg itself!
-var tooltip_death = d3.select("#deathLines")
-    .append("div")
-    .attr("class", "vis-tooltip hidden");
-
-//Configure line
-// each line dataset must have a d.year and a d.rate for this to work.
-var line_death = d3.svg.line()
-    .x(function(d) {
-        return xScale(dateFormat.parse(d.year));
-    })
-    .y(function(d) {
-        return yScale(+d.rate)
-    })
-    .defined(function(d) {
-        return yScale(+d.rate); });
-
-//Create the empty SVG image
-var $lines_death = d3.select("#deathLines")
-    .append("svg")
-    .attr("width", width)
-    .attr("height", height);
-
-/*======================================================================
-   Creating the Multiple Lines from the Data
- ======================================================================*/
-
-//Load data - first is opioid mortality rates.
-d3.csv("js/data/death_states.csv", function(data) {
-    var years = d3.keys(data[0]).slice(1, 65); //
-    //console.log(years);
-
-    //Create a new, empty array to hold our restructured dataset
-    var dataset = [];
-
-    //Loop once for each row in data
-    data.forEach(function(d, i) {
-
-        var OMRs = [];
-
-        years.forEach(function(y) { //Loop through all the years - and get the rates for this data element
-
-
-            if (d[y]) { /// What we are checking is if the "y" value - the year string from our array, which would translate to a column in our csv file - is empty or not.
-
-                OMRs.push({ //Add a new object to the new rates data array - for year, rate. These are OBJECTS that we are pushing onto the array
-                    year: y,
-                    rate: d[y], // this is the value for, for example, d["2004"]
-                    Geography: d.Geography,
-                    FullName: d.FullName
-                });
-            }
-
-        });
-
-        dataset.push({ // At this point we are accessing one index of data from our original csv "data", above and we have created an array of year and rate data from this index. We then create a new object with the Geography value from this index and the array that we have made from this index.
-            Geography: d.Geography,
-            FullName: d.FullName,
-            rates: OMRs // we just built this from the current index.
-        });
-
-    });
-    //Set scale domains - max and min of the years
-    xScale.domain(
-        d3.extent(years, function(d) {
-            return dateFormat.parse(d);
-        }));
-
-    // max of rates to 0 (reversed, remember)
-    yScale.domain([
-        d3.max(dataset, function(d) {
-            return d3.max(d.rates, function(d) {
-                return +d.rate;
-            });
-        }),
-        0
-    ]);
-
-
-    //Make a group for each Geography
-    var groups = $lines_death.selectAll("g.lines-death")
-        .data(dataset)
-        .enter()
-        .append("g")
-        .attr("class", "lines-death");
-
-    //Within each group, create a new line/path,
-    //binding just the rates data to each one
-    groups.selectAll("path")
-        .data(function(d) { // because there's a group with data already...
-            return [d.rates]; // it has to be an array for the line function
-        })
-        .enter()
-        .append("path")
-        .attr("class", "line-death")
-        .classed("massachusetts", function(d, i) {
-            //console.log(d[i].Geography);
-            if ($.inArray(d[i].Geography, Massachusetts) != -1) {
-                //console.log("true");
-                return true;
-            } else {
-                //console.log("false");
-                return false;
-            }
-        })
-        .classed("usa", function(d, i) {
-            //console.log(d[i].Geography);
-            if ($.inArray(d[i].Geography, UnitedStates) != -1) {
-                //console.log("true");
-                return true;
-            } else {
-                //console.log("false");
-                return false;
-            }
-        })
-        .attr("d", line_death);
-
-
-    /*======================================================================
-      Adding the Axes
-    ======================================================================*/
-
-
-    var margin = {
-        top: 20,
-        right: 20,
-        bottom: 20,
-        left: 50,
+    // Initial dimensions
+    var dimensions = {
+        margin: {
+            top: 20,
+            right: 20,
+            bottom: 20,
+            left: 50
+        },
+        width: rootNode.clientWidth,
+        height: 350
     };
 
-    var width = 600;
-    var height = 400;
+    var MDG = 29;
 
 
+    var Massachusetts = ["MA"];
+    var UnitedStates = ["USA"];
 
-    $lines_death.append("g")
-	.attr("class", "vis-x-axis")
-        // .attr("transform", "translate(0," + (height - margin.bottom) + ")")
-        .attr("transform", "translate(0," + (height - margin.bottom - margin.top - margin.top) + ")")
-        .call(xAxis_death)
+    var lines;
+
+
+    // Setup
+
+    //Set up date formatting and years
+    var dateFormat = d3.time.format("%Y");
+    //Set up scales
+    var xScale = d3.time.scale();
+    var yScale = d3.scale.sqrt();
+    var xAxis_death = d3.svg.axis();
+    var yAxis_death = d3.svg.axis();
+    var line_death = d3.svg.line();
+
+    //Create the empty SVG image
+    var $lines_death = d3.select(selector)
+        .append("svg")
+        .attr("width", dimensions.width)
+        .attr("height", dimensions.height);
+
+
+    var $lines_death_x_axis = $lines_death.append("g")
+        .attr("class", "vis-x-axis")
+        .attr("transform", "translate(0," + (dimensions.height - dimensions.margin.bottom - dimensions.margin.top) + ")")
+        .call(xAxis_death);
+
+    var $lines_death_x_axis_label = $lines_death_x_axis
         .append("text")
-        .attr("x", width - margin.left)
-        .attr("y", margin.bottom+10)
+        .attr("x", dimensions.width - dimensions.margin.left)
+        .attr("y", dimensions.margin.bottom)
         .attr("dy", "1em")
-	.attr("class", "vis-x-axis-label")
+        .attr("class", "vis-x-axis-label")
         .text("Year");
 
-    $lines_death.append("g")
-	.attr("class", "vis-y-axis")
-        // .attr("transform", "translate(" + margin.left + ",0)")
-        .attr("transform", "translate(" + margin.left + "," + (-margin.top / 2) + ')')
-        .call(yAxis_death)
+    var $lines_death_y_axis = $lines_death.append("g")
+        .attr("class", "vis-y-axis")
+        .attr("transform", "translate(" + dimensions.margin.left + "," + (-dimensions.margin.top / 2) + ')')
+        .call(yAxis_death);
+
+    var $lines_death_y_axis_label = $lines_death_y_axis
         .append("text")
-        .attr("x", -margin.top)
-        .attr("y", -margin.left)
+        .attr("x", -dimensions.margin.top)
+        .attr("y", -dimensions.margin.left)
         .attr("dy", "1em")
-	.attr("class", "vis-y-axis-label")
+        .attr("class", "vis-y-axis-label")
         .text("Age-Adjusted Opioid Death Rate per 100,000 People");
 
-    /*======================================================================
-      MDG line
-    ======================================================================*/
 
-    /*svg.append("line")
-        .attr("class", "MDG")
-        .attr("x1", margin.left)
-        .attr("y1", yScale(MDG))
-        .attr("x2", width - margin.left - margin.right + 15)
-        .attr("y2", yScale(MDG));*/
-    $lines_death.append("text")
+    var $lines_death_ma_label = $lines_death.append("text")
         .attr("class", "aside-ma")
-        .attr("x", width - margin.left - 15)
+        .attr("x", dimensions.width - dimensions.margin.left - 15)
         .attr("y", yScale(23.8) - 6)
         .attr("dy", "1em")
         .style("text-anchor", "start")
         .text("MA");
 
-    $lines_death.append("text")
+    var $lines_death_usa_label = $lines_death.append("text")
         .attr("class", "aside-usa")
-        .attr("x", width - margin.left - 45)
+        .attr("x", dimensions.width - dimensions.margin.left - 45)
         .attr("y", yScale(10.0) - 6)
         .attr("dy", "1em")
         .style("text-anchor", "start")
         .text("USA");
 
-    /*======================================================================
-      Mouse Functions
-    ======================================================================*/
-    d3.selectAll("g.lines-death")
-        .on("mouseover", mouseoverFunc)
-        .on("mouseout", mouseoutFunc)
-        .on("mousemove", mousemoveFunc);
+    // add a tooltip to the page - not to the svg itself!
+    var tooltip_death = d3.select("#deathLines")
+        .append("div")
+        .attr("class", "vis-tooltip hidden");
 
-    function mouseoutFunc() {
 
-        d3.selectAll("path.line-death").classed("unfocused", false).classed("focused", false);
-	tooltip_death.classed("hidden", true);
+
+
+
+    // Actually do stuff.
+    d3.csv("js/data/death_states.csv", function(data) {
+        setupData(data);
+        render();
+        // bindEvents();
+        window.addEventListener('resize', render);
+    });
+
+
+    function setupData(data) {
+        var years = d3.keys(data[0]).slice(1, 65);
+         //Create a new, empty array to hold our restructured dataset
+        var dataset = [];
+
+        //Loop once for each row in data
+        data.forEach(function(d, i) {
+            var OMRs = [];
+            years.forEach(function(y) { //Loop through all the years - and get the rates for this data element
+                if (d[y]) { /// What we are checking is if the "y" value - the year string from our array, which would translate to a column in our csv file - is empty or not.
+                    OMRs.push({ //Add a new object to the new rates data array - for year, rate. These are OBJECTS that we are pushing onto the array
+                        year: y,
+                        rate: d[y], // this is the value for, for example, d["2004"]
+                        Geography: d.Geography,
+                        FullName: d.FullName
+                    });
+                }
+            });
+            dataset.push({ // At this point we are accessing one index of data from our original csv "data", above and we have created an array of year and rate data from this index. We then create a new object with the Geography value from this index and the array that we have made from this index.
+                Geography: d.Geography,
+                FullName: d.FullName,
+                rates: OMRs // we just built this from the current index.
+            });
+        });
+
+        data.dataset = dataset;
+
+        //Set scale domains - max and min of the years
+        xScale.domain(
+            d3.extent(years, function(d) {
+                return dateFormat.parse(d);
+            }));
+
+        // max of rates to 0 (reversed, remember)
+        yScale.domain([
+            d3.max(dataset, function(d) {
+                return d3.max(d.rates, function(d) {
+                    return +d.rate;
+                });
+            }),
+            0
+        ]);
+
+        var groups = $lines_death.selectAll("g.lines-death")
+            .data(dataset)
+            .enter()
+            .append("g")
+            .attr("class", "lines-death");
+
+        lines = groups.selectAll("path")
+            .data(function(d) { // because there's a group with data already...
+                return [d.rates]; // it has to be an array for the line function
+            })
+            .enter()
+            .append("path")
+            .attr("class", "line-death")
+            .classed("massachusetts", function(d, i) {
+                //console.log(d[i].Geography);
+                if ($.inArray(d[i].Geography, Massachusetts) !== -1) {
+                    //console.log("true");
+                    return true;
+                } else {
+                    //console.log("false");
+                    return false;
+                }
+            })
+            .classed("usa", function(d, i) {
+                //console.log(d[i].Geography);
+                if ($.inArray(d[i].Geography, UnitedStates) !== -1) {
+                    //console.log("true");
+                    return true;
+                } else {
+                    //console.log("false");
+                    return false;
+                }
+            });
     }
 
-    function mouseoverFunc(d, i) {
 
-        d3.selectAll("path.line-death").classed("unfocused", true);
-        d3.select(this).select("path.line-death").classed("unfocused", false).classed("focused", true);
-        tooltip_death
-	    .classed("hidden", false)
-	    .html(d.FullName);
-        //console.log(d.FullName);
-        // console.log(d.rates[i]);
 
-    }
-
-     var coordinates = [0, 0];
-
-    function mousemoveFunc(d) {
-
-        coordinates = d3.mouse(this);
-        var x = coordinates[0];
-        var y = coordinates[1];
-
-        tooltip_death
-            .style("top", y + "px")
-            .style("left", x + "px")
-            .style('position', 'absolute')
-            .style('z-index', 1001);
+    function updateDimensions() {
+        dimensions.width = rootNode.clientWidth;
+        if(dimensions.width < 500) {
+            dimensions.margin.left = 30;
+        } else {
+            dimensions.margin.left = 50;
+        }
     }
 
 
 
-}); // end of data csv
+
+
+
+    function render() {
+        updateDimensions();
+
+        $lines_death.attr('width', dimensions.width);
+
+        xScale.range([dimensions.margin.left, dimensions.width - dimensions.margin.right - dimensions.margin.left]);
+        yScale.range([dimensions.margin.top, dimensions.height - dimensions.margin.bottom -dimensions.margin.top]);
+
+        //Configure axis generators
+        xAxis_death.scale(xScale)
+            .orient("bottom")
+            .ticks((dimensions.width < 500 ? 8 : 15))
+            .tickFormat(function(d) {
+                return dateFormat(d);
+            })
+            .innerTickSize([8]);
+
+        yAxis_death.scale(yScale)
+            .orient(dimensions.width < 500 ? 'right' : 'left')
+            .innerTickSize([8]);
+
+        $lines_death_x_axis_label
+            .attr("x", dimensions.width - dimensions.margin.left);
+
+        $lines_death_y_axis_label
+            .attr("y", -dimensions.margin.left);
+
+        if(dimensions.width < 500) {
+            $lines_death_y_axis
+                .attr("transform", "translate(" + dimensions.margin.left + "," + (-dimensions.margin.top / 2) + ')');
+        } else {
+            $lines_death_y_axis
+                .attr("transform", "translate(" + dimensions.margin.left + "," + (-dimensions.margin.top / 2) + ')');
+        }
+
+        //Configure line
+        // each line dataset must have a d.year and a d.rate for this to work.
+        line_death.x(function(d) {
+                return xScale(dateFormat.parse(d.year));
+            })
+            .y(function(d) {
+                return yScale(+d.rate);
+            })
+            .defined(function(d) {
+                return yScale(+d.rate);
+            });
+
+
+        $lines_death_x_axis
+            .call(xAxis_death);
+
+        $lines_death_y_axis
+            .call(yAxis_death);
+
+
+        $lines_death_ma_label
+            .attr("x", dimensions.width - dimensions.margin.left - 15)
+            .attr("y", yScale(23.8) - 6);
+
+        $lines_death_usa_label
+            .attr("x", dimensions.width - dimensions.margin.left - 45)
+            .attr("y", yScale(10.0) - 6);
+
+        lines.attr("d", line_death);
+    }
+
+    function bindEvents() {
+        d3.selectAll("g.lines-death")
+            .on("mouseover", mouseoverFunc)
+            .on("mouseout", mouseoutFunc)
+            .on("mousemove", mousemoveFunc);
+
+        function mouseoutFunc() {
+            d3.selectAll("path.line-death").classed("unfocused", false).classed("focused", false);
+            tooltip_death.classed("hidden", true);
+        }
+
+        function mouseoverFunc(d, i) {
+            d3.selectAll("path.line-death").classed("unfocused", true);
+            d3.select(this).select("path.line-death").classed("unfocused", false).classed("focused", true);
+            tooltip_death.classed("hidden", false).html(d.FullName);
+        }
+
+        var coordinates = [0, 0];
+
+        function mousemoveFunc(d) {
+            coordinates = d3.mouse(this);
+            var x = coordinates[0];
+            var y = coordinates[1];
+            tooltip_death
+                .style("top", y + "px")
+                .style("left", x + "px")
+                .style('position', 'absolute')
+                .style('z-index', 1001);
+        }
+    }
+
+})();
+
+
