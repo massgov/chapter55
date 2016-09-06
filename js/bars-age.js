@@ -17,7 +17,28 @@
         .attr("height", "100%")
         .attr("fill", "none");
 
+    var age_bar_color = d3.scale.ordinal()
+        .range(["#64B5F6", "#FF80AB"]);
+    var age_bar_label = d3.scale.ordinal()
+        .range(["Male", "Female"]);
 
+    var age_bars_legend = $bars_age.selectAll(".vis-legend")
+        .data(['2014', '2015'])
+        .enter().append("g");
+
+    age_bars_legend.append("rect")
+        .attr("x", 0)
+        .attr("width", 20)
+        .attr("height", 20)
+        .style("fill", age_bar_color);
+
+
+    age_bars_legend.append("text")
+        .attr("x", 25)
+        .attr("y", 9)
+        .attr("dy", ".5em")
+        .style("text-anchor", "start")
+        .text(age_bar_label);
 
     d3.csv("js/data/bars-age.csv", function(error, data) {
 
@@ -27,6 +48,8 @@
         //
         // //console.log(column, dataset);
         //
+
+
         updateWidth();
         redraw(dataset, selected);
 
@@ -190,32 +213,13 @@
             }); // key function!
 
 
-        var age_bar_color = d3.scale.ordinal()
-            .range(["#64B5F6", "#FF80AB"]);
-        var age_bar_label = d3.scale.ordinal()
-            .range(["Male", "Female"])
 
-        var age_bars_legend = $bars_age.selectAll(".vis-legend")
-            .data(['2014', '2015'])
-            .enter().append("g")
+        age_bars_legend
             .attr("class", "vis-legend")
             .attr("transform", function(d, i) {
-                return "translate(0," + (height - (margin * 2) + (i * 24)) + ")";
+                return "translate("+(width - 10)+"," + (height - (margin * 2) + (i * 24)) + ")";
             });
 
-        age_bars_legend.append("rect")
-            .attr("x", width - 18)
-            .attr("width", 20)
-            .attr("height", 20)
-            .style("fill", age_bar_color);
-
-
-        age_bars_legend.append("text")
-            .attr("x", width + 10)
-            .attr("y", 9)
-            .attr("dy", ".5em")
-            .style("text-anchor", "start")
-            .text(age_bar_label);
 
         //update -- existing bars get blue when we "redraw". We don't change labels.
         // bars
