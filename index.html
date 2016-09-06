@@ -225,27 +225,39 @@
     <section class="module content">
       <div class="container">
         <div class="row">
+          <div class="col-xs-12">
+            <h2>Cost of Addiction</h2>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <p>Economically, addiction is more costly than other brain conditions like Alzheimer’s disease, Parkinson’s disease, and stroke. In fact, data from the National Institutes of Health (NIH) shows costs related to substance abuse top more than $700 million annually in the United States.</p>
+            <p>However, economic impacts are hardly the most negative aspects of addiction and, more specifically, the opioid epidemic. Addiction to opioids can put people at greater risk for infectious diseases like HIV or hepatitis, deterioration conditions like cirrhosis or cognitive decline, family disruption like domestic violence or child abuse, criminal behavior, overdose, and death.</p>
+          </div>
           <div class="col-xs-12 col-md-6">
             <p>Similar to diabetes or cancer, <a class="controls controls-video js-play-video" data-target="#video3"><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> addiction is a complex disease </a> impacted by certain risk factors like behavior and family history. Compulsive substance abuse, cravings, and continued use despite known harmful consequences are hallmarks of the condition. This disease is also more widespread than some may realize — nearly 1 in 10 Americans over the age of 12 have a substance abuse disorder.</p>
             <video id="video3" controls="true" poster="video/header-video-poster.png">
               WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
               <source src="video/DieaseVsChoice_V02.mp4" type="video/mp4">
             </video>
-            <h2>Cost of Addiction</h2>
-            <p>Economically, addiction is more costly than other brain conditions like Alzheimer’s disease, Parkinson’s disease, and stroke. In fact, data from the National Institutes of Health (NIH) shows costs related to substance abuse top more than $700 million annually in the United States.</p>
-            <p>However, economic impacts are hardly the most negative aspects of addiction and, more specifically, the opioid epidemic. Addiction to opioids can put people at greater risk for infectious diseases like HIV or hepatitis, deterioration conditions like cirrhosis or cognitive decline, family disruption like domestic violence or child abuse, criminal behavior, overdose, and death.</p>
           </div>
-          <div class="col-xs-12 col-md-5 pull-right">
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-md-12">
             <h3 class='title'>Percentage of Patients in Treatment Listing Heroin as the Primary Substance of Use*</h3>
             <h4 class='subtitle'>*Clients identify a primary drug of use when they enter treatment for addiction</h4>
             <hr>
-            <div id="treatmentMaps">
+            <div id="treatmentMaps" data-active-date="2005">
+              <div class="btn-group btn-group-justified">
+                <div class="btn btn-default js-toggle-treatment-map active" data-date="2005">2005</div>
+                <div class="btn btn-default js-toggle-treatment-map" data-date="2010">2010</div>
+                <div class="btn btn-default js-toggle-treatment-map" data-date="2014">2014</div>
+              </div>
               <div id="treatmentMaps_legend" class="vis-legend"></div>
               <div id="treatmentMaps_maps"></div>
             </div>
           </div>
+        </div>
+        <div class="row">
           <div class="col-xs-12 col-md-7">
-            <div class="space-col"></div>
             <div class="bsas-controls">
               <h3 class="title">Primary Substance of Use When Entering Treatment by Town</h3>
               <hr>
