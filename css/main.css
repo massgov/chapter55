@@ -176,6 +176,9 @@
   font-family: Helvetica, Arial;
   text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; }
 
+.vis--dark-background text {
+  letter-spacing: 0.5px; }
+
 /* ============================================================
   Map
 ============================================================ */
@@ -199,8 +202,9 @@
   width: 100%;
   max-width: 1700px;
   margin: 0 auto; }
-  #treatmentMaps_maps div {
-    float: left;
+  #treatmentMaps_maps .map-wrapper {
+    display: inline-block;
+    width: 33%;
     position: relative; }
   #treatmentMaps_maps path {
     fill: #e9e9e9;
@@ -209,8 +213,12 @@
   #treatmentMaps_maps .vis-title {
     width: 60%;
     position: absolute;
-    bottom: 50px;
+    bottom: 20%;
     left: 0; }
+    @media screen and (max-width: 955px) and (min-width: 768px) {
+      #treatmentMaps_maps .vis-title {
+        bottom: 25%;
+        font-size: 14px; } }
   #treatmentMaps_maps .selection-label {
     width: 60%;
     text-align: center;
@@ -221,16 +229,47 @@
     font-size: 12px;
     font-family: Helvetica, Arial;
     text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; }
+    @media screen and (max-width: 955px) and (min-width: 768px) {
+      #treatmentMaps_maps .selection-label {
+        font-size: 10px; } }
+  #treatmentMaps_maps .svg-container {
+    padding-bottom: 65%; }
+
+#treatmentMaps .btn-group {
+  display: none; }
+  @media screen and (max-width: 768px) {
+    #treatmentMaps .btn-group {
+      display: inline-block;
+      margin: 2em auto; } }
+
+@media screen and (max-width: 768px) {
+  #treatmentMaps[data-active-date] .map-wrapper {
+    display: none; }
+  #treatmentMaps[data-active-date="2005"] .map-wrapper:first-child {
+    display: block; }
+  #treatmentMaps[data-active-date="2010"] .map-wrapper:nth-child(2) {
+    display: block; }
+  #treatmentMaps[data-active-date="2014"] .map-wrapper:last-child {
+    display: block; } }
+
+@media screen and (max-width: 768px) {
+  #treatmentMaps .map-wrapper {
+    display: block;
+    width: 100%;
+    position: relative; } }
+
+#treatmentMaps_legend.vis-legend {
+  max-width: 400px; }
 
 /* ============================================================
     Lines Death
 ============================================================ */
 .line-death {
-  stroke: #B1B5B4;
+  stroke: #CCC;
   fill: none;
   stroke-opacity: 40%;
-  stroke-width: 1px;
-  stroke-dasharray: 1, 1; }
+  stroke-width: 2px;
+  stroke-dasharray: 2, 2; }
 
 .usa {
   color: #000000;
@@ -300,10 +339,19 @@
 /* ============================================================
     Lines BSAS
 ============================================================ */
-.ui-autocomplete-input {
-  padding: 10px;
-  border: 1px solid #0071bc;
-  border-radius: 5px; }
+.bsas-controls {
+  margin-bottom: 10px; }
+  .bsas-controls .ui-autocomplete-input {
+    padding: 4px;
+    border: 1px solid #B0BEC5;
+    border-radius: 4px; }
+  .bsas-controls > * {
+    vertical-align: middle; }
+  @media screen and (max-width: 500px) {
+    .bsas-controls > * {
+      display: block;
+      text-align: center;
+      margin: 5px auto; } }
 
 #lines-bsas .vis-y-axis line {
   stroke-width: 0.5px;
@@ -485,6 +533,15 @@
   color: #b71c1c; }
 
 /* ============================================================
+ Bar
+============================================================ */
+#bar {
+  position: relative; }
+
+#value {
+  font-size: 12px; }
+
+/* ============================================================
  Bar Chart by Age Groups
 ============================================================ */
 .malFocus,
@@ -610,7 +667,9 @@ section.module h2 {
   font-family: "Roboto Slab", "Merriweather", "Georgia", "Times New Roman", serif;
   font-size: 30px; }
 
-#POD, #DR, #NOD {
+#POD,
+#DR,
+#NOD {
   font-size: 8pt; }
 
 section.module p {
@@ -725,10 +784,9 @@ video {
   color: #ffffff;
   padding: 20px;
   border-radius: 10px; }
-
-.callout h2 {
-  padding-bottom: 18px;
-  border-bottom: 1px solid #ffffff; }
+  .callout h2 {
+    padding-bottom: 18px;
+    border-bottom: 1px solid #ffffff; }
 
 .expandable {
   padding: 3px 5px;
@@ -804,3 +862,8 @@ footer {
   color: #ffffff;
   padding: 30px;
   background-color: #B0BEC5; }
+
+.sources-section {
+  background: #333333;
+  color: #ffffff;
+  padding: 5em 0; }
