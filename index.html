@@ -127,7 +127,7 @@
                     <div class="row">
                         <p></p>
                         <div class="col-xs-12 col-md-6">
-                        <p></p>
+                            <p></p>
                             <p>Understanding the causes and deadly impacts of this issue can be a challenge. It’s a complex problem that has many layers and no single solution, and often raises more questions than answers. &nbsp;&nbsp;<a class="controls controls-video js-play-video" data-target="#video1"><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> Why do people start - and why don’t they stop – taking opioids?</a> How many people does this affect? What can be done about it and what steps are being taken? What is an Opioid, anyway? </p>
                         </div>
                         <div class="col-xs-12 col-md-6">
@@ -302,115 +302,78 @@
                 </div>
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 col-md-12">
-                            <h3 class='title'>Decline in Legal Opioid Prescriptions Before Fatal Overdose</h3>
-                            <hr>
+                        <div class="col-xs-12 col-md-5 pull-left">
+                            <div class="space-col"></div>
+                            <h2>Multiple Prescribers</h2>
+                            <p>One risk factor for fatal overdose that was identified was the number of opioid prescribers for an individual. There are legitimate reasons why someone might have multiple prescribers — primary care plus specialists or multi-provider practices — but there is an elevated risk for this group. The fatal overdose rate for individuals with three or more prescribers is 7 times higher than the rate for other people.
+                            </p>
+                            <h2>Multiple Substances</h2>
+                            <p>Not only is having multiple prescribers a risk factor, but so is using multiple substances together. For example, cocaine showed up in 30% of toxicology screens for opioid-related deaths from 2011-2014. However, an often legally-used substance is found in these reports at an even greater scale: benzodiazepines.</p>
+                            <p>Benzodiazepines are a type of tranquilizer, including drugs like Valium, Xanax, and Ativan. They were present in 58% of these toxicology screens. More than half of these cases involved individuals who had a prescription for benzodiazepine during this period, yet only about 1 in 5 had one in the month of death.</p>
+                            <p>Although Benzodiazepines were present in 982 toxicology screens, only 495 people ever had a prescription for one. Fewer than 200 had a prescription within a month of death. This suggests that the supply of benzodiazepines involved in overdoses includes both prescribed and diverted pills.</p>
                         </div>
-                        <div class="col-xs-12 col-md-7">
-                            <h4>Primary substance found in toxicology reports</h4>
-                            <h4 class="subtitle">Step 1: Select a substance</h4>
-                            <svg id="piechart"></svg>
+                        <p></p>
+                        <div class="col-xs-12 col-md-6 callout pull-right">
+                            <h3>Deadly Trend: Switching from Legal to Illegal Opioids</h3>
                             <hr>
-                            <h4 class="subtitle">Step 2: Select a time period</h4>
-                            <!--                     <div class="range">
-            <div id="label_blocks">Study Period</div>
-            <input id="timeline_blocks" type="range" min="0" max="3" value="0">
-            <datalist id="timescale_blocks">
-            <option>during the study period</option>
-            <option>6 month before death</option>
-            <option>3 month before death</option>
-            <option>1 month before death</option>
-            </datalist>
-          </div> -->
-                            <div id="buttons-pie" class="neg-space-col">
-                                <button class="btn btn-primary btn-time" id="studyperiod" value="0">Study Period</button>
-                                <button class="btn btn-primary btn-time" id="6month" value="1">6 Months Before Death</button>
-                                <button class="btn btn-primary btn-time" id="3month" value="2">3 Months Before Death</button>
-                                <button class="btn btn-primary btn-time" id="1month" value="3">1 Month Before Death</button>
+                            <p>Most of the people who died from opioids had a legal prescription at some point. However, very few have one by the time they die. At some point, they make the transition from legal to illegal opioid use, driven by the disease of addiction. This deadly trend becomes clear by looking at the amount of people who had a prescription 6 months, 3 months, and 1 month before death. This is found regardless of the substance that caused a fatal overdose.</p>
+                            <h4><span id="total">154</span> people died from <span class="substance-type red">prescription opioid</span> from 2011-2014</h4>
+                            <div class="left">
+                                <button class="btn btn-primary btn-substance btn-sm" value="0">Heroin</button>
+                                <button class="btn btn-primary btn-substance btn-sm" value="1">Fentanyl</button>
+                                <button class="btn btn-primary btn-substance btn-sm" value="2">Heroin &amp; Fentanyl</button>
+                                <button class="btn btn-primary btn-substance btn-sm" value="3">Precription Opioids</button>
+                                <button class="btn btn-primary btn-substance btn-sm" value="4">Methadone</button>
+                                <!-- <button class="btn btn-primary btn-substance btn-sm" value="5">Buprenorpine</button> -->
                             </div>
+                            <p></p>
+                            <div id="tooltip" class="hidden">
+                                <p><span id="value"></span></p>
+                            </div>
+                            <div id='bar'></div>
+                            <p></p>
                             <hr>
-                        </div>
-                        <div class="col-xs-12 col-md-5">
+                            <h4 class="left">Of those who died of <span class="substance-type red">prescription opioid</span>, XX% had an opioid prescription XX months before death</h4>
+                            <div id="buttons-pie">
+                                <button class="btn btn-primary btn-time btn-sm" id="studyperiod" value="0">2011–2014</button>
+                                <button class="btn btn-primary btn-time btn-sm" id="6month" value="1">6 Month Before Death</button>
+                                <button class="btn btn-primary btn-time btn-sm" id="3month" value="2">3 Month Before Death</button>
+                                <button class="btn btn-primary btn-time btn-sm" id="1month" value="3">1 Month Before Death</button>
+                                <p></p>
+                                <p></p>
+                            </div>
                             <div class="people-blocks">
-                                <div class="group">
-                                    <h4>Individuals with prescription by time and substance</h4>
-                                    <!-- <h4 class="left">Percentage of individuals with an opioid prescription  <span id="time-perioid" class="red">during the study period</span> who had <span class="substance-type red">prescription opioids</span> in their system</h4> -->
-                                </div>
+                                <!-- <div class="group"></div> -->
                                 <div id="table_substance"></div>
-                                <div id="table_substance_legend">
-                                    <img src="img/person.svg" width="25px" height="25px" /><span>= 1% out of
-                <span id="total">154</span> people who died from <span class="substance-type red">prescription opioids</span></span>
+                                <div id="legend">
+                                    <img src="img/person.svg" width="25px" height="25px" /> <span>= 1% of people who died from <span class="substance-type red">prescription opioid</span></span>
                                 </div>
                                 <div class="block-chart" id="people"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- <div class="col-xs-12 col-md-5 pull-right">
-        <h2>Proportion of Decedents with History of Substance Use by Category in Study Periods</h2>
-        <div class="people-blocks">
-          <div id="legend">
-            <img src="img/person.svg" width="30px" height="30px" /><span>= 1% of total decendents with one specific substance present in toxicology screen</span>
-          </div>
-          <hr />
-          <select class="form-control" id="options_substance">
-            <option value="prescription" selected>Prescription opioids present</option>
-            <option value="heroin">Heroin present</option>
-            <option value="fentanyl">Fentanyl present</option>
-            <option value="both">Both Fentanyl and Heroin present</option>
-            <option value="methadone">Methadone present</option>
-            <option value="buprenorphine">Buprenorphine present</option>
-          </select>
-          <div id="table_substance"></div>
-          <div class="group">
-            <h3>p</h3>
-            <div class="block-chart" id="people">
-            </div>
-          </div>
-          <div class="range">
-            <div id="label_blocks">Study Period</div>
-            <input id="timeline_blocks" type="range" min="0" max="3" value="0">
-            <datalist id="timescale_blocks">
-            <option>Study Period</option>
-            <option>6 Month</option>
-            <option>3 Month</option>
-            <option>1 Month</option>
-            </datalist>
-          </div>
-        </div>
-      </div> -->
-                <!-- </div> -->
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 col-md-12">
-                            <p></p>
-                            <h2>Multiple Prescribers</h2>
-                            <p>One risk factor for fatal overdose that was identified was the number of opioid prescribers for an individual. There are legitimate reasons why someone might have multiple prescribers — primary care plus specialists or multi-provider practices — but there is an elevated risk for this group. The fatal overdose rate for individuals with three or more prescribers is 7 times higher than the rate for other people.
-                            </p>
-                        </div>
                         <div class="col-xs-12 col-md-6">
-                            <p></p>
-                            <h2>Multiple Substances</h2>
-                            <p>Not only is having multiple prescribers a risk factor, but so is using multiple substances together. For example, cocaine showed up in 30% of toxicology screens for opioid-related deaths from 2011-2014. However, an often legally-used substance is found in these reports at an even greater scale: benzodiazepines.</p>
-                            <p>Benzodiazepines are a type of tranquilizer, including drugs like Valium, Xanax, and Ativan. They were present in 58% of these toxicology screens. More than half of these cases involved individuals who had a prescription for benzodiazepine during this period, yet only about 1 in 5 had one in the month of death.</p>
-                            <p>Although Benzodiazepines were present in 982 toxicology screens, only 495 people ever had a prescription for one. Fewer than 200 had a prescription within a month of death. This suggests that the supply of benzodiazepines involved in overdoses includes both prescribed and diverted pills.</p>
-                            <h2>Illegal Drugs</h2>
-                            <p>Massachusetts is at the crossroads of an increasingly sinister set of circumstances. For example, some individuals are transitioning from legal to illegal opioid use as dependence and addiction develop beyond prescribed thresholds. At the same time, the availabilty of illegal drugs strengthens across the region. The Drug Enforcement Administration (DEA) surveyed law enforcement officials about the availability of heroin in 8 regions across the country from 2007 to 2013. Each year, New England led all regions in the percentage of respondents who reported high heroin availability.</p>
-                            <p>Heroin, perhaps expectedly, is commonly found in toxicology reports for opioid-related deaths. Data from 2011-2014 shows heroin was likely or definitely in the system at the time of death in more than 60% of cases. What might be surprising is the increasingly deadly role Fentanyl is playing in the crisis.</p>
-                            <p>While Fentanyl can be available as a legally-prescribed medication, it’s often used illegally. Only about 3% of people who died from an opioid overdose during the study period had a prescription for Fentanyl at the time of death. However, toxicology data shows Heroin, Fentanyl, or both substances were present in 85% of cases.</p>
-                        </div>
-                        <div class="col-xs-12 col-md-6 pull-right">
                             <div class="space-col"></div>
                             <div class="callout">
-                                <video autoplay loop style="border-radius:10px">
+                                <!--  <video autoplay loop style="border-radius:10px;">
                                     WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
                                     <source src="video/fentanyl.mp4" type="video/mp4">
-                                </video>
+                                </video> -->
                                 <h2>Fentanyl: Friend or Foe?</h2>
                                 <p>Fentanyl is an opioid that can be prescribed for pain management. However, it’s also used illegally either on its own or combined with heroin. According to the DEA, illegally produced Fentanyl can be up to 50 times stronger than heroin. Illegally sold and produced Fentanyl is increasingly recognized as a problem across the United States, and particularly in Massachusetts. Toxicology data from recent post-mortem cases indicates <span class="fentanyl_">Fentanyl</span> is adding to the state’s deadly epidemic more than <span class="heroin_">Heroin</span>. In 2015, 57% of toxicology samples tested positive for Fentanyl which is more than double the figure recorded in 2013.</p>
                                 <div id="fentanyl-lines" class="svg-container vis--dark-background"></div>
                             </div>
                             <div class="sourcecallout">Sources: Massachusetts Executive Office of Public Safety and Security, Office of the Chief Medical Examiner</div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 pull-right">
+                            <div class="space-col"></div>
+                            <h2>Illegal Drugs</h2>
+                            <p>Massachusetts is at the crossroads of an increasingly sinister set of circumstances. For example, some individuals are transitioning from legal to illegal opioid use as dependence and addiction develop beyond prescribed thresholds. At the same time, the availabilty of illegal drugs strengthens across the region. The Drug Enforcement Administration (DEA) surveyed law enforcement officials about the availability of heroin in 8 regions across the country from 2007 to 2013. Each year, New England led all regions in the percentage of respondents who reported high heroin availability.</p>
+                            <p>Heroin, perhaps expectedly, is commonly found in toxicology reports for opioid-related deaths. Data from 2011-2014 shows heroin was likely or definitely in the system at the time of death in more than 60% of cases. What might be surprising is the increasingly deadly role Fentanyl is playing in the crisis.</p>
+                            <p>While Fentanyl can be available as a legally-prescribed medication, it’s often used illegally. Only about 3% of people who died from an opioid overdose during the study period had a prescription for Fentanyl at the time of death. However, toxicology data shows Heroin, Fentanyl, or both substances were present in 85% of cases.</p>
                         </div>
                     </div>
                 </div>

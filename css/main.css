@@ -485,6 +485,15 @@
   color: #b71c1c; }
 
 /* ============================================================
+ Bar
+============================================================ */
+#bar {
+  position: relative; }
+
+#value {
+  font-size: 12px; }
+
+/* ============================================================
  Bar Chart by Age Groups
 ============================================================ */
 .malFocus,
@@ -610,7 +619,9 @@ section.module h2 {
   font-family: "Roboto Slab", "Merriweather", "Georgia", "Times New Roman", serif;
   font-size: 30px; }
 
-#POD, #DR, #NOD {
+#POD,
+#DR,
+#NOD {
   font-size: 8pt; }
 
 section.module p {
@@ -725,10 +736,9 @@ video {
   color: #ffffff;
   padding: 20px;
   border-radius: 10px; }
-
-.callout h2 {
-  padding-bottom: 18px;
-  border-bottom: 1px solid #ffffff; }
+  .callout h2 {
+    padding-bottom: 18px;
+    border-bottom: 1px solid #ffffff; }
 
 .expandable {
   padding: 3px 5px;

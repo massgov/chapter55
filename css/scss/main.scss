@@ -67,9 +67,13 @@ section.module h2 {
     font-family: $font-serif;
     font-size: 30px;
 }
-#POD, #DR, #NOD {
+
+#POD,
+#DR,
+#NOD {
     font-size: 8pt;
 }
+
 section.module p {
     margin-bottom: 40px;
     font-size: 16px;
@@ -215,11 +219,21 @@ video {
     color: $color-white;
     padding: 20px;
     border-radius: 10px;
-}
+    h2 {
+        padding-bottom: 18px;
+        border-bottom: 1px solid $color-white;
+    }
 
-.callout h2 {
-    padding-bottom: 18px;
-    border-bottom: 1px solid $color-white;
+    // .btn-primary {
+    //     color: $color-white;
+    //     background-color: $color-gray-light;
+    //     border-color: $color-white;
+    //     &:hover {
+    //         color: $color-white;
+    //         background-color: $color-primary;
+    //         border-color: $color-primary;
+    //     }
+    // }
 }
 
 .expandable {
