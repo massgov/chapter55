@@ -17,7 +17,7 @@
     }
 }
 
-.people-blocks{
+.people-blocks {
     width: 100%;
     margin: auto;
     text-align: center;
@@ -54,31 +54,25 @@
 
 .type_gender0 {
     background: $color-male-light;
-    // fill: $color-male;;
-}
-
-.type_gender2 {
-    background: $color-male;
-    fill: $color-male;
-    ;
 }
 
 .type_gender1 {
     background: $color-male-alt;
-    fill: $color-male-alt;
+}
+
+.type_gender2 {
+    background: $color-male;
+    ;
 }
 
 .type_gender3 {
     background: $color-female;
-    fill: $color-female;
 }
 
 .type_gender4 {
     background: $color-female-alt;
-    fill: $color-female-alt;
 }
 
 .type_gender5 {
     background: $color-female-light;
-    // fill: $color-male;;
 }
