@@ -31,8 +31,8 @@ function generateMap(error, results) {
         // Assert test.
         if (maTowns.features[i].properties.town != maOpioid.features[i].TOWN) {
             //if (usStates.features[i].properties.NAME !== usPop[i].State) {
-            console.log('ASSERT failure for index: ' + i);
-            console.log(maTowns.features[i].properties.town + ' mismatch with ' + maOpioid.features[i].TOWN);
+            //console.log('ASSERT failure for index: ' + i);
+            //console.log(maTowns.features[i].properties.town + ' mismatch with ' + maOpioid.features[i].TOWN);
             //console.log(usStates.features[i].properties.NAME + ' mismatch with ' + usPop[i].State);
             alert('Input data corrupted: generation of map terminated.');
             return;
@@ -273,8 +273,8 @@ function generateMap2(error, results) {
     var i;
     for (i = 0; i < maTowns.features.length; i++) {
         if (maTowns.features[i].properties.town != maOpioid.features[i].TOWN) {
-            console.log('ASSERT failure for index: ' + i);
-            console.log(maTowns.features[i].properties.town + ' mismatch with ' + maOpioid.features[i].TOWN);
+            //console.log('ASSERT failure for index: ' + i);
+            //console.log(maTowns.features[i].properties.town + ' mismatch with ' + maOpioid.features[i].TOWN);
             alert('Input data corrupted: generation of map terminated.');
             return;
         }
@@ -284,7 +284,7 @@ function generateMap2(error, results) {
     var width = 960,
         height = 450;
 
-    console.log(height);
+    //console.log(height);
 
     var svgContainer = d3.select("#map_comp").append("svg")
         .attr("width", width)
@@ -332,7 +332,7 @@ function generateMap2(error, results) {
             var string_base = "yr"
             currentvalue = string_base.concat(currentyear);
             var currentrate
-            console.log(height);
+           // console.log(height);
 
             if (d.properties[currentvalue] > 0) {
                 currentrate = d3.format(".1f")(d.properties[currentvalue]);
@@ -342,7 +342,7 @@ function generateMap2(error, results) {
                 currentrate = "N/A*";
             }
 
-            console.log(currentrate);
+            //console.log(currentrate);
 
             tooltip2.classed('hidden', false)
                 .attr('style', 'left:' + (mouse[0] + 15) +
@@ -413,7 +413,7 @@ function generateMap2(error, results) {
 
         var szAttr = 'yr' + year;
         currentyear = year
-        console.log(currentyear)
+       // console.log(currentyear)
         $('#titlePrefix2').html('A Composite Indicator of the Impact of the Opioid Epidemic on Massachusetts in ');
         $('#fromYear2').html(year);
 
