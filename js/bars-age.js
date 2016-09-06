@@ -22,6 +22,15 @@
     var age_bar_label = d3.scale.ordinal()
         .range(["Male", "Female"]);
 
+    var ages_label = $bars_age.append('text')
+            .text("Age")
+            .attr("class", "vis-x-axis-label")
+            .style("text-anchor", "start")
+            .attr("y", 10)
+            .attr("x", 10);
+
+    var chart_title = $bars_age.append('text');
+
     var age_bars_legend = $bars_age.selectAll(".vis-legend")
         .data(['2014', '2015'])
         .enter().append("g");
@@ -192,6 +201,12 @@
 
     function redraw(data, column) {
 
+        chart_title.text(toTitle(column))
+            .attr("class", "vis-label")
+            .style("text-anchor", "end")
+            .attr("y", 12)
+            .attr("x", width + margin + margin);
+
         var max = d3.max(data, function(d) {
             return +d[column];
         });
@@ -202,7 +217,7 @@
 
         yScale = d3.scale.ordinal()
             .domain(d3.range(data.length))
-            .rangeBands([0, height], .2);
+            .rangeBands([20, height], .2);
 
         // yScale = function calc(e){return i[((u.get(e)||("range"===t.t?u.set(e,n.push(e)):0/0))-1)%i.length]};
 
@@ -349,4 +364,14 @@
 
 
     } // end of draw function
+
+
+    function toTitle(key) {
+        var titleLookup = {
+            percentOpiodDeaths: 'Percent Opioid Deaths among All Deaths',
+            deathRate: 'Opioid Death Rate per 10,000 People per Year',
+            numberOpioidDeaths: 'Number of Opioid Deaths'
+        };
+        return titleLookup[key];
+    }
 })();
