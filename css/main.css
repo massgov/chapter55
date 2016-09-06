@@ -176,6 +176,9 @@
   font-family: Helvetica, Arial;
   text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; }
 
+.vis--dark-background text {
+  letter-spacing: 0.5px; }
+
 /* ============================================================
   Map
 ============================================================ */
@@ -226,11 +229,11 @@
     Lines Death
 ============================================================ */
 .line-death {
-  stroke: #B1B5B4;
+  stroke: #CCC;
   fill: none;
   stroke-opacity: 40%;
-  stroke-width: 1px;
-  stroke-dasharray: 1, 1; }
+  stroke-width: 2px;
+  stroke-dasharray: 2, 2; }
 
 .usa {
   color: #000000;
@@ -300,10 +303,19 @@
 /* ============================================================
     Lines BSAS
 ============================================================ */
-.ui-autocomplete-input {
-  padding: 10px;
-  border: 1px solid #0071bc;
-  border-radius: 5px; }
+.bsas-controls {
+  margin-bottom: 10px; }
+  .bsas-controls .ui-autocomplete-input {
+    padding: 4px;
+    border: 1px solid #B0BEC5;
+    border-radius: 4px; }
+  .bsas-controls > * {
+    vertical-align: middle; }
+  @media screen and (max-width: 500px) {
+    .bsas-controls > * {
+      display: block;
+      text-align: center;
+      margin: 5px auto; } }
 
 #lines-bsas .vis-y-axis line {
   stroke-width: 0.5px;
@@ -814,3 +826,8 @@ footer {
   color: #ffffff;
   padding: 30px;
   background-color: #B0BEC5; }
+
+.sources-section {
+  background: #333333;
+  color: #ffffff;
+  padding: 5em 0; }
