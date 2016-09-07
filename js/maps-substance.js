@@ -23,7 +23,7 @@ var Vis = (function(d3) {
         .attr("height", height);
 
     var path = d3.geo.path().projection(projection),
-        palette = d3.scale.threshold().domain([0, 0.1, 0.15, 0.35, 0.6, 1.00]).range(colorbrewer.RdPu[6]);
+        palette = d3.scale.threshold().domain([0, 0.1, 0.15, 0.35, 0.6, 1.00]).range(colorbrewer.PuBuGn[6]);
 
 
 
@@ -120,7 +120,7 @@ var Vis = (function(d3) {
 
     }
 
-    var opChgScale = d3.scale.threshold().domain([0, 0.1, 0.15, 0.35, 0.6, 1.00]).range(colorbrewer.RdPu[6])
+    var opChgScale = d3.scale.threshold().domain([0, 0.1, 0.15, 0.35, 0.6, 1.00]).range(colorbrewer.PuBuGn[6])
     opChgScale.domainStrings = function() {
         return (['0%', '>0-10%', '>10-15%', '>15-35%',
             '>35-60%', '>60-100%'

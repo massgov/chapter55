@@ -93,11 +93,11 @@
                                     <hr>
                                 </div>
                                 <h3>
-              <span id="odMap_titlePrefix" class="title"></span>
-              <span id="odMap_fromYear" class="year"></span>
-              <span id="odMap_titleMidfix" class="title"></span>
-              <span id="odMap_toYear" class="year"></span>
-              </h3>
+				  <span id="odMap_titlePrefix" class="title"></span>
+				  <span id="odMap_fromYear" class="year"></span>
+				  <span id="odMap_titleMidfix" class="title"></span>
+				  <span id="odMap_toYear" class="year"></span>
+				</h3>
                                 <div id="odMap_legend" class="vis-legend"></div>
                                 <div id="odMap_map"></div>
                                 <div id='odMap_source' class="source"></div>
@@ -146,12 +146,11 @@
                             </p>
                             <h3 class="title">Learn More About Opioids</h3>
                             <hr>
-                            <ul class="nav nav-pills" id="pills-first">
-                                <li class="active"><a href="#tab_a">Definition</a></li>
-                                <li><a href="#tab_b">Useful Effects</a></li>
-                                <li><a href="#tab_c">Side Effects</a></li>
+			    <ul class="nav nav-tabs" id="pills-first">
+				<li class="active"><a href="#tab_a" data-toggle="tab">Definition</a></li>
+				<li><a href="#tab_b" data-toggle="tab">Useful Effects</a></li>
+				<li><a href="#tab_c" data-toggle="tab">Side Effects</a></li>
                             </ul>
-                            <hr>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="tab_a">
                                     <h4>What are opioids?</h4>
@@ -177,9 +176,9 @@
                         </div>
                         <div class="col-xs-12 col-md-6">
                             <h3 class="title">Age-Adjusted Opioid Death Rate by Year</h3>
-                            <h4 class="subtitle">Comparing the opioid related death rate of Massachusetts<sup>2</sup> to neighboring states<sup>1</sup> and the nation overall<sup>1</sup>.</h4>
+                            <h4 class="subtitle">Comparing the opioid related death rate of Massachusetts<sup>2</sup> to the nation overall<sup>1</sup>.</h4>
                             <div id="deathLines"></div>
-                            <div class="source">Sources: <sup>(1)</sup>Centers for Disease Control and Prevention, National Center for Health Statistics. <a href="http://wonder.cdc.gov/mcd-icd10.html">Multiple Cause of Death 1999-2014 on CDC WONDER Online Database</a>, released 2015. <sup>(2)</sup>Massachusetts Registry of Vital Records and Statistics, Massachusetts Department of Public Health.</div>
+                            <div class="source">Sources: (1) Centers for Disease Control and Prevention, National Center for Health Statistics. <a href="http://wonder.cdc.gov/mcd-icd10.html">Multiple Cause of Death 1999-2014 on CDC WONDER Online Database</a>, released 2015. (2) <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/admin/dmoa/vitals/">Massachusetts Registry of Vital Records and Statistics</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/">Massachusetts Department of Public Health</a>.</div>
                         </div>
                     </div>
                 </div>
@@ -248,13 +247,14 @@
                             <hr>
                             <div id="treatmentMaps" data-active-date="2005">
                                 <div class="btn-group btn-group-justified">
-                                    <div class="btn btn-default js-toggle-treatment-map active" data-date="2005">2005</div>
-                                    <div class="btn btn-default js-toggle-treatment-map" data-date="2010">2010</div>
-                                    <div class="btn btn-default js-toggle-treatment-map" data-date="2014">2014</div>
+				    <div class="btn btn-sm btn-default js-toggle-treatment-map active" data-date="2005">2005</div>
+				    <div class="btn btn-sm btn-default js-toggle-treatment-map" data-date="2010">2010</div>
+				    <div class="btn btn-sm btn-default js-toggle-treatment-map" data-date="2014">2014</div>
                                 </div>
                                 <div id="treatmentMaps_legend" class="vis-legend"></div>
                                 <div id="treatmentMaps_maps"></div>
                             </div>
+                            <div class="source">Sources: <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/substance-abuse/">Massachusetts Bureau of Substance Abuse Services</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/">Massachusetts Department of Public Health</a></div>
                         </div>
                     </div>
                     <p></p>
@@ -268,6 +268,7 @@
                                 <button class="btn btn-primary btn-sm btn-bsas" data-val="massachusetts">view all of Massachusettes</button>
                             </div>
                             <div id="lines-bsas"></div>
+                            <div class="source">Sources: <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/substance-abuse/">Massachusetts Bureau of Substance Abuse Services</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/">Massachusetts Department of Public Health</a></div>
                         </div>
                         <div class="col-xs-12 col-md-5">
                             <h2>Growth of Addiction in Massachusetts</h2>
@@ -295,8 +296,8 @@
                             <h3 class="title">Prescription History for Fatal Overdoses</h3>
                             <hr>
                             <div>
-                                <button class="btn btn-primary btn-svg" value="2/3">Study Period (2011 – 2014)</button>
-                                <button class="btn btn-primary btn-svg" value="1/12">1 Month Before Death</button>
+				<button class="btn btn-sm btn-primary btn-svg" value="2/3">Study Period (2011 – 2014)</button>
+				<button class="btn btn-sm btn-primary btn-svg" value="1/12">1 Month Before Death</button>
                             </div>
                             <hr>
                             <div id="odInfographic" class="center"></div>
@@ -304,8 +305,9 @@
                             <div class="col-xs-12 col-md-1"></div>
                             <div class="col-xs-12 col-md-11">
                                 <p id='odInfographic_details'></p>
-                                <p></p>
+                                <p></P>
                             </div>
+                            <div class="source">Sources: <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/admin/dmoa/vitals/">Massachusetts Registry of Vital Records and Statistics</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/hcq/drug-control/pmp/">Massachusetts Prescription Drug Monitoring Program</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/">Massachusetts Department of Public Health</a></div>
                             <!-- <img src="img/state-without-stigma-462x231.jpg" class="img-responsive" alt="Responsive image"> -->
                         </div>
                         <div class="col-xs-12 col-md-6">
@@ -367,7 +369,10 @@
                                 </div>
                                 <div class="block-chart" id="people"></div>
                             </div>
+                        <div class="sourcecallout">Sources: <a target="_blank" href="http://www.mass.gov/eopss/agencies/ocme/">Massachusetts Office of the Chief Medical Examiner</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/admin/dmoa/vitals/">Massachusetts Registry of Vital Records and Statistics</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/hcq/drug-control/pmp/">Massachusetts Prescription Drug Monitoring Program</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/">Massachusetts Department of Public Health</a></div>
                         </div>
+
+
                     </div>
                 </div>
                 <div class="container">
@@ -383,8 +388,9 @@
                                 <hr>
                                 <p>Fentanyl is an opioid that can be prescribed for pain management. However, it’s also used illegally either on its own or combined with heroin. According to the DEA, illegally produced Fentanyl can be up to 50 times stronger than heroin. Illegally sold and produced Fentanyl is increasingly recognized as a problem across the United States, and particularly in Massachusetts. Toxicology data from recent post-mortem cases indicates <span class="fentanyl_">Fentanyl</span> is adding to the state’s deadly epidemic more than <span class="heroin_">Heroin</span>. In 2015, 57% of toxicology samples tested positive for Fentanyl which is more than double the figure recorded in 2013.</p>
                                 <div id="fentanyl-lines" class="vis--dark-background"></div>
+                            <div class="sourcecallout">Sources: <a target="_blank" href="http://www.mass.gov/eopss/agencies/ocme/">Massachusetts Office of the Chief Medical Examiner</a></div>
                             </div>
-                            <div class="sourcecallout">Sources: Massachusetts Executive Office of Public Safety and Security, Office of the Chief Medical Examiner</div>
+
                         </div>
                         <div class="col-xs-12 col-md-6 pull-right">
                             <div class="space-col"></div>
@@ -427,9 +433,9 @@
                                 <div class="col-xs-12 col-md-5">
                                     <div class="space-col"></div>
                                     <div id="buttons-blocks" class="center">
-                                        <button class="btn btn-primary btn-blocks" id="prescription" value='0'>Prescription Opioids</button>
-                                        <button class="btn btn-primary btn-blocks" id="heroin" value='1'>Heroin</button>
-                                        <button class="btn btn-primary btn-blocks" id="multi" value='2'>Multiple Prescribers</button>
+					<button class="btn btn-sm btn-primary btn-blocks" id="prescription" value='0'>Prescription Opioids</button>
+					<button class="btn btn-sm btn-primary btn-blocks" id="heroin" value='1'>Heroin</button>
+					<button class="btn btn-sm btn-primary btn-blocks" id="multi" value='2'>Multiple Prescribers</button>
                                     </div>
                                     <p></p>
                                     <!-- </select> -->
@@ -437,6 +443,8 @@
                                     <hr>
                                     <div id="table_gender_legend">
                                         <img src="img/person.svg" width="25px" height="25px" /><span>= 1% of the total <strong>1,692</strong> Opioid-related Decedents</span>
+                                        <div class="source">Sources: <a target="_blank" href="http://www.mass.gov/eopss/agencies/ocme/">Massachusetts Office of the Chief Medical Examiner</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/admin/dmoa/vitals/">Massachusetts Registry of Vital Records and Statistics</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/hcq/drug-control/pmp/">Massachusetts Prescription Drug Monitoring Program</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/">Massachusetts Department of Public Health</a>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -455,12 +463,12 @@
                             <hr>
                             <div id="buttons-bar">
                                 <button class="btn btn-primary btn-sm" id="POD">Percent Opioid Deaths among All Deaths</button>
-                                <button class="btn btn-primary" id="DR">Opioid Death Rate per 10,000 People per Year</button>
-                                <button class="btn btn-primary" id="NOD">Number of Opioid Deaths</button>
+                                <button class="btn btn-primary btn-sm" id="DR">Opioid Death Rate per Year</button>
+                                <button class="btn btn-primary btn-sm" id="NOD">Number of Opioid Deaths</button>
                             </div>
                             <hr>
                             <div id="changing_bars"></div>
-                            <div class="source">Sources: Massachusetts Registry of Vital Records and Statistics, Massachusetts Department of Public Health</div>
+                            <div class="source">Sources: <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/admin/dmoa/vitals/">Massachusetts Registry of Vital Records and Statistics</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/">Massachusetts Department of Public Health</a></div>
                         </div>
                     </div>
                     <div class="row">
@@ -473,9 +481,10 @@
                         <div class="col-xs-12 col-md-4">
                             <p></p>
                             <!--  <h2>Race and Ethinicity</h2> -->
-                            <h3 class="title">Opioid Deaths by Race</h3>
+                            <h3 class="title">Opioid Deaths by Race Ethnicity</h3>
                             <hr>
                             <div id="race_ethnicity_chart"></div>
+                            <div class="source">Sources: <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/admin/dmoa/vitals/">Massachusetts Registry of Vital Records and Statistics</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/">Massachusetts Department of Public Health</a></div>
                         </div>
                     </div>
                     <div class="row">

@@ -148,7 +148,9 @@
     } // generateMap
 
     function getYear() {
-        setSymbology(2000);
+        // initial setting on load
+        $("#odMap_timeline").val(2015);
+        setSymbology(2015);
         $("#odMap_timeline").on('input change', function() {
             setSymbology($(this).val());
         });
@@ -161,8 +163,8 @@
         $('#odMap_titlePrefix').html('Count of Opiod Related Deaths in Massachusetts in');
         $('#odMap_fromYear').html(year);
 
-        $('#odMap_source').html('Sources: Massachusetts Department of Public Health,' +
-                             '<br>Massachusetts Registry of Vital Records and Statistics</>');
+        $('#odMap_source').html('Sources: <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/admin/dmoa/vitals/">Massachusetts Registry of Vital Records and Statistics</a>, ' +
+                             '<br><a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/">Massachusetts Department of Public Health</a>.</>');
 
         svgContainer.selectAll("path.deathmap")
             .transition()
