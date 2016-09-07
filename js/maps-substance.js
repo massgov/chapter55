@@ -1,4 +1,8 @@
 var Vis = (function(d3) {
+    "use strict";
+
+    var visualizationWrapper = d3.select('#treatmentMaps_maps');
+
     var geojson;
     queue()
         .defer(d3.json, 'js/data/TOWN.geo.json')
@@ -11,31 +15,26 @@ var Vis = (function(d3) {
     var projection = d3.geo.conicConformal()
         .parallels([41 + 43 / 60, 42 + 41 / 60])
         .rotate([71 + 30 / 60, -41])
-        .scale([7500])
-        .translate([250, 350]);
+        .scale([8600])
+        .translate([280, 360]);
 
     var $maps_sub = d3.select("#carte").append("svg")
         .attr("width", width)
         .attr("height", height);
 
     var path = d3.geo.path().projection(projection),
-        palette = d3.scale.threshold().domain([0, 0.1, 0.15, 0.35, 0.6, 1.00]).range(colorbrewer.YlOrBr[6]);
+        palette = d3.scale.threshold().domain([0, 0.1, 0.15, 0.35, 0.6, 1.00]).range(colorbrewer.RdPu[6]);
 
 
 
     function visualize(error, states, data) {
 
-        var visualizationWrapper = d3.select('#treatmentMaps_maps');
+
 
         data.data.forEach(function(data, i) {
-            var wrapper = visualizationWrapper
-                .append('div')
-                .style({
-                    width: width + 'px',
-                    height: height + 'px'
-                });
+            var wrapper = visualizationWrapper.append('div').attr('class', 'map-wrapper').append('div');
 
-            createMap(wrapper, states, data)
+            createMap(wrapper, states, data);
         });
     }
 
@@ -43,20 +42,20 @@ var Vis = (function(d3) {
 
     function createMap(wrapper, geo, data) {
 
-        wrapper.append('p')
+        wrapper.append('span')
             .text(data.key)
-            .attr('class', 'legend');
-        wrapper.append('p2')
+            .attr('class', 'vis-title');
+	    wrapper.append('span')
             .text("")
-            .attr('class', 'legend');
+	    .attr('class', 'selection-label');
 
-        wrapper.append('y');
-
-        var $maps_sub = wrapper.append('svg')
-            .attr({
-                width: width,
-                height: height
-            });
+        var $maps_sub = wrapper
+            .classed("svg-container", true) //container class to make it responsive
+            .append("svg")
+            .attr("preserveAspectRatio", "xMinYMin meet")
+            .attr("viewBox", "0 0 "+width+" "+height)
+            //class to make it responsive
+            .classed("svg-content-responsive", true);
 
         $maps_sub.selectAll('path')
             .data(geo.features)
@@ -102,12 +101,14 @@ var Vis = (function(d3) {
 
                 //console.log(town_value);
 
-                self.node().parentNode.parentNode.getElementsByTagName('p2')[0].innerHTML = (geoData[0].properties.TOWN + ":  " + town_value);
+		self.node().parentNode.parentNode.getElementsByClassName('selection-label')[0].innerHTML = (geoData[0].properties.TOWN + ":  " + town_value);
                 d3.select((self.node())).style('fill-opacity', 0.4).style("stroke", "white").style("stroke-width", "1.5px");
             })
             .on('unselect', function(self) {
-                self.node().parentNode.parentNode.getElementsByTagName('p2')[0].innerHTML = "";
-                d3.selectAll('#treatmentMaps_maps path').style({ 'fill-opacity': 1 }).style("stroke", "white").style("stroke-width", "0.0px");
+            //     self.node().parentNode.parentNode.getElementsByTagName('p2')[0].innerHTML = "";
+            //     d3.selectAll('#treatmentMaps_maps path').style({ 'fill-opacity': 1 }).style("stroke", "white").style("stroke-width", "0.0px");
+		self.node().parentNode.parentNode.getElementsByClassName('selection-label')[0].innerHTML = "";
+                d3.selectAll('path#bsasmap').style({ 'fill-opacity': 1 }).style("stroke", "white").style("stroke-width", "0.0px");
             })
 
         function notify(selector, eventName) {
@@ -119,7 +120,7 @@ var Vis = (function(d3) {
 
     }
 
-    var opChgScale = d3.scale.threshold().domain([0, 0.1, 0.15, 0.35, 0.6, 1.00]).range(colorbrewer.YlOrBr[6])
+    var opChgScale = d3.scale.threshold().domain([0, 0.1, 0.15, 0.35, 0.6, 1.00]).range(colorbrewer.RdPu[6])
     opChgScale.domainStrings = function() {
         return (['0%', '>0-10%', '>10-15%', '>15-35%',
             '>35-60%', '>60-100%'
@@ -134,7 +135,7 @@ var Vis = (function(d3) {
             height = 70;
 
         var $maps_sub_svg = d3.select('#' + szDivId).append("svg")
-            .attr("width", width)
+            .attr("width", "100%")
             .attr("height", height);
 
         var $maps_sub_legends = $maps_sub_svg.append("g");
@@ -151,9 +152,9 @@ var Vis = (function(d3) {
             .data(legendData)
             .enter().append("rect")
             .attr("height", 20)
-            .attr("width", 50)
+	    .attr("width", 60)
             .attr("x", function(d, i) {
-                return i * 55;
+                return (i * (100/legendData.length)) + "%";
             })
             .attr("y", 20)
             .style("stroke", "black")
@@ -165,19 +166,28 @@ var Vis = (function(d3) {
         $maps_sub_legends.selectAll("text")
             .data(legendData)
             .enter().append("text")
+	    .attr('text-anchor', 'middle')
             .attr("x", function(d, i) {
-                return i * 55;
+		      return ((i * (100/legendData.length))+7) + "%";
             })
             .attr("y", 55)
             .text(function(d, i) {
                 return d.s;
-            })
-            .style("font-size", "12px");
+	    });
 
         $maps_sub_legends.append("text")
-            .attr("class", "caption")
+	    .attr("class", "vis-caption")
             .attr("y", 12)
             .text(szCaption);
     }
+
+
+
+    $('.js-toggle-treatment-map').click(function() {
+        var date = $(this).data('date');
+        $('#treatmentMaps').attr('data-active-date', date);
+        $('.js-toggle-treatment-map').removeClass('active');
+        $(this).addClass('active');
+    });
 
 })(d3);

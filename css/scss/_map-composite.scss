@@ -2,45 +2,47 @@
   Map
 ============================================================ */
 
-.range {
-    position: relative;
-    width: 90%;
-}
-
-#odMap_fromYear,
-#odMap_toYear {
-    color: $color-primary;
-}
-
-#odMap_fromYear2,
-#odMap_toYear2 {
-    color: $color-female;
-}
-
-.year {
-    font-weight: bolder;
-}
+// .range {
+//     position: relative;
+//     width: 90%;
+// }
 
 
-.label {
-    font-size: 2em;
-}
+// #fromYear,
+// #toYear {
+//     color: $color-primary;
+// }
 
-@mixin label {
-    color: $color-gray-lighter;
-    position: absolute;
-    top: -10px;
-}
+// #fromYear2,
+// #toYear2 {
+//     color: $color-female;
+// }
 
-#odMap_from {
-    @include label;
-    left: -10px;
-}
+// .year {
+//     font-weight: bolder;
+// }
 
-#odMap_to {
-    @include label;
-    right: -10px;
-}
+
+// .label {
+//     font-size: 2em;
+// }
+
+// @mixin label {
+//     color: $color-gray-lighter;
+//     position: absolute;
+//     top: -10px;
+// }
+
+
+// #from {
+//     @include label;
+//     left: -10px;
+// }
+
+// #to {
+//     @include label;
+//     right: -10px;
+// }
 
 
 
@@ -71,32 +73,4 @@ input {
             }
         }
     }
-}
-
-div.tooltip {
-    color: #222;
-    background-color: #fff;
-    padding: .5em;
-    text-shadow: #f5f5f5 0 1px 0;
-    border-radius: 2px;
-    opacity: 0.9;
-    position: absolute;
-}
-
-.tooltip.hidden {
-    display: none !important;
-}
-
-div.tooltip2 {
-    color: #222;
-    background-color: #fff;
-    padding: .5em;
-    text-shadow: #f5f5f5 0 1px 0;
-    border-radius: 2px;
-    opacity: 0.9;
-    position: absolute;
-}
-
-.tooltip2.hidden {
-    display: none !important;
 }
