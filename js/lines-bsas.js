@@ -365,7 +365,7 @@
 
      var margin = {
              top: 0,
-             right: 10,
+             right: 25,
              bottom: 30,
              left: 30
          },
@@ -461,7 +461,7 @@
          })
          .defined(function(d) {
              return y(d.value);
-         }) // Omit empty values.;
+         }); // Omit empty values.
 
          $x_axis.attr("transform", "translate(0," + height + ")").call(xAxis_bsas);
          $y_axis.call(yAxis_bsas);
@@ -471,6 +471,7 @@
 
         renderLegend();
         renderLines();
+        updateDots();
     }
 
 
@@ -642,58 +643,7 @@
 
 
 
-     d3.csv("js/data/bsas-data.csv", type, function(error, data) {
-         if (error) throw error;
-         //console.log(groups);
-         // var marriages = groups[current_town];
-
-         x.domain([2005, d3.max(data, function(d) {
-             return d.age;
-         })]);
-         y.domain([0, .99]);
-
-         setupLines();
-         render();
-         window.addEventListener('resize', render);
-
-
-
-         // Autocomplete
-
-         $(".btn-bsas").addClass('active');
-         d3.selectAll(".btn-bsas").on("click", function() {
-             current_town = d3.select(this).attr("data-val");
-             update();
-             d3.select(this).classed('active', true);
-             $("#tags").val('');
-         });
-
-
-         $("#tags").autocomplete({
-             source: function(request, response) {
-                 var matches = $.map(town_names, function(acItem) {
-                     if (acItem.toUpperCase().indexOf(request.term.toUpperCase()) === 0) {
-                         return acItem;
-                     }
-                 });
-                 response(matches);
-                 //$("#tags").focus(function() {
-                     // if (matches.length == 1) {
-                     //     current_town = matches[0];
-                     //     $(".btn-bsas").removeClass('active');
-                     //     update();
-                     // }
-                 //});
-                 //console.log(matches);
-             },
-             select: function(event, ui) {
-                 current_town = ui.item.value;
-                 $(".btn-bsas").removeClass('active');
-                 update();
-             }
-         });
-
-         function update() {
+    function updateDots() {
 
              // marriages = groups[current_town];
              //update alcohol line
@@ -881,6 +831,61 @@
 
 
 
+
+     d3.csv("js/data/bsas-data.csv", type, function(error, data) {
+         if (error) throw error;
+         //console.log(groups);
+         // var marriages = groups[current_town];
+
+         x.domain([2005, d3.max(data, function(d) {
+             return d.age;
+         })]);
+         y.domain([0, .99]);
+
+         setupLines();
+         render();
+         window.addEventListener('resize', render);
+
+
+
+         // Autocomplete
+
+         $(".btn-bsas").addClass('active');
+         d3.selectAll(".btn-bsas").on("click", function() {
+             current_town = d3.select(this).attr("data-val");
+             updateDots();
+             d3.select(this).classed('active', true);
+             $("#tags").val('');
+         });
+
+
+         $("#tags").autocomplete({
+             source: function(request, response) {
+                 var matches = $.map(town_names, function(acItem) {
+                     if (acItem.toUpperCase().indexOf(request.term.toUpperCase()) === 0) {
+                         return acItem;
+                     }
+                 });
+                 response(matches);
+                 //$("#tags").focus(function() {
+                     // if (matches.length == 1) {
+                     //     current_town = matches[0];
+                     //     $(".btn-bsas").removeClass('active');
+                     //     updateDots();
+                     // }
+                 //});
+                 //console.log(matches);
+             },
+             select: function(event, ui) {
+                 current_town = ui.item.value;
+                 $(".btn-bsas").removeClass('active');
+                 updateDots();
+             }
+         });
+
+
+
+
          // alcohol
          var focusalcohol = $lines_bsas.append("g")
              .attr("class", "focus alcohol")
@@ -975,7 +980,7 @@
 
              if (d_alcohol.value >= 0) {
                  focusalcohol.attr("transform", "translate(" + x(d_alcohol.age) + "," + y(d_alcohol.value) + ")");
-                 focusalcohol.select("text").text(percent(d_alcohol.value));
+                 focusalcohol.select("text").text(percent(d_alcohol.value)).attr('transform',"translate(-28,0)");
                  focusalcohol.select("circle").attr("r", 4);
              } else {
                  focusalcohol.select("circle").attr("r", 0);
@@ -995,7 +1000,7 @@
 
              if (d_marijuana.value >= 0) {
                  focusmarijuana.attr("transform", "translate(" + x(d_marijuana.age) + "," + y(d_marijuana.value) + ")");
-                 focusmarijuana.select("text").text(percent(d_marijuana.value));
+                 focusmarijuana.select("text").text(percent(d_marijuana.value)).attr('transform',"translate(-28,0)");
                  focusmarijuana.select("circle").attr("r", 4);
              } else {
                  focusmarijuana.select("circle").attr("r", 0);
@@ -1071,6 +1076,7 @@
 
 
          }
+
 
      }); // @end d3.tsv()
 
