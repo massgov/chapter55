@@ -37,19 +37,13 @@
   font-size: 1.2em;
   font-weight: 300; }
 
-.tab-content {
-  height: 190px;
-  overflow-x: hidden; }
-
 /* ============================================================
   Buttons
 ============================================================ */
 .btn-primary {
   color: #0071bc;
   background-color: #ffffff;
-  border-color: #0071bc;
-  margin-top: 5px;
-  padding: 10px; }
+  border-color: #0071bc; }
 
 .btn-primary:focus,
 .btn-primary.focus {
@@ -664,11 +658,6 @@ section.module h2 {
   margin-bottom: 40px;
   font-family: "Roboto Slab", "Merriweather", "Georgia", "Times New Roman", serif;
   font-size: 30px; }
-
-#POD,
-#DR,
-#NOD {
-  font-size: 8pt; }
 
 section.module p {
   margin-bottom: 40px;
