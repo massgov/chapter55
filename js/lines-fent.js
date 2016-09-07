@@ -88,7 +88,7 @@
 
     var margin = {
       top: 60, // space for the legend
-      right: 10,
+      right: 15,
       bottom: 50,
       left: 42
     };
@@ -387,7 +387,7 @@
             return y(d.value);
         });
 
-       x_axis
+      x_axis
         .attr("transform", "translate(0," + height + ")")
         .call(xAxis_fent);
 
@@ -425,14 +425,7 @@
     function updateWidth(componentWidth) {
       wrapper_width = componentWidth;
       width = wrapper_width - margin.left - margin.right;
-
-      if(componentWidth < 500) {
-        wrapper_height = 300;
-        height = wrapper_height - margin.top - margin.bottom;
-      } else {
-        wrapper_height = 400;
-        height = wrapper_height - margin.top - margin.bottom;
-      }
+      height = wrapper_height - margin.top - margin.bottom;
     }
 
     function renderLegend() {
