@@ -365,7 +365,7 @@
 
      var margin = {
              top: 0,
-             right: 10,
+             right: 25,
              bottom: 30,
              left: 30
          },
@@ -980,7 +980,7 @@
 
              if (d_alcohol.value >= 0) {
                  focusalcohol.attr("transform", "translate(" + x(d_alcohol.age) + "," + y(d_alcohol.value) + ")");
-                 focusalcohol.select("text").text(percent(d_alcohol.value));
+                 focusalcohol.select("text").text(percent(d_alcohol.value)).attr('transform',"translate(-28,0)");
                  focusalcohol.select("circle").attr("r", 4);
              } else {
                  focusalcohol.select("circle").attr("r", 0);
@@ -1000,7 +1000,7 @@
 
              if (d_marijuana.value >= 0) {
                  focusmarijuana.attr("transform", "translate(" + x(d_marijuana.age) + "," + y(d_marijuana.value) + ")");
-                 focusmarijuana.select("text").text(percent(d_marijuana.value));
+                 focusmarijuana.select("text").text(percent(d_marijuana.value)).attr('transform',"translate(-28,0)");
                  focusmarijuana.select("circle").attr("r", 4);
              } else {
                  focusmarijuana.select("circle").attr("r", 0);
