@@ -486,26 +486,22 @@
     content: attr(data-index); }
 
 .type_gender0 {
-  background: #B3E5FC; }
-
-.type_gender2 {
-  background: #0D47A1;
-  fill: #0D47A1; }
+  background: #B2DFDB; }
 
 .type_gender1 {
-  background: #64B5F6;
-  fill: #64B5F6; }
+  background: #4DB6AC; }
+
+.type_gender2 {
+  background: #006064; }
 
 .type_gender3 {
-  background: #880E4F;
-  fill: #880E4F; }
+  background: #7B1FA2; }
 
 .type_gender4 {
-  background: #FF80AB;
-  fill: #FF80AB; }
+  background: #CE93D8; }
 
 .type_gender5 {
-  background: #ffcdd2; }
+  background: #E1BEE3; }
 
 /* ============================================================
  Block Chart by Substance
@@ -547,12 +543,12 @@
 .malFocus,
 .bar.malFocus,
 .dots.malFocus {
-  fill: #64B5F6; }
+  fill: #4DB6AC; }
 
 .femFocus,
 .bar.femFocus,
 .dots.femFocus {
-  fill: #FF80AB; }
+  fill: #CE93D8; }
 
 .dots.hoverFocus {
   fill: #52524E;
@@ -562,10 +558,10 @@
   fill: #666666; }
 
 .femSelector {
-  fill: #980043 !important; }
+  fill: #7B1FA2 !important; }
 
 .malSelector {
-  fill: #08306b !important; }
+  fill: #006064 !important; }
 
 /* ============================================================
  Bar Chart by Race and Ethnicity
