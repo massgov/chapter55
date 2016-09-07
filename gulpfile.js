@@ -37,7 +37,7 @@ gulp.task('javascript', function () {
       "js/lines-fent.js",
       "js/lines-bsas.js",
       // "js/blocks-substance-pie.js",
-      "js/bar.js",
+      "js/blocks-bar.js",
       "js/blocks-gender.js",
       "js/bars-age.js",
       "js/bars-race.js",

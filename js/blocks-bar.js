@@ -113,13 +113,14 @@ $(document).ready(function() {
                     name: 'Methadone'
                 }],
                 name: 'Methadone'
-            }, {
-                data: [{
-                    count: 15,
-                    name: 'Buprenorphine'
-                }],
-                name: 'Buprenorphine'
-            }
+            },
+            //  {
+            //     data: [{
+            //         count: 15,
+            //         name: 'Buprenorphine'
+            //     }],
+            //     name: 'Buprenorphine'
+            // }
 
         ];
 
@@ -167,7 +168,7 @@ $(document).ready(function() {
         var time_period;
         switch (time) {
             case 0:
-                time_period = "During the Study Period";
+                time_period = "during 2011–2014";
                 break;
             case 1:
                 time_period = "6 Months Before Death";
@@ -179,11 +180,12 @@ $(document).ready(function() {
                 time_period = "1 Month Before Death";
                 break;
         }
-        $("#time-perioid").html(time_period.toLowerCase());
+        $("#time-period").html(time_period.toLowerCase());
         $("#label_blocks").html(time_period);
     });
 
     function asignVal_substance(type, time) {
+        $('#percentage').html(type[time].Yes+'%');
         $("#people").empty();
         $('#people').each(function() {
             makeChart_substance(type, time);
@@ -279,6 +281,8 @@ $(document).ready(function() {
         var xPos = parseFloat(xScale(d.x0) + 100 / (i + 1));
         var yPos = parseFloat(d3.select(this).attr('y')) + yScale.rangeBand() / 2;
         console.log(d);
+        $('.substance-type').html(d.n.toLowerCase());
+        $('#total').html(d.x);
 
     });
 
