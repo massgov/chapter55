@@ -461,7 +461,7 @@
          })
          .defined(function(d) {
              return y(d.value);
-         }) // Omit empty values.;
+         }); // Omit empty values.
 
          $x_axis.attr("transform", "translate(0," + height + ")").call(xAxis_bsas);
          $y_axis.call(yAxis_bsas);
@@ -471,6 +471,7 @@
 
         renderLegend();
         renderLines();
+        updateDots();
     }
 
 
@@ -642,58 +643,7 @@
 
 
 
-     d3.csv("js/data/bsas-data.csv", type, function(error, data) {
-         if (error) throw error;
-         //console.log(groups);
-         // var marriages = groups[current_town];
-
-         x.domain([2005, d3.max(data, function(d) {
-             return d.age;
-         })]);
-         y.domain([0, .99]);
-
-         setupLines();
-         render();
-         window.addEventListener('resize', render);
-
-
-
-         // Autocomplete
-
-         $(".btn-bsas").addClass('active');
-         d3.selectAll(".btn-bsas").on("click", function() {
-             current_town = d3.select(this).attr("data-val");
-             update();
-             d3.select(this).classed('active', true);
-             $("#tags").val('');
-         });
-
-
-         $("#tags").autocomplete({
-             source: function(request, response) {
-                 var matches = $.map(town_names, function(acItem) {
-                     if (acItem.toUpperCase().indexOf(request.term.toUpperCase()) === 0) {
-                         return acItem;
-                     }
-                 });
-                 response(matches);
-                 //$("#tags").focus(function() {
-                     // if (matches.length == 1) {
-                     //     current_town = matches[0];
-                     //     $(".btn-bsas").removeClass('active');
-                     //     update();
-                     // }
-                 //});
-                 //console.log(matches);
-             },
-             select: function(event, ui) {
-                 current_town = ui.item.value;
-                 $(".btn-bsas").removeClass('active');
-                 update();
-             }
-         });
-
-         function update() {
+    function updateDots() {
 
              // marriages = groups[current_town];
              //update alcohol line
@@ -877,6 +827,61 @@
              }
 
          }
+
+
+
+
+
+     d3.csv("js/data/bsas-data.csv", type, function(error, data) {
+         if (error) throw error;
+         //console.log(groups);
+         // var marriages = groups[current_town];
+
+         x.domain([2005, d3.max(data, function(d) {
+             return d.age;
+         })]);
+         y.domain([0, .99]);
+
+         setupLines();
+         render();
+         window.addEventListener('resize', render);
+
+
+
+         // Autocomplete
+
+         $(".btn-bsas").addClass('active');
+         d3.selectAll(".btn-bsas").on("click", function() {
+             current_town = d3.select(this).attr("data-val");
+             updateDots();
+             d3.select(this).classed('active', true);
+             $("#tags").val('');
+         });
+
+
+         $("#tags").autocomplete({
+             source: function(request, response) {
+                 var matches = $.map(town_names, function(acItem) {
+                     if (acItem.toUpperCase().indexOf(request.term.toUpperCase()) === 0) {
+                         return acItem;
+                     }
+                 });
+                 response(matches);
+                 //$("#tags").focus(function() {
+                     // if (matches.length == 1) {
+                     //     current_town = matches[0];
+                     //     $(".btn-bsas").removeClass('active');
+                     //     updateDots();
+                     // }
+                 //});
+                 //console.log(matches);
+             },
+             select: function(event, ui) {
+                 current_town = ui.item.value;
+                 $(".btn-bsas").removeClass('active');
+                 updateDots();
+             }
+         });
 
 
 
@@ -1071,6 +1076,7 @@
 
 
          }
+
 
      }); // @end d3.tsv()
 
