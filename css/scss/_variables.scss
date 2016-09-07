@@ -13,12 +13,6 @@ $color-secondary:            #b71c1c;
 $color-secondary-dark:       #b25801;
 $color-secondary-darkest:    #7f3f01;
 
-$color-error:            #e31c3d !default;
-$color-error-darkest:    #981b1e !default;
-$color-error-dark:       #cd2026 !default;
-$color-error-light:      #e59393 !default;
-$color-error-lightest:   #f9dede !default;
-
 $color-white:                #ffffff;
 $color-black:                #000000;
 
@@ -27,27 +21,22 @@ $color-gray-light:          #78909C;
 $color-gray-lighter:		#B0BEC5;
 $color-gray-dark:			#455A64;
 
-$color-gold:                 #fdb81e;
-$color-gold-light:           #f9c642; //  lighten($color-gold, 20%)
-$color-gold-lighter:         #fad980; //  lighten($color-gold, 60%)
-$color-gold-lightest:        #fff1d2; //  lighten($color-gold, 83%)
 
-$color-green:                #2e8540;
-$color-green-light:          #4aa564; // lighten($color-green, 20%)
-$color-green-lighter:        #94bfa2; // lighten($color-green, 60%)
-$color-green-lightest:       #e7f4e4; // lighten($color-green, 60%)
+// Purple & Orange
+// $color-female:				#E65100;
+// $color-female-alt:			#FB8C00;
+// $color-female-light:		#FFCC80;
+// $color-male: 				#4A148C;
+// $color-male-alt:			#8E24AA;
+// $color-male-light:			#CE93D8;
 
-$color-cool-blue:            #205493;
-$color-cool-blue-light:      #4773aa; // lighten($color-cool-blue, 20%)
-$color-cool-blue-lighter:    #8ba6ca; // lighten($color-cool-blue, 60%)
-$color-cool-blue-lightest:   #dce4ef; // lighten($color-cool-blue, 90%)
-
-$color-female:				#880E4F;
-$color-female-alt:			#FF80AB;
-$color-female-light:		#ffcdd2;
-$color-male: 				#0D47A1;
-$color-male-alt:			#64B5F6;
-$color-male-light:			#B3E5FC;
+//Purple & Green
+$color-female:				#7B1FA2;
+$color-female-alt:			#CE93D8;
+$color-female-light:		#E1BEE3;
+$color-male: 				#006064;
+$color-male-alt:			#4DB6AC;
+$color-male-light:			#B2DFDB;
 // // Typography
 
 
@@ -71,27 +60,3 @@ $font-serif:          "Roboto Slab", 'Merriweather', 'Georgia', 'Times New Roman
 
 // $font-normal:         400;
 // $font-bold:           700;
-
-
-
-// // Special State Colors
-// $color-focus:                #3e94cf;
-// $color-visited:              #4c2c92;
-
-
-// // Mobile First Breakpoints
-// $small-screen:      481px;
-// $medium-screen:     600px;
-// $large-screen:      1201px;
-
-
-// // Magic Numbers
-// $text-max-width:    53rem;
-// $site-max-width:    1040px;
-// $site-margins:      3rem;
-// $article-max-width: 600px;
-// $input-max-width:   46rem;
-// $border-radius:     rem(3px);
-// $box-shadow:        0 0 2px rgba(#000, 0.3);
-// $focus-shadow:      0 0 3px $color-focus, 0 0 7px $color-focus;
-// $grid-margins:      3rem;

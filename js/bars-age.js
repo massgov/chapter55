@@ -18,7 +18,7 @@
         .attr("fill", "none");
 
     var age_bar_color = d3.scale.ordinal()
-        .range(["#64B5F6", "#FF80AB"]);
+        .range(["malFocus", "femFocus"]);
     var age_bar_label = d3.scale.ordinal()
         .range(["Male", "Female"]);
 
@@ -32,14 +32,16 @@
     var chart_title = $bars_age.append('text');
 
     var age_bars_legend = $bars_age.selectAll(".vis-legend")
-        .data(['2014', '2015'])
+        .data(['male', 'female'])
         .enter().append("g");
 
     age_bars_legend.append("rect")
         .attr("x", 0)
         .attr("width", 20)
         .attr("height", 20)
-        .style("fill", age_bar_color);
+        .attr("class", age_bar_color);
+        // .style("fill", age_bar_color);
+
 
 
     age_bars_legend.append("text")
@@ -329,8 +331,8 @@
         dataLabels.transition()
             .duration(500)
             .attr("transform", function(d, i) {
-                console.log(xScale(+d[column]) + 50);
-                console.log(d[column]);
+                //console.log(xScale(+d[column]) + 50);
+                //console.log(d[column]);
                 return "translate(" + (xScale(+d[column]) + margin) + "," + (yScale(i) + 4) + ")"
             })
             .text(function(d) {

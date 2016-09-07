@@ -452,9 +452,9 @@
         .attr("class", "vis-legend")
         .attr("transform", "translate("+margin.left+",0)");
       var lineHeight = 15;
-      var seriesColors = ["#ffffff", "#b71c1c", "#0071bc", "#ffffff"];
-      var seriesLineStrokes = ["1.5px", "3.5px", "3.5px", "2px"];
-      var seriesLineDash = ["10,10,10,10", "0,0,0,0", "0,0,0,0", "2,6,0,0"];
+      // var seriesColors = ["#ffffff", "#b71c1c", "#0071bc", "#ffffff"];
+      // var seriesLineStrokes = ["1.5px", "3.5px", "3.5px", "2px"];
+      // var seriesLineDash = ["10,10,10,10", "0,0,0,0", "0,0,0,0", "2,6,0,0"];
 
       legendItems.forEach(function(item, i) {
         var $item = $legend.append("g")
