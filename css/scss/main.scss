@@ -288,23 +288,25 @@ video {
 
 .source {
     color: $color-gray;
-    font-size: 12px;
+    font-size: 11.5px;
     text-align: left;
     padding-top: 10px;
     a {
-        font-style: italic;
+        font-style: normal;
         color: $color-primary;
+        
     }
 }
 
 .sourcecallout {
     color: #b7c6cd;
-    font-size: 12px;
+    font-size: 11.5px;
     text-align: left;
     padding-top: 10px;
     a {
-        font-style: italic;
+        font-style: normal;
         color: #d5dee2;
+       
     }
 }
 

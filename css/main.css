@@ -826,20 +826,20 @@ video {
 
 .source {
   color: #607D8B;
-  font-size: 12px;
+  font-size: 11.5px;
   text-align: left;
   padding-top: 10px; }
   .source a {
-    font-style: italic;
+    font-style: normal;
     color: #0071bc; }
 
 .sourcecallout {
   color: #b7c6cd;
-  font-size: 12px;
+  font-size: 11.5px;
   text-align: left;
   padding-top: 10px; }
   .sourcecallout a {
-    font-style: italic;
+    font-style: normal;
     color: #d5dee2; }
 
 /* ============================================================
