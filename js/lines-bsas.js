@@ -855,7 +855,7 @@
 
         $("#tags").autocomplete({
             source: function(request, response) {
-                console.log(town_names);
+                //console.log(town_names);
                 var matches = $.map(town_names, function(acItem) {
                     if (acItem.toUpperCase().indexOf(request.term.toUpperCase()) === 0) {
                         return acItem;
@@ -874,7 +874,8 @@
             select: function(event, ui) {
                 $.each(town_names, function(key, value) {
                     if(value === ui.item.value) {
-                       current_town = key;        
+                       current_town = key;
+                       console.log(value)        
                     }
                 });
                 
