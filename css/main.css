@@ -592,7 +592,7 @@
       -webkit-appearance: none; }
       .range-slider input[type=range]::-webkit-slider-runnable-track {
         width: 50px;
-        height: 3px;
+        height: 4px;
         background: #B0BEC5;
         border: none;
         border-radius: 3px; }
@@ -600,10 +600,12 @@
         -webkit-appearance: none;
         border: 1px solid white;
         border-radius: 50%;
-        height: 16px;
-        width: 16px;
+        height: 20px;
+        width: 20px;
         background: #0071bc;
-        margin-top: -7px; }
+        margin-top: -8px;
+        box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+        cursor: pointer; }
       .range-slider input[type=range]:focus {
         outline: none; }
         .range-slider input[type=range]:focus::-webkit-slider-runnable-track {

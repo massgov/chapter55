@@ -11,56 +11,59 @@
 
     .from-year,
     .to-year {
-	color: $color-primary;
+      color: $color-primary;
     }
 
-
     .from-year {
-	@include rangeSliderLabel;
-	left: -10px;
+      @include rangeSliderLabel;
+      left: -10px;
     }
 
     .to-year {
-	@include rangeSliderLabel;
-	right: -10px;
+      @include rangeSliderLabel;
+      right: -10px;
     }
 
 
     .year {
-	font-weight: bolder;
+      font-weight: bolder;
     }
 
 
     .label {
-	font-size: 2em;
+      font-size: 2em;
     }
 
     input {
-	position: relative;
-	&[type=range] {
-	    -webkit-appearance: none;
-	    &::-webkit-slider-runnable-track {
-		width: 50px;
-		height: 3px;
-		background: $color-gray-lighter;
-		border: none;
-		border-radius: 3px;
+	   position: relative;
+
+    	&[type=range] {
+        -webkit-appearance: none;
+
+        &::-webkit-slider-runnable-track {
+      		width: 50px;
+      		height: 4px;
+      		background: $color-gray-lighter;
+      		border: none;
+      		border-radius: 3px;
+        }
+        &::-webkit-slider-thumb {
+      		-webkit-appearance: none;
+      		border: 1px solid white;
+      		border-radius: 50%;
+      		height: 20px;
+      		width: 20px;
+      		background: $color-primary;
+      		margin-top: -8px;
+          box-shadow: 0 0 4px 1px rgba(0,0,0,0.2);
+          cursor: pointer;
+        }
+        &:focus {
+    		  outline: none;
+    		&::-webkit-slider-runnable-track {
+    		  background: $color-gray-light;
+    		}
 	    }
-	    &::-webkit-slider-thumb {
-		-webkit-appearance: none;
-		border: 1px solid white;
-		border-radius: 50%;
-		height: 16px;
-		width: 16px;
-		background: $color-primary;
-		margin-top: -7px;
-	    }
-	    &:focus {
-		outline: none;
-		&::-webkit-slider-runnable-track {
-		    background: $color-gray-light;
-		}
-	    }
-	}
-    }
+  	}
+  }
 }

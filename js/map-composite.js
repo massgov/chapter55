@@ -148,7 +148,9 @@
     } // generateMap
 
     function getYear() {
-        setSymbology(2000);
+        // initial setting on load
+        $("#odMap_timeline").val(2015);
+        setSymbology(2015);
         $("#odMap_timeline").on('input change', function() {
             setSymbology($(this).val());
         });
