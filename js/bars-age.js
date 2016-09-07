@@ -324,7 +324,7 @@
 
         numberFormat = d3.format(".0f");
         percentageFormat = d3.format(".1f");
-        rateFormat = d3.format(".2f");
+        rateFormat = d3.format(".1f");
 
         dataLabels.transition()
             .duration(500)
@@ -369,7 +369,7 @@
     function toTitle(key) {
         var titleLookup = {
             percentOpiodDeaths: 'Percent Opioid Deaths among All Deaths',
-            deathRate: 'Opioid Death Rate per 10,000 People per Year',
+            deathRate: 'Opioid Death Rate per 100,000 People per Year',
             numberOpioidDeaths: 'Number of Opioid Deaths'
         };
         return titleLookup[key];
