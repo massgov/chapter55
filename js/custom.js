@@ -67,6 +67,15 @@ $(function() {
     });
 });
 
+
+$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+  var tab = $(e.target).attr('href');
+  var newTabHeight = document.querySelector(tab).clientHeight;
+  $(tab).parent().animate({ height: newTabHeight });
+});
+
+
+
 // Closes the Responsive Menu on Menu Item Click
 $('.navbar-collapse ul li a').click(function() {
     if ($(this).attr('class') != 'dropdown-toggle active' && $(this).attr('class') != 'dropdown-toggle') {
