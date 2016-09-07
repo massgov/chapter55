@@ -208,16 +208,12 @@ video {
     margin-bottom: 50px;
 }
 
+
 .callout {
     background-color: $color-gray-light;
     color: $color-white;
     padding: 20px;
     border-radius: 10px;
-    h2 {
-        padding-bottom: 18px;
-        border-bottom: 1px solid $color-white;
-    }
-
     // .btn-primary {
     //     color: $color-white;
     //     background-color: $color-gray-light;
@@ -325,7 +321,6 @@ footer {
     padding: 30px;
     background-color: $color-gray-lighter;
 }
-
 
 .sources-section {
     background: #333333;
