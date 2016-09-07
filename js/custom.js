@@ -184,3 +184,15 @@ $(function() {
         });
     });
 });
+
+
+// Fix widows (no words on own line at the end of a <p>)
+$('p').each(function() {
+    var innerHTML = $(this).html();
+    var words = innerHTML.trim().split(' ');
+    if(words.length > 2) {
+        var potentialWidow = words[words.length-1];
+        var newWords = words.slice(0,-1).join(' ');
+        $(this).html(newWords+'&nbsp;'+potentialWidow);
+    }
+})
