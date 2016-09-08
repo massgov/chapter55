@@ -360,8 +360,8 @@
     var margin = {
             top: 0,
             right: 25,
-            bottom: 30,
-            left: 30
+            bottom: 35,
+            left: 45
         },
         wrapper_width = rootNode.clientWidth,
         wrapper_height = 400,
@@ -447,6 +447,7 @@
             .tickFormat(percent);
 
 
+
         line.x(function(d) {
             return x(d.age);
         })
@@ -461,6 +462,22 @@
         $y_axis.call(yAxis_bsas);
         $lines_bsas.selectAll(".vis-y-axis text").attr("x", -5).attr("dy", 0).style("text-anchor", "end");
         $eventOverlay.attr("width", width).attr("height", height);
+        
+        var $lines_bsas_x_axis_label = $x_axis
+            .append("text")
+            .attr("x", width - margin.left)
+            .attr("y", (margin.bottom)/2)
+            .attr("dy", "1em")
+            .attr("class", "vis-x-axis-label")
+            .text("Fiscal Year");
+
+         var $lines_bsas_y_axis_label = $y_axis
+        .append("text")
+        .attr("x", -margin.top)
+        .attr("y", -margin.left)
+        .attr("dy", "1em")
+        .attr("class", "vis-y-axis-label")
+        .text("Percent Primary Substance of Use");
 
 
         renderLegend();
@@ -873,12 +890,12 @@
             },
             select: function(event, ui) {
                 $.each(town_names, function(key, value) {
-                    if(value === ui.item.value) {
-                       current_town = key;
-                       console.log(value)        
+                    if (value === ui.item.value) {
+                        current_town = key;
+                        console.log(value)
                     }
                 });
-                
+
 
                 $(".btn-bsas").removeClass('active');
                 updateDots();

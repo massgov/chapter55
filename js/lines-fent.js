@@ -203,6 +203,7 @@
       d3.max(seriesData, function(c) {
           return d3.max(c.values, function(d) {
       	return d.value;
+        //return 0.6
           });
       })
     ]);
