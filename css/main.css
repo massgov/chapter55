@@ -517,10 +517,8 @@
  Bar
 ============================================================ */
 #bar {
-  position: relative; }
-
-#value {
-  font-size: 12px; }
+  position: relative;
+  margin: -23px 0; }
 
 /* ============================================================
  Bar Chart by Age Groups
@@ -761,9 +759,11 @@ video {
   background-color: #ECEFF1;
   border: 1px solid #d5dbe0;
   color: #000000;
-  padding: 20px;
+  padding: 19px;
   border-radius: 2px;
   box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1); }
+  .callout .h3-sm {
+    font-size: 1.5em; }
 
 .expandable {
   padding: 3px 5px;
