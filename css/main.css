@@ -167,16 +167,8 @@
   font-family: Helvetica, Arial;
   text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; }
 
-<<<<<<< HEAD
-.vis--dark-background text {
-  letter-spacing: 0.5px; }
-
 /* ============================================================
   Map
-=======
-/* ============================================================
-  Map
->>>>>>> remotes/DigitalMass/chapter55/develop
 ============================================================ */
 #odMap_map.svg-container {
   padding-bottom: 70%; }
@@ -829,13 +821,8 @@ video {
   text-align: left;
   padding-top: 10px; }
   .sourcecallout a {
-<<<<<<< HEAD
     font-style: normal;
-    color: #d5dee2;
     text-decoration: underline; }
-=======
-    font-style: normal; }
->>>>>>> remotes/DigitalMass/chapter55/develop
 
 /* ============================================================
   Footer
