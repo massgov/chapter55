@@ -812,7 +812,8 @@ video {
   padding-top: 10px; }
   .source a {
     font-style: normal;
-    color: #0071bc; }
+    color: #0071bc;
+    text-decoration: underline; }
 
 .sourcecallout {
   color: #455A64;
@@ -820,7 +821,8 @@ video {
   text-align: left;
   padding-top: 10px; }
   .sourcecallout a {
-    font-style: normal; }
+    font-style: normal;
+    text-decoration: underline; }
 
 /* ============================================================
   Footer
