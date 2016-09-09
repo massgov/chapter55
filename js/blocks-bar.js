@@ -189,7 +189,7 @@ $(document).ready(function() {
         $("#people").empty();
         $('#people').each(function() {
             makeChart_substance(type, time);
-            $('#table_substance').html('<table class="table" id="table_substance"><tr><th>Had prescription</th><th>Did not have prescription</th></tr><tr><td class="type_substance0">' + type[time].Yes + '%</td><td class="type_substance1">' + type[time].No + '%</td></tr></table>');
+            $('#table_substance').html('<table class="table" id="table_substance"><tr><th>Had legal prescription</th><th>Did not have legal prescription</th></tr><tr><td class="type_substance0">' + type[time].Yes + '%</td><td class="type_substance1">' + type[time].No + '%</td></tr></table>');
 
         })
     };
