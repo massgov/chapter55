@@ -189,6 +189,19 @@
   #odMap_legend {
     max-width: 60%; } }
 
+#map2.svg-container {
+  padding-bottom: 50%; }
+
+#map2_source {
+  margin-top: -4em; }
+  @media all and (max-width: 768px) {
+    #map2_source {
+      margin-top: -2em; } }
+
+@media all and (min-width: 768px) {
+  #map2_legend {
+    max-width: 60%; } }
+
 /* ============================================================
  Multi Maps
 ============================================================ */

@@ -68,10 +68,11 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12 col-md-7">
+
                             <div id="odMap">
                                 <div class="range-slider">
                                     <div class="label"><span class="from-year">2000</span><span class="to-year">2015</span></div>
-                                    <input id="odMap_timeline" type="range" min="2000" max="2015" value="2000">
+                                    <input id="odMap_timeline" type="range" min="2000" max="2015" value="2015">
                                     <datalist id="odMap_timelinescale">
                                         <option>2000</option>
                                         <option>2001</option>
@@ -92,15 +93,25 @@
                                     </datalist>
                                     <hr>
                                 </div>
-                                <h3>
+               <!--  <h3>               
+                  <span id="odMap_titlePrefix" class="title"></span>
+                  <span id="odMap_fromYear" class="year"></span>
+                  <span id="odMap_titleMidfix" class="title"></span>
+                  <span id="odMap_toYear" class="year"></span>
+                </h3> -->
+                                <!-- <div id="map2"></div> -->
+                <h3>               
 				  <span id="odMap_titlePrefix" class="title"></span>
 				  <span id="odMap_fromYear" class="year"></span>
 				  <span id="odMap_titleMidfix" class="title"></span>
 				  <span id="odMap_toYear" class="year"></span>
 				</h3>
+                                
                                 <div id="odMap_legend" class="vis-legend"></div>
                                 <div id="odMap_map"></div>
                                 <div id='odMap_source' class="source"></div>
+
+
                             </div>
                             <!-- Map Composite -->
                             <!--<h3>
@@ -118,6 +129,7 @@
                         <div class="col-xs-12 col-md-5 pull-right">
                             <h2>A Deadly Problem</h2>
                             <p>Opioid use and abuse in Massachusetts has grown to the point where people are calling it an opioid epidemic.</p>
+                            <div id="map2"></div>
                             <p>Opioid-related deaths in Massachusetts were four times higher in <a class="controls controls-map" data-select="2015">2015</a> than in <a class="controls controls-map" data-select="2000">2000</a>. This recent rate of increase is several times faster than anything seen here before. In <a class="controls controls-map" data-select="2013">2013</a>-<a class="controls controls-map" data-select="2014">2014</a> alone, opioid-related deaths were recorded in two-thirds of the cities and towns in Massachusetts.</p>
                             <p>In one way or another — through deaths, nonfatal overdoses, or disruptions to marriages, families, and neighborhoods — every community in Massachusetts has been impacted by this growing crisis. In fact, the public health threat is so great in the Commonwealth, the death rate in Massachusetts is higher than the national average, with a particularly sharp increase in fatal overdoses during the last two years.</p>
                         </div>
