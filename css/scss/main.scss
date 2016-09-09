@@ -210,20 +210,16 @@ video {
 
 
 .callout {
-    background-color: $color-gray-light;
-    color: $color-white;
-    padding: 20px;
-    border-radius: 10px;
-    // .btn-primary {
-    //     color: $color-white;
-    //     background-color: $color-gray-light;
-    //     border-color: $color-white;
-    //     &:hover {
-    //         color: $color-white;
-    //         background-color: $color-primary;
-    //         border-color: $color-primary;
-    //     }
-    // }
+    background-color: $color-gray-lightest;
+    border: 1px solid darken($color-gray-lightest, 8%);
+    color: $color-black;
+    padding: 19px;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+    .h3-sm{
+        font-size: 1.5em;
+    }
+
 }
 
 .expandable {
@@ -284,19 +280,28 @@ video {
     a {
         font-style: normal;
         color: $color-primary;
+<<<<<<< HEAD
         text-decoration: underline;
+=======
+
+>>>>>>> remotes/DigitalMass/chapter55/develop
     }
 }
 
 .sourcecallout {
-    color: #b7c6cd;
+    color: $color-gray-dark;
     font-size: 11.5px;
     text-align: left;
     padding-top: 10px;
     a {
         font-style: normal;
+<<<<<<< HEAD
         color: #d5dee2;
         text-decoration: underline;
+=======
+
+
+>>>>>>> remotes/DigitalMass/chapter55/develop
     }
 }
 
