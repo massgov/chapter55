@@ -476,7 +476,7 @@
         .attr("x", -margin.top)
         .attr("y", -margin.left)
         .attr("dy", "1em")
-        .attr("class", "vis-x-axis-label")
+        .attr("class", "vis-y-axis-label")
         .text("Percent Primary Substance of Use");
 
 
