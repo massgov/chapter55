@@ -476,7 +476,7 @@
         .attr("x", -margin.top)
         .attr("y", -margin.left)
         .attr("dy", "1em")
-        .attr("class", "vis-y-axis-label")
+        .attr("class", "vis-x-axis-label")
         .text("Percent Primary Substance of Use");
 
 
@@ -843,15 +843,15 @@
 
 
 
-    d3.csv("js/data/bsas-data.csv", type, function(error, data) {
+    d3.csv("js/data/bsas-data-2000to2015.csv", type, function(error, data) {
         if (error) throw error;
         //console.log(groups);
         // var marriages = groups[current_town];
 
-        x.domain([2005, d3.max(data, function(d) {
+        x.domain([2000, d3.max(data, function(d) {
             return d.age;
         })]);
-        y.domain([0, .99]);
+        y.domain([0, 1.00]);
 
         setupLines();
         render();
