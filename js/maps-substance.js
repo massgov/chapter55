@@ -6,7 +6,7 @@ var Vis = (function(d3) {
     var geojson;
     queue()
         .defer(d3.json, 'js/data/TOWN.geo.json')
-        .defer(d3.json, 'js/data/data.json')
+        .defer(d3.json, 'js/data/maps_susbtance_data.json')
         .await(visualize);
 
     var width = 525,
