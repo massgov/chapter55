@@ -233,11 +233,13 @@
 @media screen and (max-width: 768px) {
   #treatmentMaps[data-active-date] .map-wrapper {
     display: none; }
-  #treatmentMaps[data-active-date="2005"] .map-wrapper:first-child {
+  #treatmentMaps[data-active-date="2000"] .map-wrapper:first-child {
     display: block; }
-  #treatmentMaps[data-active-date="2010"] .map-wrapper:nth-child(2) {
+  #treatmentMaps[data-active-date="2005"] .map-wrapper:nth-child(2) {
     display: block; }
-  #treatmentMaps[data-active-date="2014"] .map-wrapper:last-child {
+  #treatmentMaps[data-active-date="2010"] .map-wrapper:nth-child(3) {
+    display: block; }
+  #treatmentMaps[data-active-date="2015"] .map-wrapper:last-child {
     display: block; } }
 
 @media screen and (max-width: 768px) {
@@ -812,7 +814,8 @@ video {
   padding-top: 10px; }
   .source a {
     font-style: normal;
-    color: #0071bc; }
+    color: #0071bc;
+    text-decoration: underline; }
 
 .sourcecallout {
   color: #455A64;
@@ -820,7 +823,8 @@ video {
   text-align: left;
   padding-top: 10px; }
   .sourcecallout a {
-    font-style: normal; }
+    font-style: normal;
+    text-decoration: underline; }
 
 /* ============================================================
   Footer
