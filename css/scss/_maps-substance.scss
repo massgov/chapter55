@@ -67,17 +67,22 @@
                 display: none;
             }
         }
-        &[data-active-date="2005"] {
+        &[data-active-date="2000"] {
             .map-wrapper:first-child {
                 display: block;
             }
         }
-        &[data-active-date="2010"] {
+        &[data-active-date="2005"] {
             .map-wrapper:nth-child(2) {
                 display: block;
             }
         }
-        &[data-active-date="2014"] {
+        &[data-active-date="2010"] {
+            .map-wrapper:nth-child(3) {
+                display: block;
+            }
+        }
+        &[data-active-date="2015"] {
             .map-wrapper:last-child {
                 display: block;
             }
