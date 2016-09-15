@@ -497,7 +497,7 @@
   background: #b71c1c; }
 
 .type_substance1 {
-  background: #B0BEC5; }
+  background: #78909C; }
 
 #timeline_blocks::-webkit-slider-thumb {
   background: #b71c1c; }
@@ -508,9 +508,6 @@
 .left {
   text-align: left; }
 
-#timeline_blocks::-webkit-slider-thumb {
-  background-color: #b71c1c; }
-
 .red {
   font-weight: bold;
   color: #b71c1c; }
@@ -519,8 +516,7 @@
  Bar
 ============================================================ */
 #bar {
-  position: relative;
-  margin: -23px 0; }
+  margin: -25px 0; }
 
 /* ============================================================
  Bar Chart by Age Groups
@@ -808,7 +804,7 @@ video {
   font-weight: normal; }
 
 .source {
-  color: #607D8B;
+  color: #78909C;
   font-size: 11.5px;
   text-align: left;
   padding-top: 10px; }

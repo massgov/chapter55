@@ -279,7 +279,7 @@ $(document).ready(function() {
         var i = $(this).val(),
             d = dataset[$(this).val()][0];
         var xPos = parseFloat(xScale(d.x0) + 100 / (i + 1));
-        var yPos = parseFloat(d3.select(this).attr('y')) + yScale.rangeBand() / 2;
+        var yPos = parseFloat(d3.select(this).attr('y')) + yScale.rangeBand();
         console.log(d);
         $('.substance-type').html(d.n.toLowerCase());
         $('#total').html(d.x);
@@ -323,7 +323,7 @@ $(document).ready(function() {
             })
             .enter()
             .append('rect')
-            .style('stroke', '#b71c1c')
+            .style({'stroke': '#b71c1c','stroke-width': '1px'})
             .attr('x', function(d) {
                 return xScale(d.x0);
             })
