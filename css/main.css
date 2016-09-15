@@ -192,7 +192,7 @@
   margin: 0 auto; }
   #treatmentMaps_maps .map-wrapper {
     display: inline-block;
-    width: 33%;
+    width: 50%;
     position: relative; }
   #treatmentMaps_maps path {
     fill: #e9e9e9;
@@ -201,17 +201,17 @@
   #treatmentMaps_maps .vis-title {
     width: 60%;
     position: absolute;
-    bottom: 20%;
+    bottom: 25%;
     left: 0; }
     @media screen and (max-width: 955px) and (min-width: 768px) {
       #treatmentMaps_maps .vis-title {
-        bottom: 25%;
+        bottom: 30%;
         font-size: 14px; } }
   #treatmentMaps_maps .selection-label {
     width: 60%;
     text-align: center;
     position: absolute;
-    bottom: 20px;
+    bottom: 20%;
     left: 0;
     font-weight: bolder;
     font-size: 12px;
@@ -221,7 +221,7 @@
       #treatmentMaps_maps .selection-label {
         font-size: 10px; } }
   #treatmentMaps_maps .svg-container {
-    padding-bottom: 65%; }
+    padding-bottom: 60%; }
 
 #treatmentMaps .btn-group {
   display: none; }

@@ -167,7 +167,7 @@
             setSymbology(yearStart);
         } else { yearStart = 1999; };
 
-        timer = setTimeout(autoSetYear, 2500);
+        timer = setTimeout(autoSetYear, 2000);
     };
 
     function stopSetYear() {
