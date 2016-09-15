@@ -9,7 +9,7 @@
 
     .map-wrapper {
         display: inline-block;
-        width: 33%;
+        width: 50%;
         position: relative;
     }
     path {
@@ -20,11 +20,11 @@
     .vis-title {
         width: 60%;
         position: absolute;
-        bottom: 20%;
+        bottom: 25%;
         left: 0;
 
         @media screen and (max-width: 955px) and (min-width: 768px) {
-            bottom: 25%;
+            bottom: 30%;
             font-size: 14px;
         }
     }
@@ -32,7 +32,7 @@
         width: 60%;
         text-align: center;
         position: absolute;
-        bottom: 20px;
+        bottom: 20%;
         left: 0;
         font-weight: bolder;
         font-size: 12px;
@@ -44,7 +44,7 @@
     }
 
     .svg-container {
-        padding-bottom: 65%;
+        padding-bottom: 60%;
     }
 
 
