@@ -408,6 +408,8 @@
     var $y_axis = $lines_bsas.append("g").attr("class", "vis-y-axis");
     $y_axis.append("text");
 
+    var $lines_bsas_x_axis_label = $x_axis.append("text");
+    var $lines_bsas_y_axis_label = $y_axis.append("text");
 
     var legend_pos_text = -60,
         legend_pos_dot = -70;
@@ -462,22 +464,20 @@
         $y_axis.call(yAxis_bsas);
         $lines_bsas.selectAll(".vis-y-axis text").attr("x", -5).attr("dy", 0).style("text-anchor", "end");
         $eventOverlay.attr("width", width).attr("height", height);
-        
-        var $lines_bsas_x_axis_label = $x_axis
-            .append("text")
+
+        $lines_bsas_x_axis_label
             .attr("x", width - margin.left)
             .attr("y", (margin.bottom)/2)
             .attr("dy", "1em")
             .attr("class", "vis-x-axis-label")
             .text("Fiscal Year");
 
-         var $lines_bsas_y_axis_label = $y_axis
-        .append("text")
-        .attr("x", -margin.top)
-        .attr("y", -margin.left)
-        .attr("dy", "1em")
-        .attr("class", "vis-y-axis-label")
-        .text("Percent Primary Substance of Use");
+        $lines_bsas_y_axis_label
+            .attr("x", -margin.top)
+            .attr("y", -margin.left)
+            .attr("dy", "1em")
+            .attr("class", "vis-y-axis-label")
+            .text("Percent Primary Substance of Use");
 
 
         renderLegend();
