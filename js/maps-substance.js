@@ -6,7 +6,7 @@ var Vis = (function(d3) {
     var geojson;
     queue()
         .defer(d3.json, 'js/data/TOWN.geo.json')
-        .defer(d3.json, 'js/data/data.json')
+        .defer(d3.json, 'js/data/maps_susbtance_data.json')
         .await(visualize);
 
     var width = 525,
@@ -15,8 +15,8 @@ var Vis = (function(d3) {
     var projection = d3.geo.conicConformal()
         .parallels([41 + 43 / 60, 42 + 41 / 60])
         .rotate([71 + 30 / 60, -41])
-        .scale([8600])
-        .translate([280, 360]);
+        .scale([7500])
+        .translate([280, 330]);
 
     var $maps_sub = d3.select("#carte").append("svg")
         .attr("width", width)

@@ -7,7 +7,7 @@
 }
 
 .type_substance1 {
-    background: $color-gray-lighter;
+    background: $color-gray;
 }
 
 #timeline_blocks {
@@ -26,10 +26,6 @@
     text-align: left;
 }
 
-#timeline_blocks::-webkit-slider-thumb {
-    background-color: #b71c1c;
-}
-
 .red {
     font-weight: bold;
     color: #b71c1c;
@@ -41,24 +37,6 @@
 ============================================================ */
 
 #bar {
-    position: relative;
-    margin: -23px 0;
-    // #tooltip {
-    //     position: absolute;
-    //     top: 20;
-    //     left: 0;
-    //     background-color: white .5;
-    //     width: 180px;
-    //     -webkit-border-radius: 10px;
-    //     -moz-border-radius: 10px;
-    //     border-radius: 10px;
-    //     pointer-events: none;
-    // }
-    // #tooltip.hidden {
-    //     display: none;
-    // }
+    margin: -25px 0;
+    //border: 1px solid #b71c1c;
 }
-
-// #value{
-//   font-size: 12px;
-// }

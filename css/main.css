@@ -192,7 +192,7 @@
   margin: 0 auto; }
   #treatmentMaps_maps .map-wrapper {
     display: inline-block;
-    width: 33%;
+    width: 50%;
     position: relative; }
   #treatmentMaps_maps path {
     fill: #e9e9e9;
@@ -201,17 +201,17 @@
   #treatmentMaps_maps .vis-title {
     width: 60%;
     position: absolute;
-    bottom: 20%;
+    bottom: 25%;
     left: 0; }
     @media screen and (max-width: 955px) and (min-width: 768px) {
       #treatmentMaps_maps .vis-title {
-        bottom: 25%;
+        bottom: 30%;
         font-size: 14px; } }
   #treatmentMaps_maps .selection-label {
     width: 60%;
     text-align: center;
     position: absolute;
-    bottom: 20px;
+    bottom: 20%;
     left: 0;
     font-weight: bolder;
     font-size: 12px;
@@ -221,7 +221,7 @@
       #treatmentMaps_maps .selection-label {
         font-size: 10px; } }
   #treatmentMaps_maps .svg-container {
-    padding-bottom: 65%; }
+    padding-bottom: 60%; }
 
 #treatmentMaps .btn-group {
   display: none; }
@@ -233,11 +233,13 @@
 @media screen and (max-width: 768px) {
   #treatmentMaps[data-active-date] .map-wrapper {
     display: none; }
-  #treatmentMaps[data-active-date="2005"] .map-wrapper:first-child {
+  #treatmentMaps[data-active-date="2000"] .map-wrapper:first-child {
     display: block; }
-  #treatmentMaps[data-active-date="2010"] .map-wrapper:nth-child(2) {
+  #treatmentMaps[data-active-date="2005"] .map-wrapper:nth-child(2) {
     display: block; }
-  #treatmentMaps[data-active-date="2014"] .map-wrapper:last-child {
+  #treatmentMaps[data-active-date="2010"] .map-wrapper:nth-child(3) {
+    display: block; }
+  #treatmentMaps[data-active-date="2015"] .map-wrapper:last-child {
     display: block; } }
 
 @media screen and (max-width: 768px) {
@@ -495,7 +497,7 @@
   background: #b71c1c; }
 
 .type_substance1 {
-  background: #B0BEC5; }
+  background: #78909C; }
 
 #timeline_blocks::-webkit-slider-thumb {
   background: #b71c1c; }
@@ -506,9 +508,6 @@
 .left {
   text-align: left; }
 
-#timeline_blocks::-webkit-slider-thumb {
-  background-color: #b71c1c; }
-
 .red {
   font-weight: bold;
   color: #b71c1c; }
@@ -517,8 +516,7 @@
  Bar
 ============================================================ */
 #bar {
-  position: relative;
-  margin: -23px 0; }
+  margin: -25px 0; }
 
 /* ============================================================
  Bar Chart by Age Groups
@@ -806,7 +804,7 @@ video {
   font-weight: normal; }
 
 .source {
-  color: #607D8B;
+  color: #78909C;
   font-size: 11.5px;
   text-align: left;
   padding-top: 10px; }
