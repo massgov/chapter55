@@ -37,19 +37,13 @@
   font-size: 1.2em;
   font-weight: 300; }
 
-.tab-content {
-  height: 190px;
-  overflow-x: hidden; }
-
 /* ============================================================
   Buttons
 ============================================================ */
 .btn-primary {
   color: #0071bc;
   background-color: #ffffff;
-  border-color: #0071bc;
-  margin-top: 5px;
-  padding: 10px; }
+  border-color: #0071bc; }
 
 .btn-primary:focus,
 .btn-primary.focus {
@@ -156,9 +150,6 @@
 .vis-x-axis .domain {
   fill: none;
   stroke: #78909C; }
-  .vis--dark-background .vis-y-axis .domain, .vis--dark-background
-  .vis-x-axis .domain {
-    stroke: #ffffff; }
 
 .vis-x-axis-label,
 .vis-y-axis-label {
@@ -175,9 +166,6 @@
   font-size: 20px;
   font-family: Helvetica, Arial;
   text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; }
-
-.vis--dark-background text {
-  letter-spacing: 0.5px; }
 
 /* ============================================================
   Map
@@ -204,7 +192,7 @@
   margin: 0 auto; }
   #treatmentMaps_maps .map-wrapper {
     display: inline-block;
-    width: 33%;
+    width: 50%;
     position: relative; }
   #treatmentMaps_maps path {
     fill: #e9e9e9;
@@ -213,17 +201,17 @@
   #treatmentMaps_maps .vis-title {
     width: 60%;
     position: absolute;
-    bottom: 20%;
+    bottom: 25%;
     left: 0; }
     @media screen and (max-width: 955px) and (min-width: 768px) {
       #treatmentMaps_maps .vis-title {
-        bottom: 25%;
+        bottom: 30%;
         font-size: 14px; } }
   #treatmentMaps_maps .selection-label {
     width: 60%;
     text-align: center;
     position: absolute;
-    bottom: 20px;
+    bottom: 20%;
     left: 0;
     font-weight: bolder;
     font-size: 12px;
@@ -233,7 +221,7 @@
       #treatmentMaps_maps .selection-label {
         font-size: 10px; } }
   #treatmentMaps_maps .svg-container {
-    padding-bottom: 65%; }
+    padding-bottom: 60%; }
 
 #treatmentMaps .btn-group {
   display: none; }
@@ -245,11 +233,13 @@
 @media screen and (max-width: 768px) {
   #treatmentMaps[data-active-date] .map-wrapper {
     display: none; }
-  #treatmentMaps[data-active-date="2005"] .map-wrapper:first-child {
+  #treatmentMaps[data-active-date="2000"] .map-wrapper:first-child {
     display: block; }
-  #treatmentMaps[data-active-date="2010"] .map-wrapper:nth-child(2) {
+  #treatmentMaps[data-active-date="2005"] .map-wrapper:nth-child(2) {
     display: block; }
-  #treatmentMaps[data-active-date="2014"] .map-wrapper:last-child {
+  #treatmentMaps[data-active-date="2010"] .map-wrapper:nth-child(3) {
+    display: block; }
+  #treatmentMaps[data-active-date="2015"] .map-wrapper:last-child {
     display: block; } }
 
 @media screen and (max-width: 768px) {
@@ -310,9 +300,6 @@
 /* ============================================================
     Lines Fent
 ============================================================ */
-#fentanyl-lines {
-  fill: #ffffff; }
-
 .unfocused {
   stroke-opacity: 100% !important;
   stroke-width: 1px !important;
@@ -486,22 +473,22 @@
     content: attr(data-index); }
 
 .type_gender0 {
-  background: #B2DFDB; }
+  background: #BBDEFB; }
 
 .type_gender1 {
-  background: #4DB6AC; }
+  background: #2196F3; }
 
 .type_gender2 {
-  background: #006064; }
+  background: #1A237E; }
 
 .type_gender3 {
-  background: #7B1FA2; }
+  background: #b71c1c; }
 
 .type_gender4 {
-  background: #CE93D8; }
+  background: #ff5252; }
 
 .type_gender5 {
-  background: #E1BEE3; }
+  background: #ffcdd2; }
 
 /* ============================================================
  Block Chart by Substance
@@ -510,7 +497,7 @@
   background: #b71c1c; }
 
 .type_substance1 {
-  background: #B0BEC5; }
+  background: #78909C; }
 
 #timeline_blocks::-webkit-slider-thumb {
   background: #b71c1c; }
@@ -521,9 +508,6 @@
 .left {
   text-align: left; }
 
-#timeline_blocks::-webkit-slider-thumb {
-  background-color: #b71c1c; }
-
 .red {
   font-weight: bold;
   color: #b71c1c; }
@@ -532,10 +516,7 @@
  Bar
 ============================================================ */
 #bar {
-  position: relative; }
-
-#value {
-  font-size: 12px; }
+  margin: -25px 0; }
 
 /* ============================================================
  Bar Chart by Age Groups
@@ -543,12 +524,12 @@
 .malFocus,
 .bar.malFocus,
 .dots.malFocus {
-  fill: #4DB6AC; }
+  fill: #2196F3; }
 
 .femFocus,
 .bar.femFocus,
 .dots.femFocus {
-  fill: #CE93D8; }
+  fill: #ff5252; }
 
 .dots.hoverFocus {
   fill: #52524E;
@@ -558,10 +539,10 @@
   fill: #666666; }
 
 .femSelector {
-  fill: #7B1FA2 !important; }
+  fill: #b71c1c !important; }
 
 .malSelector {
-  fill: #006064 !important; }
+  fill: #1A237E !important; }
 
 /* ============================================================
  Bar Chart by Race and Ethnicity
@@ -664,11 +645,6 @@ section.module h2 {
   margin-bottom: 40px;
   font-family: "Roboto Slab", "Merriweather", "Georgia", "Times New Roman", serif;
   font-size: 30px; }
-
-#POD,
-#DR,
-#NOD {
-  font-size: 8pt; }
 
 section.module p {
   margin-bottom: 40px;
@@ -778,13 +754,14 @@ video {
   margin-bottom: 50px; }
 
 .callout {
-  background-color: #78909C;
-  color: #ffffff;
-  padding: 20px;
-  border-radius: 10px; }
-  .callout h2 {
-    padding-bottom: 18px;
-    border-bottom: 1px solid #ffffff; }
+  background-color: #ECEFF1;
+  border: 1px solid #d5dbe0;
+  color: #000000;
+  padding: 19px;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1); }
+  .callout .h3-sm {
+    font-size: 1.5em; }
 
 .expandable {
   padding: 3px 5px;
@@ -827,22 +804,23 @@ video {
   font-weight: normal; }
 
 .source {
-  color: #607D8B;
+  color: #78909C;
   font-size: 11.5px;
   text-align: left;
   padding-top: 10px; }
   .source a {
     font-style: normal;
-    color: #0071bc; }
+    color: #0071bc;
+    text-decoration: underline; }
 
 .sourcecallout {
-  color: #b7c6cd;
+  color: #455A64;
   font-size: 11.5px;
   text-align: left;
   padding-top: 10px; }
   .sourcecallout a {
     font-style: normal;
-    color: #d5dee2; }
+    text-decoration: underline; }
 
 /* ============================================================
   Footer

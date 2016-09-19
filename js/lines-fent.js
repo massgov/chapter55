@@ -73,7 +73,7 @@
     	return "Q" + q;
     }
 
-    var seriesColors = ["#ffffff", "#b71c1c", "#0071bc", "#ffffff"];
+    var seriesColors = ["#333333", "#b71c1c", "#0071bc", "#333333"];
     var seriesLineStrokes = ["1.5px", "3.5px", "3.5px", "2px"];
     var seriesLineDash = ["10,10,10,10", "0,0,0,0", "0,0,0,0", "2,6,0,0"];
     var seriesPointShapes = ["circle", "circle", "circle", "circle"];
@@ -203,6 +203,7 @@
       d3.max(seriesData, function(c) {
           return d3.max(c.values, function(d) {
       	return d.value;
+        //return 0.6
           });
       })
     ]);

@@ -6,7 +6,7 @@ var Vis = (function(d3) {
     var geojson;
     queue()
         .defer(d3.json, 'js/data/TOWN.geo.json')
-        .defer(d3.json, 'js/data/data.json')
+        .defer(d3.json, 'js/data/maps_susbtance_data.json')
         .await(visualize);
 
     var width = 525,
@@ -15,16 +15,17 @@ var Vis = (function(d3) {
     var projection = d3.geo.conicConformal()
         .parallels([41 + 43 / 60, 42 + 41 / 60])
         .rotate([71 + 30 / 60, -41])
-        .scale([8600])
-        .translate([280, 360]);
+        .scale([7500])
+        .translate([280, 330]);
 
     var $maps_sub = d3.select("#carte").append("svg")
         .attr("width", width)
         .attr("height", height);
 
     var path = d3.geo.path().projection(projection),
-        palette = d3.scale.threshold().domain([0, 0.1, 0.15, 0.35, 0.6, 1.00]).range(colorbrewer.PuBuGn[6]);
-
+        palette = d3.scale.threshold().domain([-0.1, 0.01, 0.14, 0.24, 0.33, 0.46, 1.1])
+        .range(['#d1d1d1','#d0d1e6','#a6bddb','#67a9cf','#3690c0','#02818a','#016450']);
+        
 
 
     function visualize(error, states, data) {
@@ -45,15 +46,15 @@ var Vis = (function(d3) {
         wrapper.append('span')
             .text(data.key)
             .attr('class', 'vis-title');
-	    wrapper.append('span')
+        wrapper.append('span')
             .text("")
-	    .attr('class', 'selection-label');
+            .attr('class', 'selection-label');
 
         var $maps_sub = wrapper
             .classed("svg-container", true) //container class to make it responsive
             .append("svg")
             .attr("preserveAspectRatio", "xMinYMin meet")
-            .attr("viewBox", "0 0 "+width+" "+height)
+            .attr("viewBox", "0 0 " + width + " " + height)
             //class to make it responsive
             .classed("svg-content-responsive", true);
 
@@ -92,7 +93,7 @@ var Vis = (function(d3) {
                 var geoData = self.data();
                 var town_value
 
-                if (data.values[geoData[0].properties.TOWN] !== 'Null') {
+                if (data.values[geoData[0].properties.TOWN] >= 0) {
                     //console.log(data.values[geoData[0].properties.TOWN] == 'Null');
                     town_value = d3.format("%,.2f")(data.values[geoData[0].properties.TOWN]);
                 } else {
@@ -101,14 +102,17 @@ var Vis = (function(d3) {
 
                 //console.log(town_value);
 
-		self.node().parentNode.parentNode.getElementsByClassName('selection-label')[0].innerHTML = (geoData[0].properties.TOWN + ":  " + town_value);
+                self.node().parentNode.parentNode.getElementsByClassName('selection-label')[0].innerHTML = (geoData[0].properties.TOWN_1 + ":  " + town_value);
                 d3.select((self.node())).style('fill-opacity', 0.4).style("stroke", "white").style("stroke-width", "1.5px");
+                //console.log(geoData[0].properties);
             })
             .on('unselect', function(self) {
-            //     self.node().parentNode.parentNode.getElementsByTagName('p2')[0].innerHTML = "";
-            //     d3.selectAll('#treatmentMaps_maps path').style({ 'fill-opacity': 1 }).style("stroke", "white").style("stroke-width", "0.0px");
-		self.node().parentNode.parentNode.getElementsByClassName('selection-label')[0].innerHTML = "";
-                d3.selectAll('path#bsasmap').style({ 'fill-opacity': 1 }).style("stroke", "white").style("stroke-width", "0.0px");
+                //     self.node().parentNode.parentNode.getElementsByTagName('p2')[0].innerHTML = "";
+                //     d3.selectAll('#treatmentMaps_maps path').style({ 'fill-opacity': 1 }).style("stroke", "white").style("stroke-width", "0.0px");
+                self.node().parentNode.parentNode.getElementsByClassName('selection-label')[0].innerHTML = "";
+                d3.selectAll('path#bsasmap').style({
+                    'fill-opacity': 1
+                }).style("stroke", "white").style("stroke-width", "0.0px");
             })
 
         function notify(selector, eventName) {
@@ -120,10 +124,9 @@ var Vis = (function(d3) {
 
     }
 
-    var opChgScale = d3.scale.threshold().domain([0, 0.1, 0.15, 0.35, 0.6, 1.00]).range(colorbrewer.PuBuGn[6])
+    var opChgScale = d3.scale.threshold().domain([0, 0.1, 0.15, 0.35, 0.6, 1.00]).range(['#d0d1e6','#a6bddb','#67a9cf','#3690c0','#02818a','#016450'])
     opChgScale.domainStrings = function() {
-        return (['0%', '>0-10%', '>10-15%', '>15-35%',
-            '>35-60%', '>60-100%'
+        return (['0%', '>0-14%', '>14-24%', '>24-33%', '>33-46%', '>46-100%'
         ]);
     };
     //popChgScale.domainStrings = function() { return (['< 0.1', '0.25-0.50', '0.50-0.75', '0.75-1.0', '1.0-1.25',
@@ -142,19 +145,27 @@ var Vis = (function(d3) {
 
         // Create data array.
         var legendData = [];
-        legendData.push({ d: -9999, r: '#f1f1f1', s: 'N/A*' });
+        legendData.push({
+            d: -9999,
+            r: '#d1d1d1',
+            s: 'N/A*'
+        });
         var i;
         for (i = 0; i < scale.domain().length; i++) {
-            legendData.push({ d: scale.domain()[i], r: scale.range()[i], s: scale.domainStrings()[i] });
+            legendData.push({
+                d: scale.domain()[i],
+                r: scale.range()[i],
+                s: scale.domainStrings()[i]
+            });
         }
 
         $maps_sub_legends.selectAll("rect")
             .data(legendData)
             .enter().append("rect")
             .attr("height", 20)
-	    .attr("width", 60)
+            .attr("width", 60)
             .attr("x", function(d, i) {
-                return (i * (100/legendData.length)) + "%";
+                return (i * (100 / legendData.length)) + "%";
             })
             .attr("y", 20)
             .style("stroke", "black")
@@ -166,17 +177,17 @@ var Vis = (function(d3) {
         $maps_sub_legends.selectAll("text")
             .data(legendData)
             .enter().append("text")
-	    .attr('text-anchor', 'middle')
+            .attr('text-anchor', 'middle')
             .attr("x", function(d, i) {
-		      return ((i * (100/legendData.length))+7) + "%";
+                return ((i * (100 / legendData.length)) + 7) + "%";
             })
             .attr("y", 55)
             .text(function(d, i) {
                 return d.s;
-	    });
+            });
 
         $maps_sub_legends.append("text")
-	    .attr("class", "vis-caption")
+            .attr("class", "vis-caption")
             .attr("y", 12)
             .text(szCaption);
     }

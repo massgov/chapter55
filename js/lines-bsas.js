@@ -360,8 +360,8 @@
     var margin = {
             top: 0,
             right: 25,
-            bottom: 30,
-            left: 30
+            bottom: 35,
+            left: 45
         },
         wrapper_width = rootNode.clientWidth,
         wrapper_height = 400,
@@ -408,6 +408,8 @@
     var $y_axis = $lines_bsas.append("g").attr("class", "vis-y-axis");
     $y_axis.append("text");
 
+    var $lines_bsas_x_axis_label = $x_axis.append("text");
+    var $lines_bsas_y_axis_label = $y_axis.append("text");
 
     var legend_pos_text = -60,
         legend_pos_dot = -70;
@@ -447,6 +449,7 @@
             .tickFormat(percent);
 
 
+
         line.x(function(d) {
             return x(d.age);
         })
@@ -461,6 +464,23 @@
         $y_axis.call(yAxis_bsas);
         $lines_bsas.selectAll(".vis-y-axis text").attr("x", -5).attr("dy", 0).style("text-anchor", "end");
         $eventOverlay.attr("width", width).attr("height", height);
+
+
+	$lines_bsas_x_axis_label
+            .attr("x", width - margin.left)
+            .attr("y", (margin.bottom)/2)
+            .attr("dy", "1em")
+            .attr("class", "vis-x-axis-label")
+            .text("Fiscal Year");
+
+
+	$lines_bsas_y_axis_label
+	    .attr("x", -margin.top)
+	    .attr("y", -margin.left)
+	    .attr("dy", "1em")
+	    .attr("class", "vis-y-axis-label")
+	    .text("Percent Primary Substance of Use");
+
 
 
         renderLegend();
@@ -826,15 +846,15 @@
 
 
 
-    d3.csv("js/data/bsas-data.csv", type, function(error, data) {
+    d3.csv("js/data/bsas-data-2000to2015.csv", type, function(error, data) {
         if (error) throw error;
         //console.log(groups);
         // var marriages = groups[current_town];
 
-        x.domain([2005, d3.max(data, function(d) {
+        x.domain([2000, d3.max(data, function(d) {
             return d.age;
         })]);
-        y.domain([0, .99]);
+        y.domain([0, 1.00]);
 
         setupLines();
         render();
@@ -855,7 +875,7 @@
 
         $("#tags").autocomplete({
             source: function(request, response) {
-                console.log(town_names);
+                //console.log(town_names);
                 var matches = $.map(town_names, function(acItem) {
                     if (acItem.toUpperCase().indexOf(request.term.toUpperCase()) === 0) {
                         return acItem;
@@ -873,11 +893,12 @@
             },
             select: function(event, ui) {
                 $.each(town_names, function(key, value) {
-                    if(value === ui.item.value) {
-                       current_town = key;        
+                    if (value === ui.item.value) {
+                        current_town = key;
+                        console.log(value)
                     }
                 });
-                
+
 
                 $(".btn-bsas").removeClass('active');
                 updateDots();

@@ -113,13 +113,14 @@ $(document).ready(function() {
                     name: 'Methadone'
                 }],
                 name: 'Methadone'
-            }, {
-                data: [{
-                    count: 15,
-                    name: 'Buprenorphine'
-                }],
-                name: 'Buprenorphine'
-            }
+            },
+            //  {
+            //     data: [{
+            //         count: 15,
+            //         name: 'Buprenorphine'
+            //     }],
+            //     name: 'Buprenorphine'
+            // }
 
         ];
 
@@ -167,7 +168,7 @@ $(document).ready(function() {
         var time_period;
         switch (time) {
             case 0:
-                time_period = "During the Study Period";
+                time_period = "during 2011–2014";
                 break;
             case 1:
                 time_period = "6 Months Before Death";
@@ -179,15 +180,16 @@ $(document).ready(function() {
                 time_period = "1 Month Before Death";
                 break;
         }
-        $("#time-perioid").html(time_period.toLowerCase());
+        $("#time-period").html(time_period.toLowerCase());
         $("#label_blocks").html(time_period);
     });
 
     function asignVal_substance(type, time) {
+        $('#percentage').html(type[time].Yes+'%');
         $("#people").empty();
         $('#people').each(function() {
             makeChart_substance(type, time);
-            $('#table_substance').html('<table class="table" id="table_substance"><tr><th>Had prescription</th><th>Did not have prescription</th></tr><tr><td class="type_substance0">' + type[time].Yes + '%</td><td class="type_substance1">' + type[time].No + '%</td></tr></table>');
+            $('#table_substance').html('<table class="table" id="table_substance"><tr><th>Had legal prescription</th><th>Did not have legal prescription</th></tr><tr><td class="type_substance0">' + type[time].Yes + '%</td><td class="type_substance1">' + type[time].No + '%</td></tr></table>');
 
         })
     };
@@ -277,8 +279,10 @@ $(document).ready(function() {
         var i = $(this).val(),
             d = dataset[$(this).val()][0];
         var xPos = parseFloat(xScale(d.x0) + 100 / (i + 1));
-        var yPos = parseFloat(d3.select(this).attr('y')) + yScale.rangeBand() / 2;
+        var yPos = parseFloat(d3.select(this).attr('y')) + yScale.rangeBand();
         console.log(d);
+        $('.substance-type').html(d.n.toLowerCase());
+        $('#total').html(d.x);
 
     });
 
@@ -319,7 +323,7 @@ $(document).ready(function() {
             })
             .enter()
             .append('rect')
-            .style('stroke', '#b71c1c')
+            .style({'stroke': '#b71c1c','stroke-width': '1px'})
             .attr('x', function(d) {
                 return xScale(d.x0);
             })

@@ -9,7 +9,7 @@
 @import 'lines-bsas';
 @import 'blocks-gender';
 // @import 'blocks-substance';
-@import 'blocks-substance-pie';
+@import 'blocks-substance-bar';
 @import 'bars-age';
 @import 'bars-race';
 @import 'range-slider';
@@ -66,12 +66,6 @@ section.module h2 {
     margin-bottom: 40px;
     font-family: $font-serif;
     font-size: 30px;
-}
-
-#POD,
-#DR,
-#NOD {
-    font-size: 8pt;
 }
 
 section.module p {
@@ -214,26 +208,18 @@ video {
     margin-bottom: 50px;
 }
 
+
 .callout {
-    background-color: $color-gray-light;
-    color: $color-white;
-    padding: 20px;
-    border-radius: 10px;
-    h2 {
-        padding-bottom: 18px;
-        border-bottom: 1px solid $color-white;
+    background-color: $color-gray-lightest;
+    border: 1px solid darken($color-gray-lightest, 8%);
+    color: $color-black;
+    padding: 19px;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+    .h3-sm{
+        font-size: 1.5em;
     }
 
-    // .btn-primary {
-    //     color: $color-white;
-    //     background-color: $color-gray-light;
-    //     border-color: $color-white;
-    //     &:hover {
-    //         color: $color-white;
-    //         background-color: $color-primary;
-    //         border-color: $color-primary;
-    //     }
-    // }
 }
 
 .expandable {
@@ -294,19 +280,18 @@ video {
     a {
         font-style: normal;
         color: $color-primary;
-        
+        text-decoration: underline;
     }
 }
 
 .sourcecallout {
-    color: #b7c6cd;
+    color: $color-gray-dark;
     font-size: 11.5px;
     text-align: left;
     padding-top: 10px;
     a {
         font-style: normal;
-        color: #d5dee2;
-       
+        text-decoration: underline;
     }
 }
 
@@ -331,7 +316,6 @@ footer {
     padding: 30px;
     background-color: $color-gray-lighter;
 }
-
 
 .sources-section {
     background: #333333;
