@@ -429,6 +429,17 @@
   font-size: 11px;
   font-weight: bolder; }
 
+#toggleOpioidsY2000, #toggleOpioidsY2015 {
+  background: white;
+  border: white;
+  border-width: 0px;
+  color: #337ab7;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: none;
+  padding: 0px 0px; }
+
 /* ============================================================
  Block Chart by Gender
 ============================================================ */
@@ -848,3 +859,6 @@ footer {
   background: #333333;
   color: #ffffff;
   padding: 5em 0; }
+
+.page-scroll sup {
+  font-size: 60%; }

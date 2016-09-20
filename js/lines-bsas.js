@@ -408,6 +408,8 @@
     var $y_axis = $lines_bsas.append("g").attr("class", "vis-y-axis");
     $y_axis.append("text");
 
+    var $lines_bsas_x_axis_label = $x_axis.append("text");
+    var $lines_bsas_y_axis_label = $y_axis.append("text");
 
     var legend_pos_text = -60,
         legend_pos_dot = -70;
@@ -424,6 +426,10 @@
     var $lines = {};
 
     var $eventOverlay = $lines_bsas.append("rect").attr("class", "overlay");
+
+
+
+
 
 
     function render() {
@@ -449,8 +455,8 @@
 
 
         line.x(function(d) {
-            return x(d.age);
-        })
+                return x(d.age);
+            })
             .y(function(d) {
                 return y(d.value);
             })
@@ -462,22 +468,23 @@
         $y_axis.call(yAxis_bsas);
         $lines_bsas.selectAll(".vis-y-axis text").attr("x", -5).attr("dy", 0).style("text-anchor", "end");
         $eventOverlay.attr("width", width).attr("height", height);
-        
-        var $lines_bsas_x_axis_label = $x_axis
-            .append("text")
+
+
+        $lines_bsas_x_axis_label
             .attr("x", width - margin.left)
-            .attr("y", (margin.bottom)/2)
+            .attr("y", (margin.bottom) / 2)
             .attr("dy", "1em")
             .attr("class", "vis-x-axis-label")
             .text("Fiscal Year");
 
-         var $lines_bsas_y_axis_label = $y_axis
-        .append("text")
-        .attr("x", -margin.top)
-        .attr("y", -margin.left)
-        .attr("dy", "1em")
-        .attr("class", "vis-y-axis-label")
-        .text("Percent Primary Substance of Use");
+
+        $lines_bsas_y_axis_label
+            .attr("x", -margin.top)
+            .attr("y", -margin.left)
+            .attr("dy", "1em")
+            .attr("class", "vis-y-axis-label")
+            .text("Percent Primary Substance of Use");
+
 
 
         renderLegend();
@@ -649,8 +656,6 @@
             return line(groups[current_town + "none"].values);
         });
     }
-
-
 
 
 
@@ -869,6 +874,7 @@
             $("#tags").val('');
         });
 
+        
 
         $("#tags").autocomplete({
             source: function(request, response) {
@@ -1124,4 +1130,20 @@
         return d;
 
     }
+
+
+
+
 })();
+
+function opioidsY2000(d, i) {
+            d3.select(".circle.opioids.y2015").attr("r", 3).style("fill-opacity", 1).style("stroke-width", "0");
+            d3.select(".circle.opioids.y2000").attr("r", 8).style("fill-opacity", 1).style("stroke-width", "2").style("stroke", "#8e1014");
+            d3.select(".btn-bsas").classed('active', true);
+        };
+
+        function opioidsY2015(d, i) {
+            d3.select(".circle.opioids.y2000").attr("r", 3).style("fill-opacity", 1).style("stroke-width", "0");
+            d3.select(".circle.opioids.y2015").attr("r", 8).style("fill-opacity", 1).style("stroke-width", "2").style("stroke", "#8e1014");
+            d3.select(".btn-bsas").classed('active', true);
+        };
