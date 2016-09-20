@@ -8,7 +8,7 @@ $(document).ready(function(){
     ];
 
     var color = d3.scale.ordinal()
-        .range(["#bdbdbd", "#78909C"]);
+        .range(["#B0BEC5", "#455A64"]);
 
     var width, height, margin = {};
 
