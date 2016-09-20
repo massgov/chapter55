@@ -185,7 +185,7 @@ $(document).ready(function() {
     });
 
     function asignVal_substance(type, time) {
-        $('#percentage').html(type[time].Yes+'%');
+        $('#percentage').html(type[time].Yes + '%');
         $("#people").empty();
         $('#people').each(function() {
             makeChart_substance(type, time);
@@ -206,11 +206,19 @@ $(document).ready(function() {
     }
 
     function addBlocks_substance(id, noOfBlocks_Yes, noOfBlocks_No, data_substance, blockArray_substance, i) {
+        var person_path = '<path d="M4,12.6c0-0.7,0-1.5,0-2.2c0-1,0.5-1.8,1.4-2.2C6,7.9,6.6,7.8,7.3,7.8c0.7,0,1.4,0,2.1,0c0.7,0,1.4,0.2,2,0.6c0.7,0.4,1.1,1.1,1.1,2c0,1.5,0,3,0,4.5c0,0.9-0.2,1.8-0.8,2.6c-0.1,0.2-0.3,0.3-0.4,0.5c-0.1,0.1-0.1,0.2-0.2,0.3c-0.1,0.6-0.3,1.2-0.4,1.8c-0.2,1.3-0.4,2.6-0.6,3.8c-0.1,0.7-0.6,1.1-1.3,1.1c-0.4,0-0.8,0-1.2,0c-0.1,0-0.2,0-0.3,0c-0.5-0.1-0.9-0.5-1-1c-0.2-1.2-0.4-2.4-0.6-3.5c-0.1-0.6-0.2-1.2-0.3-1.8c-0.1-0.3-0.2-0.5-0.4-0.7c-0.4-0.3-0.6-0.8-0.7-1.3C4.1,15.9,4,15.3,4,14.7C4,14,4,13.3,4,12.6z"/>'
+        + '<path d="M4.8,3.6c0-1.8,1.4-3.4,3.4-3.5c1.9,0,3.5,1.5,3.5,3.5c0,2-1.5,3.4-3.5,3.4C6.3,7,4.8,5.5,4.8,3.6z"/>';
+        var person_svg_No = '<svg class="block type_substance1" width="25px" height="25px">' + person_path + '</svg>';
+
         for (b = 0; b < noOfBlocks_No; b++) {
-            blockArray_substance.push('<div class="block type_substance' + 1 + ' data-index=' + data_substance[i].No + '">' + '</div>');
+            blockArray_substance.push(person_svg_No);
+
+            //blockArray_substance.push('<div class="block type_substance' + 1 + ' data-index=' + data_substance[i].No + '">' + '</div>');
         };
         for (b = 0; b < noOfBlocks_Yes; b++) {
-            $(id).append('<div class="block type_substance' + 0 + ' data-index=' + data_substance[i].Yes + '">' + '</div>');
+            //$(id).append('<div class="block type_substance' + 0 + ' data-index=' + data_substance[i].Yes + '">' + '</div>');
+        var person_svg_Yes = '<svg class="block type_substance0" width="25px" height="25px">' + person_path + '</svg>';
+            $(id).append(person_svg_Yes);
         };
         return blockArray_substance;
 
@@ -282,14 +290,12 @@ $(document).ready(function() {
         var yPos = parseFloat(d3.select(this).attr('y')) + yScale.rangeBand();
         console.log(d);
         console.log(d.n == 'Fentanyl & Heroin')
-        
-        if(d.n == 'Fentanyl & Heroin'){
+
+        if (d.n == 'Fentanyl & Heroin') {
             substance_html = d.n.toLowerCase() + "<a href=\"#footnote-7\" class=\"page-scroll\"><sup>7</sup></a>";
-        }
-        else if(d.n == 'Prescription Opioids') {
+        } else if (d.n == 'Prescription Opioids') {
             substance_html = d.n.toLowerCase() + "<a href=\"#footnote-8\" class=\"page-scroll\"><sup>8</sup></a>";
-        }
-        else{
+        } else {
             substance_html = d.n.toLowerCase();
         }
 
@@ -336,7 +342,7 @@ $(document).ready(function() {
             })
             .enter()
             .append('rect')
-            .style({'stroke': '#b71c1c','stroke-width': '1px'})
+            .style({ 'stroke': '#b71c1c', 'stroke-width': '1px' })
             .attr('x', function(d) {
                 return xScale(d.x0);
             })

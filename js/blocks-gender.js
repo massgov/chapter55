@@ -45,13 +45,11 @@ $(document).ready(function() {
     $('#table_gender').html(table_html[0]);
     $("#prescription").addClass("active");
 
-     //Link text controls
+    //Link text controls
     $('.controls-block').click(function() {
         $option = $(this).data('select');
         //$value = eval($(this).val());
-        if($option == 'multi'){$value = 2;}
-        else if($option == 'heroin'){$value = 1;}
-        else if($option = 'prescription'){$value = 0;}
+        if ($option == 'multi') { $value = 2; } else if ($option == 'heroin') { $value = 1; } else if ($option = 'prescription') { $value = 0; }
         console.log($value);
         asignVal_gender($option, $value);
     });
@@ -65,7 +63,7 @@ $(document).ready(function() {
         asignVal_gender($option, $value);
     });
 
-   
+
     function asignVal_gender(option, value) {
         $("#buttons-blocks button").removeClass("active");
         $('#' + option).addClass('active');
@@ -106,8 +104,12 @@ $(document).ready(function() {
 
     function addBlocks_gender(id, noOfBlocks, data_gender, blockArray, index) {
         for (b = 0; b < noOfBlocks; b++) {
+            var person_svg = '<svg class="block type_gender' + index[i] + ' data-index=' + data_gender[i][0] + ' width="25px" height="25px">'+'<path d="M4,12.6c0-0.7,0-1.5,0-2.2c0-1,0.5-1.8,1.4-2.2C6,7.9,6.6,7.8,7.3,7.8c0.7,0,1.4,0,2.1,0c0.7,0,1.4,0.2,2,0.6c0.7,0.4,1.1,1.1,1.1,2c0,1.5,0,3,0,4.5c0,0.9-0.2,1.8-0.8,2.6c-0.1,0.2-0.3,0.3-0.4,0.5c-0.1,0.1-0.1,0.2-0.2,0.3c-0.1,0.6-0.3,1.2-0.4,1.8c-0.2,1.3-0.4,2.6-0.6,3.8c-0.1,0.7-0.6,1.1-1.3,1.1c-0.4,0-0.8,0-1.2,0c-0.1,0-0.2,0-0.3,0c-0.5-0.1-0.9-0.5-1-1c-0.2-1.2-0.4-2.4-0.6-3.5c-0.1-0.6-0.2-1.2-0.3-1.8c-0.1-0.3-0.2-0.5-0.4-0.7c-0.4-0.3-0.6-0.8-0.7-1.3C4.1,15.9,4,15.3,4,14.7C4,14,4,13.3,4,12.6z"/>'
+        + '<path d="M4.8,3.6c0-1.8,1.4-3.4,3.4-3.5c1.9,0,3.5,1.5,3.5,3.5c0,2-1.5,3.4-3.5,3.4C6.3,7,4.8,5.5,4.8,3.6z"/></svg>';
+
             // blockArray.push('<div class="block type' + i + '">' + '<p>' + data[i][0] + '</p></div>');
-            blockArray.push('<div class="block type_gender' + index[i] + ' data-index=' + data_gender[i][0] + '">' + '</div>');
+            //blockArray.push('<div class="block type_gender' + index[i] + ' data-index=' + data_gender[i][0] + '">' + '</div>');
+            blockArray.push(person_svg);
             // $(id).append('<div class="block type'+i+'"><p>'+ data[i][0] +'</p></div>');
         }
         return blockArray;

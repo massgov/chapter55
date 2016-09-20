@@ -469,10 +469,6 @@
   display: inline-block; }
 
 .block {
-  -webkit-mask: url(../img/person.svg) no-repeat 50% 50%;
-  mask: url(../img/person.svg) no-repeat 50% 50%;
-  -webkit-mask-size: cover;
-  mask-size: cover;
   float: left;
   height: 9%;
   width: 9%;
@@ -484,36 +480,47 @@
 
 .type_gender0 {
   background: #BBDEFB;
+  fill: #BBDEFB;
   color: #000000; }
 
 .type_gender1 {
   background: #2196F3;
+  fill: #2196F3;
   color: #ffffff; }
 
 .type_gender2 {
   background: #1A237E;
+  fill: #1A237E;
   color: #ffffff; }
 
 .type_gender3 {
   background: #b71c1c;
+  fill: #b71c1c;
   color: #ffffff; }
 
 .type_gender4 {
   background: #ff5252;
+  fill: #ff5252;
   color: #ffffff; }
 
 .type_gender5 {
   background: #ffcdd2;
+  fill: #ffcdd2;
   color: #000000; }
 
 /* ============================================================
  Block Chart by Substance
 ============================================================ */
 .type_substance0 {
-  background: #b71c1c; }
+  background: #b71c1c;
+  fill: #b71c1c; }
 
 .type_substance1 {
-  background: #78909C; }
+  background: #78909C;
+  fill: #78909C; }
+
+.block {
+  background: none; }
 
 #timeline_blocks::-webkit-slider-thumb {
   background: #b71c1c; }

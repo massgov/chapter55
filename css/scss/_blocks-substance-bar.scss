@@ -4,10 +4,16 @@
 
 .type_substance0 {
     background: $color-secondary;
+    fill: $color-secondary;
 }
 
 .type_substance1 {
     background: $color-gray;
+    fill: $color-gray;
+}
+
+.block {
+    background: none;
 }
 
 #timeline_blocks {
