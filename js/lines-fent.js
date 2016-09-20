@@ -234,12 +234,14 @@
     var y_axis = $lines_fent.append("g")
     	.attr("class", "vis-y-axis")
     	.call(yAxis_fent)
-    	.append("text")
+      //.append("tspan")
+      .append("text")
     	.attr("x", 0)
     	.attr("y", -44)
     	.attr("dy", "1em")
     	.attr("class", "vis-y-axis-label")
-    	.text("Percent Opioid Deaths");
+    	.text("Percent Opioid Deaths")
+      //.html("<sup>1</sup>");
 
     var series = $lines_fent.selectAll(".series")
     	.data(seriesData)

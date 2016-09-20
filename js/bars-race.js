@@ -8,7 +8,7 @@ $(document).ready(function(){
     ];
 
     var color = d3.scale.ordinal()
-        .range(["#2166ac", "#92c5de"]);
+        .range(["#bdbdbd", "#78909C"]);
 
     var width, height, margin = {};
 
@@ -121,7 +121,7 @@ $(document).ready(function(){
         .on("mousemove", function(d) {
             divtooltip_raceeth.style("left", d3.event.pageX - $("#race_ethnicity_chart").offset().left + "px");
             divtooltip_raceeth.style("top", d3.event.pageY - $("#race_ethnicity_chart").offset().top + "px");
-    	divtooltip_raceeth.classed("hidden", false);
+        divtooltip_raceeth.classed("hidden", false);
             var x = d3.event.pageX,
                 y = d3.event.pageY
             var elements = document.querySelectorAll(':hover');
@@ -135,7 +135,7 @@ $(document).ready(function(){
 
     bar
         .on("mouseout", function(d) {
-    	divtooltip_raceeth.classed("hidden", true);
+        divtooltip_raceeth.classed("hidden", true);
         });
 
 
