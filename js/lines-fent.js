@@ -87,7 +87,7 @@
     // Dimensions
 
     var margin = {
-      top: 60, // space for the legend
+      top: 10, // space for the legend
       right: 15,
       bottom: 50,
       left: 42
@@ -423,6 +423,7 @@
         return line(d.values);
       });
 
+      $legend.attr("class", "vis-legend").attr("transform", "translate("+(width-margin.right*6)+",0)");
     }
 
     function updateWidth(componentWidth) {
@@ -431,7 +432,12 @@
       height = wrapper_height - margin.top - margin.bottom;
     }
 
+    var $legend = $svg.append("g");
+    var $item = $legend.append("g");
+
     function renderLegend() {
+      
+
       var legendItems = [
         "FentanylHeroin",
         "Fentanyl",
@@ -444,16 +450,14 @@
         "Heroin",
         "Methadone"
       ];
-      var $legend = $svg.append("g")
-        .attr("class", "vis-legend")
-        .attr("transform", "translate("+margin.left+",0)");
+      $legend.attr("class", "vis-legend").attr("transform", "translate("+(width-(margin.right*8))+",0)");
       var lineHeight = 15;
       // var seriesColors = ["#ffffff", "#b71c1c", "#0071bc", "#ffffff"];
       // var seriesLineStrokes = ["1.5px", "3.5px", "3.5px", "2px"];
       // var seriesLineDash = ["10,10,10,10", "0,0,0,0", "0,0,0,0", "2,6,0,0"];
 
       legendItems.forEach(function(item, i) {
-        var $item = $legend.append("g")
+      $item = $legend.append("g")
           .attr("class", "legend-item-"+item)
           .attr("transform", "translate(0,"+(i*lineHeight)+")");
 
@@ -480,6 +484,7 @@
     renderLegend();
 
     window.addEventListener('resize', render);
+    //window.addEventListener('resize', renderLegend);
 
 
 

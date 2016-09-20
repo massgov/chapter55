@@ -428,6 +428,10 @@
     var $eventOverlay = $lines_bsas.append("rect").attr("class", "overlay");
 
 
+
+
+
+
     function render() {
         updateWidth(rootNode.clientWidth);
 
@@ -451,8 +455,8 @@
 
 
         line.x(function(d) {
-            return x(d.age);
-        })
+                return x(d.age);
+            })
             .y(function(d) {
                 return y(d.value);
             })
@@ -466,20 +470,20 @@
         $eventOverlay.attr("width", width).attr("height", height);
 
 
-	$lines_bsas_x_axis_label
+        $lines_bsas_x_axis_label
             .attr("x", width - margin.left)
-            .attr("y", (margin.bottom)/2)
+            .attr("y", (margin.bottom) / 2)
             .attr("dy", "1em")
             .attr("class", "vis-x-axis-label")
             .text("Fiscal Year");
 
 
-	$lines_bsas_y_axis_label
-	    .attr("x", -margin.top)
-	    .attr("y", -margin.left)
-	    .attr("dy", "1em")
-	    .attr("class", "vis-y-axis-label")
-	    .text("Percent Primary Substance of Use");
+        $lines_bsas_y_axis_label
+            .attr("x", -margin.top)
+            .attr("y", -margin.left)
+            .attr("dy", "1em")
+            .attr("class", "vis-y-axis-label")
+            .text("Percent Primary Substance of Use");
 
 
 
@@ -652,8 +656,6 @@
             return line(groups[current_town + "none"].values);
         });
     }
-
-
 
 
 
@@ -872,6 +874,7 @@
             $("#tags").val('');
         });
 
+        
 
         $("#tags").autocomplete({
             source: function(request, response) {
@@ -1127,4 +1130,20 @@
         return d;
 
     }
+
+
+
+
 })();
+
+function opioidsY2000(d, i) {
+            d3.select(".circle.opioids.y2015").attr("r", 3).style("fill-opacity", 1).style("stroke-width", "0");
+            d3.select(".circle.opioids.y2000").attr("r", 8).style("fill-opacity", 1).style("stroke-width", "2").style("stroke", "#8e1014");
+            d3.select(".btn-bsas").classed('active', true);
+        };
+
+        function opioidsY2015(d, i) {
+            d3.select(".circle.opioids.y2000").attr("r", 3).style("fill-opacity", 1).style("stroke-width", "0");
+            d3.select(".circle.opioids.y2015").attr("r", 8).style("fill-opacity", 1).style("stroke-width", "2").style("stroke", "#8e1014");
+            d3.select(".btn-bsas").classed('active', true);
+        };
