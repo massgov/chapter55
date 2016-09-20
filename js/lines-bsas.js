@@ -665,7 +665,7 @@
         //update alcohol line
         $lines_bsas.select(".line.alcohol")
             .transition()
-            .duration(600)
+            .duration(1000)
             .delay(180)
             .attr("d", function(d) {
                 return line(groups[current_town + "alcohol"].values);
@@ -681,7 +681,7 @@
             if (groups[current_town + "alcohol"].values[i].value >= 0) {
                 $lines_bsas.selectAll(string_select)
                     .transition()
-                    .duration(600)
+                    .duration(1000)
                     .attr("cx", function(d) {
                         return x(groups[current_town + "alcohol"].values[i].age)
                     })
@@ -692,7 +692,7 @@
             } else {
                 $lines_bsas.selectAll(string_select)
                     .transition()
-                    .duration(600)
+                    .duration(1000)
                     .attr("r", 0)
             }
 
@@ -703,7 +703,7 @@
         //marijuana
         $lines_bsas.select(".line.marijuana")
             .transition()
-            .duration(600)
+            .duration(1000)
             .attr("d", function(d) {
                 return line(groups[current_town + "marijuana"].values);
             });
@@ -715,7 +715,7 @@
             if (groups[current_town + "marijuana"].values[i].value >= 0) {
                 $lines_bsas.selectAll(string_select)
                     .transition()
-                    .duration(600)
+                    .duration(1000)
                     .attr("cx", function(d) {
                         return x(groups[current_town + "marijuana"].values[i].age)
                     })
@@ -726,7 +726,7 @@
             } else {
                 $lines_bsas.selectAll(string_select)
                     .transition()
-                    .duration(600)
+                    .duration(1000)
                     .attr("r", 0)
             }
 
@@ -735,7 +735,7 @@
         //none
         $lines_bsas.select(".line.none")
             .transition()
-            .duration(600)
+            .duration(1000)
             .attr("d", function(d) {
                 return line(groups[current_town + "none"].values);
             });
@@ -752,7 +752,7 @@
             if (groups[current_town + "none"].values[i].value >= 0) {
                 $lines_bsas.selectAll(string_select)
                     .transition()
-                    .duration(600)
+                    .duration(1000)
                     .attr("cx", function(d) {
                         return x(groups[current_town + "none"].values[i].age)
                     })
@@ -763,7 +763,7 @@
             } else {
                 $lines_bsas.selectAll(string_select)
                     .transition()
-                    .duration(600)
+                    .duration(1000)
                     .attr("r", 0);
             }
 
@@ -772,7 +772,7 @@
         //opioids
         $lines_bsas.select(".line.opioids")
             .transition()
-            .duration(600)
+            .duration(1000)
             .attr("d", function(d) {
                 return line(groups[current_town + "opioids"].values);
             });
@@ -789,7 +789,7 @@
             if (value_select >= 0) {
                 $lines_bsas.selectAll(string_select)
                     .transition()
-                    .duration(600)
+                    .duration(1000)
                     .attr("cx", function(d) {
                         return x(groups[current_town + "opioids"].values[i].age)
                     })
@@ -800,7 +800,7 @@
             } else {
                 $lines_bsas.selectAll(string_select)
                     .transition()
-                    .duration(600)
+                    .duration(1000)
                     .attr("r", 0);
             }
 
@@ -809,7 +809,7 @@
         //other
         $lines_bsas.select(".line.other")
             .transition()
-            .duration(600)
+            .duration(1000)
             .attr("d", function(d) {
                 return line(groups[current_town + "other"].values);
             });
@@ -825,7 +825,7 @@
             if (value_select >= 0) {
                 $lines_bsas.selectAll(string_select)
                     .transition()
-                    .duration(600)
+                    .duration(1000)
                     .attr("cx", function(d) {
                         return x(groups[current_town + "other"].values[i].age)
                     })
@@ -836,7 +836,7 @@
             } else {
                 $lines_bsas.selectAll(string_select)
                     .transition()
-                    .duration(600)
+                    .duration(1000)
                     .attr("r", 0);
             }
 
@@ -1137,13 +1137,13 @@
 })();
 
 function opioidsY2000(d, i) {
-            d3.select(".circle.opioids.y2015").attr("r", 3).style("fill-opacity", 1).style("stroke-width", "0");
-            d3.select(".circle.opioids.y2000").attr("r", 8).style("fill-opacity", 1).style("stroke-width", "2").style("stroke", "#8e1014");
+            d3.select(".circle.opioids.y2015").attr("r", 3).style("fill-opacity", 0.75).style("stroke-width", "0");
+            d3.select(".circle.opioids.y2000").attr("r", 15).style("fill-opacity", 0.9).style("stroke-width", "0").style("stroke", "#8e1014");
             d3.select(".btn-bsas").classed('active', true);
         };
 
         function opioidsY2015(d, i) {
-            d3.select(".circle.opioids.y2000").attr("r", 3).style("fill-opacity", 1).style("stroke-width", "0");
-            d3.select(".circle.opioids.y2015").attr("r", 8).style("fill-opacity", 1).style("stroke-width", "2").style("stroke", "#8e1014");
+            d3.select(".circle.opioids.y2000").attr("r", 3).style("fill-opacity", 0.75).style("stroke-width", "0");
+            d3.select(".circle.opioids.y2015").attr("r", 15).style("fill-opacity", 0.9).style("stroke-width", "0").style("stroke", "#8e1014");
             d3.select(".btn-bsas").classed('active', true);
         };
