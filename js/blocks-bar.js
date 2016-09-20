@@ -281,7 +281,20 @@ $(document).ready(function() {
         var xPos = parseFloat(xScale(d.x0) + 100 / (i + 1));
         var yPos = parseFloat(d3.select(this).attr('y')) + yScale.rangeBand();
         console.log(d);
-        $('.substance-type').html(d.n.toLowerCase());
+        console.log(d.n == 'Fentanyl & Heroin')
+        
+        if(d.n == 'Fentanyl & Heroin'){
+            substance_html = d.n.toLowerCase() + "<a href=\"#footnote-7\" class=\"page-scroll\"><sup>7</sup></a>";
+        }
+        else if(d.n == 'Prescription Opioids') {
+            substance_html = d.n.toLowerCase() + "<a href=\"#footnote-8\" class=\"page-scroll\"><sup>8</sup></a>";
+        }
+        else{
+            substance_html = d.n.toLowerCase();
+        }
+
+        console.log(substance_html)
+        $('.substance-type').html(substance_html);
         $('#total').html(d.x);
 
     });
