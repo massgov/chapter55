@@ -1,0 +1,99 @@
+/* ============================================================
+ Multi Maps
+============================================================ */
+
+#binaryMaps_maps {
+    width: 100%;
+    max-width: 1700px;
+    margin: 0 auto;
+
+    .map-wrapper {
+        display: inline-block;
+        width: 33%;
+        position: relative;
+    }
+    path {
+        fill: #e9e9e9;
+        stroke: #e9e9e9;
+        stroke-width: 1px;
+    }
+    .vis-title {
+        width: 60%;
+        position: absolute;
+        bottom: 20%;
+        left: 0;
+
+        @media screen and (max-width: 955px) and (min-width: 768px) {
+            bottom: 25%;
+            font-size: 14px;
+        }
+    }
+    .selection-label {
+        width: 60%;
+        text-align: center;
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        font-weight: bolder;
+        font-size: 12px;
+        font-family: Helvetica, Arial;
+        text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+        @media screen and (max-width: 955px) and (min-width: 768px) {
+            font-size: 10px;
+        }
+    }
+
+    .svg-container {
+        padding-bottom: 65%;
+    }
+
+
+}
+
+#binaryMaps {
+    // Mobile toggle
+    .btn-group {
+        display: none;
+        @media screen and (max-width: 768px) {
+            display: inline-block;
+            margin: 2em auto;
+        }
+    }
+
+
+    @media screen and (max-width: 768px) {
+        &[data-active-date] {
+            .map-wrapper {
+                display: none;
+            }
+        }
+        &[data-active-date="2005"] {
+            .map-wrapper:first-child {
+                display: block;
+            }
+        }
+        &[data-active-date="2010"] {
+            .map-wrapper:nth-child(2) {
+                display: block;
+            }
+        }
+        &[data-active-date="2014"] {
+            .map-wrapper:last-child {
+                display: block;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .map-wrapper {
+            display: block;
+            width: 100%;
+            position: relative;
+        }
+    }
+}
+
+
+#binaryMaps_legend.vis-legend {
+    max-width: 400px;
+}
