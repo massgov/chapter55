@@ -48,7 +48,8 @@ var Vis = (function(d3) {
                 else if (data.key == 2010) {return '2006 to 2010';}
                 else if (data.key == 2015) {return '2011 to 2015';}
         })
-            .attr('class', 'vis-title');
+            .attr('class', 'vis-title')
+            .style('padding-bottom', "3%");
 
 
         
@@ -73,7 +74,7 @@ var Vis = (function(d3) {
             .style("stroke", "white")
             .style("stroke-width", "0.0px")
             .style('fill', function(d, i) {
-                var value = data.values[d.properties.TOWN];
+                var value = data.values[d.properties.TOWN_1];
                 return palette(value);
             })
             .on('mouseover', function(d, i) {
@@ -83,31 +84,31 @@ var Vis = (function(d3) {
 
             })
             .attr('class', function(d) {
-                return d.properties.TOWN.toLowerCase()
+                return d.properties.TOWN_1.toLowerCase()
             })
             .attr('id', 'bsasmap')
             .on('mouseenter', function(d, i) {
-                notify('.' + d.properties.TOWN.toLowerCase(), 'select');
+                notify('.' + d.properties.TOWN_1.toLowerCase(), 'select');
                 // var currentState = this;
                 // console.log(this);
                 // d3.select(this).style('fill-opacity', 0.4).style("stroke", "white").style("stroke-width", "1.5px");
             })
             .on('mouseleave', function(d) {
-                notify('.' + d.properties.TOWN.toLowerCase(), 'unselect');
+                notify('.' + d.properties.TOWN_1.toLowerCase(), 'unselect');
 
             })
             .on('select', function(self) {
                 var geoData = self.data();
                 var town_value
 
-                if (data.values[geoData[0].properties.TOWN] > 0) {
+                if (data.values[geoData[0].properties.TOWN_1] > 0) {
                     town_value = d3.format(".2f")(data.values[geoData[0].properties.TOWN]);
                 }
-                else { town_value = "No Death";}    
+                else { town_value = "0";}    
 
                 //console.log(town_value);
 
-                self.node().parentNode.parentNode.getElementsByClassName('selection-label')[0].innerHTML = (geoData[0].properties.TOWN + ":  " + town_value);
+                self.node().parentNode.parentNode.getElementsByClassName('selection-label')[0].innerHTML = (geoData[0].properties.TOWN_1 + "<br>" + town_value)  + " per 100,000";
                 d3.select((self.node())).style('fill-opacity', 0.4).style("stroke", "white").style("stroke-width", "1.5px");
             })
             .on('unselect', function(self) {
@@ -130,11 +131,11 @@ var Vis = (function(d3) {
 
     var opChgScale = d3.scale.threshold().domain([0.1, 2.1, 6.1, 17.1, Infinity]).range(["#d3d3d3", '#db8d8d', '#c54949', "#b71c1c",'#801313'])
     opChgScale.domainStrings = function() {
-        return (['No Opioid-Related Death', 'One or More Opioid-Related Deaths']);
+        return (['0', '>0-2.1', '>2.1-6.1', '>6.1-17.1', '>17.1']);
     };
     //popChgScale.domainStrings = function() { return (['< 0.1', '0.25-0.50', '0.50-0.75', '0.75-1.0', '1.0-1.25',
     //'1.25-1.50', '1.50-1.75', '1.75-2.0', '> 2.0']); };
-    generateLegend_map_sub(opChgScale, 'binaryMaps_legend', 'Presence of Opioid-Related Death in a Municipality in the Past 5 years');
+    generateLegend_map_sub(opChgScale, 'binaryMaps_legend', 'Average 5 year Opioid-Related Death Rate per 100,000 people');
 
     function generateLegend_map_sub(scale, szDivId, szCaption) {
         var width = 550,
