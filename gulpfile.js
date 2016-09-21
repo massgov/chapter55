@@ -41,6 +41,7 @@ gulp.task('javascript', function () {
       "js/blocks-gender.js",
       "js/bars-age.js",
       "js/bars-race.js",
+      "js/maps_binary5yr.js",
     ])
     .pipe(sourcemaps.init())
     .pipe(concat('main.js'))
