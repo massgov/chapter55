@@ -4,10 +4,16 @@
 
 .type_substance0 {
     background: $color-secondary;
+    fill: $color-secondary;
 }
 
 .type_substance1 {
     background: $color-gray;
+    fill: $color-gray;
+}
+
+.block {
+    background: none;
 }
 
 #timeline_blocks {
@@ -29,6 +35,10 @@
 .red {
     font-weight: bold;
     color: #b71c1c;
+}
+
+#table_substance td {
+    color: $color-white;
 }
 
 

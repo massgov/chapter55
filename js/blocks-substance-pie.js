@@ -146,6 +146,7 @@ $(document).ready(function() {
     function addBlocks_substance(id, noOfBlocks_Yes, noOfBlocks_No, data_substance, blockArray_substance, i) {
         for (b = 0; b < noOfBlocks_No; b++) {
             blockArray_substance.push('<div class="block type_substance' + 1 + ' data-index=' + data_substance[i].No + '">' + '</div>');
+
         };
         for (b = 0; b < noOfBlocks_Yes; b++) {
             $(id).append('<div class="block type_substance' + 0 + ' data-index=' + data_substance[i].Yes + '">' + '</div>');

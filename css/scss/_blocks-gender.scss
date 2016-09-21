@@ -13,7 +13,6 @@
     }
     td {
         text-align: center;
-        color: white;
     }
 }
 
@@ -37,10 +36,10 @@
 }
 
 .block {
-    -webkit-mask: url(../img/person.svg) no-repeat 50% 50%;
-    mask: url(../img/person.svg) no-repeat 50% 50%;
-    -webkit-mask-size: cover;
-    mask-size: cover;
+    // -webkit-mask: url(../img/person.svg) no-repeat 50% 50%;
+    // mask: url(../img/person.svg) no-repeat 50% 50%;
+    // -webkit-mask-size: cover;
+    // mask-size: cover;
     float: left;
     height: 9%;
     width: 9%;
@@ -54,25 +53,37 @@
 
 .type_gender0 {
     background: $color-male-light;
+    fill: $color-male-light;
+    color: $color-black;
 }
 
 .type_gender1 {
     background: $color-male-alt;
+    fill: $color-male-alt;
+    color: $color-white;
 }
 
 .type_gender2 {
     background: $color-male;
+    fill: $color-male;
+    color: $color-white;
     ;
 }
 
 .type_gender3 {
     background: $color-female;
+    fill: $color-female;
+    color: $color-white;
 }
 
 .type_gender4 {
     background: $color-female-alt;
+    fill: $color-female-alt;
+    color: $color-white;
 }
 
 .type_gender5 {
     background: $color-female-light;
+    fill: $color-female-light;
+    color: $color-black;
 }
