@@ -184,7 +184,7 @@
 
         var szAttr = 'yr' + year;
         currentyear = year;
-        $('#odMap_titlePrefix').html('Count of Opiod Related Deaths in Massachusetts in');
+        $('#odMap_titlePrefix').html('Opioid Related Deaths in Massachusetts in');
         $('#odMap_fromYear').html(year);
 
         $('#odMap_source').html('Sources: <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/admin/dmoa/vitals/">Massachusetts Registry of Vital Records and Statistics</a>, ' +
