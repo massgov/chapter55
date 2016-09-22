@@ -423,7 +423,7 @@
         return line(d.values);
       });
 
-      $legend.attr("class", "vis-legend").attr("transform", "translate("+(width-margin.right*6)+",0)");
+      $legend.attr("class", "vis-legend").attr("transform", "translate("+(width-margin.right*10)+",0)");
     }
 
     function updateWidth(componentWidth) {
@@ -445,12 +445,12 @@
         "Methadone"
       ];
       var legendItemsTranslate = [
-        "Fentanyl & Heroin",
-        "Fentanyl",
-        "Heroin",
-        "Methadone"
+        "Both Fentanyl & Heroin",
+        "Only Fentanyl",
+        "Only Heroin",
+        "Only Methadone"
       ];
-      $legend.attr("class", "vis-legend").attr("transform", "translate("+(width-(margin.right*8))+",0)");
+      $legend.attr("class", "vis-legend").attr("transform", "translate("+(width-(margin.right*10))+",0)");
       var lineHeight = 15;
       // var seriesColors = ["#ffffff", "#b71c1c", "#0071bc", "#ffffff"];
       // var seriesLineStrokes = ["1.5px", "3.5px", "3.5px", "2px"];
