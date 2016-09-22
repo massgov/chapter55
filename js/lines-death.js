@@ -108,7 +108,7 @@
 
 
     function setupData(data) {
-        var years = d3.keys(data[0]).slice(1, 65);
+        var years = d3.keys(data[0]).slice(0, 65);
          //Create a new, empty array to hold our restructured dataset
         var dataset = [];
 
