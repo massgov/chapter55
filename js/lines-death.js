@@ -33,7 +33,8 @@
     var dateFormat = d3.time.format("%Y");
     //Set up scales
     var xScale = d3.time.scale();
-    var yScale = d3.scale.sqrt();
+    //var yScale = d3.scale.sqrt();
+    var yScale = d3.scale.linear();
     var xAxis_death = d3.svg.axis();
     var yAxis_death = d3.svg.axis();
     var line_death = d3.svg.line();
