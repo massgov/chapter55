@@ -40,9 +40,7 @@
             <nav class="navbar navbar-inverse" role="navigation" id="navigation">
                 <div class="container">
                     <div class="navbar-header">
-                        <span class="navbar-brand" id="current-section">
-            Home
-          </span>
+                        <span class="navbar-brand" id="current-section">Home</span>
                         <button type="button" class="btn btn-danger navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">Menu <i class="glyphicon glyphicon-menu-hamburger"></i>
                         </button>
                     </div>
@@ -67,7 +65,18 @@
             <section class="module content">
                 <div class="container">
                     <div class="row">
-                        <div id="binaryMaps" data-active-date="2005" style="padding-bottom: 5%;">
+                        <div class="col-md-12">
+                            <h2>A Deadly Problem</h2>
+                            <p>Opioid use and misuse in Massachusetts has reached epidemic proportions. </p>
+                            <p>Opioid-related deaths in the state were more than four times higher in 2015 than in 2000. This recent rate of increase is several times faster than anything seen here before. In 2013-2014 alone, opioid-related deaths occurred in two-thirds of the cities and towns in Massachusetts. </p>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="binaryMaps" data-active-date="2005" style="padding-bottom: 5%;">
                                 <div class="btn-group btn-group-justfied">
                                     <div class="btn btn-sm btn-default js-toggle-binary-map active" data-date="2005">2001-2005</div>
                                     <div class="btn btn-sm btn-default js-toggle-binary-map" data-date="2010">2006-2010</div>
@@ -76,84 +85,20 @@
                                 <div id="binaryMaps_legend" class="vis-legend"></div>
                                 <div id="binaryMaps_maps"></div>
                             </div>
-                        <div class="col-xs-12 col-md-7">
-                            <div id="odMap">
-                                <div class="range-slider">
-                                    <div class="label"><span class="from-year">2000</span><span class="to-year">2015</span></div>
-                                    <input id="odMap_timeline" type="range" min="2000" max="2015" value="2000">
-                                    <datalist id="odMap_timelinescale">
-                                        <option>2000</option>
-                                        <option>2001</option>
-                                        <option>2002</option>
-                                        <option>2003</option>
-                                        <option>2004</option>
-                                        <option>2005</option>
-                                        <option>2006</option>
-                                        <option>2007</option>
-                                        <option>2008</option>
-                                        <option>2009</option>
-                                        <option>2010</option>
-                                        <option>2011</option>
-                                        <option>2012</option>
-                                        <option>2013</option>
-                                        <option>2014</option>
-                                        <option>2015</option>
-                                    </datalist>
-                                    <hr>
-                                </div>
-                                <h3>
-                  <span id="odMap_titlePrefix" class="title"></span>
-                  <span id="odMap_fromYear" class="year"></span>
-                  <span id="odMap_titleMidfix" class="title"></span>
-                  <span id="odMap_toYear" class="year"></span>
-                </h3>
-                                <div id="odMap_legend" class="vis-legend"></div>
-                                <div id="odMap_map"></div>
-                                <div id='odMap_source' class="source"></div>
-                            </div>
-                            <!-- Map Composite -->
-                            <!--<h3>
-            <span id="titlePrefix2" class="title"></span>
-            <span id="fromYear2" class="year"></span>
-            <span id="titleMidfix2" class="title"></span>
-            <span id="toYear2" class="year"></span>
-            </h3>
-            <div id='map2-note' class="subtitle"></div>
-            <div id="legend2"></div>
-            <div id="map2" class="neg-space-col-md"></div>
-            <div id='map2-source' class="source neg-space-col-lg"></div>
-            Map2 Composite -->
-                        </div>
-                        <div class="col-xs-12 col-md-5 pull-right">
-                            <h2>A Deadly Problem</h2>
-                            <p>Opioid use and abuse in Massachusetts has reached epidemic proportions.</p>
-                            <p>Opioid-related deaths in the state were more than four times higher in <a class="controls controls-map" data-select="2015">2015</a> than in <a class="controls controls-map" data-select="2000">2000</a>. This recent rate of increase is several times faster than anything seen here before. In <a class="controls controls-map" data-select="2013">2013</a>-<a class="controls controls-map" data-select="2014">2014</a> alone, opioid-related deaths occurred in two-thirds of the cities and towns in Massachusetts.</p>
-                            <p>In one way or another — through deaths, nonfatal overdoses, or disruptions to jobs, marriages, families, and neighborhoods — every community in Massachusetts has been impacted by this growing crisis.</p>
-                            <!-- <p>In fact, the public health threat is so great in the Commonwealth, the death rate in Massachusetts is higher than the national average, with a particularly sharp increase in fatal overdoses during the last two years.</p> -->
                         </div>
                     </div>
                 </div>
                 <div class="container">
                     <div class="row">
-                        <p></p>
-                        <div class="col-xs-12 col-md-6">
-                            <p></p>
+                        <div class="col-xs-12 col-md-12">
+                            <p>In one way or another — through deaths, nonfatal overdoses, or disruptions to jobs, marriages, families, and neighborhoods — every community in Massachusetts has been impacted by this growing crisis.</p>
                             <p>Understanding the causes and deadly impacts of this issue can be a challenge. It’s a complex problem that has many layers and no single solution. It often raises more questions than answers. &nbsp;&nbsp;<a class="controls controls-video js-play-video" data-target="#video1"><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> Why do people start – and why do they continue – taking opioids?</a> How many people does this affect? What can be done about it and what steps are being taken? What is an Opioid, anyway? </p>
                         </div>
-                        <div class="col-xs-12 col-md-6">
-                            <video id="video1" controls="true" poster="video/ScienceOfAddictition.png">
-                                WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
-                                <source src="video/ScienceOfAddictition_V01.mp4" type="video/mp4">
-                            </video>
-                        </div>
                     </div>
-                </div>
-                <div class="container">
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
+                            <!--tabs -->
                             <p></p>
-                            <p>The opioid death rate in Massachusetts has surpassed the national average, with an especially sharp rise in the last two years.
-                            </p>
                             <h3 class="title">Learn More About Opioids</h3>
                             <hr>
                             <ul class="nav nav-tabs" id="pills-first">
@@ -181,17 +126,35 @@
                                     </ul>
                                     <p>Each side-effect is independent of the others, meaning that any, all, or none may occur in any individual.</p>
                                 </div>
+                                <hr>
                             </div>
-                            <hr>
+                            <!--tabs -->
                         </div>
-                        <div class="col-xs-12 col-md-6">
-                            <h3 class="title">Age-Adjusted Opioid Death Rate by Year</h3>
-                            <h4 class="subtitle">Comparing the opioid related death rate of Massachusetts<a href="#footnote-4" class="page-scroll"><sup>4</sup></a> to the nation overall<a href="#footnote-5" class="page-scroll"><sup>5</sup></a>.</h4>
-                            <div id="deathLines"></div>
-                            <div class="source">Sources: Centers for Disease Control and Prevention, National Center for Health Statistics. <a target="_blank" href="http://wonder.cdc.gov/mcd-icd10.html">Multiple Cause of Death 1999-2014 on CDC WONDER Online Database</a>, released 2015. <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/admin/dmoa/vitals/">Massachusetts Registry of Vital Records and Statistics</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/">Massachusetts Department of Public Health</a>.</div>
+                        <div class="col-xs-12 col-md-5">
+                            <p></p>
+                            <video id="video1" controls="true" poster="video/ScienceOfAddictition.png">
+                                WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
+                                <source src="video/ScienceOfAddictition_V01.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <!--row -->
+                    </div>
+                    <!--container -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <p></p>
+                                <p>The opioid death rate in Massachusetts has surpassed the national average, with an especially sharp rise in the last two years.
+                                </p>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <h3 class="title">Age-Adjusted Opioid Death Rate by Year</h3>
+                                <h4 class="subtitle">Comparing the opioid related death rate of Massachusetts<a href="#footnote-4" class="page-scroll"><sup>4</sup></a> to the nation overall<a href="#footnote-5" class="page-scroll"><sup>5</sup></a>.</h4>
+                                <div id="deathLines"></div>
+                                <div class="source">Sources: Centers for Disease Control and Prevention, National Center for Health Statistics. <a target="_blank" href="http://wonder.cdc.gov/mcd-icd10.html">Multiple Cause of Death 1999-2014 on CDC WONDER Online Database</a>, released 2015. <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/admin/dmoa/vitals/">Massachusetts Registry of Vital Records and Statistics</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/">Massachusetts Department of Public Health</a>.</div>
+                            </div>
                         </div>
                     </div>
-                </div>
             </section>
             <!-- /intro -->
             <!-- Chapter55 -->
@@ -250,8 +213,29 @@
                         </div>
                     </div>
                     <p></p>
+                    <p></p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-5 pull-right">
+                            <h2>Growth of Addiction in Massachusetts</h2>
+                            <p>Data from the DPH Bureau of Substance Abuse Services (BSAS) shows an increasing need for opioid-related treatment in Massachusetts. In 2000, <a id="toggleOpioidsY2000" onclick="opioidsY2000()" class="btn-bsas" data-val="massachusetts">about one third</a> of admissions to substance abuse treatment centers and programs were opioid related<a href="#footnote-2" class="page-scroll"><sup>2</sup></a>. By 2015, that figure had increased to <a id="toggleOpioidsY2015" onclick="opioidsY2015()" class="btn-bsas" data-val="massachusetts">more than half</a>, overtaking alcohol as the most prevalent substance recorded by BSAS at treatment intake. The Health Policy Commission (HPC) recorded similar figures for emergency room visits and hospitalizations during that time.</p>
+                            <p>Along with the rise in demand for opioid-use treatment, nationally and in Massachusetts, there has been an increase in opioid overdoses, both fatal and nonfatal.</p>
+                        </div>
+                        <div class="col-xs-12 col-md-7">
+                            <div class="bsas-controls">
+                                <h3 class="title">Primary Substance of Use When Entering Treatment by Town<a href="#footnote-1" class="page-scroll"><sup>1,</sup></a><a href="#footnote-2" class="page-scroll"><sup>2,</sup></a><a href="#footnote-3" class="page-scroll"><sup>3</sup></a></h3>
+                                <h4 class="subtitle">At admission clients identify a “primary drug” of use which is the substance for which they seek treatment. Below, view the changes in the percentage of admission by primary drug from 2000 to 2015.</h4>
+                                <hr>
+                                <span> Filter by town name </span>
+                                <input type='text' title='Tags' id='tags' placeholder="e.g. Arlington" /> <span> or </span>
+                                <button class="btn btn-primary btn-sm btn-bsas" data-val="massachusetts">view all of Massachusetts</button>
+                            </div>
+                            <div id="lines-bsas"></div>
+                            <div class="source">Sources: <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/substance-abuse/">Massachusetts Bureau of Substance Abuse Services</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/">Massachusetts Department of Public Health</a></div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-xs-12 col-md-12">
+                            <p></p>
                             <h3 class='title'>Percentage of Patients in Treatment Listing Heroin as their Primary Substance of Use<a href="#footnote-1" class="page-scroll"><sup>1,</sup></a><a href="#footnote-3" class="page-scroll"><sup>3</sup></a></h3>
                             <h4 class='subtitle'>At admission clients identify a “primary drug” of use which is the substance for which they seek treatment. Below, view the increse in the percentage of admissions identifying heroin as their primary drug of use.</h4>
                             <hr>
@@ -268,26 +252,6 @@
                             <div class="source">Sources: <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/substance-abuse/">Massachusetts Bureau of Substance Abuse Services</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/">Massachusetts Department of Public Health</a></div>
                         </div>
                     </div>
-                    <p></p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-7">
-                            <div class="bsas-controls">
-                                <h3 class="title">Primary Substance of Use When Entering Treatment by Town<a href="#footnote-1" class="page-scroll"><sup>1,</sup></a><a href="#footnote-2" class="page-scroll"><sup>2,</sup></a><a href="#footnote-3" class="page-scroll"><sup>3</sup></a></h3>
-                                <h4 class="subtitle">At admission clients identify a “primary drug” of use which is the substance for which they seek treatment. Below, view the changes in the percentage of admission by primary drug from 2000 to 2015.</h4>
-                                <hr>
-                                <span> Filter by town name </span>
-                                <input type='text' title='Tags' id='tags' placeholder="e.g. Arlington" /> <span> or </span>
-                                <button class="btn btn-primary btn-sm btn-bsas" data-val="massachusetts">view all of Massachusetts</button>
-                            </div>
-                            <div id="lines-bsas"></div>
-                            <div class="source">Sources: <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/substance-abuse/">Massachusetts Bureau of Substance Abuse Services</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/">Massachusetts Department of Public Health</a></div>
-                        </div>
-                        <div class="col-xs-12 col-md-5">
-                            <h2>Growth of Addiction in Massachusetts</h2>
-                            <p>Data from the DPH Bureau of Substance Abuse Services (BSAS) shows an increasing need for opioid-related treatment in Massachusetts. In 2000, <a id="toggleOpioidsY2000" onclick="opioidsY2000()" class="btn-bsas" data-val="massachusetts">about one third</a> of admissions to substance abuse treatment centers and programs were opioid related<a href="#footnote-2" class="page-scroll"><sup>2</sup></a>. By 2015, that figure had increased to <a id="toggleOpioidsY2015" onclick="opioidsY2015()" class="btn-bsas" data-val="massachusetts">more than half</a>, overtaking alcohol as the most prevalent substance recorded by BSAS at treatment intake. The Health Policy Commission (HPC) recorded similar figures for emergency room visits and hospitalizations during that time.</p>
-                            <p>Along with the rise in demand for opioid-use treatment, nationally and in Massachusetts, there has been an increase in opioid overdoses, both fatal and nonfatal.</p>
-                        </div>
-                    </div>
                 </div>
             </section>
             <!-- /addiction -->
@@ -301,7 +265,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12 col-md-12">
-                            <p>Opioids are incredibly powerful drugs that have transformed the way the health care world treats and manages pain. However, because they are so potent, they can be dangerous if misused. To understand the opioid epidemic, it’s important to realize how both legal prescription medications and illegal substances impact the crisis in Massachusetts.  To investigate the scope of the problem, we considered the entire population of adults as potential opioid users.</p>
+                            <p>Opioids are incredibly powerful drugs that have transformed the way the health care world treats and manages pain. However, because they are so potent, they can be dangerous if misused. To understand the opioid epidemic, it’s important to realize how both legal prescription medications and illegal substances impact the crisis in Massachusetts. To investigate the scope of the problem, we considered the entire population of adults as potential opioid users.</p>
                             <p></p>
                         </div>
                         <div class="col-xs-12 col-md-5">
@@ -326,7 +290,7 @@
                         <div class="col-xs-12 col-md-1"></div>
                         <div class="col-xs-12 col-md-6">
                             <h2>Prescriptions</h2>
-                            <p>The number of opioids prescribed to Massachusetts’s residents has increased roughly 7% annually since 2000. Between 2011 and 2014, 2 in 5 adults had opioids legally prescribed to them.  That subset averaged more than 6 prescriptions each.  Spread out across the population, that’s roughly 2.5 prescriptions per adult.  During that period, about 8.8 million prescriptions were filled in total.</p>
+                            <p>The number of opioids prescribed to Massachusetts’s residents has increased roughly 7% annually since 2000. Between 2011 and 2014, 2 in 5 adults had opioids legally prescribed to them. That subset averaged more than 6 prescriptions each. Spread out across the population, that’s roughly 2.5 prescriptions per adult. During that period, about 8.8 million prescriptions were filled in total.</p>
                             <p>Even when people use opioids for legitimate medical reasons, they can become dependent or addicted to the drug. When this happens, the body’s craving for an opioid continues even if a prescription runs out. In these cases, many people continue to use opioids illegally. More than <a class="controls controls-svg" data-select="2/3">two thirds</a> of people who died from an opioid overdose had a legal opioid-prescription at some point. Of those who died, however, only about <a class="controls controls-svg" data-select="1/12">1 in 12</a> had a prescription a month before they died.</p>
                             <p>It should be noted that opioid-related deaths began increasing sharply in 2012, no similar increase in opioid prescriptions was recorded. This suggests that no single substance or health care practice is solely responsible for the current opioid crisis. Rather, it’s a complex issue with a number of contributing factors.</p>
                             <p></p>
@@ -338,10 +302,10 @@
                         <div class="col-xs-12 col-md-6">
                             <div class="space-col"></div>
                             <h2>Multiple Prescribers</h2>
-                            <p>One risk factor for fatal overdose that was identified was the number of opioid prescribers for an individual. There are legitimate reasons why someone might have multiple prescribers — primary care plus specialists or multi-provider practices — but there is an elevated risk for this group.  The fatal overdose rate for individuals with three or more prescribers is 7 times higher than the rate for other people.</p>
+                            <p>One risk factor for fatal overdose that was identified was the number of opioid prescribers for an individual. There are legitimate reasons why someone might have multiple prescribers — primary care plus specialists or multi-provider practices — but there is an elevated risk for this group. The fatal overdose rate for individuals with three or more prescribers is 7 times higher than the rate for other people.</p>
                             <h2>Multiple Substances</h2>
-                            <p>Not only is having multiple prescribers a risk factor, but so is using multiple substances together.  For example, cocaine showed up in 30% of toxicology screens for opioid-related deaths from 2013-2014. Nearly 60% of post-mortem toxicology screens were positive for benzodiazepines. Benzodiazepines are a type of tranquilizer, including drugs like Valium, Xanax, and Ativan.</p>
-                            <p>While cocaine is always illegal, benzodiazepines are legally available but might be used outside a prescription. Although Benzodiazepines were present in 982 toxicology screens, only 495 people ever had a prescription for one.  Fewer than 200 had a prescription within a month of death.  This suggests that the supply of benzodiazepines involved in overdoses includes both prescribed and diverted pills.</p>
+                            <p>Not only is having multiple prescribers a risk factor, but so is using multiple substances together. For example, cocaine showed up in 30% of toxicology screens for opioid-related deaths from 2013-2014. Nearly 60% of post-mortem toxicology screens were positive for benzodiazepines. Benzodiazepines are a type of tranquilizer, including drugs like Valium, Xanax, and Ativan.</p>
+                            <p>While cocaine is always illegal, benzodiazepines are legally available but might be used outside a prescription. Although Benzodiazepines were present in 982 toxicology screens, only 495 people ever had a prescription for one. Fewer than 200 had a prescription within a month of death. This suggests that the supply of benzodiazepines involved in overdoses includes both prescribed and diverted pills.</p>
                         </div>
                         <div class="col-xs-12 col-md-6">
                             <div class="space-col"></div>
@@ -392,7 +356,7 @@
                         <div class="col-xs-12 col-md-6 pull-right">
                             <div class="space-col"></div>
                             <h2>Illegal Drugs</h2>
-                            <p>When it comes to illegal opioids, Massachusetts is facing a dangerous combination of trends. Some individuals are transitioning from legal to illegal opioid use as dependence and addiction develop beyond prescribed thresholds.  At the same time, the availability of illegal drugs strengthens across the region. The Drug Enforcement Administration (DEA) surveyed law enforcement officials about the availability of heroin in 8 regions across the country from 2007 to 2013. Each year, New England led all regions in the percentage of respondents who reported high heroin availability.</p>
+                            <p>When it comes to illegal opioids, Massachusetts is facing a dangerous combination of trends. Some individuals are transitioning from legal to illegal opioid use as dependence and addiction develop beyond prescribed thresholds. At the same time, the availability of illegal drugs strengthens across the region. The Drug Enforcement Administration (DEA) surveyed law enforcement officials about the availability of heroin in 8 regions across the country from 2007 to 2013. Each year, New England led all regions in the percentage of respondents who reported high heroin availability.</p>
                             <p>Heroin, perhaps expectedly, is commonly found in toxicology reports for opioid-related deaths. Data from 2013-2014 shows heroin was likely or definitely in the system at the time of death in more than 60% of cases. What might be surprising is the increasingly deadly role Fentanyl is playing in the crisis.</p>
                             <p>While Fentanyl can be available as a legally-prescribed medication, it’s often used illegally. Only about 3% of people who died from an opioid overdose during the study period had a prescription for Fentanyl at the time of death. However, toxicology data shows Heroin, Fentanyl, or both substances were present in 85% of cases.</p>
                         </div>
@@ -461,8 +425,7 @@
                         <div class="col-xs-12 col-md-4 pull-right">
                             <p></p>
                             <h2>Young People</h2>
-                            <p>The fight to curb the opioid epidemic in Massachusetts is also a battle to protect future generations. The percentage of opioid deaths for different age groups shows the young people of Massachusetts are especially at risk. From 2013 to 2014, opioids accounted for more than a quarter of all fatalities in the <a id="age18to24">18 to 24</a> age group. For individuals from <a id="age25to34">25 to 34</a>, opioids were responsible for more than a third of all deaths, rising to more than 40% for men in this group. In 2015, roughly 2 out of every 3 people who died from opioids were younger than 44.
-                            The percentage of opioid deaths for different age groups shows that the young people of Massachusetts are at risk. </p>
+                            <p>The fight to curb the opioid epidemic in Massachusetts is also a battle to protect future generations. The percentage of opioid deaths for different age groups shows the young people of Massachusetts are especially at risk. From 2013 to 2014, opioids accounted for more than a quarter of all fatalities in the <a id="age18to24">18 to 24</a> age group. For individuals from <a id="age25to34">25 to 34</a>, opioids were responsible for more than a third of all deaths, rising to more than 40% for men in this group. In 2015, roughly 2 out of every 3 people who died from opioids were younger than 44. The percentage of opioid deaths for different age groups shows that the young people of Massachusetts are at risk. </p>
                         </div>
                         <div class="col-xs-12 col-md-7">
                             <p></p>
@@ -591,10 +554,10 @@
                 <li id="footnote-9">Data from 2013-2014.</li>
             </ol>
         </div>
-    </div>
-    <!-- /#wrapper -->
-    <!-- js -->
-    <script src="js/dist/main.js"></script>
+        </div>
+        <!-- /#wrapper -->
+        <!-- js -->
+        <script src="js/dist/main.js"></script>
 </body>
 
 </html>
