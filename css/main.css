@@ -168,22 +168,6 @@
   text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; }
 
 /* ============================================================
-  Map
-============================================================ */
-#odMap_map.svg-container {
-  padding-bottom: 70%; }
-
-#odMap_source {
-  margin-top: -5em; }
-  @media all and (max-width: 768px) {
-    #odMap_source {
-      margin-top: -2em; } }
-
-@media all and (min-width: 768px) {
-  #odMap_legend {
-    max-width: 60%; } }
-
-/* ============================================================
  Multi Maps
 ============================================================ */
 #treatmentMaps_maps {
@@ -639,51 +623,6 @@
 /* ============================================================
  Bar Chart by Race and Ethnicity
 ============================================================ */
-.range-slider {
-  position: relative;
-  width: 90%; }
-  .range-slider .from-year,
-  .range-slider .to-year {
-    color: #0071bc; }
-  .range-slider .from-year {
-    color: #B0BEC5;
-    position: absolute;
-    top: -10px;
-    left: -10px; }
-  .range-slider .to-year {
-    color: #B0BEC5;
-    position: absolute;
-    top: -10px;
-    right: -10px; }
-  .range-slider .year {
-    font-weight: bolder; }
-  .range-slider .label {
-    font-size: 2em; }
-  .range-slider input {
-    position: relative; }
-    .range-slider input[type=range] {
-      -webkit-appearance: none; }
-      .range-slider input[type=range]::-webkit-slider-runnable-track {
-        width: 50px;
-        height: 4px;
-        background: #B0BEC5;
-        border: none;
-        border-radius: 3px; }
-      .range-slider input[type=range]::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        border: 1px solid white;
-        border-radius: 50%;
-        height: 20px;
-        width: 20px;
-        background: #b71c1c;
-        margin-top: -8px;
-        box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
-        cursor: pointer; }
-      .range-slider input[type=range]:focus {
-        outline: none; }
-        .range-slider input[type=range]:focus::-webkit-slider-runnable-track {
-          background: #78909C; }
-
 .svg-container {
   display: inline-block;
   position: relative;
