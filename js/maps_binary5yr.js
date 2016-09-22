@@ -22,8 +22,12 @@ var Vis = (function(d3) {
         .attr("width", width)
         .attr("height", height);
 
+    var colors_5yr = ["#d3d3d3", "#9ecae1", "#6baed6", "#2171b5", "#084594"];
+    
     var path = d3.geo.path().projection(projection),
-        palette = d3.scale.threshold().domain([0.1, 2.1, 6.1, 17.1, Infinity]).range(["#d3d3d3", '#db8d8d', '#c54949', "#b71c1c",'#801313']);
+        palette = d3.scale.threshold().domain([0.1, 2.1, 6.1, 17.1, Infinity])
+        //.range(["#d3d3d3", '#db8d8d', '#c54949', "#b71c1c", '#801313']);
+        .range(colors_5yr);
 
 
 
@@ -43,16 +47,20 @@ var Vis = (function(d3) {
     function createMap(wrapper, geo, data) {
 
         wrapper.append('span')
-            .text(function (d) { 
-                if (data.key == 2005) { return '2001 to 2005';}
-                else if (data.key == 2010) {return '2006 to 2010';}
-                else if (data.key == 2015) {return '2011 to 2015';}
-        })
+            .text(function(d) {
+                if (data.key == 2005) {
+                    return '2001 to 2005';
+                } else if (data.key == 2010) {
+                    return '2006 to 2010';
+                } else if (data.key == 2015) {
+                    return '2011 to 2015';
+                }
+            })
             .attr('class', 'vis-title')
             .style('padding-bottom', "3%");
 
 
-        
+
 
         wrapper.append('span')
             .text("")
@@ -103,12 +111,11 @@ var Vis = (function(d3) {
 
                 if (data.values[geoData[0].properties.TOWN_1] > 0) {
                     town_value = d3.format(".2f")(data.values[geoData[0].properties.TOWN]);
-                }
-                else { town_value = "0";}    
+                } else { town_value = "0"; }
 
                 //console.log(town_value);
 
-                self.node().parentNode.parentNode.getElementsByClassName('selection-label')[0].innerHTML = (geoData[0].properties.TOWN_1 + "<br>" + town_value)  + " per 100,000";
+                self.node().parentNode.parentNode.getElementsByClassName('selection-label')[0].innerHTML = (geoData[0].properties.TOWN_1 + "<br>" + town_value) + " per 100,000";
                 d3.select((self.node())).style('fill-opacity', 0.4).style("stroke", "white").style("stroke-width", "1.5px");
             })
             .on('unselect', function(self) {
@@ -129,7 +136,9 @@ var Vis = (function(d3) {
 
     }
 
-    var opChgScale = d3.scale.threshold().domain([0.1, 2.1, 6.1, 17.1, Infinity]).range(["#d3d3d3", '#db8d8d', '#c54949', "#b71c1c",'#801313'])
+    var opChgScale = d3.scale.threshold().domain([0.1, 2.1, 6.1, 17.1, Infinity])
+        //.range(["#d3d3d3", '#db8d8d', '#c54949', "#b71c1c", '#801313'])
+        .range(colors_5yr);
     opChgScale.domainStrings = function() {
         return (['0', '>0-2.1', '>2.1-6.1', '>6.1-17.1', '>17.1']);
     };
@@ -138,12 +147,15 @@ var Vis = (function(d3) {
     generateLegend_map_sub(opChgScale, 'binaryMaps_legend', 'Average 5 year Opioid-Related Death Rate per 100,000 people');
 
     function generateLegend_map_sub(scale, szDivId, szCaption) {
-        var width = 550,
-            height = 70;
+
+        var legendHeight = 60,
+            legendWidth = '90%';
+
+
 
         var $maps_sub_svg = d3.select('#' + szDivId).append("svg")
-            .attr("width", "100%")
-            .attr("height", height);
+            .attr("width", legendWidth)
+            .attr("height", legendHeight);
 
         var $maps_sub_legends = $maps_sub_svg.append("g");
 
@@ -154,22 +166,24 @@ var Vis = (function(d3) {
         //     r: '#f1f1f1',
         //     s: 'N/A*'
         // });
-        var i;
-        for (i = 0; i < scale.domain().length; i++) {
+        for (var i = 0; i < scale.domain().length; i++) {
             legendData.push({
                 d: scale.domain()[i],
                 r: scale.range()[i],
                 s: scale.domainStrings()[i]
             });
         }
+        var unitWidth = 100 / legendData.length;
 
         $maps_sub_legends.selectAll("rect")
             .data(legendData)
             .enter().append("rect")
-            .attr("height", 20)
-            .attr("width", 60)
+            .attr("height", legendHeight / 3)
+            .attr("width", function(d, i) {
+                return unitWidth + '%';
+            })
             .attr("x", function(d, i) {
-                return (i * (100 / legendData.length)) + "%";
+                return (i * unitWidth) + '%';
             })
             .attr("y", 20)
             .style("stroke", "black")
@@ -183,7 +197,7 @@ var Vis = (function(d3) {
             .enter().append("text")
             .attr('text-anchor', 'middle')
             .attr("x", function(d, i) {
-                return ((i * (100 / legendData.length)) + 7) + "%";
+                return (i * unitWidth) + (unitWidth / 2) + '%';
             })
             .attr("y", 55)
             .text(function(d, i) {
