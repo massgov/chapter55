@@ -72,7 +72,8 @@
 
         opChgScale = d3.scale.threshold()
             .domain([0.01, 1.01, 5.01, 15.01, 33.01, 64.01, Infinity])
-            .range(["#f1f1f1", "#c6dbef", "#9ecae1", "#6baed6", "#4292c6", "#2171b5", "#084594"]);
+            .range(["#d3d3d3", '#db8d8d', '#c54949', "#b71c1c", '#801313','#57000d','#212121'])
+            //.range(["#f1f1f1", "#c6dbef", "#9ecae1", "#6baed6", "#4292c6", "#2171b5", "#084594"]);
         opChgScale.domainStrings = function() {
             return (['0', '1', '2-5', '6-15', '16-33', '34-64', '>64']);
         };

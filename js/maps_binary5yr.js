@@ -22,8 +22,12 @@ var Vis = (function(d3) {
         .attr("width", width)
         .attr("height", height);
 
+    var colors_5yr = ["#d3d3d3", "#9ecae1", "#6baed6", "#2171b5", "#084594"];
+    
     var path = d3.geo.path().projection(projection),
-        palette = d3.scale.threshold().domain([0.1, 2.1, 6.1, 17.1, Infinity]).range(["#d3d3d3", '#db8d8d', '#c54949', "#b71c1c", '#801313']);
+        palette = d3.scale.threshold().domain([0.1, 2.1, 6.1, 17.1, Infinity])
+        //.range(["#d3d3d3", '#db8d8d', '#c54949', "#b71c1c", '#801313']);
+        .range(colors_5yr);
 
 
 
@@ -132,7 +136,9 @@ var Vis = (function(d3) {
 
     }
 
-    var opChgScale = d3.scale.threshold().domain([0.1, 2.1, 6.1, 17.1, Infinity]).range(["#d3d3d3", '#db8d8d', '#c54949', "#b71c1c", '#801313'])
+    var opChgScale = d3.scale.threshold().domain([0.1, 2.1, 6.1, 17.1, Infinity])
+        //.range(["#d3d3d3", '#db8d8d', '#c54949', "#b71c1c", '#801313'])
+        .range(colors_5yr);
     opChgScale.domainStrings = function() {
         return (['0', '>0-2.1', '>2.1-6.1', '>6.1-17.1', '>17.1']);
     };
