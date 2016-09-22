@@ -266,37 +266,90 @@
 
         lines.attr("d", line_death);
     }
+    
+    var focus = $lines_death.append("g")
+        .attr("class", "focus")
+        .classed("hidden", true);
 
-    function bindEvents() {
-        d3.selectAll("g.lines-death")
-            .on("mouseover", mouseoverFunc)
-            .on("mouseout", mouseoutFunc)
-            .on("mousemove", mousemoveFunc);
+    $lines_death
+        .on("mouseover", mouseoverFunc)
+        .on("mouseout", mouseoutFunc)
+        .on("mousemove", mousemoveFunc);
 
-        function mouseoutFunc() {
-            d3.selectAll("path.line-death").classed("unfocused", false).classed("focused", false);
-            tooltip_death.classed("hidden", true);
-        }
+    function mouseoutFunc() {
 
-        function mouseoverFunc(d, i) {
-            d3.selectAll("path.line-death").classed("unfocused", true);
-            d3.select(this).select("path.line-death").classed("unfocused", false).classed("focused", true);
-            tooltip_death.classed("hidden", false).html(d.FullName);
-        }
-
-        var coordinates = [0, 0];
-
-        function mousemoveFunc(d) {
-            coordinates = d3.mouse(this);
-            var x = coordinates[0];
-            var y = coordinates[1];
-            tooltip_death
-                .style("top", y + "px")
-                .style("left", x + "px")
-                .style('position', 'absolute')
-                .style('z-index', 1001);
-        }
+        //d3.selectAll("path.line-death").classed("unfocused", false).classed("focused", false);
+        tooltip_death.classed("hidden", true);
     }
+    function mouseoverFunc(d, i) {
+ 
+        //d3.selectAll("path.line-death").classed("unfocused", true);
+        
+        //d3.select(this).select("path.line-death").classed("unfocused", false).classed("focused", true);
+        //d3.select(this).select("path.point").classed("unfocused", false).classed("focused", true).attr("d", d3.svg.symbol().type("circle").size(0));
+        var x0 = d3.mouse(this)[0];
+        var y0 = d3.mouse(this)[1];
+        //console.log(y0);
+        var y1 = yScale.invert(y0);
+        var percentVal = d3.format(".2f")(y1)
+
+        tooltip_death.classed("hidden", false)
+        .html(percentVal);
+        //console.log(d.rates[i]);
+        //console.log(d3.select(this).select("path.point"));
+        //focus.classed("hidden", false);
+    }
+
+    function mousemoveFunc(d) {
+
+        console.log("events", d3.event.offsetX, d3.event.layerY/2);
+        console.log("d3.events", d3.event);
+        var x0 = d3.mouse(this)[0];
+        var y0 = d3.mouse(this)[1]
+        var y1 = yScale.invert(y0);
+        var percentVal = d3.format(".2f")(y1);
+
+       //focus.attr("transform", "translate(" + x0 + "," + y0 + ")");
+
+
+
+        tooltip_death
+            .style("top", (d3.event.offsetY+20) + "px")
+            .style("left", (d3.event.offsetX) + "px")
+            .html(percentVal);
+    }
+
+    // function bindEvents() {
+    //     d3.selectAll("g.lines-death")
+    //         .on("mouseover", mouseoverFunc)
+    //         .on("mouseout", mouseoutFunc)
+    //         .on("mousemove", mousemoveFunc);
+
+    //     function mouseoutFunc() {
+    //         d3.selectAll("path.line-death").classed("unfocused", false).classed("focused", false);
+    //         tooltip_death.classed("hidden", true);
+    //     }
+
+    //     function mouseoverFunc(d, i) {
+    //         d3.selectAll("path.line-death").classed("unfocused", true);
+    //         d3.select(this).select("path.line-death").classed("unfocused", false).classed("focused", true);
+    //         tooltip_death.classed("hidden", false).html(d.FullName);
+    //     }
+
+    //     var coordinates = [0, 0];
+
+    //     function mousemoveFunc(d) {
+    //         coordinates = d3.mouse(this);
+
+    //         var x = coordinates[0];
+    //         var y = coordinates[1];
+    //         tooltip_death
+    //             .style("top", y + "px")
+    //             .style("left", x + "px")
+    //             .style('position', 'absolute')
+    //             .style('z-index', 1001);
+    //     }
+    // }
 
 })();
 
