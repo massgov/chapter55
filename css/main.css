@@ -623,6 +623,10 @@
 .ageSelector {
   font-weight: bolder !important; }
 
+.noageSelector {
+  font-weight: lighter !important;
+  color: #78909C !important; }
+
 /* ============================================================
  Bar Chart by Race and Ethnicity
 ============================================================ */

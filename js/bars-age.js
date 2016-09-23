@@ -86,6 +86,11 @@
 
                     thisButton.classed("selected", true);
                     $(this).addClass("active");
+
+                    d3.selectAll(".lab18to24")
+                        .classed("ageSelector", false);
+                    d3.selectAll(".lab25to34")
+                        .classed("ageSelector", false);
                 });
             d3.select("#DR")
                 .on("click", function(d, i) {
@@ -101,6 +106,11 @@
 
                     thisButton.classed("selected", true);
                     $(this).addClass("active");
+
+                    d3.selectAll(".lab18to24")
+                        .classed("ageSelector", false);
+                    d3.selectAll(".lab25to34")
+                        .classed("ageSelector", false);
                 });
             d3.select("#NOD")
                 .on("click", function(d, i) {
@@ -117,6 +127,10 @@
                     thisButton.classed("selected", true);
                     $(this).addClass("active");
 
+                    d3.selectAll(".lab18to24")
+                        .classed("ageSelector", false);
+                    d3.selectAll(".lab25to34")
+                        .classed("ageSelector", false);
                 });
 
             d3.select("#age18to24")
@@ -142,6 +156,14 @@
                         .classed("malSelector", false);
                     d3.selectAll(".bar.femFocus.age18to24")
                         .classed("femSelector", false);
+                    
+                     d3.selectAll(".vis-axis")
+                        .classed("noageSelector", true);
+                    d3.selectAll(".vis-data-label")
+                        .classed("noageSelector", true);
+                    d3.selectAll(".lab18to24")
+                        .classed("noageSelector", false)
+                        .classed("ageSelector", true);  
                     d3.selectAll(".lab25to34")
                         .classed("ageSelector", false);
                 });
@@ -162,15 +184,23 @@
                         .classed("malSelector", true);
                     d3.selectAll(".bar.femFocus")
                         .classed("femSelector", true);
-                     d3.selectAll(".lab25to34")
-                        .classed("ageSelector", true);
+                     
 
                     d3.selectAll(".bar.malFocus.age25to34")
                         .classed("malSelector", false);
                     d3.selectAll(".bar.femFocus.age25to34")
                         .classed("femSelector", false);
+
+                    d3.selectAll(".vis-axis")
+                        .classed("noageSelector", true);
+                    d3.selectAll(".vis-data-label")
+                        .classed("noageSelector", true);
+                    d3.selectAll(".lab25to34")
+                        .classed("noageSelector", false)
+                        .classed("ageSelector", true);                    
                     d3.selectAll(".lab18to24")
                         .classed("ageSelector", false);
+
 
                 });
 
