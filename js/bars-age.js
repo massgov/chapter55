@@ -131,16 +131,16 @@
                     thisButton.classed("selected", true);
                     $(this).addClass("active");
 
-                    d3.selectAll(".malFocus")
+                    d3.selectAll(".bar.malFocus")
                         .classed("malSelector", true);
-                    d3.selectAll(".femFocus")
+                    d3.selectAll(".bar.femFocus")
                         .classed("femSelector", true);
                     d3.selectAll(".lab18to24")
                         .classed("ageSelector", true);    
 
-                    d3.selectAll(".malFocus.age18to24")
+                    d3.selectAll(".bar.malFocus.age18to24")
                         .classed("malSelector", false);
-                    d3.selectAll(".femFocus.age18to24")
+                    d3.selectAll(".bar.femFocus.age18to24")
                         .classed("femSelector", false);
                     d3.selectAll(".lab25to34")
                         .classed("ageSelector", false);
@@ -158,16 +158,16 @@
                     thisButton.classed("selected", true);
                     $(this).addClass("active");
 
-                    d3.selectAll(".malFocus")
+                    d3.selectAll(".bar.malFocus")
                         .classed("malSelector", true);
-                    d3.selectAll(".femFocus")
+                    d3.selectAll(".bar.femFocus")
                         .classed("femSelector", true);
                      d3.selectAll(".lab25to34")
                         .classed("ageSelector", true);
 
-                    d3.selectAll(".malFocus.age25to34")
+                    d3.selectAll(".bar.malFocus.age25to34")
                         .classed("malSelector", false);
-                    d3.selectAll(".femFocus.age25to34")
+                    d3.selectAll(".bar.femFocus.age25to34")
                         .classed("femSelector", false);
                     d3.selectAll(".lab18to24")
                         .classed("ageSelector", false);
