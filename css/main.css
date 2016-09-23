@@ -630,6 +630,11 @@
 /* ============================================================
  Bar Chart by Race and Ethnicity
 ============================================================ */
+.line-race-bar {
+  fill: none;
+  stroke: #444;
+  stroke-width: 1.5px; }
+
 .svg-container {
   display: inline-block;
   position: relative;
