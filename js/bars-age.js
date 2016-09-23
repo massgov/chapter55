@@ -23,11 +23,11 @@
         .range(["Male", "Female"]);
 
     var ages_label = $bars_age.append('text')
-            .text("Age")
-            .attr("class", "vis-x-axis-label")
-            .style("text-anchor", "start")
-            .attr("y", 10)
-            .attr("x", 10);
+        .text("Age")
+        .attr("class", "vis-x-axis-label")
+        .style("text-anchor", "start")
+        .attr("y", 10)
+        .attr("x", 10);
 
     var chart_title = $bars_age.append('text');
 
@@ -40,7 +40,7 @@
         .attr("width", 20)
         .attr("height", 20)
         .attr("class", age_bar_color);
-        // .style("fill", age_bar_color);
+    // .style("fill", age_bar_color);
 
 
 
@@ -53,130 +53,137 @@
 
     d3.csv("js/data/bars-age.csv", function(error, data) {
 
-        var selected = "percentOpiodDeaths";
-        //console.log(column);
-        var dataset = drawGraph(data, selected); // you need to finish this function below.
-        //
-        // //console.log(column, dataset);
-        //
+            var selected = "percentOpiodDeaths";
+            //console.log(column);
+            var dataset = drawGraph(data, selected); // you need to finish this function below.
+            //
+            // //console.log(column, dataset);
+            //
 
 
-        updateWidth();
-        redraw(dataset, selected);
-
-        window.addEventListener('resize', function() {
             updateWidth();
             redraw(dataset, selected);
-        });
 
-        d3.select("#POD").classed("selected", true);
-        $("#POD").addClass("active");
-
-        d3.select("#POD")
-            .on("click", function(d, i) {
-                selected = "percentOpiodDeaths"
-                dataset = drawGraph(data, selected);
+            window.addEventListener('resize', function() {
+                updateWidth();
                 redraw(dataset, selected);
-                var thisButton = d3.select(this);
-                d3.selectAll("#buttons-bar button").classed("selected", false);
-                $("#buttons-bar button").removeClass("active");
-
-                d3.selectAll("#age18to24").classed("selected", false);
-                $("#age18to24").removeClass("active");
-
-                thisButton.classed("selected", true);
-                $(this).addClass("active");
-            });
-        d3.select("#DR")
-            .on("click", function(d, i) {
-                selected = "deathRate"
-                dataset = drawGraph(data, selected);
-                redraw(dataset, selected);
-                var thisButton = d3.select(this);
-                d3.selectAll("#buttons-bar button").classed("selected", false);
-                $("#buttons-bar button").removeClass("active");
-
-                d3.selectAll("#age18to24").classed("selected", false);
-                $("#age18to24").removeClass("active");
-
-                thisButton.classed("selected", true);
-                $(this).addClass("active");
-            });
-        d3.select("#NOD")
-            .on("click", function(d, i) {
-                selected = "numberOpioidDeaths"
-                dataset = drawGraph(data, selected);
-                redraw(dataset, selected);
-                var thisButton = d3.select(this);
-                d3.selectAll("#buttons-bar button").classed("selected", false);
-                $("#buttons-bar button").removeClass("active");
-
-                d3.selectAll("#age18to24").classed("selected", false);
-                $("#age18to24").removeClass("active");
-
-                thisButton.classed("selected", true);
-                $(this).addClass("active");
-
             });
 
-        d3.select("#age18to24")
-            .on("click", function(d, i) {
-                //selected = "18to24"
-                // dataset = drawGraph(data, selected);
-                // redraw(dataset, selected);
-                var thisButton = d3.select(this);
+            d3.select("#POD").classed("selected", true);
+            $("#POD").addClass("active");
 
-                //d3.selectAll("#buttons-bar button").classed("selected", false);
-                //$("#buttons-bar button").removeClass("active");
-                thisButton.classed("selected", true);
-                $(this).addClass("active");
+            d3.select("#POD")
+                .on("click", function(d, i) {
+                    selected = "percentOpiodDeaths"
+                    dataset = drawGraph(data, selected);
+                    redraw(dataset, selected);
+                    var thisButton = d3.select(this);
+                    d3.selectAll("#buttons-bar button").classed("selected", false);
+                    $("#buttons-bar button").removeClass("active");
 
-                d3.selectAll(".malFocus.age18to24")
-                    .classed("malSelector", true);
-                d3.selectAll(".femFocus.age18to24")
-                    .classed("femSelector", true);
+                    d3.selectAll("#age18to24").classed("selected", false);
+                    $("#age18to24").removeClass("active");
 
-                d3.selectAll(".malFocus.age25to34")
-                    .classed("malSelector", false);
-                d3.selectAll(".femFocus.age25to34")
-                    .classed("femSelector", false);
+                    thisButton.classed("selected", true);
+                    $(this).addClass("active");
+                });
+            d3.select("#DR")
+                .on("click", function(d, i) {
+                    selected = "deathRate"
+                    dataset = drawGraph(data, selected);
+                    redraw(dataset, selected);
+                    var thisButton = d3.select(this);
+                    d3.selectAll("#buttons-bar button").classed("selected", false);
+                    $("#buttons-bar button").removeClass("active");
 
-            });
+                    d3.selectAll("#age18to24").classed("selected", false);
+                    $("#age18to24").removeClass("active");
 
-        d3.select("#age25to34")
-            .on("click", function(d, i) {
-                //lected = "18to24"
-                // dataset = drawGraph(data, selected);
-                // redraw(dataset, selected);
-                var thisButton = d3.select(this);
+                    thisButton.classed("selected", true);
+                    $(this).addClass("active");
+                });
+            d3.select("#NOD")
+                .on("click", function(d, i) {
+                    selected = "numberOpioidDeaths"
+                    dataset = drawGraph(data, selected);
+                    redraw(dataset, selected);
+                    var thisButton = d3.select(this);
+                    d3.selectAll("#buttons-bar button").classed("selected", false);
+                    $("#buttons-bar button").removeClass("active");
 
-                //d3.selectAll("#buttons-bar button").classed("selected", false);
-                //$("#buttons-bar button").removeClass("active");
-                thisButton.classed("selected", true);
-                $(this).addClass("active");
+                    d3.selectAll("#age18to24").classed("selected", false);
+                    $("#age18to24").removeClass("active");
 
-                d3.selectAll(".malFocus.age25to34")
-                    .classed("malSelector", true);
-                d3.selectAll(".femFocus.age25to34")
-                    .classed("femSelector", true);
+                    thisButton.classed("selected", true);
+                    $(this).addClass("active");
 
-                d3.selectAll(".malFocus.age18to24")
-                    .classed("malSelector", false);
-                d3.selectAll(".femFocus.age18to24")
-                    .classed("femSelector", false);
+                });
 
-            });
+            d3.select("#age18to24")
+                .on("click", function(d, i) {
+                    //selected = "18to24"
+                    // dataset = drawGraph(data, selected);
+                    // redraw(dataset, selected);
+                    var thisButton = d3.select(this);
 
-        //setup our ui -- requires access to data variable, so inside csv
-        // d3.select("#menu select")
-        //     .on("change", function() {
-        //         column = d3.select("#menu select").property("value");
-        //         dataset = drawGraph(data, column);
-        //         //console.log(column, dataset);
-        //         redraw(dataset, column);
-        // });
+                    //d3.selectAll("#buttons-bar button").classed("selected", false);
+                    //$("#buttons-bar button").removeClass("active");
+                    thisButton.classed("selected", true);
+                    $(this).addClass("active");
 
-    }) // end csv
+                    d3.selectAll(".malFocus")
+                        .classed("malSelector", true);
+                    d3.selectAll(".femFocus")
+                        .classed("femSelector", true);
+                    d3.selectAll(".lab18to24")
+                        .classed("ageSelector", true);    
+
+                    d3.selectAll(".malFocus.age18to24")
+                        .classed("malSelector", false);
+                    d3.selectAll(".femFocus.age18to24")
+                        .classed("femSelector", false);
+                    d3.selectAll(".lab25to34")
+                        .classed("ageSelector", false);
+                });
+
+            d3.select("#age25to34")
+                .on("click", function(d, i) {
+                    //lected = "18to24"
+                    // dataset = drawGraph(data, selected);
+                    // redraw(dataset, selected);
+                    var thisButton = d3.select(this);
+
+                    //d3.selectAll("#buttons-bar button").classed("selected", false);
+                    //$("#buttons-bar button").removeClass("active");
+                    thisButton.classed("selected", true);
+                    $(this).addClass("active");
+
+                    d3.selectAll(".malFocus")
+                        .classed("malSelector", true);
+                    d3.selectAll(".femFocus")
+                        .classed("femSelector", true);
+                     d3.selectAll(".lab25to34")
+                        .classed("ageSelector", true);
+
+                    d3.selectAll(".malFocus.age25to34")
+                        .classed("malSelector", false);
+                    d3.selectAll(".femFocus.age25to34")
+                        .classed("femSelector", false);
+                    d3.selectAll(".lab18to24")
+                        .classed("ageSelector", false);
+
+                });
+
+            //setup our ui -- requires access to data variable, so inside csv
+            // d3.select("#menu select")
+            //     .on("change", function() {
+            //         column = d3.select("#menu select").property("value");
+            //         dataset = drawGraph(data, column);
+            //         //console.log(column, dataset);
+            //         redraw(dataset, column);
+            // });
+
+        }) // end csv
 
 
     function updateWidth() {
@@ -234,7 +241,7 @@
         age_bars_legend
             .attr("class", "vis-legend")
             .attr("transform", function(d, i) {
-                return "translate("+(width - 10)+"," + (height - (margin * 2) + (i * 24)) + ")";
+                return "translate(" + (width - 10) + "," + (height - (margin * 2) + (i * 24)) + ")";
             });
 
 
@@ -278,10 +285,18 @@
                     return "bar femFocus age25to34";
                 } else if (d.gender === 'Male' && d.age === '25 to 34') {
                     return "bar malFocus age25to34";
+                } else if (d.gender === 'Female' && d.age === '35 to 49') {
+                    return "bar femFocus age35to49";
+                } else if (d.gender === 'Male' && d.age === '35 to 49') {
+                    return "bar malFocus age35to49";
+                } else if (d.gender === 'Female' && d.age === '50 to 64') {
+                    return "bar femFocus age50to64";
+                } else if (d.gender === 'Male' && d.age === '50 to 64') {
+                    return "bar malFocus age50to64";
                 } else if (d.gender === 'Female') {
-                    return "bar femFocus";
+                    return "bar femFocus age65plus";
                 } else if (d.gender === 'Male') {
-                    return "bar malFocus";
+                    return "bar malFocus age65plus";
                 }
             });
         //.classed("18to24", (d.age === '18 to 24'))
@@ -301,26 +316,50 @@
 
         var dataLabels = $bars_age.selectAll("text.vis-data-label")
             .data(data, function(d) {
+                console.log(d.age)
                 return d.gender_age
-            }); // key function!
+            });
+             // key function!
 
         var axisLabels = $bars_age
             .selectAll("text.vis-axis")
+
             .data(data, function(d) {
                 return d.gender_age
-            });
+            })
+            ;
 
 
         // everything gets a class and a text field.  But we assign attributes in the transition.
         axisLabels.enter()
             .append("text")
-            .attr("class", "vis-axis");
+            .attr("class", function(d, i) {
+                if(d.age == '25 to 34'){
+                    return "vis-axis lab25to34"
+                }
+                else if(d.age == '18 to 24'){
+                    return "vis-axis lab18to24"
+                }
+                else{
+                    return "vis-axis"
+                }
+            });
         axisLabels.exit()
             .remove();
 
         dataLabels.enter()
             .append("text")
-            .attr("class", "vis-data-label");
+            .attr("class", function(d, i) {
+                if(d.age == '25 to 34'){
+                    return "vis-data-label lab25to34"
+                }
+                else if(d.age == '18 to 24'){
+                    return "vis-data-label lab18to24"
+                }
+                else{
+                    return "vis-data-label"
+                }
+            });
         dataLabels.exit()
             .remove();
 
