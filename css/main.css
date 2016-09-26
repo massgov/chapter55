@@ -277,12 +277,12 @@
 
 #binaryMaps .btn-group {
   display: none; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     #binaryMaps .btn-group {
       display: inline-block;
       margin: 2em auto; } }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   #binaryMaps[data-active-date] .map-wrapper {
     display: none; }
   #binaryMaps[data-active-date="2005"] .map-wrapper:first-child {
@@ -292,7 +292,7 @@
   #binaryMaps[data-active-date="2015"] .map-wrapper:last-child {
     display: block; } }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   #binaryMaps .map-wrapper {
     display: block;
     width: 100%;
@@ -630,6 +630,13 @@
 /* ============================================================
  Bar Chart by Race and Ethnicity
 ============================================================ */
+.line-race-bar {
+  fill: none;
+  stroke: #0071bc;
+  stroke-width: 2.5px;
+  stroke-dasharray: 2, 4, 0, 0;
+  shape-rendering: crispEdges; }
+
 .svg-container {
   display: inline-block;
   position: relative;

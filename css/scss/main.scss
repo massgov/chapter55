@@ -254,6 +254,10 @@ video {
 #odInfographic {
     max-width: 260px;
     max-height: 260px;
+
+    svg {
+        width: 100%;
+    }
 }
 
 .center {

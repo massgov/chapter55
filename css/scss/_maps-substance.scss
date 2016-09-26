@@ -159,14 +159,14 @@
     // Mobile toggle
     .btn-group {
         display: none;
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 1024px) {
             display: inline-block;
             margin: 2em auto;
         }
     }
 
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
         &[data-active-date] {
             .map-wrapper {
                 display: none;
@@ -189,7 +189,7 @@
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
         .map-wrapper {
             display: block;
             width: 100%;

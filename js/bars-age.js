@@ -346,7 +346,7 @@
 
         var dataLabels = $bars_age.selectAll("text.vis-data-label")
             .data(data, function(d) {
-                console.log(d.age)
+                //console.log(d.age)
                 return d.gender_age
             });
              // key function!

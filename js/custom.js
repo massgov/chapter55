@@ -156,8 +156,8 @@ $('#pills-first a').click(function(e) {
 
 /////////////////////////////Video Links
 
-$('.js-play-video').click(function() {
-    var $target = $($(this).data('target'));
+$(document).click('.js-play-video', function(e) {
+    var $target = $($(e.target).data('target'));
     if($target.get(0)) {
         $target.get(0).play();
     }

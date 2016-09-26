@@ -3,6 +3,7 @@ var gulp = require('gulp');
 // Requires the gulp-sass plugin
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
+var autoprefixer = require('gulp-autoprefixer');
 var pump = require('pump');
 var runSequence = require('run-sequence');
 var concat = require("gulp-concat");
@@ -84,6 +85,7 @@ gulp.task('serve', ['sass', 'vendorJS', 'javascript'], function() {
 gulp.task('sass', function() {
     return gulp.src("css/scss/main.scss")
         .pipe(sass())
+        .pipe(autoprefixer())
         .pipe(gulp.dest("css"))
         .pipe(browserSync.stream());
 });

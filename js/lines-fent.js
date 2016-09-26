@@ -221,10 +221,11 @@
     var x_axis2 = $lines_fent.append("g")
     	.attr("class", "vis-axis")
     	.attr("transform", "translate(0," + (height + 15) + ")")
-    	.call(xAxis2_fent)
+    	.call(xAxis2_fent);
+
     var x_axis2_text = x_axis2
     	.append("text")
-    	.attr("x", width - margin.left)
+    	.attr("x", (width - margin.left)/2)
     	.attr("y", margin.bottom - 32)
     	.attr("dy", "1em")
     	.attr("class", "vis-x-axis-label")
@@ -236,11 +237,11 @@
     	.call(yAxis_fent)
       //.append("tspan")
       .append("text")
-    	.attr("x", 0)
+    	.attr("x", -(height/2))
     	.attr("y", -44)
     	.attr("dy", "1em")
     	.attr("class", "vis-y-axis-label")
-    	.text("Percent Opioid Deaths")
+    	.text("Percent Opioid Deaths");
       //.html("<sup>1</sup>");
 
     var series = $lines_fent.selectAll(".series")
@@ -399,7 +400,7 @@
         .call(xAxis2_fent);
 
       x_axis2_text
-      .attr("x", width - margin.left)
+      .attr("x", (width - margin.left)/2)
       .attr("y", margin.bottom - 32);
 
 
@@ -436,7 +437,7 @@
     var $item = $legend.append("g");
 
     function renderLegend() {
-      
+
 
       var legendItems = [
         "FentanylHeroin",
