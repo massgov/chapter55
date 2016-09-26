@@ -61,7 +61,7 @@
 
     var $lines_death_y_axis = $lines_death.append("g")
         .attr("class", "vis-y-axis")
-        .attr("transform", "translate(" + dimensions.margin.left + "," + (-dimensions.margin.top / 2) + ')')
+        .attr("transform", "translate(" + dimensions.margin.left + "," + (0) + ')')
         .call(yAxis_death);
 
     var $lines_death_y_axis_label = $lines_death_y_axis
@@ -230,10 +230,10 @@
 
         if(dimensions.width < 500) {
             $lines_death_y_axis
-                .attr("transform", "translate(" + dimensions.margin.left + "," + (-dimensions.margin.top / 2) + ')');
+                .attr("transform", "translate(" + dimensions.margin.left + "," + (0) + ')');
         } else {
             $lines_death_y_axis
-                .attr("transform", "translate(" + dimensions.margin.left + "," + (-dimensions.margin.top / 2) + ')');
+                .attr("transform", "translate(" + dimensions.margin.left + "," + (0) + ')');
         }
 
         //Configure line

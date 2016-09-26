@@ -1,26 +1,41 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
-    dataset = [
-        { raceth: "All", "2014": 19.8, "2015": 23.2 },
-        { raceth: "White non-Hispanic", "2014": 23.3, "2015": 27.1 },
-        { raceth: "Black non-Hispanic", "2014": 11.1, "2015": 13.6 },
-        { raceth: "Hispanic", "2014": 15.3, "2015": 19.5 }
-    ];
+    dataset = [{
+        raceth: "All",
+        "2014": 19.8,
+        "2015": 23.2
+    }, {
+        raceth: "White non-Hispanic",
+        "2014": 23.3,
+        "2015": 27.1
+    }, {
+        raceth: "Black non-Hispanic",
+        "2014": 11.1,
+        "2015": 13.6
+    }, {
+        raceth: "Hispanic",
+        "2014": 15.3,
+        "2015": 19.5
+    }];
 
     var color = d3.scale.ordinal()
-        .range(["#B0BEC5", "#455A64"]);
+        .range(["rgb(211, 211, 211)", "#78909C"]);
 
     var width, height, margin = {};
 
     updateWidth();
 
-    var x0 = d3.scale.ordinal()
-        .rangeRoundBands([0, width], .1);
+    var x0 = d3.scale.ordinal().rangeRoundBands([0, width], .1);
 
-    var x1 = d3.scale.ordinal();
+    var x1 = d3.scale.ordinal().rangeBands([0, width], 0);
 
     var y = d3.scale.linear()
         .range([height, 0]);
+
+    var lineavg = d3.svg.line();
+    var linesavg;
+    var linemult;
+    var linepad;
 
     //var colorRange = d3.scale.category20();
     //var color = d3.scale.ordinal()
@@ -52,7 +67,10 @@ $(document).ready(function(){
 
     dataset.forEach(function(d) {
         d.values = options.map(function(name) {
-            return { name: name, value: +d[name] };
+            return {
+                name: name,
+                value: +d[name]
+            };
         });
     });
 
@@ -68,7 +86,7 @@ $(document).ready(function(){
 
     var xAxis = $bars_race.append("g")
         .attr("class", "vis-x-axis")
-        .attr("transform", "translate(10," + height + ")");
+        .attr("transform", "translate(0," + height + ")");
 
     var yAxis = $bars_race.append("g")
         .attr("class", "vis-y-axis");
@@ -100,15 +118,18 @@ $(document).ready(function(){
             return x1(d.name) + 5;
         })
         .attr("y", function(d) {
+            //console.log(d.value + ": " + y(d.value))
             return y(d.value);
         })
         .attr("value", function(d) {
             return d.name;
         })
         .attr("height", function(d) {
+            //console.log(height - y(9.7));
             return height - y(d.value);
         })
         .style("fill", function(d) {
+
             return color(d.name);
         });
 
@@ -121,7 +142,7 @@ $(document).ready(function(){
         .on("mousemove", function(d) {
             divtooltip_raceeth.style("left", d3.event.pageX - $("#race_ethnicity_chart").offset().left + "px");
             divtooltip_raceeth.style("top", d3.event.pageY - $("#race_ethnicity_chart").offset().top + "px");
-        divtooltip_raceeth.classed("hidden", false);
+            divtooltip_raceeth.classed("hidden", false);
             var x = d3.event.pageX,
                 y = d3.event.pageY
             var elements = document.querySelectorAll(':hover');
@@ -135,7 +156,7 @@ $(document).ready(function(){
 
     bar
         .on("mouseout", function(d) {
-        divtooltip_raceeth.classed("hidden", true);
+            divtooltip_raceeth.classed("hidden", true);
         });
 
 
@@ -163,6 +184,35 @@ $(document).ready(function(){
             return d;
         });
 
+    var dataSum = 9.7;
+
+    lineavg.x(function(d) {
+           return (x0(d.raceth)*linemult)+linepad;
+        })
+        .y(function(d, i) {
+            return y(dataSum) + 50;
+        }); //function(d, i) { return y(dataSum); }); 
+
+
+
+    linesavg = $svg.append("g")
+        .append("path")
+        //.enter()
+        //.append("g")
+        .datum(dataset)
+        .attr("class", "line-race-bar")
+        .attr("d", lineavg)
+        .attr("max-width", width);
+
+    var $linesavg_usa_label = linesavg.append("text")
+         .attr("class", "aside-usa")
+         .attr("x", width)
+         .attr("y", y(9.7) + 50)
+         .attr("dy", "0.35em")
+         .style("text-anchor", "start")
+         .text("USA");
+
+
     function wrap(text, width) {
         text.each(function() {
             var text = d3.select(this),
@@ -188,7 +238,7 @@ $(document).ready(function(){
     }
 
 
-    function render () {
+    function render() {
         updateWidth();
 
         x1.rangeRoundBands([0, x0.rangeBand()]);
@@ -202,7 +252,7 @@ $(document).ready(function(){
         $svg.attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom)
 
         xAxis
-            .attr("transform", "translate(10," + height + ")")
+            .attr("transform", "translate(0," + height + ")")
             .call(xAxis_bars)
             .selectAll(".tick text")
             .call(wrap, x0.rangeBand());
@@ -217,9 +267,11 @@ $(document).ready(function(){
 
         bars.attr("width", x1.rangeBand())
             .attr("x", function(d) {
-                return x1(d.name) + 20;
+                
+                return x1(d.name) + 10;
             })
             .attr("y", function(d) {
+
                 return y(d.value);
             })
             .attr("value", function(d) {
@@ -229,26 +281,50 @@ $(document).ready(function(){
                 return height - y(d.value);
             });
 
+       dataSum = 9.7     
+
+       lineavg.x(function(d) {
+            return (x0(d.raceth)*linemult)+linepad;
+        })
+        .y(function(d, i) {
+            //console.log(y(dataSum))
+            return y(dataSum) + 50;
+        });
+        //console.log(lineavg)
+
+        linesavg.attr("d", lineavg);
+
+    
+        $linesavg_usa_label
+         .attr("x", width-50)
+         .attr("y", y(9.7) + 50)
+         .attr("dy", "0.35em")
+         .style("text-anchor", "start")
+         .text("USA");
+
     }
 
-    function updateWidth () {
+    function updateWidth() {
         var w = document.querySelector('#race_ethnicity_chart').clientWidth;
         margin = {
-            top: 50,
-            right: 10,
-            bottom: 60,
-            left: 50
-        },
-        width = w - margin.left - margin.right;
+                top: 50,
+                right: 10,
+                bottom: 60,
+                left: 50
+            },
+            width = w - margin.left - margin.right;
 
-        if(w < 500) {
+        if (w < 500) {
             height = 350 - margin.top - margin.bottom;
+            linemult = 1.4
+            linepad = 40
         } else {
             height = 500 - margin.top - margin.bottom;
+            linemult = 1.35
+            linepad = 30
         }
 
     }
-
     render();
     window.addEventListener('resize', render);
 });
