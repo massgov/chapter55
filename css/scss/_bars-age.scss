@@ -35,8 +35,15 @@
 	fill: rgb(102, 102, 102);
 }
 .femSelector{
-	fill: $color-female !important;
+	fill: $color-female-light !important;
 }
 .malSelector{
-	fill: $color-male !important;
+	fill: $color-male-light !important;
 }
+.ageSelector{
+	font-weight: bolder !important;
+}
+.noageSelector{
+	font-weight: lighter !important;
+	color: #78909C !important
+;}

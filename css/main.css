@@ -615,10 +615,17 @@
   fill: #666666; }
 
 .femSelector {
-  fill: #b71c1c !important; }
+  fill: #ffcdd2 !important; }
 
 .malSelector {
-  fill: #1A237E !important; }
+  fill: #BBDEFB !important; }
+
+.ageSelector {
+  font-weight: bolder !important; }
+
+.noageSelector {
+  font-weight: lighter !important;
+  color: #78909C !important; }
 
 /* ============================================================
  Bar Chart by Race and Ethnicity
