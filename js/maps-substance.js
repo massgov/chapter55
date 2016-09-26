@@ -25,7 +25,7 @@ var Vis = (function(d3) {
     var path = d3.geo.path().projection(projection),
         palette = d3.scale.threshold().domain([-0.1, 0.01, 0.14, 0.24, 0.33, 0.46, 1.1])
         .range(['#d1d1d1','#d0d1e6','#a6bddb','#67a9cf','#3690c0','#02818a','#016450']);
-        
+
 
 
     function visualize(error, states, data) {
@@ -77,9 +77,8 @@ var Vis = (function(d3) {
 
             })
             .attr('class', function(d) {
-                return d.properties.TOWN.toLowerCase()
+		return d.properties.TOWN.toLowerCase() + ' bsasmap';
             })
-            .attr('id', 'bsasmap')
             .on('mouseenter', function(d, i) {
                 notify('.' + d.properties.TOWN.toLowerCase(), 'select');
                 // var currentState = this;
@@ -112,7 +111,7 @@ var Vis = (function(d3) {
                 //     self.node().parentNode.parentNode.getElementsByTagName('p2')[0].innerHTML = "";
                 //     d3.selectAll('#treatmentMaps_maps path').style({ 'fill-opacity': 1 }).style("stroke", "white").style("stroke-width", "0.0px");
                 self.node().parentNode.parentNode.getElementsByClassName('selection-label')[0].innerHTML = "";
-                d3.selectAll('path#bsasmap').style({
+		d3.selectAll('path.bsasmap').style({
                     'fill-opacity': 1
                 }).style("stroke", "white").style("stroke-width", "0.0px");
             })
