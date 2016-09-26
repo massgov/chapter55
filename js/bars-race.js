@@ -19,21 +19,23 @@ $(document).ready(function() {
     }];
 
     var color = d3.scale.ordinal()
-        .range(["#B0BEC5", "#455A64"]);
+        .range(["rgb(211, 211, 211)", "#78909C"]);
 
     var width, height, margin = {};
 
     updateWidth();
 
-    var x0 = d3.scale.ordinal()
-        .rangeRoundBands([0, width], .1);
+    var x0 = d3.scale.ordinal().rangeRoundBands([0, width], .1);
 
-    var x1 = d3.scale.ordinal();
+    var x1 = d3.scale.ordinal().rangeBands([0, width], 0);
 
     var y = d3.scale.linear()
         .range([height, 0]);
 
-    var line;
+    var lineavg = d3.svg.line();
+    var linesavg;
+    var linemult;
+    var linepad;
 
     //var colorRange = d3.scale.category20();
     //var color = d3.scale.ordinal()
@@ -116,7 +118,7 @@ $(document).ready(function() {
             return x1(d.name) + 5;
         })
         .attr("y", function(d) {
-            //console.log(y(9.7))
+            //console.log(d.value + ": " + y(d.value))
             return y(d.value);
         })
         .attr("value", function(d) {
@@ -127,6 +129,7 @@ $(document).ready(function() {
             return height - y(d.value);
         })
         .style("fill", function(d) {
+
             return color(d.name);
         });
 
@@ -183,22 +186,31 @@ $(document).ready(function() {
 
     var dataSum = 9.7;
 
-    line = d3.svg.line()
-        .x(function(d, i) {
-           // console.log(d);
-            return x0(d.raceth) * 2 + 20;
+    lineavg.x(function(d) {
+           return (x0(d.raceth)*linemult)+linepad;
         })
-        .y(function(d) {
-
-            return y(dataSum) + 50
+        .y(function(d, i) {
+            return y(dataSum) + 50;
         }); //function(d, i) { return y(dataSum); }); 
 
 
 
-    $svg.append("path")
+    linesavg = $svg.append("g")
+        .append("path")
+        //.enter()
+        //.append("g")
         .datum(dataset)
         .attr("class", "line-race-bar")
-        .attr("d", line);
+        .attr("d", lineavg)
+        .attr("max-width", width);
+
+    var $linesavg_usa_label = linesavg.append("text")
+         .attr("class", "aside-usa")
+         .attr("x", width)
+         .attr("y", y(9.7) + 50)
+         .attr("dy", "0.35em")
+         .style("text-anchor", "start")
+         .text("USA");
 
 
     function wrap(text, width) {
@@ -256,9 +268,10 @@ $(document).ready(function() {
         bars.attr("width", x1.rangeBand())
             .attr("x", function(d) {
                 
-                return x1(d.name) + 20;
+                return x1(d.name) + 10;
             })
             .attr("y", function(d) {
+
                 return y(d.value);
             })
             .attr("value", function(d) {
@@ -270,20 +283,24 @@ $(document).ready(function() {
 
        dataSum = 9.7     
 
-       line = d3.svg.line()
-        .x(function(d, i) {
-           // console.log(d);
-            return x0(d.raceth) * 2 + 20;
+       lineavg.x(function(d) {
+            return (x0(d.raceth)*linemult)+linepad;
         })
-        .y(function(d) {
-
-            return y(dataSum) + 50
+        .y(function(d, i) {
+            //console.log(y(dataSum))
+            return y(dataSum) + 50;
         });
+        //console.log(lineavg)
 
-        $svg.selectAll("line-race-bar")
-            .attr("d", line);
+        linesavg.attr("d", lineavg);
 
-        console.log(line)
+    
+        $linesavg_usa_label
+         .attr("x", width-50)
+         .attr("y", y(9.7) + 50)
+         .attr("dy", "0.35em")
+         .style("text-anchor", "start")
+         .text("USA");
 
     }
 
@@ -299,12 +316,15 @@ $(document).ready(function() {
 
         if (w < 500) {
             height = 350 - margin.top - margin.bottom;
+            linemult = 1.4
+            linepad = 40
         } else {
             height = 500 - margin.top - margin.bottom;
+            linemult = 1.35
+            linepad = 30
         }
 
     }
-
     render();
     window.addEventListener('resize', render);
 });

@@ -86,6 +86,8 @@
   
 .line-race-bar {
   fill: none;
-  stroke: #444;
-  stroke-width: 1.5px;
+  stroke: #0071bc;
+  stroke-width: 2.5px;
+  stroke-dasharray: 2, 4, 0, 0;
+  shape-rendering: crispEdges;
 }
