@@ -91,7 +91,7 @@ $(document).ready(function() {
     var yAxis = $bars_race.append("g")
         .attr("class", "vis-y-axis");
 
-    yAxis.append("text")
+    var yAxisLabel = yAxis.append("text")
         .attr("y", -35)
         .attr("dy", ".71em")
         .attr("class", "vis-y-axis-label")
@@ -191,7 +191,7 @@ $(document).ready(function() {
         })
         .y(function(d, i) {
             return y(dataSum) + 50;
-        }); //function(d, i) { return y(dataSum); }); 
+        }); //function(d, i) { return y(dataSum); });
 
 
 
@@ -258,6 +258,7 @@ $(document).ready(function() {
             .call(wrap, x0.rangeBand());
 
         yAxis.call(yAxis_bars);
+        yAxisLabel.attr("x", -height/2);
         legendRect.attr("x", width - 18);
         legendText.attr("x", width - 24);
 
@@ -267,7 +268,7 @@ $(document).ready(function() {
 
         bars.attr("width", x1.rangeBand())
             .attr("x", function(d) {
-                
+
                 return x1(d.name) + 10;
             })
             .attr("y", function(d) {
@@ -281,7 +282,7 @@ $(document).ready(function() {
                 return height - y(d.value);
             });
 
-       dataSum = 9.7     
+       dataSum = 9.7
 
        lineavg.x(function(d) {
             return (x0(d.raceth)*linemult)+linepad;
@@ -294,7 +295,7 @@ $(document).ready(function() {
 
         linesavg.attr("d", lineavg);
 
-    
+
         $linesavg_usa_label
          .attr("x", width-50)
          .attr("y", y(9.7) + 50)

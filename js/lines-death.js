@@ -53,7 +53,7 @@
 
     var $lines_death_x_axis_label = $lines_death_x_axis
         .append("text")
-        .attr("x", dimensions.width - dimensions.margin.left)
+        .attr("x", (dimensions.width - dimensions.margin.left)/2)
         .attr("y", dimensions.margin.bottom)
         .attr("dy", "1em")
         .attr("class", "vis-x-axis-label")
@@ -66,7 +66,7 @@
 
     var $lines_death_y_axis_label = $lines_death_y_axis
         .append("text")
-        .attr("x", -dimensions.margin.top)
+        .attr("x", -(dimensions.height/2))
         .attr("y", -dimensions.margin.left)
         .attr("dy", "1em")
         .attr("class", "vis-y-axis-label")
@@ -223,7 +223,7 @@
             .innerTickSize([8]);
 
         $lines_death_x_axis_label
-            .attr("x", dimensions.width - dimensions.margin.left);
+            .attr("x", (dimensions.width - dimensions.margin.left)/2);
 
         $lines_death_y_axis_label
             .attr("y", -dimensions.margin.left);
@@ -266,7 +266,7 @@
 
         lines.attr("d", line_death);
     }
-    
+
     var focus = $lines_death.append("g")
         .attr("class", "focus")
         .classed("hidden", true);
@@ -282,9 +282,9 @@
         tooltip_death.classed("hidden", true);
     }
     function mouseoverFunc(d, i) {
- 
+
         //d3.selectAll("path.line-death").classed("unfocused", true);
-        
+
         //d3.select(this).select("path.line-death").classed("unfocused", false).classed("focused", true);
         //d3.select(this).select("path.point").classed("unfocused", false).classed("focused", true).attr("d", d3.svg.symbol().type("circle").size(0));
         var x0 = d3.mouse(this)[0];
