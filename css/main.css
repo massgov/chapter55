@@ -155,10 +155,11 @@
 .vis-y-axis-label {
   font-weight: bold;
   font-size: 12px;
-  text-anchor: end; }
+  text-anchor: middle; }
 
 .vis-y-axis-label {
-  transform: rotate(-90deg); }
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg); }
 
 .vis-title {
   text-align: center;
@@ -508,9 +509,6 @@
   margin: auto;
   text-align: center; }
 
-.group {
-  display: inline-block; }
-
 .block-chart {
   height: 300px;
   margin: 20px;
@@ -834,6 +832,8 @@ video {
 #odInfographic {
   max-width: 260px;
   max-height: 260px; }
+  #odInfographic svg {
+    width: 100%; }
 
 .center {
   text-align: center;
