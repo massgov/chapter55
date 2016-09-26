@@ -466,12 +466,12 @@
 
         $x_axis.attr("transform", "translate(0," + height + ")").call(xAxis_bsas);
         $y_axis.call(yAxis_bsas);
-        $lines_bsas.selectAll(".vis-y-axis text").attr("x", -5).attr("dy", 0).style("text-anchor", "end");
+        $lines_bsas.selectAll(".vis-y-axis .tick text").attr("x", -5).attr("dy", 0).style("text-anchor", "end");
         $eventOverlay.attr("width", width).attr("height", height);
 
 
         $lines_bsas_x_axis_label
-            .attr("x", width - margin.left)
+            .attr("x", (width - margin.left)/2)
             .attr("y", (margin.bottom) / 2)
             .attr("dy", "1em")
             .attr("class", "vis-x-axis-label")
@@ -479,7 +479,7 @@
 
 
         $lines_bsas_y_axis_label
-            .attr("x", -margin.top)
+            .attr("x", -(height - margin.top)/2)
             .attr("y", -margin.left)
             .attr("dy", "1em")
             .attr("class", "vis-y-axis-label")
@@ -874,7 +874,7 @@
             $("#tags").val('');
         });
 
-        
+
 
         $("#tags").autocomplete({
             source: function(request, response) {
