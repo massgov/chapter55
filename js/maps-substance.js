@@ -39,6 +39,7 @@ var Vis = (function(d3) {
         });
     }
 
+    //console.log(geo.features)
 
 
     function createMap(wrapper, geo, data) {
@@ -97,6 +98,7 @@ var Vis = (function(d3) {
                     //console.log(data.values[geoData[0].properties.TOWN] == 'Null');
                     town_value = d3.format("%,.2f")(data.values[geoData[0].properties.TOWN]);
                 } else {
+                    //console.log(data.values[geoData[0].properties.TOWN])
                     town_value = "N/A";
                 };
 
