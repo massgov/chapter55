@@ -32,16 +32,37 @@ $(document).ready(function() {
     var y = d3.scale.linear()
         .range([height, 0]);
 
-    var lineavg = d3.svg.line();
-    var linesavg;
-    var linemult;
-    var linepad;
+    //var lineavg = d3.svg.line();
+    //var linesavg;
+    //var linemult;
+    //var linepad;
 
     //var colorRange = d3.scale.category20();
     //var color = d3.scale.ordinal()
     //.range(colorRange.range());
 
+    var min2014 = [18.8, 21.9, 5.5, 12.4] 
+    var max2014 = [20.8, 24.7, 16.7, 18.2]
+    var min2015 = [22.1, 25.6, 7.4, 16.2]
+    var max2015 = [24.3, 28.6, 19.8, 22.8] 
 
+    var errorBarArea2014all = d3.svg.area()
+    var errorBarArea2015all = d3.svg.area()
+    var errorBarArea2014white = d3.svg.area()
+    var errorBarArea2015white = d3.svg.area()  
+    var errorBarArea2014black = d3.svg.area()
+    var errorBarArea2015black = d3.svg.area()
+    var errorBarArea2014hisp = d3.svg.area()
+    var errorBarArea2015hisp = d3.svg.area() 
+
+    var errorBars2014all;
+    var errorBars2015all;
+    var errorBars2014white;
+    var errorBars2015white;
+    var errorBars2014black;
+    var errorBars2015black;
+    var errorBars2014hisp;
+    var errorBars2015hisp;        
 
     var xAxis_bars = d3.svg.axis()
         .scale(x0)
@@ -170,7 +191,7 @@ $(document).ready(function() {
         });
 
     var legendRect = legend.append("rect")
-        .attr("x", width - 18)
+        .attr("x", width - 24)
         .attr("width", 18)
         .attr("height", 18)
         .style("fill", color);
@@ -183,35 +204,97 @@ $(document).ready(function() {
         .text(function(d) {
             return d;
         });
+   
 
-    var dataSum = 9.7;
+    errorBarArea2014all 
+        .x(function(d) {return x0('All')+x1.rangeBand()/2; }) 
+        .y0(function(d) {return y(min2014[0]); }) 
+        .y1(function(d) {return y(max2014[0]); }) 
+        .interpolate("linear");
+    errorBarArea2015all 
+        .x(function(d) {return x0('All')+x1.rangeBand()/2+x1.rangeBand(); }) 
+        .y0(function(d) {return y(min2015[0]); }) 
+        .y1(function(d) {return y(max2015[0]); }) 
+        .interpolate("linear");
+    errorBarArea2014white 
+        .x(function(d) {return x0('White non-Hispanic')+x1.rangeBand()/2; }) 
+        .y0(function(d) {return y(min2014[1]); }) 
+        .y1(function(d) {return y(max2014[1]); }) 
+        .interpolate("linear");
+    errorBarArea2015white 
+        .x(function(d) {return x0('White non-Hispanic')+x1.rangeBand()/2+x1.rangeBand(); }) 
+        .y0(function(d) {return y(min2015[1]); }) 
+        .y1(function(d) {return y(max2015[1]); }) 
+        .interpolate("linear");
+    errorBarArea2014black 
+        .x(function(d) {return x0('Black non-Hispanic')+x1.rangeBand()/2; }) 
+        .y0(function(d) {return y(min2014[2]); }) 
+        .y1(function(d) {return y(max2014[2]); }) 
+        .interpolate("linear");
+    errorBarArea2015black 
+        .x(function(d) {return x0('Black non-Hispanic')+x1.rangeBand()/2+x1.rangeBand(); }) 
+        .y0(function(d) {return y(min2015[2]); }) 
+        .y1(function(d) {return y(max2015[2]); }) 
+        .interpolate("linear");
+    errorBarArea2014hisp 
+        .x(function(d) {return x0('Hispanic')+x1.rangeBand()/2; }) 
+        .y0(function(d) {return y(min2014[3]); }) 
+        .y1(function(d) {return y(max2014[3]); }) 
+        .interpolate("linear");
+    errorBarArea2015hisp 
+        .x(function(d) {return x0('Hispanic')+x1.rangeBand()/2+x1.rangeBand(); }) 
+        .y0(function(d) {return y(min2015[3]); }) 
+        .y1(function(d) {return y(max2015[3]); }) 
+        .interpolate("linear");
 
-    lineavg.x(function(d) {
-           return (x0(d.raceth)*linemult)+linepad;
-        })
-        .y(function(d, i) {
-            return y(dataSum) + 50;
-        }); //function(d, i) { return y(dataSum); });
+    
+    //var errorBarSVG = d3.select("#race_ethnicity_chart").append("svg")
+    errorBars2014all = $bars_race.append("g").selectAll("path").data(dataset);
+    errorBars2015all = $bars_race.append("g").selectAll("path").data(dataset);
+    errorBars2014white = $bars_race.append("g").selectAll("path").data(dataset);
+    errorBars2015white = $bars_race.append("g").selectAll("path").data(dataset);
+    errorBars2014black = $bars_race.append("g").selectAll("path").data(dataset);
+    errorBars2015black = $bars_race.append("g").selectAll("path").data(dataset);
+    errorBars2014hisp = $bars_race.append("g").selectAll("path").data(dataset);
+    errorBars2015hisp = $bars_race.append("g").selectAll("path").data(dataset);
 
+    //
+    errorBars2014all.enter().append("path");
+    errorBars2015all.enter().append("path");
+    errorBars2014white.enter().append("path");
+    errorBars2015white.enter().append("path");
+    errorBars2014black.enter().append("path");
+    errorBars2015black.enter().append("path");
+    errorBars2014hisp.enter().append("path");
+    errorBars2015hisp.enter().append("path");
 
+    //
+    errorBars2014all
+        .attr("d", function(d){return errorBarArea2014all([d]);}) 
+        .attr("class", "bars_race_error");
+    errorBars2015all
+        .attr("d", function(d){return errorBarArea2015all([d]);})
+        .attr("class", "bars_race_error"); 
+    errorBars2014white
+        .attr("d", function(d){return errorBarArea2014white([d]);}) 
+        .attr("class", "bars_race_error");    
+    errorBars2015white
+        .attr("d", function(d){return errorBarArea2015white([d]);})
+        .attr("class", "bars_race_error"); 
+    errorBars2014black
+        .attr("d", function(d){return errorBarArea2014black([d]);}) 
+        .attr("class", "bars_race_error");    
+    errorBars2015black
+        .attr("d", function(d){return errorBarArea2015black([d]);})
+        .attr("class", "bars_race_error"); 
+    errorBars2014hisp
+        .attr("d", function(d){return errorBarArea2014hisp([d]);}) 
+        .attr("class", "bars_race_error");    
+    errorBars2015hisp
+        .attr("d", function(d){return errorBarArea2015hisp([d]);})
+        .attr("class", "bars_race_error"); 
 
-    linesavg = $svg.append("g")
-        .append("path")
-        //.enter()
-        //.append("g")
-        .datum(dataset)
-        .attr("class", "line-race-bar")
-        .attr("d", lineavg)
-        .attr("max-width", width);
-
-    var $linesavg_usa_label = linesavg.append("text")
-         .attr("class", "aside-usa")
-         .attr("x", width)
-         .attr("y", y(9.7) + 50)
-         .attr("dy", "0.35em")
-         .style("text-anchor", "start")
-         .text("USA");
-
+    
 
     function wrap(text, width) {
         text.each(function() {
@@ -282,26 +365,84 @@ $(document).ready(function() {
                 return height - y(d.value);
             });
 
-       dataSum = 9.7
+       //dataSum = 9.7
 
-       lineavg.x(function(d) {
-            return (x0(d.raceth)*linemult)+linepad;
-        })
-        .y(function(d, i) {
+       //lineavg.x(function(d) {
+        //    return (x0(d.raceth)*linemult)+linepad;
+        //})
+        //.y(function(d, i) {
             //console.log(y(dataSum))
-            return y(dataSum) + 50;
-        });
+        //    return y(dataSum) + 50;
+        //});
         //console.log(lineavg)
 
-        linesavg.attr("d", lineavg);
+        //linesavg.attr("d", lineavg);
 
 
-        $linesavg_usa_label
-         .attr("x", width-50)
-         .attr("y", y(9.7) + 50)
-         .attr("dy", "0.35em")
-         .style("text-anchor", "start")
-         .text("USA");
+        //$linesavg_usa_label
+        //.attr("x", width-50)
+        // .attr("y", y(9.7) + 50)
+        // .attr("dy", "0.35em")
+        // .style("text-anchor", "start")
+        // .text("USA");
+
+    errorBarArea2014all 
+        .x(function(d) {return x0('All')+x1.rangeBand()/2; }) 
+        .y0(function(d) {return y(min2014[0]); }) 
+        .y1(function(d) {return y(max2014[0]); }) 
+        .interpolate("linear");
+    errorBarArea2015all 
+        .x(function(d) {return x0('All')+x1.rangeBand()/2+x1.rangeBand(); }) 
+        .y0(function(d) {return y(min2015[0]); }) 
+        .y1(function(d) {return y(max2015[0]); }) 
+        .interpolate("linear");
+    errorBarArea2014white 
+        .x(function(d) {return x0('White non-Hispanic')+x1.rangeBand()/2; }) 
+        .y0(function(d) {return y(min2014[1]); }) 
+        .y1(function(d) {return y(max2014[1]); }) 
+        .interpolate("linear");
+    errorBarArea2015white 
+        .x(function(d) {return x0('White non-Hispanic')+x1.rangeBand()/2+x1.rangeBand(); }) 
+        .y0(function(d) {return y(min2015[1]); }) 
+        .y1(function(d) {return y(max2015[1]); }) 
+        .interpolate("linear");
+    errorBarArea2014black 
+        .x(function(d) {return x0('Black non-Hispanic')+x1.rangeBand()/2; }) 
+        .y0(function(d) {return y(min2014[2]); }) 
+        .y1(function(d) {return y(max2014[2]); }) 
+        .interpolate("linear");
+    errorBarArea2015black 
+        .x(function(d) {return x0('Black non-Hispanic')+x1.rangeBand()/2+x1.rangeBand(); }) 
+        .y0(function(d) {return y(min2015[2]); }) 
+        .y1(function(d) {return y(max2015[2]); }) 
+        .interpolate("linear");
+    errorBarArea2014hisp 
+        .x(function(d) {return x0('Hispanic')+x1.rangeBand()/2; }) 
+        .y0(function(d) {return y(min2014[3]); }) 
+        .y1(function(d) {return y(max2014[3]); }) 
+        .interpolate("linear");
+    errorBarArea2015hisp 
+        .x(function(d) {return x0('Hispanic')+x1.rangeBand()/2+x1.rangeBand(); }) 
+        .y0(function(d) {return y(min2015[3]); }) 
+        .y1(function(d) {return y(max2015[3]); }) 
+        .interpolate("linear");
+
+    errorBars2014all
+        .attr("d", function(d){return errorBarArea2014all([d]); });
+    errorBars2015all
+        .attr("d", function(d){return errorBarArea2015all([d]); }); 
+    errorBars2014white
+        .attr("d", function(d){return errorBarArea2014white([d]); });    
+    errorBars2015white
+        .attr("d", function(d){return errorBarArea2015white([d]); }); 
+    errorBars2014black
+        .attr("d", function(d){return errorBarArea2014black([d]); });    
+    errorBars2015black
+        .attr("d", function(d){return errorBarArea2015black([d]); }); 
+    errorBars2014hisp
+        .attr("d", function(d){return errorBarArea2014hisp([d]); });    
+    errorBars2015hisp
+        .attr("d", function(d){return errorBarArea2015hisp([d]); }); 
 
     }
 
