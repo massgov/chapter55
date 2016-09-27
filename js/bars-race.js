@@ -32,15 +32,6 @@ $(document).ready(function() {
     var y = d3.scale.linear()
         .range([height, 0]);
 
-    //var lineavg = d3.svg.line();
-    //var linesavg;
-    //var linemult;
-    //var linepad;
-
-    //var colorRange = d3.scale.category20();
-    //var color = d3.scale.ordinal()
-    //.range(colorRange.range());
-
     var min2014 = [18.8, 21.9, 5.5, 12.4] 
     var max2014 = [20.8, 24.7, 16.7, 18.2]
     var min2015 = [22.1, 25.6, 7.4, 16.2]
@@ -365,26 +356,6 @@ $(document).ready(function() {
                 return height - y(d.value);
             });
 
-       //dataSum = 9.7
-
-       //lineavg.x(function(d) {
-        //    return (x0(d.raceth)*linemult)+linepad;
-        //})
-        //.y(function(d, i) {
-            //console.log(y(dataSum))
-        //    return y(dataSum) + 50;
-        //});
-        //console.log(lineavg)
-
-        //linesavg.attr("d", lineavg);
-
-
-        //$linesavg_usa_label
-        //.attr("x", width-50)
-        // .attr("y", y(9.7) + 50)
-        // .attr("dy", "0.35em")
-        // .style("text-anchor", "start")
-        // .text("USA");
 
     errorBarArea2014all 
         .x(function(d) {return x0('All')+x1.rangeBand()/2; }) 
