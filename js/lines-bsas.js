@@ -507,8 +507,8 @@
         $legend.marijuana.text = $lines_bsas.append("g").append("text").attr("class", "focus marijuana").text("marijuana");
         $legend.other.circle = $lines_bsas.append("circle").attr("class", "circle other").attr("r", 3);
         $legend.other.text = $lines_bsas.append("g").append("text").attr("class", "focus other").text("other");
-        $legend.none.circle = $lines_bsas.append("circle").attr("class", "circle none").attr("r", 3);
-        $legend.none.text = $lines_bsas.append("g").append("text").attr("class", "focus none").text("none");
+        //$legend.none.circle = $lines_bsas.append("circle").attr("class", "circle none").attr("r", 3);
+        //$legend.none.text = $lines_bsas.append("g").append("text").attr("class", "focus none").text("none");
     }
 
     function renderLegend() {
@@ -522,8 +522,8 @@
         $legend.marijuana.text.attr("x", width + legend_pos_text).attr("y", top_offset + (3 * line_height) + 3);
         $legend.other.circle.attr("cx", width + legend_pos_dot).attr("cy", top_offset + (4 * line_height));
         $legend.other.text.attr("x", width + legend_pos_text).attr("y", top_offset + (4 * line_height) + 3);
-        $legend.none.circle.attr("cx", width + legend_pos_dot).attr("cy", top_offset + (5 * line_height));
-        $legend.none.text.attr("x", width + legend_pos_text).attr("y", top_offset + (5 * line_height) + 3);
+        //$legend.none.circle.attr("cx", width + legend_pos_dot).attr("cy", top_offset + (5 * line_height));
+        //$legend.none.text.attr("x", width + legend_pos_text).attr("y", top_offset + (5 * line_height) + 3);
     }
 
     function setupLines() {
@@ -571,27 +571,27 @@
             }
         }
 
-        $lines.none = $lines_bsas.append("path").attr("class", "line none").attr("pointer-events", "none");
-        for (i = 0; i < groups[current_town + "none"].values.length; i++) {
+        // $lines.none = $lines_bsas.append("path").attr("class", "line none").attr("pointer-events", "none");
+        // for (i = 0; i < groups[current_town + "none"].values.length; i++) {
 
-            var x_circle_alcohol = groups[current_town + "none"].values[i].age;
-            var y_circle_alcohol = groups[current_town + "none"].values[i].value;
+        //     var x_circle_alcohol = groups[current_town + "none"].values[i].age;
+        //     var y_circle_alcohol = groups[current_town + "none"].values[i].value;
 
-            if (y_circle_alcohol >= 0) {
+        //     if (y_circle_alcohol >= 0) {
 
-                //console.log(groups[current_town+"alcohol"].values[i].age);
-                //console.log("circle none y" + groups[current_town + "none"].values[i].age)
+        //         //console.log(groups[current_town+"alcohol"].values[i].age);
+        //         //console.log("circle none y" + groups[current_town + "none"].values[i].age)
 
-                $lines_bsas.append("circle")
-                    .attr("class", function(d) {
-                        return "circle none y" + groups[current_town + "none"].values[i].age
-                    })
-                    .attr("cx", x(groups[current_town + "none"].values[i].age))
-                    .attr("cy", y(groups[current_town + "none"].values[i].value))
-                    .attr("r", 3)
-                    .attr("pointer-events", "none");
-            }
-        }
+        //         $lines_bsas.append("circle")
+        //             .attr("class", function(d) {
+        //                 return "circle none y" + groups[current_town + "none"].values[i].age
+        //             })
+        //             .attr("cx", x(groups[current_town + "none"].values[i].age))
+        //             .attr("cy", y(groups[current_town + "none"].values[i].value))
+        //             .attr("r", 3)
+        //             .attr("pointer-events", "none");
+        //     }
+        // }
 
         $lines.opioids = $lines_bsas.append("path").attr("class", "line opioids").attr("pointer-events", "none");
         for (i = 0; i < groups[current_town + "opioids"].values.length; i++) {
@@ -652,9 +652,9 @@
         $lines.other.attr("d", function(d) {
             return line(groups[current_town + "other"].values);
         });
-        $lines.none.attr("d", function(d) {
-            return line(groups[current_town + "none"].values);
-        });
+        // $lines.none.attr("d", function(d) {
+        //     return line(groups[current_town + "none"].values);
+        // });
     }
 
 
@@ -733,41 +733,41 @@
         }
 
         //none
-        $lines_bsas.select(".line.none")
-            .transition()
-            .duration(1000)
-            .attr("d", function(d) {
-                return line(groups[current_town + "none"].values);
-            });
-        //update none circles
-        for (i = 0; i < groups[current_town + "none"].values.length; i++) {
+        // $lines_bsas.select(".line.none")
+        //     .transition()
+        //     .duration(1000)
+        //     .attr("d", function(d) {
+        //         return line(groups[current_town + "none"].values);
+        //     });
+        // //update none circles
+        // for (i = 0; i < groups[current_town + "none"].values.length; i++) {
 
 
-            var string_select = ".circle.none.y" + groups[current_town + "none"].values[i].age
-            var value_select = groups[current_town + "none"].values[i].value
-                // console.log(string_select);
-                // console.log(value_select);
-                // console.log(value_select >= 0);
+        //     var string_select = ".circle.none.y" + groups[current_town + "none"].values[i].age
+        //     var value_select = groups[current_town + "none"].values[i].value
+        //         // console.log(string_select);
+        //         // console.log(value_select);
+        //         // console.log(value_select >= 0);
 
-            if (groups[current_town + "none"].values[i].value >= 0) {
-                $lines_bsas.selectAll(string_select)
-                    .transition()
-                    .duration(1000)
-                    .attr("cx", function(d) {
-                        return x(groups[current_town + "none"].values[i].age)
-                    })
-                    .attr("cy", function(d) {
-                        return y(groups[current_town + "none"].values[i].value)
-                    })
-                    .attr("r", 3);
-            } else {
-                $lines_bsas.selectAll(string_select)
-                    .transition()
-                    .duration(1000)
-                    .attr("r", 0);
-            }
+        //     if (groups[current_town + "none"].values[i].value >= 0) {
+        //         $lines_bsas.selectAll(string_select)
+        //             .transition()
+        //             .duration(1000)
+        //             .attr("cx", function(d) {
+        //                 return x(groups[current_town + "none"].values[i].age)
+        //             })
+        //             .attr("cy", function(d) {
+        //                 return y(groups[current_town + "none"].values[i].value)
+        //             })
+        //             .attr("r", 3);
+        //     } else {
+        //         $lines_bsas.selectAll(string_select)
+        //             .transition()
+        //             .duration(1000)
+        //             .attr("r", 0);
+        //     }
 
-        }
+        // }
 
         //opioids
         $lines_bsas.select(".line.opioids")
@@ -936,16 +936,16 @@
             .attr("dy", ".35em");
 
         // none
-        var focusnone = $lines_bsas.append("g")
-            .attr("class", "focus none")
-            .style("display", "none");
-        focusnone.append("circle")
-            .attr("pointer-events", "none")
-            .attr("r", 3);
-        focusnone.append("text")
-            .attr("pointer-events", "none")
-            .attr("x", 9)
-            .attr("dy", ".35em");
+        // var focusnone = $lines_bsas.append("g")
+        //     .attr("class", "focus none")
+        //     .style("display", "none");
+        // focusnone.append("circle")
+        //     .attr("pointer-events", "none")
+        //     .attr("r", 3);
+        // focusnone.append("text")
+        //     .attr("pointer-events", "none")
+        //     .attr("x", 9)
+        //     .attr("dy", ".35em");
 
         // opioids
         var focusopioids = $lines_bsas.append("g")
@@ -976,7 +976,7 @@
             .on("mouseover", function() {
                 focusmarijuana.style("display", null);
                 focusalcohol.style("display", null);
-                focusnone.style("display", null);
+                //focusnone.style("display", null);
                 focusopioids.style("display", null);
                 focusother.style("display", null);
                 //focusage.style("display", null);
@@ -984,7 +984,7 @@
             .on("mouseout", function() {
                 focusmarijuana.style("display", "none");
                 focusalcohol.style("display", "none");
-                focusnone.style("display", "none");
+                //focusnone.style("display", "none");
                 focusopioids.style("display", "none");
                 focusother.style("display", "none");
                 //focusage.style("display", "none");
@@ -1034,19 +1034,19 @@
 
             // None
 
-            var i_none = bisectAge(groups[current_town + "none"].values, x0, 1),
-                d0_none = groups[current_town + "none"].values[i_none - 1],
-                d1_none = groups[current_town + "none"].values[i_none],
-                d_none = x0 - d0_none.age > d1_none.age - x0 ? d1_none : d0_none;
+            // var i_none = bisectAge(groups[current_town + "none"].values, x0, 1),
+            //     d0_none = groups[current_town + "none"].values[i_none - 1],
+            //     d1_none = groups[current_town + "none"].values[i_none],
+            //     d_none = x0 - d0_none.age > d1_none.age - x0 ? d1_none : d0_none;
 
-            if (d_none.value >= 0) {
-                focusnone.attr("transform", "translate(" + x(d_none.age) + "," + y(d_none.value) + ")");
-                focusnone.select("text").text(percent(d_none.value));
-                focusnone.select("circle").attr("r", 4);
-            } else {
-                focusnone.select("circle").attr("r", 0);
-                focusnone.select("text").text("");
-            }
+            // if (d_none.value >= 0) {
+            //     focusnone.attr("transform", "translate(" + x(d_none.age) + "," + y(d_none.value) + ")");
+            //     focusnone.select("text").text(percent(d_none.value));
+            //     focusnone.select("circle").attr("r", 4);
+            // } else {
+            //     focusnone.select("circle").attr("r", 0);
+            //     focusnone.select("text").text("");
+            // }
 
 
             // Opioids
@@ -1087,13 +1087,13 @@
             if (x0 > 80) {
                 focusalcohol.select("text").attr("x", 3).attr("y", -7).attr("text-anchor", "beginning");
                 focusmarijuana.select("text").attr("x", 3).attr("y", -7).attr("text-anchor", "beginning");
-                focusnone.select("text").attr("x", 3).attr("y", -7).attr("text-anchor", "beginning");
+                //focusnone.select("text").attr("x", 3).attr("y", -7).attr("text-anchor", "beginning");
                 focusopioids.select("text").attr("x", 3).attr("y", -7).attr("text-anchor", "beginning");
                 focusother.select("text").attr("x", 3).attr("y", -7).attr("text-anchor", "beginning");
             } else {
                 focusalcohol.select("text").attr("x", 10).attr("text-anchor", "beginning");
                 focusmarijuana.select("text").attr("x", 10).attr("text-anchor", "beginning");
-                focusnone.select("text").attr("x", 10).attr("text-anchor", "beginning");
+                //focusnone.select("text").attr("x", 10).attr("text-anchor", "beginning");
                 focusopioids.select("text").attr("x", 10).attr("text-anchor", "beginning");
                 focusother.select("text").attr("x", 10).attr("text-anchor", "beginning");
             }
