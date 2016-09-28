@@ -11,6 +11,26 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/dist/vendor.js"></script>
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+    <script type="text/javascript">
+    // ga tracking
+    // initiate google analytics queue
+      var _gaq = _gaq || [];
+
+  // global tracking code
+    _gaq.push(
+      ['b._setAccount', 'UA-12471675-2'],
+      ['b._setDomainName', 'mass.gov'],
+      ['b._trackPageview']      
+    );
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
 </head>
 
 <body>
