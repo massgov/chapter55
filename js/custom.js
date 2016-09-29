@@ -205,3 +205,25 @@ $('p').each(function() {
         $(this).html(newWords+'&nbsp;'+potentialWidow);
     }
 })
+
+//bold footnote on in text num click
+
+var currElem = null; //will hold the element that is bold now
+
+ function BoldText(elem) {
+    //console.log(elem)
+    //document.getElementById("footnote-4")
+ 
+  if (elem != currElem) { //do thing if you're clicking on a bold link
+
+   if (currElem) //if a link bold right now unbold it
+
+    currElem.style.fontWeight='lighter';
+
+   currElem = elem; //assign this element as the current one
+
+   elem.style.fontWeight='bolder';  //make the element clicked bold
+ 
+  }
+
+ }
