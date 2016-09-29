@@ -59,10 +59,12 @@ $(document).ready(collapseNavbar);
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
         event.preventDefault();
-        var $anchor = $(this);
+	var href = $(this).attr('href');
         $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
+	    scrollTop: $(href).offset().top
+	}, 750, function() {
+	    window.location.hash = href;
+	});
         event.preventDefault();
     });
 });
@@ -113,38 +115,6 @@ $("#navigation li").on('click', function() {
 });
 
 
-
-$('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-        if (target.length) {
-            $('html,body').animate({
-                scrollTop: target.offset().top
-            }, 500);
-            return false;
-        }
-    }
-    // });
-
-
-});
-
-
-/////////////////////////////Accordion
-// $(function() {
-//     var icons = {
-//         header: "iconClosed",
-//         activeHeader: "iconOpen",
-//         hoverHeader: 'iconHover'
-
-//     };
-//     $("#accordion").accordion({
-//         icons: icons,
-//         heightStyle: "content"
-//     });
-// });
 
 /////////////////////////////Pills
 
