@@ -23,7 +23,7 @@ var Vis = (function(d3) {
         .attr("height", height);
 
     var colors_5yr = ["#d3d3d3", "#9ecae1", "#6baed6", "#2171b5", "#084594"];
-    
+
     var path = d3.geo.path().projection(projection),
         palette = d3.scale.threshold().domain([0.1, 2.1, 6.1, 17.1, Infinity])
         //.range(["#d3d3d3", '#db8d8d', '#c54949', "#b71c1c", '#801313']);
@@ -92,9 +92,8 @@ var Vis = (function(d3) {
 
             })
             .attr('class', function(d) {
-                return d.properties.TOWN_1.toLowerCase()
+		return d.properties.TOWN_1.toLowerCase()+' bsasmap';
             })
-            .attr('id', 'bsasmap')
             .on('mouseenter', function(d, i) {
                 notify('.' + d.properties.TOWN_1.toLowerCase(), 'select');
                 // var currentState = this;
@@ -122,7 +121,7 @@ var Vis = (function(d3) {
                 //     self.node().parentNode.parentNode.getElementsByTagName('p2')[0].innerHTML = "";
                 //     d3.selectAll('#treatmentMaps_maps path').style({ 'fill-opacity': 1 }).style("stroke", "white").style("stroke-width", "0.0px");
                 self.node().parentNode.parentNode.getElementsByClassName('selection-label')[0].innerHTML = "";
-                d3.selectAll('path#bsasmap').style({
+		d3.selectAll('path.bsasmap').style({
                     'fill-opacity': 1
                 }).style("stroke", "white").style("stroke-width", "0.0px");
             })
