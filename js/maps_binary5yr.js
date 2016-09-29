@@ -110,7 +110,7 @@ var Vis = (function(d3) {
                 var town_value
 
                 if (data.values[geoData[0].properties.TOWN_1] > 0) {
-                    town_value = d3.format(".2f")(data.values[geoData[0].properties.TOWN]);
+                    town_value = d3.format(".1f")(data.values[geoData[0].properties.TOWN]);
                 } else { town_value = "0"; }
 
                 //console.log(town_value);

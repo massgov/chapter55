@@ -291,7 +291,7 @@
         var y0 = d3.mouse(this)[1];
         //console.log(y0);
         var y1 = yScale.invert(y0);
-        var percentVal = d3.format(".2f")(y1)
+        var percentVal = d3.format(".1f")(y1)
 
         tooltip_death.classed("hidden", false)
         .html(percentVal);
@@ -307,7 +307,7 @@
         var x0 = d3.mouse(this)[0];
         var y0 = d3.mouse(this)[1]
         var y1 = yScale.invert(y0);
-        var percentVal = d3.format(".2f")(y1);
+        var percentVal = d3.format(".1f")(y1);
 
        //focus.attr("transform", "translate(" + x0 + "," + y0 + ")");
 
