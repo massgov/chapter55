@@ -212,7 +212,7 @@
         //Configure axis generators
         xAxis_death.scale(xScale)
             .orient("bottom")
-            .ticks((dimensions.width < 500 ? 8 : 15))
+            .ticks((dimensions.width < 700 ? 8 : 15))
             .tickFormat(function(d) {
                 return dateFormat(d);
             })
