@@ -2,20 +2,20 @@ $(document).ready(function() {
 
     dataset = [{
         raceth: "All",
-        "2014": 19.8,
-        "2015": 23.2
+        "2014": 19.9,
+        "2015": 23.3
     }, {
         raceth: "White non-Hispanic",
         "2014": 23.3,
-        "2015": 27.1
+        "2015": 27.5
     }, {
         raceth: "Black non-Hispanic",
         "2014": 11.1,
-        "2015": 13.6
+        "2015": 13.7
     }, {
         raceth: "Hispanic",
         "2014": 15.3,
-        "2015": 19.5
+        "2015": 18.8
     }];
 
     var color = d3.scale.ordinal()
@@ -32,10 +32,10 @@ $(document).ready(function() {
     var y = d3.scale.linear()
         .range([height, 0]);
 
-    var min2014 = [18.8, 21.9, 5.5, 12.4] 
-    var max2014 = [20.8, 24.7, 16.7, 18.2]
-    var min2015 = [22.1, 25.6, 7.4, 16.2]
-    var max2015 = [24.3, 28.6, 19.8, 22.8] 
+    var min2014 = [18.8, 22.0, 5.5, 12.4] 
+    var max2014 = [20.9, 24.7, 18.5, 18.3]
+    var min2015 = [22.2, 26.0, 7.4, 15.7]
+    var max2015 = [24.5, 29.0, 21.9, 21.9] 
 
     var errorBarArea2014all = d3.svg.area()
     var errorBarArea2015all = d3.svg.area()
