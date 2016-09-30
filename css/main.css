@@ -140,7 +140,7 @@
   .vis-axis .tick line,
   .vis-x-axis .tick line,
   .vis-y-axis .tick line {
-    stroke: #78909C; }
+    stroke: #5a707a; }
     .vis--dark-background .vis-axis .tick line, .vis--dark-background
     .vis-x-axis .tick line, .vis--dark-background
     .vis-y-axis .tick line {
@@ -149,7 +149,7 @@
 .vis-y-axis .domain,
 .vis-x-axis .domain {
   fill: none;
-  stroke: #78909C; }
+  stroke: #5a707a; }
 
 .vis-x-axis-label,
 .vis-y-axis-label {
@@ -563,8 +563,8 @@
   fill: #b71c1c; }
 
 .type_substance1 {
-  background: #78909C;
-  fill: #78909C; }
+  background: #5a707a;
+  fill: #5a707a; }
 
 .block {
   background: none; }
@@ -602,7 +602,7 @@
 .femFocus,
 .bar.femFocus,
 .dots.femFocus {
-  fill: #ff5252; }
+  fill: #b71c1c; }
 
 .dots.hoverFocus {
   fill: #52524E;
@@ -679,32 +679,32 @@
 /* ============================================================
   SECTIONS
 ============================================================ */
-section.module:last-child {
+.module:last-child {
   margin-bottom: 0; }
 
-section.module h2 {
+.module h2 {
   margin-bottom: 40px;
   font-family: "Roboto Slab", "Merriweather", "Georgia", "Times New Roman", serif;
   font-size: 30px; }
 
-section.module p {
+.module p {
   margin-bottom: 40px;
   font-size: 16px;
   font-weight: 300; }
 
-section.module p:last-child {
+.module p:last-child {
   margin-bottom: 0; }
 
-section.module.content {
+.module.content {
   padding: 40px 0; }
 
-section.module.parallax {
+.module.parallax {
   color: #ffffff;
   padding: 50px 0;
   background-position: center bottom;
   background-size: cover; }
 
-section.module.parallax h1 {
+.module.parallax h1 {
   font-size: 38px;
   line-height: 1;
   font-weight: 700;
@@ -712,39 +712,39 @@ section.module.parallax h1 {
   text-transform: uppercase;
   text-shadow: 0 0 10px #ffffff; }
 
-section.module.parallax-1 {
+.module.parallax-1 {
   padding: 0;
   margin: auto;
   background-color: #000000; }
 
-section.module.parallax-2 {
+.module.parallax-2 {
   /*  color: $color-black;*/
   background-image: url("../img/addiction.png"); }
 
-section.module.parallax-1-1 {
+.module.parallax-1-1 {
   background-image: url("../img/chapter55.jpg"); }
 
-section.module.parallax-3 {
+.module.parallax-3 {
   background-image: url("../img/prescription.jpg"); }
 
-section.module.parallax-4 {
+.module.parallax-4 {
   background-image: url("../img/populations.png"); }
 
-section.module.parallax-5 {
+.module.parallax-5 {
   background-image: url("../img/future.jpg"); }
 
 @media all and (min-width: 600px) {
-  section.module h2 {
+  .module h2 {
     font-size: 28px; }
-  section.module p {
+  .module p {
     font-size: 20px; }
-  section.module.parallax.parallax-1 {
+  .module.parallax.parallax-1 {
     padding: 50px 0; }
   video {
     display: block; } }
 
 @media all and (min-width: 768px) {
-  section.module.parallax h1 {
+  .module.parallax h1 {
     font-size: 80px; }
   .navbar-text {
     float: left;
@@ -754,17 +754,17 @@ section.module.parallax-5 {
     display: none; } }
 
 @media all and (min-width: 960px) {
-  section.module.parallax {
+  .module.parallax {
     padding: 150px 0; }
-  section.module.parallax h1 {
+  .module.parallax h1 {
     font-size: 80px; }
   #current-section {
     display: none; } }
 
 @media all and (min-width: 1440px) {
-  section.module.parallax h1 {
+  .module.parallax h1 {
     font-size: 100px; }
-  section.module.parallax {
+  .module.parallax {
     padding: 220px 0; }
   #current-section {
     display: none; } }
@@ -803,15 +803,17 @@ video {
   box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1); }
   .callout .h3-sm {
     font-size: 1.5em; }
+  .callout a {
+    color: #205493; }
 
 .expandable {
   padding: 3px 5px;
-  border-bottom: 3px solid #78909C;
+  border-bottom: 3px solid #5a707a;
   display: inline;
   cursor: pointer; }
 
 .expandable:hover {
-  background-color: #78909C;
+  background-color: #5a707a;
   color: #ffffff; }
 
 .space-col {
@@ -847,7 +849,7 @@ video {
   font-weight: normal; }
 
 .source {
-  color: #78909C;
+  color: #5a707a;
   font-size: 11.5px;
   text-align: left;
   padding-top: 10px; }
@@ -863,7 +865,8 @@ video {
   padding-top: 10px; }
   .sourcecallout a {
     font-style: normal;
-    text-decoration: underline; }
+    text-decoration: underline;
+    color: #205493; }
 
 /* ============================================================
   Footer
@@ -880,7 +883,7 @@ video {
 footer {
   color: #ffffff;
   padding: 30px;
-  background-color: #B0BEC5; }
+  background-color: #455A64; }
 
 .sources-section {
   background: #333333;
@@ -888,4 +891,13 @@ footer {
   padding: 5em 0; }
 
 .page-scroll sup {
-  font-size: 60%; }
+  font-size: 60%;
+  color: #205493; }
+
+.sources-section li {
+  background: transparent;
+  -webkit-transition: background 250ms ease-in-out;
+  transition: background 250ms ease-in-out; }
+
+.sources-section li:target {
+  background: rgba(255, 255, 255, 0.1); }

@@ -441,7 +441,7 @@
         var titleLookup = {
             percentOpiodDeaths: 'Percent of Opioid Deaths among All Deaths',
             deathRate: 'Opioid Death Rate per 100,000 People per Year',
-            numberOpioidDeaths: 'Number of Opioid Deaths'
+            numberOpioidDeaths: 'Number of Opioid Deaths from 2013 to 2014'
         };
         return titleLookup[key];
     }
