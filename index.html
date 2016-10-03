@@ -62,7 +62,7 @@
                 <div class="container">
                     <div class="navbar-header">
                         <span class="navbar-brand" id="current-section">Home</span>
-                        <button type="button" class="btn btn-danger navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">Menu <i class="glyphicon glyphicon-menu-hamburger"></i>
+                        <button type="button" class="btn btn-danger navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse" onclick="_gaq.push(['_trackEvent', 'menu-button', 'clicked'])">Menu <i class="glyphicon glyphicon-menu-hamburger"></i>
                         </button>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -101,9 +101,9 @@
                             <h4 class="subtitle">The maps below, representing average annual rates of opioid-related deaths across five-year spans, demonstrate the increase in both the spread and intensity of the problem across Massachusetts.</h4>
             			    <div id="binaryMaps" data-active-date="2005" style="padding-bottom: 5%;" role="img" aria-label="Three maps showing opioid-related deaths in Massachusetts in 5-year intervals from 2001 to 2015.">
                                 <div class="btn-group btn-group-justified">
-                                    <div class="btn btn-sm btn-default js-toggle-binary-map active" data-date="2005">2001-2005</div>
-                                    <div class="btn btn-sm btn-default js-toggle-binary-map" data-date="2010">2006-2010</div>
-                                    <div class="btn btn-sm btn-default js-toggle-binary-map" data-date="2015">2011-2015</div>
+                                    <div class="btn btn-sm btn-default js-toggle-binary-map active" onclick="_gaq.push(['_trackEvent', '5yrmap_20012005', 'clicked'])" data-date="2005">2001-2005</div>
+                                    <div class="btn btn-sm btn-default js-toggle-binary-map" onclick="_gaq.push(['_trackEvent', '5yrmap_20062010', 'clicked'])" data-date="2010">2006-2010</div>
+                                    <div class="btn btn-sm btn-default js-toggle-binary-map" onclick="_gaq.push(['_trackEvent', '5yrmap_20112015', 'clicked'])" data-date="2015">2011-2015</div>
                                 </div>
                                 <div id="binaryMaps_legend" class="vis-legend"></div>
                                 <div id="binaryMaps_maps"></div>
@@ -132,7 +132,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-md-12">
                             <p></p>
-                            <p>Understanding the causes and deadly impacts of this issue can be a challenge. It’s a complex problem that has many layers and no single solution. It often raises more questions than answers. &nbsp;&nbsp;<a class="controls controls-video js-play-video" data-target="#video1"><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> Why do people start – and why do they continue – taking opioids? <span class="sr-only"> Play video. </span></a> How many people does this affect? What can be done about it and what steps are being taken? What is an Opioid, anyway? </p>
+                            <p>Understanding the causes and deadly impacts of this issue can be a challenge. It’s a complex problem that has many layers and no single solution. It often raises more questions than answers. &nbsp;&nbsp;<a class="controls controls-video js-play-video" onclick="_gaq.push(['_trackEvent', 'intext_vidintro', 'clicked'])" data-target="#video1"><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> Why do people start – and why do they continue – taking opioids? <span class="sr-only"> Play video. </span></a> How many people does this affect? What can be done about it and what steps are being taken? What is an Opioid, anyway? </p>
                         </div>
                     </div>
                     <div class="row">
@@ -142,9 +142,9 @@
                             <h3 class="title">Learn More About Opioids</h3>
                             <hr>
                             <ul class="nav nav-tabs" id="pills-first">
-                                <li class="active"><a href="#tab_a" data-toggle="tab">Definition</a></li>
-                                <li><a href="#tab_b" data-toggle="tab">Useful Effects</a></li>
-                                <li><a href="#tab_c" data-toggle="tab">Side Effects</a></li>
+                                <li class="active"><a href="#tab_a" onclick="_gaq.push(['_trackEvent', 'opioidlearn_definition', 'clicked'])" data-toggle="tab">Definition</a></li>
+                                <li><a href="#tab_b" onclick="_gaq.push(['_trackEvent', 'opioidlearn_useeff', 'clicked'])" data-toggle="tab">Useful Effects</a></li>
+                                <li><a href="#tab_c" onclick="_gaq.push(['_trackEvent', 'opioidlearn_sideeff', 'clicked'])" data-toggle="tab">Side Effects</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="tab_a">
@@ -224,7 +224,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12">
-                            <p>Similar to diabetes or cancer, <a class="controls controls-video js-play-video" data-target="#video3"><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> addiction is a complex disease  <span class="sr-only"> play video</span></a> impacted by certain risk factors like behavior and family history. Compulsive substance abuse, cravings, and continued use despite known harmful consequences are hallmarks of the condition. This disease is also more widespread than some may realize — according to a <a href='http://www.samhsa.gov/data/sites/default/files/NSDUH-FRR1-2014/NSDUH-FRR1-2014.pdf#page=6' target="_blank">SAMHSA study</a>, nearly 1 in 12 Americans over the age of 12 have a substance abuse disorder.</p>
+                            <p>Similar to diabetes or cancer, <a class="controls controls-video js-play-video" onclick="_gaq.push(['_trackEvent', 'intextvid_addictvid', 'clicked'])" data-target="#video3"><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> addiction is a complex disease  <span class="sr-only"> play video</span></a> impacted by certain risk factors like behavior and family history. Compulsive substance abuse, cravings, and continued use despite known harmful consequences are hallmarks of the condition. This disease is also more widespread than some may realize — according to a <a href='http://www.samhsa.gov/data/sites/default/files/NSDUH-FRR1-2014/NSDUH-FRR1-2014.pdf#page=6' target="_blank">SAMHSA study</a>, nearly 1 in 12 Americans over the age of 12 have a substance abuse disorder.</p>
                             <h2>Cost of Addiction</h2>
                         </div>
                         <div class="col-xs-12 col-md-6">
