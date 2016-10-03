@@ -302,8 +302,8 @@
 
     function mousemoveFunc(d) {
 
-        console.log("events", d3.event.offsetX, d3.event.layerY/2);
-        console.log("d3.events", d3.event);
+        //console.log("events", d3.event.offsetX, d3.event.layerY/2);
+        //console.log("d3.events", d3.event);
         var x0 = d3.mouse(this)[0];
         var y0 = d3.mouse(this)[1]
         var y1 = yScale.invert(y0);
