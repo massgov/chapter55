@@ -143,7 +143,7 @@ var Vis = (function(d3) {
     };
     //popChgScale.domainStrings = function() { return (['< 0.1', '0.25-0.50', '0.50-0.75', '0.75-1.0', '1.0-1.25',
     //'1.25-1.50', '1.50-1.75', '1.75-2.0', '> 2.0']); };
-    generateLegend_map_sub(opChgScale, 'binaryMaps_legend', 'Average 5 year Opioid-Related Death Rate per 100,000 people');
+    generateLegend_map_sub(opChgScale, 'binaryMaps_legend', 'Average Annual Opioid-Related Death Rate per 100,000 People');
 
     function generateLegend_map_sub(scale, szDivId, szCaption) {
 
