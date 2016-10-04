@@ -62,19 +62,19 @@
                 <div class="container">
                     <div class="navbar-header">
                         <span class="navbar-brand" id="current-section">Home</span>
-                        <button type="button" class="btn btn-danger navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse" onclick="_gaq.push(['_trackEvent', 'menu-button', 'clicked'])">Menu <i class="glyphicon glyphicon-menu-hamburger"></i>
+                        <button type="button" class="btn btn-danger navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse" onclick="_gaq.push(['b._trackEvent', 'menu', 'clicked', 'menu-mobile'])">Menu <i class="glyphicon glyphicon-menu-hamburger"></i>
                         </button>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse navbar-main-collapse">
                         <ul class="nav navbar-nav">
-                            <li id="top1" class="active"><a href="#top" class="page-scroll">Home</a></li>
-                            <li id="intro1"><a href="#intro" class="page-scroll">Intro</a></li>
-                            <li id="chapter551"><a href="#chapter55" class="page-scroll">Chapter 55</a></li>
-                            <li id="prescriptions1"><a href="#prescriptions" class="page-scroll">Addiction</a></li>
-                            <li id="addictions1"><a href="#addictions" class="page-scroll">Substance Use</a></li>
-                            <li id="populations1"><a href="#populations" class="page-scroll">Demographics</a></li>
-                            <li id="future1"><a href="#future" class="page-scroll">The Future</a></li>
+                            <li id="top1" class="active"><a href="#top"  onclick="_gaq.push(['b._trackEvent', 'menu', 'clicked', 'menu-top'])" class="page-scroll">Home</a></li>
+                            <li id="intro1"><a href="#intro"  onclick="_gaq.push(['b._trackEvent', 'menu', 'clicked', 'menu-intro'])" class="page-scroll">Intro</a></li>
+                            <li id="chapter551"><a href="#chapter55"  onclick="_gaq.push(['b._trackEvent', 'menu', 'clicked', 'mobile-menu'])" class="page-scroll">Chapter 55</a></li>
+                            <li id="prescriptions1"><a href="#prescriptions"  onclick="_gaq.push(['b._trackEvent', 'menu', 'clicked', 'menu-prescriptions'])" class="page-scroll">Addiction</a></li>
+                            <li id="addictions1"><a href="#addictions"  onclick="_gaq.push(['b._trackEvent', 'menu', 'clicked', 'menu-addiction'])" class="page-scroll">Substance Use</a></li>
+                            <li id="populations1"><a href="#populations"  onclick="_gaq.push(['b._trackEvent', 'menu', 'clicked', 'menu-population'])" class="page-scroll">Demographics</a></li>
+                            <li id="future1"><a href="#future"  onclick="_gaq.push(['b._trackEvent', 'menu', 'clicked', 'menu-future'])" class="page-scroll">The Future</a></li>
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->
@@ -101,9 +101,9 @@
                             <h4 class="subtitle">The maps below, representing average annual rates of opioid-related deaths across five-year spans, demonstrate the increase in both the spread and intensity of the problem across Massachusetts.</h4>
             			    <div id="binaryMaps" data-active-date="2005" style="padding-bottom: 5%;" role="img" aria-label="Three maps showing opioid-related deaths in Massachusetts in 5-year intervals from 2001 to 2015.">
                                 <div class="btn-group btn-group-justified">
-                                    <div class="btn btn-sm btn-default js-toggle-binary-map active" onclick="_gaq.push(['_trackEvent', '5yrmap_20012005', 'clicked'])" data-date="2005">2001-2005</div>
-                                    <div class="btn btn-sm btn-default js-toggle-binary-map" onclick="_gaq.push(['_trackEvent', '5yrmap_20062010', 'clicked'])" data-date="2010">2006-2010</div>
-                                    <div class="btn btn-sm btn-default js-toggle-binary-map" onclick="_gaq.push(['_trackEvent', '5yrmap_20112015', 'clicked'])" data-date="2015">2011-2015</div>
+                                    <div class="btn btn-sm btn-default js-toggle-binary-map active" onclick="_gaq.push(['b._trackEvent', '5yrmap', 'clicked', 'mobile-2001-2005])" data-date="2005">2001-2005</div>
+                                    <div class="btn btn-sm btn-default js-toggle-binary-map" onclick="_gaq.push(['b._trackEvent', '5yrmap', 'clicked']), 'mobile-2006-2010" data-date="2010">2006-2010</div>
+                                    <div class="btn btn-sm btn-default js-toggle-binary-map" onclick="_gaq.push(['b._trackEvent', '5yrmap', 'clicked', 'mobile-2011-2015'])" data-date="2015">2011-2015</div>
                                 </div>
                                 <div id="binaryMaps_legend" class="vis-legend"></div>
                                 <div id="binaryMaps_maps"></div>
@@ -132,7 +132,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-md-12">
                             <p></p>
-                            <p>Understanding the causes and deadly impacts of this issue can be a challenge. It’s a complex problem that has many layers and no single solution. It often raises more questions than answers. &nbsp;&nbsp;<a class="controls controls-video js-play-video" onclick="_gaq.push(['_trackEvent', 'intext_vidintro', 'clicked'])" data-target="#video1"><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> Why do people start – and why do they continue – taking opioids? <span class="sr-only"> Play video. </span></a> How many people does this affect? What can be done about it and what steps are being taken? What is an Opioid, anyway? </p>
+                            <p>Understanding the causes and deadly impacts of this issue can be a challenge. It’s a complex problem that has many layers and no single solution. It often raises more questions than answers. &nbsp;&nbsp;<a class="controls controls-video js-play-video" onclick="_gaq.push(['b._trackEvent', 'intext', 'clicked', 'video-intro'])" data-target="#video1"><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> Why do people start – and why do they continue – taking opioids? <span class="sr-only"> Play video. </span></a> How many people does this affect? What can be done about it and what steps are being taken? What is an Opioid, anyway? </p>
                         </div>
                     </div>
                     <div class="row">
@@ -142,9 +142,9 @@
                             <h3 class="title">Learn More About Opioids</h3>
                             <hr>
                             <ul class="nav nav-tabs" id="pills-first">
-                                <li class="active"><a href="#tab_a" onclick="_gaq.push(['_trackEvent', 'opioidlearn_definition', 'clicked'])" data-toggle="tab">Definition</a></li>
-                                <li><a href="#tab_b" onclick="_gaq.push(['_trackEvent', 'opioidlearn_useeff', 'clicked'])" data-toggle="tab">Useful Effects</a></li>
-                                <li><a href="#tab_c" onclick="_gaq.push(['_trackEvent', 'opioidlearn_sideeff', 'clicked'])" data-toggle="tab">Side Effects</a></li>
+                                <li class="active"><a href="#tab_a" onclick="_gaq.push(['b._trackEvent', 'learn-more', 'clicked', 'definition'])" data-toggle="tab">Definition</a></li>
+                                <li><a href="#tab_b" onclick="_gaq.push(['b._trackEvent', 'learn-more', 'clicked', 'useful-effects'])" data-toggle="tab">Useful Effects</a></li>
+                                <li><a href="#tab_c" onclick="_gaq.push(['b._trackEvent', 'learn-more', 'clicked', 'side-effects'])" data-toggle="tab">Side Effects</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="tab_a">
@@ -171,7 +171,7 @@
                         </div>
                         <div class="col-xs-12 col-md-5">
                             <p></p>
-                            <video id="video1" controls="true" poster="video/poster/ScienceOfAddictition.png">
+                            <video id="video1" controls="true" onclick="_gaq.push(['b._trackEvent', 'video', 'clicked', 'video-intro'])"  poster="video/poster/ScienceOfAddictition.png">
                                 WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
                                 <source src="video/DrLukas.mp4" type="video/mp4">
                                 <track label="English Captions" kind="captions" srclang="en" src="video/captions/DrLukas_captions.vtt">
@@ -193,17 +193,17 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
-                            <p>In the face of this emergent public-health issue, the Commonwealth of Massachusetts took an unprecedented deep dive into available data on opioid-related deaths to investigate the crisis. As part of a multi-faceted effort to combat the epidemic, <a target="_blank" href="https://malegislature.gov/Laws/SessionLaws/Acts/2015/Chapter55">Chapter 55 of the Acts of 2015</a> was passed by the Legislature and signed into law by Governor Baker in August 2015. </p>
+                            <p>In the face of this emergent public-health issue, the Commonwealth of Massachusetts took an unprecedented deep dive into available data on opioid-related deaths to investigate the crisis. As part of a multi-faceted effort to combat the epidemic, <a target="_blank" onclick="_gaq.push(['b._trackEvent', 'intext', 'clicked', 'ref-chpt55-legislation'])" href="https://malegislature.gov/Laws/SessionLaws/Acts/2015/Chapter55">Chapter 55 of the Acts of 2015</a> was passed by the Legislature and signed into law by Governor Baker in August 2015. </p>
                             <video id="video2" controls="true" poster="video/poster/governor.jpg">
                                 WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
-                                <source src="video/governor.webm" type="video/webm">
+                                <source src="video/governor.webm" onclick="_gaq.push(['b._trackEvent', 'video', 'clicked', 'video-chpt55'])"type="video/webm">
                             </video>
                             <p>This is a placeholder for a potential video — interview with the governor about the opioid crisis.</p>
                             <p>This new law permits the analysis of different government datasets to guide policy decisions and to better understand the opioid epidemic. Recently, a groundbreaking report highlighting the current state of the crisis was released as part of this effort.</p>
                         </div>
                         <div class=col-md-6>
-                            <p>Led by the Department of Public Health (DPH), the Chapter 55 analysis involved <a target="_blank" href="http://www.mass.gov/eohhs/docs/dph/stop-addiction/dph-legislative-report-chapter-55-opioid-overdose-study-9-15-2016.pdf#page=58">10 datasets</a> from five different government agencies. In total, <a target="_blank" href="http://www.mass.gov/eohhs/docs/dph/stop-addiction/dph-legislative-report-chapter-55-opioid-overdose-study-9-15-2016.pdf#page=95">29 groups</a> from government, higher education, and the private sector provided information and expertise. This level of partnership is what makes the <a target="_blank" href="http://www.mass.gov/eohhs/docs/dph/stop-addiction/dph-legislative-report-chapter-55-opioid-overdose-study-9-15-2016.pdf">Chapter 55 report</a> a milestone achievement in Massachusetts. Before this legislation was passed, such a comprehensive look at the opioid epidemic in the Commonwealth would not have been possible.</p>
-                            <p>In addition to providing significant insights into the opioid crisis by answering <a target="_blank" href="http://www.mass.gov/eohhs/docs/dph/stop-addiction/dph-legislative-report-chapter-55-opioid-overdose-study-9-15-2016.pdf#page=41">seven key questions</a>, this project demonstrates how private and public organizations can collaborate to answer complex public-health questions. This model of cooperative data analysis has the potential to become the standard in Massachusetts and across the United States. The Chapter 55 project represents a process that should be continued, adapted, and refined as new public health challenges and new collaborators step forward.</p>
+                            <p>Led by the Department of Public Health (DPH), the Chapter 55 analysis involved <a target="_blank" onclick="_gaq.push(['b._trackEvent', 'intext', 'clicked', 'ref-chpt55-datasets'])" href="http://www.mass.gov/eohhs/docs/dph/stop-addiction/dph-legislative-report-chapter-55-opioid-overdose-study-9-15-2016.pdf#page=58">10 datasets</a> from five different government agencies. In total, <a target="_blank" onclick="_gaq.push(['b._trackEvent', 'intext', 'clicked', 'ref-chpt55-partners'])" href="http://www.mass.gov/eohhs/docs/dph/stop-addiction/dph-legislative-report-chapter-55-opioid-overdose-study-9-15-2016.pdf#page=95">29 groups</a> from government, higher education, and the private sector provided information and expertise. This level of partnership is what makes the <a target="_blank" onclick="_gaq.push(['b._trackEvent', 'intext', 'clicked', 'ref-chpt55-report'])" href="http://www.mass.gov/eohhs/docs/dph/stop-addiction/dph-legislative-report-chapter-55-opioid-overdose-study-9-15-2016.pdf">Chapter 55 report</a> a milestone achievement in Massachusetts. Before this legislation was passed, such a comprehensive look at the opioid epidemic in the Commonwealth would not have been possible.</p>
+                            <p>In addition to providing significant insights into the opioid crisis by answering <a target="_blank" onclick="_gaq.push(['b._trackEvent', 'intext', 'clicked', 'ref-chpt55-7questions'])" href="http://www.mass.gov/eohhs/docs/dph/stop-addiction/dph-legislative-report-chapter-55-opioid-overdose-study-9-15-2016.pdf#page=41">seven key questions</a>, this project demonstrates how private and public organizations can collaborate to answer complex public-health questions. This model of cooperative data analysis has the potential to become the standard in Massachusetts and across the United States. The Chapter 55 project represents a process that should be continued, adapted, and refined as new public health challenges and new collaborators step forward.</p>
                             <p>Below are examples of opioid-use trends that were uncovered by Chapter 55 analysis. Real, actionable steps to curb the epidemic can be taken as a direct result of this innovative data effort.</p>
                         </div>
                     </div>
@@ -224,15 +224,15 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12">
-                            <p>Similar to diabetes or cancer, <a class="controls controls-video js-play-video" onclick="_gaq.push(['_trackEvent', 'intextvid_addictvid', 'clicked'])" data-target="#video3"><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> addiction is a complex disease  <span class="sr-only"> play video</span></a> impacted by certain risk factors like behavior and family history. Compulsive substance abuse, cravings, and continued use despite known harmful consequences are hallmarks of the condition. This disease is also more widespread than some may realize — according to a <a href='http://www.samhsa.gov/data/sites/default/files/NSDUH-FRR1-2014/NSDUH-FRR1-2014.pdf#page=6' target="_blank">SAMHSA study</a>, nearly 1 in 12 Americans over the age of 12 have a substance abuse disorder.</p>
+                            <p>Similar to diabetes or cancer, <a class="controls controls-video js-play-video" onclick="_gaq.push(['b._trackEvent', 'intext', 'clicked', 'video-addiction'])" data-target="#video3"><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> addiction is a complex disease  <span class="sr-only"> play video</span></a> impacted by certain risk factors like behavior and family history. Compulsive substance abuse, cravings, and continued use despite known harmful consequences are hallmarks of the condition. This disease is also more widespread than some may realize — according to a <a href='http://www.samhsa.gov/data/sites/default/files/NSDUH-FRR1-2014/NSDUH-FRR1-2014.pdf#page=6' onclick="_gaq.push(['b._trackEvent', 'intext', 'clicked', 'ref-addiction-SAMHSA'])" target="_blank">SAMHSA study</a>, nearly 1 in 12 Americans over the age of 12 have a substance abuse disorder.</p>
                             <h2>Cost of Addiction</h2>
                         </div>
                         <div class="col-xs-12 col-md-6">
-                            <p>Economically, addiction is more costly than other brain conditions like Alzheimer’s disease, Parkinson’s disease, and stroke. In fact, <a href='https://www.drugabuse.gov/related-topics/trends-statistics' target="_blank">data from the National Institutes of Health (NIH)</a> shows costs related to substance abuse top more than $700 billion annually in the United States.</p>
+                            <p>Economically, addiction is more costly than other brain conditions like Alzheimer’s disease, Parkinson’s disease, and stroke. In fact, <a href='https://www.drugabuse.gov/related-topics/trends-statistics' onclick="_gaq.push(['b._trackEvent', 'intext', 'clicked', 'ref-addiction-NIH'])" target="_blank">data from the National Institutes of Health (NIH)</a> shows costs related to substance abuse top more than $700 billion annually in the United States.</p>
                             <p>However, economic impacts are hardly the most negative aspects of addiction and, more specifically, the opioid epidemic. Addiction to opioids can put people at greater risk for infectious diseases like HIV or hepatitis, deteriorating conditions like cirrhosis or cognitive decline, family disruption like domestic violence or child abuse, job loss, exposure to criminal behavior, overdose, and death.</p>
                         </div>
                         <div class="col-xs-12 col-md-6">
-                            <video id="video3" controls="true" poster="video/poster/BrainScan.png">
+                            <video id="video3" controls="true" onclick="_gaq.push(['b._trackEvent', 'video', 'clicked', 'video-addiction'])" poster="video/poster/BrainScan.png">
                                 WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
                                 <source src="video/SarahWakeman.mp4" type="video/mp4">
                                 <track label="English Captions" kind="captions" srclang="en" src="video/captions/SarahWakeman_captions.vtt">
@@ -244,7 +244,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-md-5 pull-right">
                             <h2>Growth of Addiction in Massachusetts</h2>
-                            <p>Data from the DPH Bureau of Substance Abuse Services (BSAS) shows an increasing need for opioid-related treatment in Massachusetts. In 2000, <a id="toggleOpioidsY2000" onclick="opioidsY2000()" class="btn-bsas" data-val="massachusetts">about one third</a> of admissions to substance abuse treatment centers and programs were opioid related<a href="#footnote-9" class="page-scroll" aria-describedby="footnote-label"><span class="sr-only">see footnote</span><sup>9</sup></a>. By 2015, that figure had increased to <a id="toggleOpioidsY2015" onclick="opioidsY2015()" class="btn-bsas" data-val="massachusetts">more than half</a>, overtaking alcohol as the most prevalent substance recorded by BSAS at treatment intake. The Health Policy Commission (HPC) recorded similar figures for emergency room visits and hospitalizations during that time.</p>
+                            <p>Data from the DPH Bureau of Substance Abuse Services (BSAS) shows an increasing need for opioid-related treatment in Massachusetts. In 2000, <a id="toggleOpioidsY2000" onclick="opioidsY2000(); _gaq.push(['b._trackEvent', 'intext', 'clicked', 'vis-lines-bsas-onethird'])" class="btn-bsas" data-val="massachusetts">about one third</a> of admissions to substance abuse treatment centers and programs were opioid related<a href="#footnote-9" class="page-scroll" aria-describedby="footnote-label"><span class="sr-only">see footnote</span><sup>9</sup></a>. By 2015, that figure had increased to <a id="toggleOpioidsY2015" onclick="opioidsY2015(); _gaq.push(['b._trackEvent', 'intext', 'clicked', 'vis-lines-bsas-half'])" class="btn-bsas" data-val="massachusetts">more than half</a>, overtaking alcohol as the most prevalent substance recorded by BSAS at treatment intake. The Health Policy Commission (HPC) recorded similar figures for emergency room visits and hospitalizations during that time.</p>
                             <p>Along with the rise in demand for opioid-use treatment, nationally and in Massachusetts, there has been an increase in opioid overdoses, both fatal and nonfatal.</p>
                         </div>
                         <div class="col-xs-12 col-md-7">
@@ -253,8 +253,8 @@
                                 <h4 class="subtitle">At admission clients identify a “primary drug” of use which is the substance for which they seek treatment. Below, view the changes in the percentage of admission by primary drug from 2000 to 2015.</h4>
                                 <hr>
                                 <span> Filter by town name </span>
-                                <input type='text' title='Tags' id='tags' placeholder="e.g. Arlington" /> <span> or </span>
-                                <button class="btn btn-primary btn-sm btn-bsas" data-val="massachusetts">view all of Massachusetts</button>
+                                <input type='text' title='Tags' id='tags' placeholder="e.g. Arlington" onclick="_gaq.push(['b._trackEvent', 'lines-bsas', 'clicked', 'entered-town'])"/> <span> or </span>
+                                <button class="btn btn-primary btn-sm btn-bsas" onclick="_gaq.push(['b._trackEvent', 'lines-bsas', 'clicked', 'mass'])" data-val="massachusetts">view all of Massachusetts</button>
                             </div>
                             <div id="lines-bsas" role="img" aria-label="Line chart sortable by town showing the annual percentage of people who listed opioids, alcohol, marijuana, other, or none as the primary substance of use from 2000 to 2015."></div>
                             <div class="source">Sources: <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/substance-abuse/">Massachusetts Bureau of Substance Abuse Services</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/">Massachusetts Department of Public Health</a></div>
@@ -268,10 +268,10 @@
                             <hr>
                             <div id="treatmentMaps" data-active-date="2000" role="img" aria-label="Four maps showing the percentage of people by town seeking substance use treatment who listed heroin as the primary substance of use in 2000, 2005, 2010, and 2015.">
                                 <div class="btn-group btn-group-justified">
-                                    <div class="btn btn-sm btn-default js-toggle-treatment-map active" data-date="2000">2000</div>
-                                    <div class="btn btn-sm btn-default js-toggle-treatment-map" data-date="2005">2005</div>
-                                    <div class="btn btn-sm btn-default js-toggle-treatment-map" data-date="2010">2010</div>
-                                    <div class="btn btn-sm btn-default js-toggle-treatment-map" data-date="2015">2015</div>
+                                    <div class="btn btn-sm btn-default js-toggle-treatment-map active" onclick="_gaq.push(['b._trackEvent', 'maps-bsas', 'clicked', '2000'])" data-date="2000">2000</div>
+                                    <div class="btn btn-sm btn-default js-toggle-treatment-map" onclick="_gaq.push(['b._trackEvent', 'maps-bsas', 'clicked', '2005'])" data-date="2005">2005</div>
+                                    <div class="btn btn-sm btn-default js-toggle-treatment-map" onclick="_gaq.push(['b._trackEvent', 'maps-bsas', 'clicked', '2010'])" data-date="2010">2010</div>
+                                    <div class="btn btn-sm btn-default js-toggle-treatment-map" onclick="_gaq.push(['b._trackEvent', 'maps-bsas', 'clicked', '2015'])" data-date="2015">2015</div>
                                 </div>
                                 <div id="treatmentMaps_legend" class="vis-legend"></div>
                                 <div id="treatmentMaps_maps"></div>
@@ -300,8 +300,8 @@
                             <h3 class="title center">Prescription History for Fatal Overdoses</h3>
                             <hr>
                             <div class="center">
-                                <button class="btn btn-sm btn-primary btn-svg" value="2/3">2011 – 2014</button>
-                                <button class="btn btn-sm btn-primary btn-svg" value="1/12">1 Month Before Death</button>
+                                <button class="btn btn-sm btn-primary btn-svg" onclick="_gaq.push(['b._trackEvent', 'rx-history', 'clicked', '2011-2014'])" value="2/3">2011 – 2014</button>
+                                <button class="btn btn-sm btn-primary btn-svg" onclick="_gaq.push(['b._trackEvent', 'rx-history', 'clicked', '1monthdeath'])" value="1/12">1 Month Before Death</button>
                             </div>
                             <hr>
                             <div id="odInfographic" class="center" role="presentation"></div>
@@ -312,7 +312,7 @@
                             </div>
                             <div class="source">Sources: <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/admin/dmoa/vitals/">Massachusetts Registry of Vital Records and Statistics</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/hcq/drug-control/pmp/">Massachusetts Prescription Drug Monitoring Program</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/">Massachusetts Department of Public Health</a></div>
                             <p></p>
-                            <p>Even when people use opioids for legitimate medical reasons, they can become dependent on or addicted to the drug. When this happens, the body’s craving for an opioid continues even if a prescription runs out. In these cases, many people continue to use opioids illegally. More than <a class="controls controls-svg" data-select="2/3">two thirds</a> of people who died from an opioid overdose had a legal opioid prescription at some point. Of those who died, however, only about <a class="controls controls-svg" data-select="1/12">1 in 12</a> had a prescription in the month before their death. </p>
+                            <p>Even when people use opioids for legitimate medical reasons, they can become dependent on or addicted to the drug. When this happens, the body’s craving for an opioid continues even if a prescription runs out. In these cases, many people continue to use opioids illegally. More than <a class="controls controls-svg" onclick="_gaq.push(['b._trackEvent', 'intext', 'clicked', 'rx-history-2thirds'])" data-select="2/3">two thirds</a> of people who died from an opioid overdose had a legal opioid prescription at some point. Of those who died, however, only about <a class="controls controls-svg" onclick="_gaq.push(['b._trackEvent', 'intext', 'clicked', 'rx-history-1twelve'])" data-select="1/12">1 in 12</a> had a prescription in the month before their death. </p>
                             <p>It should be noted that opioid-related deaths began increasing sharply in 2012, no similar increase in opioid prescriptions was recorded. This suggests that no single substance or health care practice is solely responsible for the current opioid crisis. Rather, it’s a complex issue with a number of contributing factors.</p>
                             <p></p>
                         </div>
@@ -324,11 +324,11 @@
                                 <p>Some people make the transition from legal to illegal opioid use, driven by the disease of addiction. This becomes clear by looking at the amount of people who had a prescription 6 months, 3 months, and 1 month before death. This is found regardless of the substance that caused a fatal overdose.</p>
                                 <h4><span id="total" class='red'>154</span> people had a positive <b><span class="substance-type">prescription opioid<a href="#footnote-15" class="page-scroll" aria-describedby="footnote-label"><span class="sr-only">see footnote</span><sup>15</sup></a></span></b> toxicology screen from 2013-2014</h4>
                                 <div class="left">
-                                    <button class="btn btn-primary btn-substance btn-sm" value="0">Heroin</button>
-                                    <button class="btn btn-primary btn-substance btn-sm" value="1">Fentanyl</button>
-                                    <button class="btn btn-primary btn-substance btn-sm" value="2">Heroin &amp; Fentanyl</button>
-                                    <button class="btn btn-primary btn-substance btn-sm active" value="3">Precription Opioids</button>
-                                    <button class="btn btn-primary btn-substance btn-sm" value="4">Methadone</button>
+                                    <button class="btn btn-primary btn-substance btn-sm" onclick="_gaq.push(['b._trackEvent', 'call-rx-history', 'clicked', 'heroin'])" value="0">Heroin</button>
+                                    <button class="btn btn-primary btn-substance btn-sm" onclick="_gaq.push(['b._trackEvent', 'call-rx-history', 'clicked', 'fentanyl'])" value="1">Fentanyl</button>
+                                    <button class="btn btn-primary btn-substance btn-sm" onclick="_gaq.push(['b._trackEvent', 'call-rx-history', 'clicked', 'heroin-fentanyl'])" value="2">Heroin &amp; Fentanyl</button>
+                                    <button class="btn btn-primary btn-substance btn-sm active" onclick="_gaq.push(['b._trackEvent', 'call-rx-history', 'clicked', 'rx-opioid'])" value="3">Precription Opioids</button>
+                                    <button class="btn btn-primary btn-substance btn-sm" onclick="_gaq.push(['b._trackEvent', 'call-rx-history', 'clicked', 'meth'])" value="4">Methadone</button>
                                     <!-- <button class="btn btn-primary btn-substance btn-sm" value="5">Buprenorpine</button> -->
                                 </div>
                                 <p></p>
@@ -340,10 +340,10 @@
                                 <hr>
                                 <h4 class="left">Of those with a positive <b><span class="substance-type">prescription opioid</span></b> toxicology screen, <b><span id='percentage' class='red'>83%</span></b> had a legal opioid prescription<a href="#footnote-17" class="page-scroll" aria-describedby="footnote-label"><span class="sr-only">see footnote</span><sup>17</sup></a> <span id='time-period'>at some point from 2011-2014</span></h4>
                                 <div id="buttons-pie">
-                                    <button class="btn btn-primary btn-time btn-sm active" id="studyperiod" value="0">2011–2014</button>
-                                    <button class="btn btn-primary btn-time btn-sm" id="6month" value="1">6 Month Before Death</button>
-                                    <button class="btn btn-primary btn-time btn-sm" id="3month" value="2">3 Month Before Death</button>
-                                    <button class="btn btn-primary btn-time btn-sm" id="1month" value="3">1 Month Before Death</button>
+                                    <button class="btn btn-primary btn-time btn-sm active" id="studyperiod" onclick="_gaq.push(['b._trackEvent', 'call-rx-history', 'clicked', '2011-2014'])" value="0">2011–2014</button>
+                                    <button class="btn btn-primary btn-time btn-sm" id="6month" onclick="_gaq.push(['b._trackEvent', 'call-rx-history', 'clicked', '6month'])" value="1">6 Month Before Death</button>
+                                    <button class="btn btn-primary btn-time btn-sm" id="3month" onclick="_gaq.push(['b._trackEvent', 'call-rx-history', 'clicked', '3month'])" value="2">3 Month Before Death</button>
+                                    <button class="btn btn-primary btn-time btn-sm" id="1month" onclick="_gaq.push(['b._trackEvent', 'call-rx-history', 'clicked', '1month'])" value="3">1 Month Before Death</button>
                                     <p></p>
                                     <p></p>
                                 </div>
@@ -407,7 +407,7 @@
                             <div class="row">
                                 <div class="col-xs-12 col-md-12">
                                     <h2>Male and Female</h2>
-                                    <p>Despite the fact more men die from opioid overdoses than women, both genders are at risk, yet in different ways. Toxicology reports show males are more likely than females to have <a class="controls controls-block" data-select="heroin">heroin</a> in their systems, while <a class="controls controls-block" data-select="prescription">prescription</a> opioids are more likely to be found in women than in men at the time of death. Part of this discrepancy may be down to a simple fact — women are more likely to use the health care system. Even so, this could present a particular risk for women, who are also more likely than men to have multiple prescribers for opioids, due to dangers associated with individuals with <a class="controls controls-block" data-select="multi">multiple prescribers</a> mentioned above.</p>
+                                    <p>Despite the fact more men die from opioid overdoses than women, both genders are at risk, yet in different ways. Toxicology reports show males are more likely than females to have <a class="controls controls-block" onclick="_gaq.push(['b._trackEvent', 'intext', 'clicked', 'demo-mf-heroin'])" data-select="heroin">heroin</a> in their systems, while <a class="controls controls-block" onclick="_gaq.push(['b._trackEvent', 'intext', 'clicked', 'demo-mf-rx'])" data-select="prescription">prescription</a> opioids are more likely to be found in women than in men at the time of death. Part of this discrepancy may be down to a simple fact — women are more likely to use the health care system. Even so, this could present a particular risk for women, who are also more likely than men to have multiple prescribers for opioids, due to dangers associated with individuals with <a class="controls controls-block" onclick="_gaq.push(['b._trackEvent', 'intext', 'clicked', 'demo-mf-multi-rx'])" data-select="multi">multiple prescribers</a> mentioned above.</p>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
                                     <p></p>
@@ -424,9 +424,9 @@
                                 <div class="col-xs-12 col-md-5">
                                     <div class="space-col"></div>
                                     <div id="buttons-blocks" class="center">
-                                        <button class="btn btn-sm btn-primary btn-blocks" id="prescription" value='0'>Prescription Opioids</button>
-                                        <button class="btn btn-sm btn-primary btn-blocks" id="heroin" value='1'>Heroin</button>
-                                        <button class="btn btn-sm btn-primary btn-blocks" id="multi" value='2'>Multiple Prescribers</button>
+                                        <button class="btn btn-sm btn-primary btn-blocks" id="prescription" onclick="_gaq.push(['b._trackEvent', 'demo-mf', 'clicked', 'rx'])" value='0'>Prescription Opioids</button>
+                                        <button class="btn btn-sm btn-primary btn-blocks" id="heroin" onclick="_gaq.push(['b._trackEvent', 'demo-mf', 'clicked', 'heroin'])" value='1'>Heroin</button>
+                                        <button class="btn btn-sm btn-primary btn-blocks" id="multi" onclick="_gaq.push(['b._trackEvent', 'demo-mf', 'clicked', 'multi-rx'])" value='2'>Multiple Prescribers</button>
                                     </div>
                                     <p></p>
                                     <!-- </select> -->
@@ -444,16 +444,16 @@
                         <div class="col-xs-12 col-md-4 pull-right">
                             <p></p>
                             <h2>Young People</h2>
-                            <p>The fight to curb the opioid epidemic in Massachusetts is also a battle to protect future generations. The percentage of opioid deaths for different age groups shows the young people of Massachusetts are especially at risk. From 2013–2014, opioids accounted for more than a quarter of all fatalities in the <a id="age18to24">18–24</a> age group. For individuals from <a id="age25to34">25–34</a>, opioids were responsible for more than a third of all deaths, rising to more than 40% for men in this group. In 2015, roughly 2 out of every 3 people who died from opioids were younger than 45.</p>
+                            <p>The fight to curb the opioid epidemic in Massachusetts is also a battle to protect future generations. The percentage of opioid deaths for different age groups shows the young people of Massachusetts are especially at risk. From 2013–2014, opioids accounted for more than a quarter of all fatalities in the <a id="age18to24" onclick="_gaq.push(['b._trackEvent', 'intext', 'clicked', 'demo-age-18-24'])">18–24</a> age group. For individuals from <a id="age25to34" onclick="_gaq.push(['b._trackEvent', 'intext', 'clicked', 'demo-age-25-34'])">25–34</a>, opioids were responsible for more than a third of all deaths, rising to more than 40% for men in this group. In 2015, roughly 2 out of every 3 people who died from opioids were younger than 45.</p>
                         </div>
                         <div class="col-xs-12 col-md-7">
                             <p></p>
                             <h3 class="title">Fatal Opioid Overdoses by Age and Gender<a href="#footnote-18" class="page-scroll" aria-describedby="footnote-label"><span class="sr-only">see footnote</span><sup>18</sup></a></h3>
                             <hr>
                             <div id="buttons-bar">
-                                <button class="btn btn-primary btn-sm" id="POD">Percent of Opioid Deaths among All Deaths</button>
-                                <button class="btn btn-primary btn-sm" id="DR">Opioid Death Rate per Year</button>
-                                <button class="btn btn-primary btn-sm" id="NOD">Number of Opioid Deaths</button>
+                                <button class="btn btn-primary btn-sm" id="POD" onclick="_gaq.push(['b._trackEvent', 'demo-age', 'clicked', 'percent'])">Percent of Opioid Deaths among All Deaths</button>
+                                <button class="btn btn-primary btn-sm" id="DR" onclick="_gaq.push(['b._trackEvent', 'demo-age', 'clicked', 'rate'])">Opioid Death Rate per Year</button>
+                                <button class="btn btn-primary btn-sm" id="NOD" onclick="_gaq.push(['b._trackEvent', 'demo-age', 'clicked', 'number'])">Number of Opioid Deaths</button>
                             </div>
                             <hr>
                             <div id="changing_bars"></div>
@@ -503,7 +503,7 @@
                         </div>
                         <div class="col-xs-12 col-md-5 col-md-offset-1">
                             <!-- <iframe width="100%" height="260" src="https://www.youtube.com/embed/bk8oGbIYNDo" frameborder="0" allowfullscreen></iframe> -->
-                            <video controls poster='video/poster/StateWithoutStigma.png'>
+                            <video controls poster='video/poster/StateWithoutStigma.png' onclick="_gaq.push(['b._trackEvent', 'video', 'clicked', 'video-future'])">
                                 WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
                                 <source src="video/Cotto.mp4">
                                 <track label="English Captions" kind="captions" srclang="en" src="video/captions/Cotto_captions.vtt">
