@@ -7965,10 +7965,16 @@ button.close {
     .hidden-xs {
         display: none !important;
     }
+    .mobile-hidden {
+        display: none !important;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
     .hidden-sm {
+        display: none !important;
+    }
+    .mobile-hidden {
         display: none !important;
     }
 }
