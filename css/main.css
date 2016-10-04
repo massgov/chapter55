@@ -674,6 +674,7 @@
   border-color: #000000; }
 
 #current-section {
+  margin-top: 4px;
   display: block; }
 
 /* ============================================================
