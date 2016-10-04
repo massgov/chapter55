@@ -98,7 +98,7 @@ var Vis = (function(d3) {
                     town_value = d3.format("%,.2f")(data.values[geoData[0].properties.TOWN]);
                 } else {
                     //console.log(data.values[geoData[0].properties.TOWN])
-                    town_value = "N/A<a href=\"#footnote-13\" class=\"page-scroll\"><sup>13</sup></a>";
+                    town_value = "N/A";
                 };
 
                 //console.log(town_value);
@@ -132,7 +132,7 @@ var Vis = (function(d3) {
     };
     //popChgScale.domainStrings = function() { return (['< 0.1', '0.25-0.50', '0.50-0.75', '0.75-1.0', '1.0-1.25',
     //'1.25-1.50', '1.50-1.75', '1.75-2.0', '> 2.0']); };
-    generateLegend_map_sub(opChgScale, 'treatmentMaps_legend', 'Heroin Primary Substance of Abuse upon Seeking Treatment (%)<a href=\"#footnote-13\" class=\"page-scroll\"><sup>13</sup></a>');
+    generateLegend_map_sub(opChgScale, 'treatmentMaps_legend', 'Heroin Primary Substance of Abuse upon Seeking Treatment (%)');
 
     function generateLegend_map_sub(scale, szDivId, szCaption) {
         var width = 550,
