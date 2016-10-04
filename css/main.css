@@ -648,6 +648,293 @@
   top: 10px;
   left: 0; }
 
+@font-face {
+  /* declare fonts */
+  font-family: "Glyphicons";
+  src: url("../fonts/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/glyphicons-halflings-regular.eot") format("eot"), url("../fonts/glyphicons-halflings-regular.ttf") format("ttf"), url("../fonts/glyphicons-halflings-regular.svg") format("svg"); }
+
+/* utilities */
+.px-video-container {
+  position: relative; }
+
+.controls-left {
+  width: 24%;
+  float: left; }
+
+.controls-right {
+  width: 76%;
+  float: right; }
+
+.sr-only {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden; }
+
+.hide {
+  display: none; }
+
+.show-inline {
+  display: inline-block; }
+
+/* containers */
+.px-video-img-captions-container {
+  position: relative; }
+  .px-video-img-captions-container * {
+    box-sizing: border-box; }
+
+/* progress indicator */
+.px-video-progress {
+  width: 100%;
+  height: 10px; }
+  .px-video-progress[value] {
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+    border: none; }
+    .px-video-progress[value]::-webkit-progress-bar {
+      background-color: #ECEFF1; }
+    .px-video-progress[value]::-webkit-progress-value {
+      background-color: #0071bc; }
+
+/* caption area */
+.px-video-captions {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  padding: .5em;
+  min-height: 2.5em;
+  background-color: #000;
+  color: #fff;
+  font-size: 1.1em;
+  text-align: center;
+  opacity: 0.75; }
+
+/* buttons */
+.px-video-controls button {
+  font-size: .9em;
+  border: 1px #fff solid;
+  background: transparent;
+  padding: 0;
+  margin: 0 .3em;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  /* restart button */
+  /* rewind button */
+  /* play button */
+  /* pause button */
+  /* forward button */ }
+  .px-video-controls button:focus {
+    border: 1px #999 dotted;
+    outline: none; }
+  .px-video-controls button.px-video-restart {
+    position: relative; }
+    .px-video-controls button.px-video-restart:before {
+      font-family: 'Glyphicons';
+      content: "\e070";
+      position: absolute;
+      top: 3px; }
+    .px-video-controls button.px-video-restart:hover, .px-video-controls button.px-video-restart:focus {
+      color: #0071bc; }
+  .px-video-controls button.px-video-rewind {
+    position: relative; }
+    .px-video-controls button.px-video-rewind:before {
+      font-family: 'Glyphicons';
+      content: "\e071";
+      position: absolute;
+      top: 3px; }
+    .px-video-controls button.px-video-rewind:hover, .px-video-controls button.px-video-rewind:focus {
+      color: #0071bc; }
+  .px-video-controls button.px-video-play {
+    position: relative; }
+    .px-video-controls button.px-video-play:before {
+      font-family: 'Glyphicons';
+      content: "\e072";
+      position: absolute;
+      top: 3px; }
+    .px-video-controls button.px-video-play:hover, .px-video-controls button.px-video-play:focus {
+      color: #0071bc; }
+  .px-video-controls button.px-video-pause {
+    position: relative; }
+    .px-video-controls button.px-video-pause:before {
+      font-family: 'Glyphicons';
+      content: "\e073";
+      position: absolute;
+      top: 3px; }
+    .px-video-controls button.px-video-pause:hover, .px-video-controls button.px-video-pause:focus {
+      color: #0071bc; }
+  .px-video-controls button.px-video-forward {
+    position: relative; }
+    .px-video-controls button.px-video-forward:before {
+      font-family: 'Glyphicons';
+      content: "\e075";
+      position: absolute;
+      top: 3px; }
+    .px-video-controls button.px-video-forward:hover, .px-video-controls button.px-video-forward:focus {
+      color: #0071bc; }
+
+/* mute button */
+.px-video-mute-btn-container label {
+  float: left;
+  display: inline-block;
+  width: 25px;
+  height: 20px;
+  position: relative; }
+  .px-video-mute-btn-container label:before {
+    font-family: 'Glyphicons';
+    content: "\e038";
+    position: absolute;
+    top: 3px; }
+
+.px-video-mute-btn-container input[type="checkbox"]:focus + label {
+  outline: 1px #999 dotted; }
+
+.px-video-mute-btn-container input[type="checkbox"]:hover + label {
+  cursor: pointer; }
+
+.px-video-mute-btn-container input[type="checkbox"]:focus + label {
+  outline: 1px #999 dotted; }
+
+.px-video-mute-btn-container input[type="checkbox"]:checked + label:before {
+  font-family: 'Glyphicons';
+  content: "\e036";
+  position: absolute;
+  top: 3px; }
+
+/* volume range input */
+.px-video-controls input[type='range'] {
+  float: left;
+  display: inline-block;
+  position: relative;
+  -webkit-appearance: none;
+  height: 3px;
+  margin-top: 3px;
+  width: 100px;
+  margin-top: 10px;
+  margin-right: 10px;
+  background-color: #B0BEC5;
+  outline: none; }
+  .px-video-controls input[type='range']:focus::-webkit-slider-thumb {
+    outline: 1px #999 dotted; }
+  .px-video-controls input[type='range']::-moz-range-track {
+    -moz-appearance: none;
+    background-color: #B0BEC5;
+    border: none; }
+  .px-video-controls input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    border-radius: 50%;
+    height: 12px;
+    width: 12px;
+    background-color: #000; }
+  .px-video-controls input[type='range']::-moz-range-thumb {
+    border-radius: 50%;
+    height: 12px;
+    width: 12px;
+    background-color: #000; }
+
+/* captions button */
+.px-video-captions-btn-container label {
+  float: left;
+  display: inline-block;
+  width: 25px;
+  height: 20px;
+  margin-right: 10px;
+  position: relative; }
+  .px-video-captions-btn-container label:before {
+    font-family: 'Glyphicons';
+    content: "\e188";
+    position: absolute;
+    top: 3px; }
+
+.px-video-captions-btn-container input[type="checkbox"]:focus + label {
+  outline: 1px #999 dotted; }
+
+.px-video-captions-btn-container input[type="checkbox"]:hover + label {
+  cursor: pointer; }
+
+.px-video-captions-btn-container input[type="checkbox"]:focus + label {
+  outline: 1px #999 dotted; }
+
+.px-video-captions-btn-container input[type="checkbox"]:checked + label {
+  color: #0071bc; }
+
+/* fullscreen button */
+.px-video-fullscreen-btn-container label {
+  float: left;
+  display: inline-block;
+  margin-right: 10px;
+  width: 25px;
+  height: 20px;
+  position: relative; }
+  .px-video-fullscreen-btn-container label:before {
+    font-family: 'Glyphicons';
+    content: "\e140";
+    position: absolute;
+    top: 3px; }
+
+.px-video-fullscreen-btn-container input[type="checkbox"]:focus + label {
+  outline: 1px #999 dotted; }
+
+.px-video-fullscreen-btn-container input[type="checkbox"]:hover + label {
+  cursor: pointer; }
+
+.px-video-fullscreen-btn-container input[type="checkbox"]:focus + label {
+  outline: 1px #999 dotted; }
+
+.px-video-fullscreen-btn-container input[type="checkbox"]:checked + label:before {
+  font-family: 'Glyphicons';
+  content: "\e097";
+  position: absolute;
+  top: 3px; }
+
+.px-video-fullscreen-btn-container input[type="checkbox"]:checked:hover + label {
+  color: #0071bc; }
+
+/* time */
+.px-video-time {
+  float: left;
+  display: inline-block;
+  margin-top: 3px; }
+
+/* fixing display for IE10+ */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .px-video-controls input[type='range'] {
+    position: relative;
+    padding: 0;
+    height: 8px;
+    top: -3px; }
+  .px-video-time {
+    margin-top: 3px; }
+  .px-video-captions {
+    padding: 8px;
+    min-height: 36px; } }
+
+.px-video-container.fullscreen {
+  position: fixed;
+  top: 3px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-cursor-visibility: auto-hide; }
+
+/* Fullscreen styles */
+/* style applied through js */
+.px-video-controls.js-fullscreen-controls {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 940;
+  background: white; }
+
+.px-video-captions.js-fullscreen-captions {
+  min-height: 3.5em;
+  font-size: 2.5em;
+  padding: 1em 0 2em; }
+
 /* ============================================================
   Nav
 ============================================================ */
