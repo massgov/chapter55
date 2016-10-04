@@ -5549,12 +5549,13 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 
 .navbar-inverse .navbar-toggle {
-    border-color: #333;
+    border-color: #fff;
 }
 
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
-    background-color: #333;
+    background-color: #000;
+    border-color: #000;
 }
 
 .navbar-inverse .navbar-toggle .icon-bar {
@@ -7964,10 +7965,16 @@ button.close {
     .hidden-xs {
         display: none !important;
     }
+    .mobile-hidden {
+        display: none !important;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
     .hidden-sm {
+        display: none !important;
+    }
+    .mobile-hidden {
         display: none !important;
     }
 }
