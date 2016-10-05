@@ -20,6 +20,10 @@
   Nav
 ============================================================ */
 
+.h1-sm {
+    font-size: 30px;
+}
+
 #alert {
     color: yellow;
     top: 0;
@@ -50,6 +54,7 @@
 }
 
 #current-section {
+    margin-top: 4px;
     display: block;
 }
 
@@ -57,6 +62,10 @@
 /* ============================================================
   SECTIONS
 ============================================================ */
+
+.h1-sm {
+    font-size: 30px;
+}
 
 .module:last-child {
     margin-bottom: 0;
@@ -125,18 +134,17 @@
     background-image: url("../img/future.jpg");
 }
 
+#top {
+    padding: 0;
+}
+
+.module h2 {
+    font-size: 23px;
+}
+
 @media all and (min-width: 600px) {
-    .module h2 {
-        font-size: 28px;
-    }
     .module p {
         font-size: 20px;
-    }
-    .module.parallax.parallax-1 {
-        padding: 50px 0;
-    }
-    video {
-        display: block;
     }
 }
 
@@ -152,17 +160,32 @@
     #current-section {
         display: none;
     }
+    .neg-space-col-md {
+        margin-top: -30px;
+    }
 }
 
-@media all and (min-width: 960px) {
+@media all and (min-width: 991px) {
     .module.parallax {
         padding: 150px 0;
     }
     .module.parallax h1 {
         font-size: 80px;
     }
+    .module h2 {
+        font-size: 28px;
+    }
     #current-section {
         display: none;
+    }
+    .neg-space-col-md {
+        margin-top: -30px;
+    }
+    #top {
+        padding: 0;
+    }
+    .header-vid-space {
+        margin-top: 20px;
     }
 }
 
@@ -175,6 +198,15 @@
     }
     #current-section {
         display: none;
+    }
+    #top {
+        padding: 50px 0 0;
+    }
+    .neg-space-col-md {
+        margin-top: -100px;
+    }
+    .header-vid-space {
+        margin-top: 0px;
     }
 }
 
@@ -208,7 +240,6 @@ video {
     margin-bottom: 50px;
 }
 
-
 .callout {
     background-color: $color-gray-lightest;
     border: 1px solid darken($color-gray-lightest, 8%);
@@ -216,14 +247,12 @@ video {
     padding: 19px;
     border-radius: 2px;
     box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
-    .h3-sm{
+    .h3-sm {
         font-size: 1.5em;
     }
-
     a {
-	color: $color-primary-darker;
+        color: $color-primary-darker;
     }
-
 }
 
 .expandable {
@@ -247,10 +276,6 @@ video {
     margin-top: -30px;
 }
 
-.neg-space-col-md {
-    margin-top: -100px;
-}
-
 .neg-space-col-lg {
     margin-top: -150px;
 }
@@ -258,7 +283,6 @@ video {
 #odInfographic {
     max-width: 260px;
     max-height: 260px;
-
     svg {
         width: 100%;
     }
@@ -300,7 +324,7 @@ video {
     a {
         font-style: normal;
         text-decoration: underline;
-	color: $color-primary-darker;
+        color: $color-primary-darker;
     }
 }
 
@@ -337,12 +361,11 @@ footer {
     color: $color-primary-darker;
 }
 
-
-
 .sources-section li {
     background: transparent;
     transition: background 250ms ease-in-out;
 }
+
 .sources-section li:target {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
 }
