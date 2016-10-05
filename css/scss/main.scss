@@ -184,6 +184,9 @@
     #top {
         padding: 0;
     }
+    .header-vid-space {
+        margin-top: 20px;
+    }
 }
 
 @media all and (min-width: 1440px) {
@@ -201,6 +204,9 @@
     }
     .neg-space-col-md {
         margin-top: -100px;
+    }
+    .header-vid-space {
+        margin-top: 0px;
     }
 }
 
