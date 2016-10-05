@@ -651,6 +651,9 @@
 /* ============================================================
   Nav
 ============================================================ */
+.h1-sm {
+  font-size: 30px; }
+
 #alert {
   color: yellow;
   top: 0;
@@ -680,6 +683,9 @@
 /* ============================================================
   SECTIONS
 ============================================================ */
+.h1-sm {
+  font-size: 30px; }
+
 .module:last-child {
   margin-bottom: 0; }
 
@@ -734,13 +740,15 @@
 .module.parallax-5 {
   background-image: url("../img/future.jpg"); }
 
+#top {
+  padding: 0; }
+
+.module h2 {
+  font-size: 23px; }
+
 @media all and (min-width: 600px) {
-  .module h2 {
-    font-size: 28px; }
   .module p {
-    font-size: 20px; }
-  .module.parallax.parallax-1 {
-    padding: 50px 0; } }
+    font-size: 20px; } }
 
 @media all and (min-width: 768px) {
   .module.parallax h1 {
@@ -750,15 +758,23 @@
     margin-right: 15px;
     margin-left: 15px; }
   #current-section {
-    display: none; } }
+    display: none; }
+  .neg-space-col-md {
+    margin-top: -30px; } }
 
-@media all and (min-width: 960px) {
+@media all and (min-width: 991px) {
   .module.parallax {
     padding: 150px 0; }
   .module.parallax h1 {
     font-size: 80px; }
+  .module h2 {
+    font-size: 28px; }
   #current-section {
-    display: none; } }
+    display: none; }
+  .neg-space-col-md {
+    margin-top: -30px; }
+  #top {
+    padding: 0; } }
 
 @media all and (min-width: 1440px) {
   .module.parallax h1 {
@@ -766,7 +782,11 @@
   .module.parallax {
     padding: 220px 0; }
   #current-section {
-    display: none; } }
+    display: none; }
+  #top {
+    padding: 50px 0 0; }
+  .neg-space-col-md {
+    margin-top: -100px; } }
 
 .wrapper {
   background-color: #000000; }
@@ -821,9 +841,6 @@ video {
 
 .neg-space-col {
   margin-top: -30px; }
-
-.neg-space-col-md {
-  margin-top: -100px; }
 
 .neg-space-col-lg {
   margin-top: -150px; }
