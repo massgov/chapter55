@@ -776,7 +776,10 @@
   #top {
     padding: 0; }
   .header-vid-space {
-    margin-top: 20px; } }
+    margin-top: 20px; }
+  .space-col {
+    height: 100px;
+    width: 100%; } }
 
 @media all and (min-width: 1440px) {
   .module.parallax h1 {
@@ -790,7 +793,10 @@
   .neg-space-col-md {
     margin-top: -100px; }
   .header-vid-space {
-    margin-top: 0px; } }
+    margin-top: 0px; }
+  .space-col {
+    height: 100px;
+    width: 100%; } }
 
 .wrapper {
   background-color: #000000; }
@@ -838,10 +844,6 @@ video {
 .expandable:hover {
   background-color: #5a707a;
   color: #ffffff; }
-
-.space-col {
-  height: 100px;
-  width: 100%; }
 
 .neg-space-col {
   margin-top: -30px; }
@@ -891,14 +893,9 @@ video {
 /* ============================================================
   Footer
 ============================================================ */
-#logo {
-  display: block; }
-
-#circle {
-  width: 150px;
-  height: 150px;
-  border: 2px solid #ffffff;
-  border-radius: 50%; }
+.logo {
+  display: block;
+  max-width: 150px; }
 
 footer {
   color: #ffffff;
