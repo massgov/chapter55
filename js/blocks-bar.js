@@ -292,9 +292,9 @@ $(document).ready(function() {
         console.log(d.n == 'Fentanyl & Heroin')
 
         if (d.n == 'Fentanyl & Heroin') {
-            substance_html = d.n.toLowerCase() + "<a href=\"#footnote-16\" class=\"page-scroll\"><sup>16</sup></a>";
+	    substance_html = d.n.toLowerCase() + "<a href=\"#footnote-7\" class=\"page-scroll\"><sup>7</sup></a>";
         } else if (d.n == 'Prescription Opioids') {
-            substance_html = d.n.toLowerCase() + "<a href=\"#footnote-15\" class=\"page-scroll\"><sup>15</sup></a>";
+	    substance_html = d.n.toLowerCase() + "<a href=\"#footnote-8\" class=\"page-scroll\"><sup>8</sup></a>";
         } else {
             substance_html = d.n.toLowerCase();
         }
