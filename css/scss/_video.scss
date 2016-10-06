@@ -1,0 +1,420 @@
+@font-face {
+    /* declare fonts */
+    font-family: "Glyphicons";
+    src: url("../fonts/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/glyphicons-halflings-regular.eot") format("eot"), url("../fonts/glyphicons-halflings-regular.ttf") format("ttf"), url("../fonts/glyphicons-halflings-regular.svg") format("svg");
+}
+
+
+/* utilities */
+
+.px-video-container {
+    position: relative;
+    background-color: $color-black;
+}
+
+.controls-left {
+    width: 30%;
+    float: left;
+}
+
+.controls-right {
+    width: 70%;
+    float: right;
+    text-align: right;
+
+    > * {
+	vertical-align: middle;
+	text-align: left;
+	padding-left: 1em;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .controls-left {
+	width: 100%;
+    }
+
+    .controls-right {
+	width: 100%;
+    }
+
+}
+
+.sr-only {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}
+
+.hide {
+    display: none;
+}
+
+.show-inline {
+    display: inline-block;
+}
+
+
+/* containers */
+
+.px-video-img-captions-container {
+    * {
+	box-sizing: border-box;
+    }
+    position: relative;
+}
+
+.px-video-controls {
+    background-color: $color-white;
+}
+
+/* progress indicator */
+
+.px-video-progress {
+    width: 100%;
+    height: 8px;
+
+    &[value] {
+	/* Reset the default appearance */
+	-webkit-appearance: none;
+	border: none;
+	&::-webkit-progress-bar {
+	    background-color: $color-gray-lightest;
+	}
+	&::-webkit-progress-value {
+	    background-color: $color-primary;
+	}
+    }
+}
+
+
+/* caption area */
+
+.px-video-captions {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: .5em 2em;
+    min-height: 2.5em;
+    background-color: #000;
+    color: #fff;
+    font-size: 1.1em;
+    text-align: center;
+    opacity: 0.75;
+}
+
+
+/* buttons */
+
+.px-video-controls button {
+    font-size: .9em;
+    border: 1px #fff solid;
+    background: transparent;
+    padding: 0;
+    margin: 0 .3em;
+    width: 20px;
+    height: 20px;
+    &:focus {
+	border: 1px #999 dotted;
+	outline: none;
+    }
+    cursor: pointer;
+    /* restart button */
+    &.px-video-restart {
+	position: relative;
+	&:before {
+	    font-family: 'Glyphicons';
+	    content: "\e070";
+	    position: absolute;
+	    top: 3px;
+	}
+	&:hover,
+	&:focus {
+	    color: $color-primary;
+	}
+    }
+    /* rewind button */
+    &.px-video-rewind {
+	position: relative;
+	&:before {
+	    font-family: 'Glyphicons';
+	    content: "\e071";
+	    position: absolute;
+	    top: 3px;
+	}
+	&:hover,
+	&:focus {
+	    color: $color-primary;
+	}
+    }
+    /* play button */
+    &.px-video-play {
+	position: relative;
+	&:before {
+	    font-family: 'Glyphicons';
+	    content: "\e072";
+	    position: absolute;
+	    top: 3px;
+	}
+	&:hover,
+	&:focus {
+	    color: $color-primary;
+	}
+    }
+    /* pause button */
+    &.px-video-pause {
+	position: relative;
+	&:before {
+	    font-family: 'Glyphicons';
+	    content: "\e073";
+	    position: absolute;
+	    top: 3px;
+	}
+	&:hover,
+	&:focus {
+	    color: $color-primary;
+	}
+    }
+    /* forward button */
+    &.px-video-forward {
+	position: relative;
+	&:before {
+	    font-family: 'Glyphicons';
+	    content: "\e075";
+	    position: absolute;
+	    top: 3px;
+	}
+	&:hover,
+	&:focus {
+	    color: $color-primary;
+	}
+    }
+}
+
+
+/* mute button */
+.px-video-mute-btn-container {
+    display: inline-block;
+}
+.px-video-mute-btn-container {
+    label {
+	// float: left;
+        display: inline-block;
+        width: 25px;
+        height: 20px;
+        position: relative;
+        &:before {
+            font-family: 'Glyphicons';
+            content: "\e038";
+            position: absolute;
+            top: 3px;
+        }
+    }
+    input[type="checkbox"] {
+	&:focus + label {
+	    outline: 1px #999 dotted;
+	}
+	&:hover + label {
+	    cursor: pointer;
+	}
+	&:focus + label {
+	    outline: 1px #999 dotted;
+	}
+	&:checked + label {
+	    &:before {
+		font-family: 'Glyphicons';
+		content: "\e036";
+		position: absolute;
+		top: 3px;
+	    }
+	}
+    }
+}
+
+
+/* volume range input */
+
+.px-video-controls input[type='range'] {
+    // float: left;
+    display: inline-block;
+    position: relative;
+    -webkit-appearance: none;
+    height: 3px;
+    width: 100px;
+    background-color: $color-gray-lighter;
+    outline: none;
+
+    &:focus::-webkit-slider-thumb {
+	outline: 1px #999 dotted;
+    }
+    &::-moz-range-track {
+	-moz-appearance: none;
+	background-color: $color-gray-lighter;
+	border: none;
+    }
+    &::-webkit-slider-thumb {
+	-webkit-appearance: none !important;
+	border-radius: 50%;
+	height: 12px;
+	width: 12px;
+	background-color: #000;
+    }
+    &::-moz-range-thumb {
+	border-radius: 50%;
+	height: 12px;
+	width: 12px;
+	background-color: #000;
+    }
+}
+
+
+/* captions button */
+.px-video-captions-btn-container {
+    display: inline-block;
+}
+.px-video-captions-btn-container {
+    label {
+	// float: left;
+        display: inline-block;
+        width: 25px;
+        height: 20px;
+        position: relative;
+        &:before {
+            font-family: 'Glyphicons';
+            content: "\e188";
+            position: absolute;
+            top: 3px;
+        }
+    }
+    input[type="checkbox"] {
+	&:focus + label {
+	    outline: 1px #999 dotted;
+	}
+	&:hover + label {
+	    cursor: pointer;
+	}
+	&:focus + label {
+	    outline: 1px #999 dotted;
+	}
+	&:checked + label {
+	    color: $color-primary;
+	}
+    }
+}
+
+
+/* fullscreen button */
+
+.px-video-fullscreen-btn-container {
+    label {
+	// float: left;
+        display: inline-block;
+        width: 25px;
+        height: 20px;
+        position: relative;
+        &:before {
+            font-family: 'Glyphicons';
+            content: "\e140";
+            position: absolute;
+            top: 3px;
+        }
+    }
+    input[type="checkbox"] {
+	&:focus + label {
+	    outline: 1px #999 dotted;
+	}
+	&:hover + label {
+	    cursor: pointer;
+	}
+	&:focus + label {
+	    outline: 1px #999 dotted;
+	}
+	&:checked {
+	    + label {
+		&:before {
+		    font-family: 'Glyphicons';
+		    content: "\e097";
+		    position: absolute;
+		    top: 3px;
+		}
+	    }
+	    &:hover + label {
+		color: $color-primary;
+	    }
+	}
+    }
+}
+
+
+/* time */
+
+.px-video-time {
+    display: inline-block;
+}
+
+
+/* fixing display for IE10+ */
+
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+    .px-video-controls input[type='range'] {
+	position: relative;
+	padding: 0;
+	height: 8px;
+	top: -3px;
+    }
+    .px-video-time {
+	margin-top: 3px;
+    }
+    .px-video-captions {
+	padding: 8px;
+	min-height: 36px;
+    }
+}
+
+.px-video-container.fullscreen {
+    position: fixed;
+    top: 3px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-cursor-visibility: auto-hide;
+
+    .px-video-img-captions-container {
+	// center
+	height: 100%;
+    }
+
+    .px-video-controls {
+	opacity: 0;
+	transition: opacity 350ms ease-in-out;
+	&:hover {
+	    opacity: 1;
+	}
+    }
+}
+
+
+/* Fullscreen styles */
+
+
+/* style applied through js */
+
+.px-video-controls.js-fullscreen-controls {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 940;
+    background: white;
+}
+
+.px-video-captions.js-fullscreen-captions {
+    min-height: 3.5em;
+    font-size: 2.5em;
+    padding: 1em 0 2em;
+}
