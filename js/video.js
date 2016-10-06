@@ -54,11 +54,11 @@ function InitPxVideo(options) {
 
     // Display captions container and button (for initialization)
     function showCaptionContainerAndButton(obj) {
-	obj.captionsBtnContainer.className = "px-video-captions-btn-container show";
-	if (obj.isCaptionDefault) {
-	    obj.captionsContainer.className = "px-video-captions show";
-	    obj.captionsBtn.setAttribute("checked", "checked");
-	}
+	obj.captionsBtnContainer.className = "px-video-captions-btn-container show-inline";
+        if (obj.isCaptionDefault) {
+            obj.captionsContainer.className = "px-video-captions show";
+            obj.captionsBtn.setAttribute("checked", "checked");
+        }
     }
 
     // Unfortunately, due to scattered support, browser sniffing is required
@@ -137,23 +137,25 @@ function InitPxVideo(options) {
 
     // change styles of fullscreen accordingly
     function fullScreenStyles() {
-	if (document.fullscreen || document.mozFullScreen || document.webkitIsFullScreen || document.msFullscreenElement) {
-	    obj.fullScreenBtn.checked = true;
-	    //must apply other styles in container
-	    obj.container.setAttribute("style", "width: 100%; height: 100%;");
-	    obj.controls.className = "px-video-controls js-fullscreen-controls";
-	    obj.captionsContainer.className = "px-video-captions js-fullscreen-captions";
-	    obj.movie.setAttribute('width', '100%');
-	    obj.movie.setAttribute('height', '100%');
-	} else {
-	    obj.fullScreenBtn.checked = false;
-	    // revert back to default styles
-	    obj.container.setAttribute("style", "width:" + obj.movieWidth + "px");
-	    obj.controls.className = "px-video-controls";
-	    obj.captionsContainer.className = "px-video-captions";
-	    obj.movie.setAttribute('width', obj.movieWidth);
-	    obj.movie.setAttribute('height', obj.movieHeight);
-	}
+        if (document.fullscreen || document.mozFullScreen || document.webkitIsFullScreen || document.msFullscreenElement) {
+            obj.fullScreenBtn.checked = true;
+            //must apply other styles in container
+	    // obj.container.setAttribute("style", "width: 100%; height: 100%;");
+	    obj.container.className = obj.container.className = 'px-video-container fullscreen';
+            obj.controls.className = "px-video-controls js-fullscreen-controls";
+            obj.captionsContainer.className = "px-video-captions js-fullscreen-captions";
+            obj.movie.setAttribute('width', '100%');
+            obj.movie.setAttribute('height', '100%');
+        } else {
+            obj.fullScreenBtn.checked = false;
+            // revert back to default styles
+	    // obj.container.setAttribute("style", "width:" + obj.movieWidth + "px");
+	    obj.container.className = obj.container.className = 'px-video-container';
+            obj.controls.className = "px-video-controls";
+            obj.captionsContainer.className = "px-video-captions";
+            obj.movie.setAttribute('width', obj.movieWidth);
+            obj.movie.setAttribute('height', obj.movieHeight);
+        }
     }
 
     // exit fullscreen
@@ -235,56 +237,55 @@ function InitPxVideo(options) {
 	console.log("Inserting custom video controls");
     }
     obj.controls.innerHTML =
-	    '<div class="controls-left">' +
-		'<button class="px-video-restart" title="' + GLOBAL_STRINGS['RESTART'] + '"><span class="sr-only">' + GLOBAL_STRINGS['RESTART'] + '</span></button>' +
-		'<button class="px-video-rewind" title="' + GLOBAL_STRINGS['REWIND'] + '"><span class="sr-only">rewind <span class="px-seconds">10</span> seconds</span></button>' +
-		'<button class="px-video-play" aria-label="'+obj.playAriaLabel+'" title="' + GLOBAL_STRINGS['PLAY'] + '"><span class="sr-only">' + GLOBAL_STRINGS['PLAY'] + '</span></button>' +
-		'<button class="px-video-pause hide" title="' + GLOBAL_STRINGS['PAUSE'] + '"><span class="sr-only">' + GLOBAL_STRINGS['PAUSE'] + '</span></button>' +
-		'<button class="px-video-forward" title="' + GLOBAL_STRINGS['FORWARD'] + '""><span class="sr-only">forward <span class="px-seconds">10</span> seconds</span></button>' +
-	    '</div>' +
-	    '<div class="controls-right">' +
-	    '<div class="px-video-mute-btn-container" title="' + GLOBAL_STRINGS['MUTE'] + '">' +
-		'<input class="px-video-mute sr-only" id="btnMute'+obj.randomNum+'" type="checkbox" />' +
-		'<label id="labelMute'+obj.randomNum+'" for="btnMute'+obj.randomNum+'"><span class="sr-only">' + GLOBAL_STRINGS['MUTE'] + '</span></label>' +
-	    '</div>' +
-	    '<label for="volume'+obj.randomNum+'" class="sr-only">Volume:</label><input id="volume'+obj.randomNum+'" class="px-video-volume" type="range" min="0" max="10" value="5" />' +
-	    '<div class="px-video-captions-btn-container hide" title="' + GLOBAL_STRINGS['CAPTIONS'] + '">' +
-		'<input class="px-video-btnCaptions sr-only" id="btnCaptions'+obj.randomNum+'" type="checkbox" />' +
-		'<label for="btnCaptions'+obj.randomNum+'"><span class="sr-only">' + GLOBAL_STRINGS['CAPTIONS'] + '</span></label>' +
-	    '</div>' +
-	    '<div class="px-video-fullscreen-btn-container show" title="' + GLOBAL_STRINGS['TOGGLE_FULL_SCREEN'] + '">' +
-		'<input class="px-video-btnFullScreen sr-only" id="btnFullscreen'+obj.randomNum+'" type="checkbox" />' +
-		'<label for="btnFullscreen'+obj.randomNum+'"><span class="sr-only">' + GLOBAL_STRINGS['TOGGLE_FULL_SCREEN'] + '</span></label>' +
-	    '</div>' +
-	    '<div class="px-video-time">' +
-		'<span class="sr-only">time</span> <span class="px-video-duration">00:00</span>' +
-	    '</div>' +
-	    '</div>' +
-	'</div>' +
-
 	    '<progress class="px-video-progress" max="100" value="0"><span>0</span>% played</progress>' +
-	'</div>';
+            '<div class="controls-left">' +
+                '<button class="px-video-restart" title="' + GLOBAL_STRINGS['RESTART'] + '"><span class="sr-only">' + GLOBAL_STRINGS['RESTART'] + '</span></button>' +
+                '<button class="px-video-rewind" title="' + GLOBAL_STRINGS['REWIND'] + '"><span class="sr-only">rewind <span class="px-seconds">10</span> seconds</span></button>' +
+                '<button class="px-video-play" aria-label="'+obj.playAriaLabel+'" title="' + GLOBAL_STRINGS['PLAY'] + '"><span class="sr-only">' + GLOBAL_STRINGS['PLAY'] + '</span></button>' +
+                '<button class="px-video-pause hide" title="' + GLOBAL_STRINGS['PAUSE'] + '"><span class="sr-only">' + GLOBAL_STRINGS['PAUSE'] + '</span></button>' +
+                '<button class="px-video-forward" title="' + GLOBAL_STRINGS['FORWARD'] + '""><span class="sr-only">forward <span class="px-seconds">10</span> seconds</span></button>' +
+            '</div>' +
+            '<div class="controls-right">' +
+            '<div class="px-video-mute-btn-container" title="' + GLOBAL_STRINGS['MUTE'] + '">' +
+                '<input class="px-video-mute sr-only" id="btnMute'+obj.randomNum+'" type="checkbox" />' +
+                '<label id="labelMute'+obj.randomNum+'" for="btnMute'+obj.randomNum+'"><span class="sr-only">' + GLOBAL_STRINGS['MUTE'] + '</span></label>' +
+            '</div>' +
+            '<label for="volume'+obj.randomNum+'" class="sr-only">Volume:</label><input id="volume'+obj.randomNum+'" class="px-video-volume" type="range" min="0" max="10" value="5" />' +
+            '<div class="px-video-captions-btn-container hide" title="' + GLOBAL_STRINGS['CAPTIONS'] + '">' +
+                '<input class="px-video-btnCaptions sr-only" id="btnCaptions'+obj.randomNum+'" type="checkbox" />' +
+                '<label for="btnCaptions'+obj.randomNum+'"><span class="sr-only">' + GLOBAL_STRINGS['CAPTIONS'] + '</span></label>' +
+            '</div>' +
+	    '<div class="px-video-fullscreen-btn-container show-inline" title="' + GLOBAL_STRINGS['TOGGLE_FULL_SCREEN'] + '">' +
+                '<input class="px-video-btnFullScreen sr-only" id="btnFullscreen'+obj.randomNum+'" type="checkbox" />' +
+                '<label for="btnFullscreen'+obj.randomNum+'"><span class="sr-only">' + GLOBAL_STRINGS['TOGGLE_FULL_SCREEN'] + '</span></label>' +
+            '</div>' +
+            '<div class="px-video-time">' +
+                '<span class="sr-only">time</span> <span class="px-video-duration">00:00</span>' +
+            '</div>' +
+            '</div>' +
+        '</div>' +
+        '</div>';
 
-    // Adjust layout per width of video - container
-    obj.movieWidth = obj.movie.width;
-    if (obj.movieWidth < 360) {
-	obj.movieWidth = 360;
-    }
-    obj.container.setAttribute("style", "width:" + obj.movieWidth + "px");
+    // // Adjust layout per width of video - container
+    // obj.movieWidth = obj.movie.width;
+    // if (obj.movieWidth < 360) {
+    //     obj.movieWidth = 360;
+    // }
+    // // obj.container.setAttribute("style", "width:" + obj.movieWidth + "px");
 
-    // Added for fullscreen reference
-    obj.movieHeight = obj.movie.height;
+    // // Added for fullscreen reference
+    // obj.movieHeight = obj.movie.height;
 
-    // Adjust layout per width of video - controls/mute offset
-    obj.labelMute = document.getElementById("labelMute" + obj.randomNum);
-    obj.labelMuteOffset = obj.movieWidth - 390;
-    if (obj.browserName === "Firefox") { // adjust for Firefox rendering
-	obj.labelMuteOffset = obj.labelMuteOffset - 10;
-    }
-    if (obj.labelMuteOffset < 0) {
-	obj.labelMuteOffset = 0;
-    }
-    obj.labelMute.setAttribute("style", "margin-left:" + obj.labelMuteOffset + "px");
+    // // Adjust layout per width of video - controls/mute offset
+    // obj.labelMute = document.getElementById("labelMute" + obj.randomNum);
+    // obj.labelMuteOffset = obj.movieWidth - 390;
+    // if (obj.browserName === "Firefox") { // adjust for Firefox rendering
+    //     obj.labelMuteOffset = obj.labelMuteOffset - 10;
+    // }
+    // if (obj.labelMuteOffset < 0) {
+    //     obj.labelMuteOffset = 0;
+    // }
+    // obj.labelMute.setAttribute("style", "margin-left:" + obj.labelMuteOffset + "px");
 
     // Get URL of caption file if exists
     var captionSrc = "",
@@ -517,31 +518,31 @@ function InitPxVideo(options) {
 
     // Toggle display of captions via captions button
     obj.captionsBtn.addEventListener('click', function() {
-	if (this.checked) {
-	    obj.captionsContainer.className = "px-video-captions show";
-	} else {
-	    obj.captionsContainer.className = "px-video-captions hide";
-	}
-	// if fullscreen add fullscreen class
-	if (document.fullscreen || document.mozFullScreen || document.webkitIsFullScreen || document.msFullscreenElement) {
-	    var currClass = obj.captionsContainer.className;
-	    obj.captionsContainer.className = currClass + ' js-fullscreen-captions';
-	}
+        if (this.checked) {
+	    obj.captionsContainer.className = "px-video-captions show-inline";
+        } else {
+            obj.captionsContainer.className = "px-video-captions hide";
+        }
+        // if fullscreen add fullscreen class
+        if (document.fullscreen || document.mozFullScreen || document.webkitIsFullScreen || document.msFullscreenElement) {
+            var currClass = obj.captionsContainer.className;
+            obj.captionsContainer.className = currClass + ' js-fullscreen-captions';
+        }
     }, false);
     obj.captionsBtn.onkeypress = function(e) {
-	if (e.keyCode == 13) { // enter key
-	    e.preventDefault();
-	    if (this.checked == true) {
-		this.checked = false;
-	    } else {
-		this.checked = true;
-	    }
-	    if (this.checked) {
-		obj.captionsContainer.className = "px-video-captions show";
-	    } else {
-		obj.captionsContainer.className = "px-video-captions hide";
-	    }
-	}
+        if (e.keyCode == 13) { // enter key
+            e.preventDefault();
+            if (this.checked == true) {
+                this.checked = false;
+            } else {
+                this.checked = true;
+            }
+            if (this.checked) {
+		obj.captionsContainer.className = "px-video-captions show-inline";
+            } else {
+                obj.captionsContainer.className = "px-video-captions hide";
+            }
+        }
     }
 
     // If no caption file exists, hide container for caption text
@@ -708,9 +709,9 @@ function InitPxVideo(options) {
     });
 
     new InitPxVideo({
-	"videoId": "video3",
-	"captionsOnDefault": false,
-	"seekInterval": 20,
-	"videoTitle": "Sarah Wakeman",
-	"debug": true
+        "videoId": "video3",
+        "captionsOnDefault": false,
+        "seekInterval": 20,
+        "videoTitle": "Sarah Wakeman",
+        "debug": true
     });

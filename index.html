@@ -136,14 +136,6 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xs-12 col-md-6 pull-right">
-                            <p></p>
-                            <video id="video1" controls="true" onclick="_gaq.push(['b._trackEvent', 'video', 'clicked', 'video-intro'])" poster="video/poster/ScienceOfAddictition.png">
-                                WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
-                                <source src="video/DrLukas.mp4" type="video/mp4">
-                                <track label="English Captions" kind="captions" srclang="en" src="video/captions/DrLukas_captions.vtt">
-                            </video>
-                        </div>
                         <div class="col-xs-12 col-md-6">
                             <!--tabs -->
                             <p class="hidden-xs hidden-sm"></p>
@@ -179,25 +171,21 @@
                         </div>
                         <div class="col-xs-12 col-md-5">
                             <p></p>
-			    <!--                             <video id="video1" controls="true" onclick="_gaq.push(['b._trackEvent', 'video', 'clicked', 'video-intro'])" poster="video/poster/ScienceOfAddictition.png">
-                                WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
-                                <source src="video/DrLukas.mp4" type="video/mp4">
-                                <track label="English Captions" kind="captions" srclang="en" src="video/captions/DrLukas_captions.vtt">
-			    </video> -->
+
 			    <div class="px-video-container" id="video1">
-				<div class="px-video-img-captions-container">
-				    <div class="px-video-captions hide"></div>
-				    <video width="500" height="300" onclick="_gaq.push(['b._trackEvent', 'video', 'clicked', 'video-intro'])" poster="video/poster/ScienceOfAddictition.png">
-					<source src="video/DrLukas.mp4" type="video/mp4" />
-					<track label="English Captions" kind="captions" srclang="en" src="video/captions/DrLukas_captions.vtt" />
-					<div>
-					    <a href="video/DrLukas.mp4">
-						<img src="video/poster/ScienceOfAddictition.png" width="500" height="300" alt="download video" />
-					    </a>
-					</div>
-				    </video>
-				</div>
-				<div class="px-video-controls"></div>
+    				<div class="px-video-img-captions-container">
+    				    <div class="px-video-captions hide"></div>
+    				    <video width="500" height="300" onclick="_gaq.push(['b._trackEvent', 'video', 'clicked', 'video-intro'])" poster="video/poster/ScienceOfAddictition.png">
+    					<source src="video/DrLukas.mp4" type="video/mp4" />
+    					<track label="English Captions" kind="captions" srclang="en" src="video/captions/DrLukas_captions.vtt" />
+    					<div>
+    					    <a href="video/DrLukas.mp4">
+    						<img src="video/poster/ScienceOfAddictition.png" width="500" height="300" alt="download video" />
+    					    </a>
+    					</div>
+    				    </video>
+    				</div>
+    				<div class="px-video-controls"></div>
 			    </div>
                         </div>
                     </div>
@@ -255,27 +243,24 @@
                             <p>However, economic impacts are hardly the most negative aspects of addiction and, more specifically, the opioid epidemic. Addiction to opioids can put people at greater risk for infectious diseases like HIV or hepatitis, deteriorating conditions like cirrhosis or cognitive decline, family disruption like domestic violence or child abuse, job loss, exposure to criminal behavior, overdose, and death.</p>
                         </div>
                         <div class="col-xs-12 col-md-6">
-			    <div class="px-video-container" id="video3">
-				<div class="px-video-img-captions-container">
-				    <div class="px-video-captions hide"></div>
-				    <video width="500" height="300" onclick="_gaq.push(['b._trackEvent', 'video', 'clicked', 'video-addiction'])" poster="video/poster/BrainScan.png">
-					<source src="video/SarahWakeman.mp4" type="video/mp4">
-					<track label="English Captions" kind="captions" srclang="en" src="video/captions/SarahWakeman_captions.vtt">
-					<div>
-					    <a href="video/SarahWakeman.mp4">
-						<img src="video/poster/BrainScan.png" width="500" height="300" alt="download video" />
-					    </a>
-					</div>
-				    </video>
-				</div>
-				<div class="px-video-controls"></div>
-			    </div>
-			    <!--                             <video id="video3" controls="true" onclick="_gaq.push(['b._trackEvent', 'video', 'clicked', 'video-addiction'])" poster="video/poster/BrainScan.png">
->>>>>>> add video player for cross-browser accessibility issues
-                                WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
-                                <source src="video/SarahWakeman.mp4" type="video/mp4">
-                                <track label="English Captions" kind="captions" srclang="en" src="video/captions/SarahWakeman_captions.vtt">
-			    </video> -->
+
+                            <div class="px-video-container" id='video3'>
+                                <div class="px-video-img-captions-container">
+                                    <div class="px-video-captions hide"></div>
+                                    <video width="500" height="300" poster="video/poster/BrainScan.png" onclick="_gaq.push(['b._trackEvent', 'video', 'clicked', 'video-addiction'])">
+                                    <source src="video/SarahWakeman.mp4" type="video/mp4" />
+                                    <track kind="captions" label="English captions" src="video/captions/SarahWakeman_captions.vtt" srclang="en" default />
+                                    <div>
+                                        <a href="video/SarahWakeman.mp4">
+                                        <img src="video/poster/BrainScan.png" width="500" height="300" alt="download video" />
+                                        </a>
+                                    </div>
+                                    </video>
+                                </div>
+                                <div class="px-video-controls"></div>
+                                </div>
+
+
                         </div>
                     </div>
                     <p class="hidden-xs hidden-sm"></p>

@@ -9,16 +9,35 @@
 
 .px-video-container {
     position: relative;
+    background-color: $color-black;
 }
 
 .controls-left {
-    width: 24%;
+    width: 30%;
     float: left;
 }
 
 .controls-right {
-    width: 76%;
+    width: 70%;
     float: right;
+    text-align: right;
+
+    > * {
+	vertical-align: middle;
+	text-align: left;
+	padding-left: 1em;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .controls-left {
+	width: 100%;
+    }
+
+    .controls-right {
+	width: 100%;
+    }
+
 }
 
 .sr-only {
@@ -49,12 +68,16 @@
     position: relative;
 }
 
+.px-video-controls {
+    background-color: $color-white;
+}
 
 /* progress indicator */
 
 .px-video-progress {
     width: 100%;
-    height: 10px;
+    height: 8px;
+
     &[value] {
 	/* Reset the default appearance */
 	-webkit-appearance: none;
@@ -73,10 +96,10 @@
 
 .px-video-captions {
     position: absolute;
-    bottom: 5px;
+    bottom: 0;
     left: 0;
     width: 100%;
-    padding: .5em;
+    padding: .5em 2em;
     min-height: 2.5em;
     background-color: #000;
     color: #fff;
@@ -175,20 +198,22 @@
 
 
 /* mute button */
-
+.px-video-mute-btn-container {
+    display: inline-block;
+}
 .px-video-mute-btn-container {
     label {
-	float: left;
-	display: inline-block;
-	width: 25px;
-	height: 20px;
-	position: relative;
-	&:before {
-	    font-family: 'Glyphicons';
-	    content: "\e038";
-	    position: absolute;
-	    top: 3px;
-	}
+	// float: left;
+        display: inline-block;
+        width: 25px;
+        height: 20px;
+        position: relative;
+        &:before {
+            font-family: 'Glyphicons';
+            content: "\e038";
+            position: absolute;
+            top: 3px;
+        }
     }
     input[type="checkbox"] {
 	&:focus + label {
@@ -215,17 +240,15 @@
 /* volume range input */
 
 .px-video-controls input[type='range'] {
-    float: left;
+    // float: left;
     display: inline-block;
     position: relative;
     -webkit-appearance: none;
     height: 3px;
-    margin-top: 3px;
     width: 100px;
-    margin-top: 10px;
-    margin-right: 10px;
     background-color: $color-gray-lighter;
     outline: none;
+
     &:focus::-webkit-slider-thumb {
 	outline: 1px #999 dotted;
     }
@@ -251,21 +274,22 @@
 
 
 /* captions button */
-
+.px-video-captions-btn-container {
+    display: inline-block;
+}
 .px-video-captions-btn-container {
     label {
-	float: left;
-	display: inline-block;
-	width: 25px;
-	height: 20px;
-	margin-right: 10px;
-	position: relative;
-	&:before {
-	    font-family: 'Glyphicons';
-	    content: "\e188";
-	    position: absolute;
-	    top: 3px;
-	}
+	// float: left;
+        display: inline-block;
+        width: 25px;
+        height: 20px;
+        position: relative;
+        &:before {
+            font-family: 'Glyphicons';
+            content: "\e188";
+            position: absolute;
+            top: 3px;
+        }
     }
     input[type="checkbox"] {
 	&:focus + label {
@@ -288,18 +312,17 @@
 
 .px-video-fullscreen-btn-container {
     label {
-	float: left;
-	display: inline-block;
-	margin-right: 10px;
-	width: 25px;
-	height: 20px;
-	position: relative;
-	&:before {
-	    font-family: 'Glyphicons';
-	    content: "\e140";
-	    position: absolute;
-	    top: 3px;
-	}
+	// float: left;
+        display: inline-block;
+        width: 25px;
+        height: 20px;
+        position: relative;
+        &:before {
+            font-family: 'Glyphicons';
+            content: "\e140";
+            position: absolute;
+            top: 3px;
+        }
     }
     input[type="checkbox"] {
 	&:focus + label {
@@ -331,9 +354,7 @@
 /* time */
 
 .px-video-time {
-    float: left;
     display: inline-block;
-    margin-top: 3px;
 }
 
 
@@ -363,6 +384,19 @@
     left: 0;
     right: 0;
     -webkit-cursor-visibility: auto-hide;
+
+    .px-video-img-captions-container {
+	// center
+	height: 100%;
+    }
+
+    .px-video-controls {
+	opacity: 0;
+	transition: opacity 350ms ease-in-out;
+	&:hover {
+	    opacity: 1;
+	}
+    }
 }
 
 
