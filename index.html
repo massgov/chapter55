@@ -98,15 +98,15 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h3 class="title">Average Annual Opioid-Related Death Rate per 100,000 People<a href="#footnote-1" class="page-scroll" aria-describedby="footnote-label"><span class="sr-only">see footnote</span><sup>1</sup></a><sup>,</sup><a href="#footnote-2" class="page-scroll" aria-describedby="footnote-label"><span class="sr-only">see footnote</span><sup>2</sup></a><sup>,</sup><a href="#footnote-3" class="page-scroll" aria-describedby="footnote-label"><span class="sr-only">see footnote</span><sup>3,</sup></a><a href="#footnote-4" class="page-scroll" aria-describedby="footnote-label"><span class="sr-only">see footnote</span><sup>4,</sup></a><a href="#footnote-5" class="page-scroll" aria-describedby="footnote-label"><span class="sr-only">see footnote</span><sup>5</sup></a></h3>
-                            <h4 class="subtitle">The maps below, representing average annual rates of opioid-related deaths across five-year spans, demonstrate the increase in both the spread and intensity of the problem across Massachusetts.</h4>
-                            <div id="binaryMaps" data-active-date="2005" style="padding-bottom: 5%;" role="img" aria-label="Three maps showing opioid-related deaths in Massachusetts in 5-year intervals from 2001 to 2015.">
-                                <div class="btn-group btn-group-justified">
+                            <h4 class="subtitle" aria-hidden="true">The maps below, representing average annual rates of opioid-related deaths across five-year spans, demonstrate the increase in both the spread and intensity of the problem across Massachusetts.</h4>
+                            <div id="binaryMaps" data-active-date="2005" style="padding-bottom: 5%;" role="img" aria-label="Three maps of Massachusetts representing the average annual rate of opioid-related deaths across three five-year time spans (2001 to 2005, 2006 to 2010, and 2011 to 2015). The maps demonstrate the increase in both the spread and intensity of the opioid problem across Massachusetts. The percentage of Massachusetts’s municipalities that experienced one or more opioid-related death(s) increased from 70% of towns from 2001 to 2005 to over 85% of Commonwealth towns from 2011 to 2015.">
+                                <div class="btn-group btn-group-justified" aria-hidden="true">
                                     <div class="btn btn-sm btn-default js-toggle-binary-map active" onclick="_gaq.push(['b._trackEvent', '5yrmap', 'clicked', 'mobile-2001-2005'])" data-date="2005">2001-2005</div>
                                     <div class="btn btn-sm btn-default js-toggle-binary-map" onclick="_gaq.push(['b._trackEvent', '5yrmap', 'clicked', 'mobile-2006-2010'])" data-date="2010">2006-2010</div>
                                     <div class="btn btn-sm btn-default js-toggle-binary-map" onclick="_gaq.push(['b._trackEvent', '5yrmap', 'clicked', 'mobile-2011-2015'])" data-date="2015">2011-2015</div>
                                 </div>
-                                <div id="binaryMaps_legend" class="vis-legend"></div>
-                                <div id="binaryMaps_maps"></div>
+                                <div id="binaryMaps_legend" class="vis-legend" aria-hidden="true"></div>
+                                <div id="binaryMaps_maps" aria-hidden="true"></div>
                                 <div class="source">Sources: <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/admin/dmoa/vitals/">Massachusetts Registry of Vital Records and Statistics</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/">Massachusetts Department of Public Health</a>.</div>
                             </div>
                         </div>
@@ -123,7 +123,9 @@
                         <div class="col-xs-12 col-md-6">
                             <h3 class="title">Age-Adjusted Opioid-Related Death Rate by Year<a href="#footnote-7" class="page-scroll" aria-describedby="footnote-label"><span class="sr-only">see footnote</span><sup>7</sup></a><sup>,</sup><a href="#footnote-8" class="page-scroll" aria-describedby="footnote-label"><span class="sr-only">see footnote</span><sup>8,</sup></a></sup><a href="#footnote-4" class="page-scroll" aria-describedby="footnote-label"><span class="sr-only">see footnote</span><sup>4</sup></a></h3>
                             <h4 class="subtitle">Comparing the opioid-related death rate of Massachusetts to the nation overall.</h4>
-                            <div id="deathLines" role="img" aria-label="Line chart showing annual age-adjusted opioid death rates per 100,000 people for Massachusetts and the United States from 2000 to 2015."></div>
+                            <div aria-label="A line chart depicting the increase in the age-adjusted opioid-related death rate per 100,000 people from 1999 to 2015. Two lines are displayed on the chart, one mapping the opioid-related death rate of Massachusetts from 1999 to 2015 and the other depicting the opioid-related death rate of the United States from 2000 to 2014. The chart clearly shows a dramatic rise in opioid-related deaths in Massachusetts from 2012 to 2015, increasing from a rate of 11.1 per 100,000 people in 2012 to a rate of 23.3 per 100,000 people in 2015. From 2000 to 2014, Massachusetts’s opioid-related death rate has consistently remained greater than that of the United States. In the past 5 years the gap between the opioid-related death rate of the nation and the Commonwealth has widened. In 2010, the opioid-related death rate in the United States was 7.5 per 100,000 people while in the Commonwealth the rate was 9.9 per 100,000 people. In 2014, however, the opioid-related death rate in the United States was 9.7 per 100,000 people while in the Commonwealth the rate was over double that of the nation, at 19.9 per 100,000 people.">
+                            <div id="deathLines" role="img" aria-hidden="true"></div>
+                            </div>
                             <div class="source">Sources: Centers for Disease Control and Prevention, National Center for Health Statistics. <a target="_blank" href="http://wonder.cdc.gov/mcd-icd10.html">Multiple Cause of Death 1999-2014 on CDC WONDER Online Database</a>, released 2015. <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/admin/dmoa/vitals/">Massachusetts Registry of Vital Records and Statistics</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/">Massachusetts Department of Public Health</a>.</div>
                         </div>
                     </div>
@@ -246,20 +248,20 @@
                         <div class="col-xs-12 col-md-5 pull-right">
                             <p class="hidden-xs hidden-sm"></p>
                             <h2>Growth of Addiction in Massachusetts</h2>
-                            <p>Data from the DPH Bureau of Substance Abuse Services (BSAS) shows an increasing need for opioid-related treatment in Massachusetts. In 2000, <a id="toggleOpioidsY2000" onclick="opioidsY2000(); _gaq.push(['b._trackEvent', 'intext', 'clicked', 'vis-lines-bsas-onethird'])" class="btn-bsas" data-val="massachusetts">about one third</a> of admissions to substance abuse treatment centers and programs were opioid related<a href="#footnote-9" class="page-scroll" aria-describedby="footnote-label"><span class="sr-only">see footnote</span><sup>9</sup></a>. By 2015, that figure had increased to <a id="toggleOpioidsY2015" onclick="opioidsY2015(); _gaq.push(['b._trackEvent', 'intext', 'clicked', 'vis-lines-bsas-half'])" class="btn-bsas" data-val="massachusetts">more than half</a>, overtaking alcohol as the most prevalent substance recorded by BSAS at treatment intake. The Health Policy Commission (HPC) recorded similar figures for emergency room visits and hospitalizations during that time.</p>
+                            <p>Data from the DPH Bureau of Substance Abuse Services (BSAS) shows an increasing need for opioid-related treatment in Massachusetts. In 2000, <a id="toggleOpioidsY2000" onclick="opioidsY2000(); _gaq.push(['b._trackEvent', 'intext', 'clicked', 'vis-lines-bsas-onethird'])" class="btn-bsas" data-val="massachusetts" aria-label="about one third">about one third</a> of admissions to substance abuse treatment centers and programs were opioid related<a href="#footnote-9" class="page-scroll" aria-describedby="footnote-label"><span class="sr-only">see footnote</span><sup>9</sup></a>. By 2015, that figure had increased to <a id="toggleOpioidsY2015" onclick="opioidsY2015(); _gaq.push(['b._trackEvent', 'intext', 'clicked', 'vis-lines-bsas-half'])" class="btn-bsas" data-val="massachusetts" aria-label="more than half">more than half</a>, overtaking alcohol as the most prevalent substance recorded by BSAS at treatment intake. The Health Policy Commission (HPC) recorded similar figures for emergency room visits and hospitalizations during that time.</p>
                             <p>Along with the rise in demand for opioid-use treatment, nationally and in Massachusetts, there has been an increase in opioid overdoses, both fatal and nonfatal.</p>
                         </div>
                         <div class="col-xs-12 col-md-7">
                             <p></p>
                             <div class="bsas-controls">
                                 <h3 class="title">Primary Substance of Use When Entering Treatment by Town<a href="#footnote-9" class="page-scroll" aria-describedby="footnote-label"><span class="sr-only">see footnote</span><sup>9,</sup></a><a href="#footnote-10" class="page-scroll"><span class="sr-only">see footnote</span><sup>10,</sup></a><a href="#footnote-11" class="page-scroll" aria-describedby="footnote-label"><span class="sr-only">see footnote</span><sup>11,</sup></a><a href="#footnote-12" class="page-scroll" aria-describedby="footnote-label"><span class="sr-only">see footnote</span><sup>12,</sup></a><a href="#footnote-13" class="page-scroll" aria-describedby="footnote-label"><span class="sr-only">see footnote</span><sup>13</sup></a></h3>
-                                <h4 class="subtitle">At admission clients identify a “primary drug” of use which is the substance for which they seek treatment. Below, view the changes in the percentage of admission by primary drug from 2000 to 2015.</h4>
-                                <hr>
-                                <span> Filter by town name </span>
-                                <input type='text' title='Tags' id='tags' placeholder="e.g. Arlington" onclick="_gaq.push(['b._trackEvent', 'lines-bsas', 'clicked', 'entered-town'])" /> <span> or </span>
-                                <button class="btn btn-primary btn-sm btn-bsas" onclick="_gaq.push(['b._trackEvent', 'lines-bsas', 'clicked', 'mass'])" data-val="massachusetts">view all of Massachusetts</button>
+                                <h4 aria-hidden="true" class="subtitle">At admission clients identify a “primary drug” of use which is the substance for which they seek treatment. Below, view the changes in the percentage of admission by primary drug from 2000 to 2015.</h4>
+                                <hr aria-hidden="true">
+                                <span aria-hidden="true"> Filter by town name </span>
+                                <input aria-hidden="true" type='text' title='Tags' id='tags' placeholder="e.g. Arlington" onclick="_gaq.push(['b._trackEvent', 'lines-bsas', 'clicked', 'entered-town'])" /> <span aria-hidden="true"> or </span>
+                                <button aria-hidden="true" class="btn btn-primary btn-sm btn-bsas" onclick="_gaq.push(['b._trackEvent', 'lines-bsas', 'clicked', 'mass'])" data-val="massachusetts">view all of Massachusetts</button>
                             </div>
-                            <div id="lines-bsas" role="img" aria-label="Line chart sortable by town showing the annual percentage of people who listed opioids, alcohol, marijuana, other, or none as the primary substance of use from 2000 to 2015."></div>
+                            <div id="lines-bsas" role="img" aria-label="At admission clients identify a “primary drug” of use that is the substance for which they seek treatment. Here, we see a line chart sortable by town showing the annual percentage of people who listed opioids, alcohol, marijuana, or other as their primary substance of use from 2000 to 2015. The chart conveys the rise over the past 15 years of people seeking substance abuse treatment for opioids, increasing from one third of admissions in 2000 to over half of admission in 2015. Further, opioids overtook alcohol as the most prevalent primary substance of use for those seeking substance abuse treatment in 2003 and the proportion of those seeking opioid abuse treatment since 2003 has only increased."></div>
                             <div class="source">Sources: <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/substance-abuse/">Massachusetts Bureau of Substance Abuse Services</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/">Massachusetts Department of Public Health</a></div>
                         </div>
                     </div>
@@ -267,9 +269,10 @@
                         <div class="col-xs-12 col-md-12">
                             <p></p>
                             <h3 class='title'>Percentage of Patients in Treatment Listing Heroin as their Primary Substance of Use<a href="#footnote-10" class="page-scroll" aria-describedby="footnote-label"><span class="sr-only">see footnote</span><sup>10,</sup></a><a href="#footnote-11" class="page-scroll" aria-describedby="footnote-label"><span class="sr-only">see footnote</span><sup>11,</sup></a><a href="#footnote-13" class="page-scroll" aria-describedby="footnote-label"><span class="sr-only">see footnote</span><sup>13</sup></a></h3>
-                            <h4 class='subtitle'>At admission clients identify a “primary drug” of use which is the substance for which they seek treatment. Below, view the increse in the percentage of admissions identifying heroin as their primary drug of use.</h4>
+                            <h4 aria-hidden="true" class='subtitle'>At admission clients identify a “primary drug” of use which is the substance for which they seek treatment. Below, view the increse in the percentage of admissions identifying heroin as their primary drug of use.</h4>
                             <hr>
-                            <div id="treatmentMaps" data-active-date="2000" role="img" aria-label="Four maps showing the percentage of people by town seeking substance use treatment who listed heroin as the primary substance of use in 2000, 2005, 2010, and 2015.">
+                            <div aria-label="Four municipality-level maps of Massachusetts representing the percentage of patients in treatment listing Heroin as their primary substance of use in 2000, 2005, 2010, and 2015. The maps show the increase in the percentage of substance abuse treatment admissions for heroin over the past 15 years, increasing in the Commonwealth overall from about 35% of admissions in fiscal year 2000 to over 53% of admissions in fiscal year 2015."> 
+                            <div id="treatmentMaps" data-active-date="2000" role="img" aria-hidden="true">
                                 <div class="btn-group btn-group-justified">
                                     <div class="btn btn-sm btn-default js-toggle-treatment-map active" onclick="_gaq.push(['b._trackEvent', 'maps-bsas', 'clicked', '2000'])" data-date="2000">2000</div>
                                     <div class="btn btn-sm btn-default js-toggle-treatment-map" onclick="_gaq.push(['b._trackEvent', 'maps-bsas', 'clicked', '2005'])" data-date="2005">2005</div>
@@ -278,6 +281,7 @@
                                 </div>
                                 <div id="treatmentMaps_legend" class="vis-legend"></div>
                                 <div id="treatmentMaps_maps"></div>
+                            </div>
                             </div>
                             <div class="source">Sources: <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/substance-abuse/">Massachusetts Bureau of Substance Abuse Services</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/">Massachusetts Department of Public Health</a></div>
                         </div>
@@ -304,13 +308,13 @@
                             <h3 class="title center">Prescription History for Fatal Overdoses</h3>
                             <hr>
                             <div class="center">
-                                <button class="btn btn-sm btn-primary btn-svg" onclick="_gaq.push(['b._trackEvent', 'rx-history', 'clicked', '2011-2014'])" value="2/3">2011 – 2014</button>
-                                <button class="btn btn-sm btn-primary btn-svg" onclick="_gaq.push(['b._trackEvent', 'rx-history', 'clicked', '1monthdeath'])" value="1/12">1 Month Before Death</button>
+                                <button class="btn btn-sm btn-primary btn-svg" onclick="_gaq.push(['b._trackEvent', 'rx-history', 'clicked', '2011-2014'])" value="2/3" aria-label="About 8 in 12 people who died from opioids in 2013 and 2014 had an opioid prescription at some point from 2011 to 2014">2011 – 2014</button>
+                                <button class="btn btn-sm btn-primary btn-svg" onclick="_gaq.push(['b._trackEvent', 'rx-history', 'clicked', '1monthdeath'])" value="1/12" aria-label="Only about 1 in 12 people who died from opioids in 2013 and 2014 had an active opioid prescription a month before they died">1 Month Before Death</button>
                             </div>
                             <hr>
-                            <div id="odInfographic" class="center" role="presentation"></div>
+                            <div id="odInfographic" class="center" role="presentation" aria-hidden="true"></div>
                             <div class="col-xs-12 col-md-1"></div>
-                            <div class="col-xs-12 col-md-11">
+                            <div class="col-xs-12 col-md-11" aria-hidden="true">
                                 <p id='odInfographic_details'></p>
                                 <p></p>
                             </div>
