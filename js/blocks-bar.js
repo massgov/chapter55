@@ -86,31 +86,36 @@ $(document).ready(function() {
         dataset = [{
                 data: [{
                     count: 867,
-                    name: 'Heroin'
+                    name: 'Heroin',
+                    alias: heroin
                 }],
                 name: 'Heroin'
             }, {
                 data: [{
                     count: 288,
-                    name: 'Fentanyl'
+                    name: 'Fentanyl',
+                    alias: fentanyl
                 }],
                 name: 'Fentanyl'
             }, {
                 data: [{
                     count: 249,
-                    name: 'Fentanyl & Heroin'
+                    name: 'Fentanyl & Heroin',
+                    alias: both
                 }],
                 name: 'Fentanyl & Heroin'
             }, {
                 data: [{
                     count: 154,
-                    name: 'Prescription Opioids'
+                    name: 'Prescription Opioids',
+                    alias: prescription
                 }],
                 name: 'Prescription Opioids'
             }, {
                 data: [{
                     count: 84,
-                    name: 'Methadone'
+                    name: 'Methadone',
+                    alias: methadone
                 }],
                 name: 'Methadone'
             },
@@ -123,6 +128,20 @@ $(document).ready(function() {
             // }
 
         ];
+
+
+    //add screen reader text
+    for (var i = 0; i < 5; i++) {
+        var dl_blocks_bar = $("<dl>");
+        dl_blocks_bar.append("<dt>" + dataset[i].data[0].count + " people had a positive " + dataset[i].data[0].name.toLowerCase() + " toxicology screen from 2013-2014.</dt>");
+        dl_blocks_bar.append("<dd>Of those with a positive " + dataset[i].data[0].name.toLowerCase() + " toxicology screen, " +
+            dataset[i].data[0].alias[0].Yes + "% had a legal opioid prescription at some point from 2011 - 2014, " + 
+            dataset[i].data[0].alias[1].Yes +"% had a legal opioid prescription 6 month before death, " + 
+            dataset[i].data[0].alias[2].Yes + "% had a legal opioid prescription 3 month before death, and " + 
+            dataset[i].data[0].alias[3].Yes + "% had a legal opioid prescription 1 month before death.</dd>");
+        $("#sr-blocks-bar").append(dl_blocks_bar);
+    };
+
 
 
     var data_substance = prescription;
@@ -189,7 +208,7 @@ $(document).ready(function() {
         $("#people").empty();
         $('#people').each(function() {
             makeChart_substance(type, time);
-	    $('#table_substance').html('<table class="table table_substance"><tr><th>Had legal prescription</th><th>Did not have legal prescription</th></tr><tr><td class="type_substance0">' + type[time].Yes + '%</td><td class="type_substance1">' + type[time].No + '%</td></tr></table>');
+            $('#table_substance').html('<table class="table table_substance"><tr><th>Had legal prescription</th><th>Did not have legal prescription</th></tr><tr><td class="type_substance0">' + type[time].Yes + '%</td><td class="type_substance1">' + type[time].No + '%</td></tr></table>');
 
         })
     };
@@ -206,8 +225,7 @@ $(document).ready(function() {
     }
 
     function addBlocks_substance(id, noOfBlocks_Yes, noOfBlocks_No, data_substance, blockArray_substance, i) {
-        var person_path = '<path d="M4,12.6c0-0.7,0-1.5,0-2.2c0-1,0.5-1.8,1.4-2.2C6,7.9,6.6,7.8,7.3,7.8c0.7,0,1.4,0,2.1,0c0.7,0,1.4,0.2,2,0.6c0.7,0.4,1.1,1.1,1.1,2c0,1.5,0,3,0,4.5c0,0.9-0.2,1.8-0.8,2.6c-0.1,0.2-0.3,0.3-0.4,0.5c-0.1,0.1-0.1,0.2-0.2,0.3c-0.1,0.6-0.3,1.2-0.4,1.8c-0.2,1.3-0.4,2.6-0.6,3.8c-0.1,0.7-0.6,1.1-1.3,1.1c-0.4,0-0.8,0-1.2,0c-0.1,0-0.2,0-0.3,0c-0.5-0.1-0.9-0.5-1-1c-0.2-1.2-0.4-2.4-0.6-3.5c-0.1-0.6-0.2-1.2-0.3-1.8c-0.1-0.3-0.2-0.5-0.4-0.7c-0.4-0.3-0.6-0.8-0.7-1.3C4.1,15.9,4,15.3,4,14.7C4,14,4,13.3,4,12.6z"/>'
-        + '<path d="M4.8,3.6c0-1.8,1.4-3.4,3.4-3.5c1.9,0,3.5,1.5,3.5,3.5c0,2-1.5,3.4-3.5,3.4C6.3,7,4.8,5.5,4.8,3.6z"/>';
+        var person_path = '<path d="M4,12.6c0-0.7,0-1.5,0-2.2c0-1,0.5-1.8,1.4-2.2C6,7.9,6.6,7.8,7.3,7.8c0.7,0,1.4,0,2.1,0c0.7,0,1.4,0.2,2,0.6c0.7,0.4,1.1,1.1,1.1,2c0,1.5,0,3,0,4.5c0,0.9-0.2,1.8-0.8,2.6c-0.1,0.2-0.3,0.3-0.4,0.5c-0.1,0.1-0.1,0.2-0.2,0.3c-0.1,0.6-0.3,1.2-0.4,1.8c-0.2,1.3-0.4,2.6-0.6,3.8c-0.1,0.7-0.6,1.1-1.3,1.1c-0.4,0-0.8,0-1.2,0c-0.1,0-0.2,0-0.3,0c-0.5-0.1-0.9-0.5-1-1c-0.2-1.2-0.4-2.4-0.6-3.5c-0.1-0.6-0.2-1.2-0.3-1.8c-0.1-0.3-0.2-0.5-0.4-0.7c-0.4-0.3-0.6-0.8-0.7-1.3C4.1,15.9,4,15.3,4,14.7C4,14,4,13.3,4,12.6z"/>' + '<path d="M4.8,3.6c0-1.8,1.4-3.4,3.4-3.5c1.9,0,3.5,1.5,3.5,3.5c0,2-1.5,3.4-3.5,3.4C6.3,7,4.8,5.5,4.8,3.6z"/>';
         var person_svg_No = '<svg class="block type_substance1" width="25px" height="25px">' + person_path + '</svg>';
 
         for (b = 0; b < noOfBlocks_No; b++) {
@@ -217,7 +235,7 @@ $(document).ready(function() {
         };
         for (b = 0; b < noOfBlocks_Yes; b++) {
             //$(id).append('<div class="block type_substance' + 0 + ' data-index=' + data_substance[i].Yes + '">' + '</div>');
-        var person_svg_Yes = '<svg class="block type_substance0" width="25px" height="25px">' + person_path + '</svg>';
+            var person_svg_Yes = '<svg class="block type_substance0" width="25px" height="25px">' + person_path + '</svg>';
             $(id).append(person_svg_Yes);
         };
         return blockArray_substance;
@@ -292,7 +310,7 @@ $(document).ready(function() {
         console.log(d.n == 'Fentanyl & Heroin')
 
         if (d.n == 'Fentanyl & Heroin') {
-	    substance_html = d.n.toLowerCase() + "<a href=\"#footnote-7\" class=\"page-scroll\"><sup>7</sup></a>";
+            substance_html = d.n.toLowerCase() + "<a href=\"#footnote-7\" class=\"page-scroll\"><sup>7</sup></a>";
         } else if (d.n == 'Prescription Opioids') {
 	    substance_html = d.n.toLowerCase() + "<a href=\"#footnote-15\" class=\"page-scroll\"><sup>15</sup></a>";
         } else {
