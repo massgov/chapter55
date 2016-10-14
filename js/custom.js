@@ -118,7 +118,7 @@ $("#navigation li").on('click', function() {
 
 /////////////////////////////Pills
 
-$('#pills-first a').click(function(e) {
+$('.pills-first a').click(function(e) {
     e.preventDefault()
     $(this).tab('show')
 });
