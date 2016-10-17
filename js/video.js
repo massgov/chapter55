@@ -365,13 +365,10 @@ function InitPxVideo(options) {
     // Play by in-text controlls
     $('.js-play-video').click(function(e) {
         var $target = $(e.target).data('target');
-        // var $target = $target.slice(1);
         console.log($target);
         var which_container = document.getElementById($target);
-
         var which_video = which_container.getElementsByTagName('video')[0];
         var which_btnPlay = which_container.getElementsByClassName('px-video-play')[0];
-
         var which_btnPause = which_container.getElementsByClassName('px-video-pause')[0];
         which_video.play();
         which_btnPlay.className = "px-video-play hide";
@@ -713,6 +710,31 @@ function InitPxVideo(options) {
 };
 
 new InitPxVideo({
+    "videoId": "drLukas",
+    "captionsOnDefault": false,
+    "seekInterval": 20,
+    "videoTitle": "Dr Lukas",
+    "debug": true
+});
+
+// new InitPxVideo({
+//     "videoId": "governor",
+//     "captionsOnDefault": false,
+//     "seekInterval": 20,
+//     "videoTitle": "Governor Baker",
+//     "debug": true
+// });
+
+
+new InitPxVideo({
+    "videoId": "sarahWakeman",
+    "captionsOnDefault": false,
+    "seekInterval": 20,
+    "videoTitle": "Sarah Wakeman",
+    "debug": true
+});
+
+new InitPxVideo({
     "videoId": "cotto",
     "captionsOnDefault": false,
     "seekInterval": 20,
@@ -721,17 +743,9 @@ new InitPxVideo({
 });
 
 new InitPxVideo({
-    "videoId": "video1",
+    "videoId": "sue",
     "captionsOnDefault": false,
     "seekInterval": 20,
-    "videoTitle": "Dr Lukas",
-    "debug": true
-});
-
-new InitPxVideo({
-    "videoId": "video3",
-    "captionsOnDefault": false,
-    "seekInterval": 20,
-    "videoTitle": "Sarah Wakeman",
+    "videoTitle": "Sue",
     "debug": true
 });
