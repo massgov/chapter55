@@ -166,7 +166,7 @@
                                 <p class="hidden-xs hidden-sm"></p>
                                 <h3 class="title">Learn More About Opioids</h3>
                                 <hr class="hidden-xs hidden-sm" />
-                                <ul class="nav nav-tabs" id="pills-first">
+                                <ul class="nav nav-tabs" class="pills-first">
                                     <li class="active"><a href="#tab_a" onclick="_gaq.push(['b._trackEvent', 'learn-more', 'clicked', 'definition'])" data-toggle="tab">Definition</a></li>
                                     <li><a href="#tab_b" onclick="_gaq.push(['b._trackEvent', 'learn-more', 'clicked', 'useful-effects'])" data-toggle="tab">Useful Effects</a></li>
                                     <li><a href="#tab_c" onclick="_gaq.push(['b._trackEvent', 'learn-more', 'clicked', 'side-effects'])" data-toggle="tab">Side Effects</a></li>
@@ -515,12 +515,14 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xs-12 col-md-7">
+                        <div class="col-xs-12 col-md-12">
                             <p></p>
                             <h2>Race and Ethnicity</h2>
                             <p>In 2000, the rate of opioid-related fatal overdose was 5.8 per 100,000 people in Massachusetts, according to DPH data. That rate has increased steadily since then, with the figure hitting 11.1 per 100,000 in 2012. However, the increase in the last three years has been especially sharp. By 2015, there were 23.4 fatal overdoses for every 100,000 residents.</p>
                             <p>While the death rate within Massachusetts differs for various racial and ethnic groups, people from all backgrounds in the Bay State are caught up in the deadly epidemic. At least three of the state’s largest racial groups had overdose rates above the national average of 9.7 per 100,000 in 2014 — white non-Hispanic, black non-Hispanic, and Hispanic.</p>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col-xs-12 col-md-4">
                             <p></p>
                             <h3 class="title">Opioid Deaths by Race and Ethnicity</h3>
@@ -529,16 +531,47 @@
                             <div class="source"><a href="js/data/csv/Demographics_AgeGender.csv" download="Prescriber and Opioid Use Trends by Gender.csv">View the dataset powering this visualization <i class="glyphicon glyphicon-download-alt" aria-hidden="true"></i></a></div>
                             <div class="source">Sources: <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/programs/admin/dmoa/vitals/">Massachusetts Registry of Vital Records and Statistics</a>, <a target="_blank" href="http://www.mass.gov/eohhs/gov/departments/dph/">Massachusetts Department of Public Health</a>.</div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-12">
-                            <p></p>
-                            <h2>Incarcerated Population</h2>
-                            <p>When an inmate is released from prison in Massachusetts, their ability to re-enter society is being threatened by the opioid crisis. The risk of opioid-related death following incarceration is more than 50 times greater than for the general public. What’s more concerning is that the threat is immediate. Fatal overdoses during the first month after release are six times higher than for all other post-incarceration periods.</p>
-                            <p>Among inmates who both were released and died between 2013 and 2014, opioid overdose was the cause of death in 40% of the cases. Following the age trend noted above, the risk of death for people aged 18–24 in this group is roughly 10 times higher than for individuals 45 or older. While some portion of inmates receives substance use treatment while incarcerated, it’s unclear how, when, or for how long that treatment takes place.</p>
+                        <div class="col-xs-12 col-md-7 pull-right">
+                            <p class="hidden-xs hidden-sm"></p>
+                            <div class="callout">
+
+                                <h3 class="title">Interpreting Data</h3>
+                                <hr class="hidden-xs hidden-sm" />
+                                <ul class="nav nav-tabs" class="pills-first">
+                                    <li class="active"><a href="#tab_d" onclick="_gaq.push(['b._trackEvent', 'learn-more', 'clicked', 'definition'])" data-toggle="tab">Age-Adjusted Rates</a></li>
+                                    <li><a href="#tab_e" onclick="_gaq.push(['b._trackEvent', 'learn-more', 'clicked', 'useful-effects'])" data-toggle="tab">Confidence Intervals</a></li>
+                                    <li><a href="#tab_f" onclick="_gaq.push(['b._trackEvent', 'learn-more', 'clicked', 'side-effects'])" data-toggle="tab">Normalizing Rates</a></li>
+                                </ul>
+                                <div class="tab-content aria-hidden">
+                                    <div class="tab-pane active" id="tab_d">
+                                        <p></p>
+                                        <p>Using age-adjusted data is important because different groups have different age distributions, whether those groups are broken out by racial/ethnic, gender, or geographic lines. For example, the Hispanic population in Massachusetts is relatively younger than other racial/ethnic groups in the state. Without taking age distribution into account, the fact that younger people are more likely to die from opioid-related overdoses could result in an over-estimated death rate for the Hispanic community as a whole. We might experience similar mischaracterization when looking at cities and towns that skew older or younger than the rest of the state. In these ways and others, age-adjusting population data helps public health officials get a more accurate picture of the crisis and better target the most problematic areas and populations.</p>
+                                    </div>
+                                    <div class="tab-pane" id="tab_e">
+                                        <p></p>
+                                        <p>Statisticians use confidence intervals to indicate the level of certainty of a measurement by showing a range of likely results. Analyzing a population is often done by looking at samples that are intended to be representative of the whole group. It is easier to assess whether that representation is accurate when the sample size is larger. For example, it’s easier to trust the results of a survey with thousands of respondents than one with only a dozen respondents. So, adjusted for different sample sizes, confidence intervals show the precision of different results. </p>
+                                        <p>When counts are smaller, rates are less precise and confidence intervals are wider. Larger samples have narrower ranges. Note that the confidence intervals on the rates for non-Hispanic blacks are much wider than those around the rates for non-Hispanic whites. This is because fewer non-Hispanic blacks are dying from opioid-related overdoses than non-Hispanic whites, so their sample size is smaller.</p>
+                                        <p>When comparing two results, you can only be sure that there is truly a difference when the confidence intervals do not overlap. An example of this is seen in the death rates for the black non-Hispanic and Hispanic populations. While the projections look higher for 2015, since the confidence intervals overlap, we can’t be sure that the numbers are significantly different from 2014 because the results could fall anywhere within either overlapping range. </p>
+                                    </div>
+                                    <div class="tab-pane" id="tab_f">
+                                        <p></p>
+                                        <p>When doing population analysis, statisticians will often use a rate per sample size (example: rate per 100,000), rather than just a raw count. Densely populated areas are more likely to show many types of behavior, whether good or bad, because there are simply more people. By using raw count, the largest cities would always show up as hot spots and probably draw the most focus and resources. In contrast, a raw count change from 100 to 200 in a city of 1 million (was 0.01%, now 0.02%) might not seem as significant as if that same change happened in a town of 2000 (was 5%, now 10%).</p>
+                                        <p>For example, since the non-Hispanic White population is larger in Massachusetts than other similar groups, if we just went by raw count, we couldn’t be sure whether the higher number reflected a larger problem, or just a larger sample. By normalizing all the rates to the same sample size, we can properly compare groups to see that the problem is truly more prevalent among non-Hispanic Whites than among other groups.</p>
+                                        <p>Comparing apples to apples by standardizing to a normalized rate helps public health officials get a more accurate picture so they can develop the right strategies to combat the epidemic.</p>
+                                    </div>
+                                    <hr class="hidden-xs hidden-sm" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-12">
+                                <p></p>
+                                <h2>Incarcerated Population</h2>
+                                <p>When an inmate is released from prison in Massachusetts, their ability to re-enter society is being threatened by the opioid crisis. The risk of opioid-related death following incarceration is more than 50 times greater than for the general public. What’s more concerning is that the threat is immediate. Fatal overdoses during the first month after release are six times higher than for all other post-incarceration periods.</p>
+                                <p>Among inmates who both were released and died between 2013 and 2014, opioid overdose was the cause of death in 40% of the cases. Following the age trend noted above, the risk of death for people aged 18–24 in this group is roughly 10 times higher than for individuals 45 or older. While some portion of inmates receives substance use treatment while incarcerated, it’s unclear how, when, or for how long that treatment takes place.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
             </section>
             <!-- /populations -->
             <!-- future -->
@@ -563,21 +596,21 @@
                                 <source src="video/Cotto.mp4">
                                 <track label="English Captions" kind="captions" srclang="en" src="video/captions/Cotto_captions.vtt">
                 </video> -->
-                <div class="px-video-container" id='cotto'>
-                <div class="px-video-img-captions-container">
-                    <div class="px-video-captions hide"></div>
-                    <video width="500" height="300" poster="video/poster/StateWithoutStigma.png" onclick="_gaq.push(['b._trackEvent', 'video', 'clicked', 'video-future'])">
-                    <source src="video/Cotto.mp4" type="video/mp4" />
-                    <track kind="captions" label="English captions" src="video/captions/Cotto_captions.vtt" srclang="en" default />
-                    <div>
-                        <a href="video/Cotto.mp4">
-                        <img src="video/poster/StateWithoutStigma.png" width="500" height="300" alt="download video" />
-                        </a>
-                    </div>
-                    </video>
-                </div>
-                <div class="px-video-controls"></div>
-                </div>
+                            <div class="px-video-container" id='cotto'>
+                                <div class="px-video-img-captions-container">
+                                    <div class="px-video-captions hide"></div>
+                                    <video width="500" height="300" poster="video/poster/StateWithoutStigma.png" onclick="_gaq.push(['b._trackEvent', 'video', 'clicked', 'video-future'])">
+                                        <source src="video/Cotto.mp4" type="video/mp4" />
+                                        <track kind="captions" label="English captions" src="video/captions/Cotto_captions.vtt" srclang="en" default />
+                                        <div>
+                                            <a href="video/Cotto.mp4">
+                                                <img src="video/poster/StateWithoutStigma.png" width="500" height="300" alt="download video" />
+                                            </a>
+                                        </div>
+                                    </video>
+                                </div>
+                                <div class="px-video-controls"></div>
+                            </div>
                             <div class="clearfix"></div>
                             <h6 class="placeholder">This is a placeholder for a potential video — interview with someone in recovery.</h6>
                             <div class="callout">
@@ -586,7 +619,6 @@
                                     <li>Information Links?</li>
                                     <li>Outreach?</li>
                                 </ul>
-                    
                             </div>
                         </div>
                     </div>
@@ -646,10 +678,10 @@
                 </ol>
             </div>
         </div>
-    </div>
-    <!-- /#wrapper -->
-    <!-- js -->
-    <script src="js/dist/main.js"></script>
+        </div>
+        <!-- /#wrapper -->
+        <!-- js -->
+        <script src="js/dist/main.js"></script>
 </body>
 
 </html>
