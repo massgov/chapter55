@@ -362,6 +362,24 @@ function InitPxVideo(options) {
         obj.btnPause.focus();
     }, false);
 
+    // Play by in-text controlls
+    $('.js-play-video').click(function(e) {
+        var $target = $(e.target).data('target');
+        // var $target = $target.slice(1);
+        console.log($target);
+        var which_container = document.getElementById($target);
+
+        var which_video = which_container.getElementsByTagName('video')[0];
+        var which_btnPlay = which_container.getElementsByClassName('px-video-play')[0];
+
+        var which_btnPause = which_container.getElementsByClassName('px-video-pause')[0];
+        which_video.play();
+        which_btnPlay.className = "px-video-play hide";
+        which_btnPause.className = "px-video-pause px-video-show-inline";
+
+    });
+
+
     // Pause
     obj.btnPause.addEventListener('click', function() {
         obj.movie.pause();
@@ -384,6 +402,7 @@ function InitPxVideo(options) {
         obj.movie.play();
         obj.btnPlay.className = "px-video-play hide";
         obj.btnPause.className = "px-video-pause px-video-show-inline";
+
 
     }, false);
 
