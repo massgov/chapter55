@@ -712,7 +712,7 @@ function InitPxVideo(options) {
 new InitPxVideo({
     "videoId": "drLukas",
     "captionsOnDefault": false,
-    "seekInterval": 20,
+    "seekInterval": 10,
     "videoTitle": "Dr Lukas",
     "debug": true
 });
@@ -729,7 +729,7 @@ new InitPxVideo({
 new InitPxVideo({
     "videoId": "sarahWakeman",
     "captionsOnDefault": false,
-    "seekInterval": 20,
+    "seekInterval": 10,
     "videoTitle": "Sarah Wakeman",
     "debug": true
 });
@@ -737,7 +737,7 @@ new InitPxVideo({
 new InitPxVideo({
     "videoId": "cotto",
     "captionsOnDefault": false,
-    "seekInterval": 20,
+    "seekInterval": 10,
     "videoTitle": "Cotto",
     "debug": true
 });
@@ -745,7 +745,7 @@ new InitPxVideo({
 new InitPxVideo({
     "videoId": "sue",
     "captionsOnDefault": false,
-    "seekInterval": 20,
+    "seekInterval": 10,
     "videoTitle": "Sue",
     "debug": true
 });
