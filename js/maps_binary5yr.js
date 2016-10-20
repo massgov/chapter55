@@ -82,7 +82,7 @@ var Vis = (function(d3) {
             .style("stroke", "white")
             .style("stroke-width", "0.0px")
             .style('fill', function(d, i) {
-                var value = data.values[d.properties.TOWN_1];
+                var value = data.values[d.properties.TOWN];
                 return palette(value);
             })
             .on('mouseover', function(d, i) {
@@ -92,23 +92,23 @@ var Vis = (function(d3) {
 
             })
             .attr('class', function(d) {
-		return d.properties.TOWN_1.toLowerCase()+' bsasmap';
+		return d.properties.TOWN.toLowerCase()+' bsasmap';
             })
             .on('mouseenter', function(d, i) {
-                notify('.' + d.properties.TOWN_1.toLowerCase(), 'select');
+                notify('.' + d.properties.TOWN.toLowerCase(), 'select');
                 // var currentState = this;
                 // console.log(this);
                 // d3.select(this).style('fill-opacity', 0.4).style("stroke", "white").style("stroke-width", "1.5px");
             })
             .on('mouseleave', function(d) {
-                notify('.' + d.properties.TOWN_1.toLowerCase(), 'unselect');
+                notify('.' + d.properties.TOWN.toLowerCase(), 'unselect');
 
             })
             .on('select', function(self) {
                 var geoData = self.data();
                 var town_value
 
-                if (data.values[geoData[0].properties.TOWN_1] > 0) {
+                if (data.values[geoData[0].properties.TOWN] > 0) {
                     town_value = d3.format(".1f")(data.values[geoData[0].properties.TOWN]);
                 } else { town_value = "0"; }
 
@@ -143,7 +143,7 @@ var Vis = (function(d3) {
     };
     //popChgScale.domainStrings = function() { return (['< 0.1', '0.25-0.50', '0.50-0.75', '0.75-1.0', '1.0-1.25',
     //'1.25-1.50', '1.50-1.75', '1.75-2.0', '> 2.0']); };
-    generateLegend_map_sub(opChgScale, 'binaryMaps_legend', 'Average Annual Opioid-Related Death Rate per 100,000 People');
+    generateLegend_map_sub(opChgScale, 'binaryMaps_legend', 'Rate per 100,000 People');
 
     function generateLegend_map_sub(scale, szDivId, szCaption) {
 

@@ -118,20 +118,11 @@ $("#navigation li").on('click', function() {
 
 /////////////////////////////Pills
 
-$('#pills-first a').click(function(e) {
+$('.pills-first a').click(function(e) {
     e.preventDefault()
     $(this).tab('show')
 });
 
-
-/////////////////////////////Video Links
-
-$(document).click('.js-play-video', function(e) {
-    var $target = $($(e.target).data('target'));
-    if($target.get(0)) {
-        $target.get(0).play();
-    }
-});
 
 /////////////////////////////SVG Infographic
 $(function() {

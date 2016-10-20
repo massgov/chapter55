@@ -32,17 +32,15 @@ gulp.task('javascript', function() {
             "js/queue.js",
             "js/custom.js",
             "js/maps_binary5yr.js",
-            //"js/map-death.js",
-            //"js/map-composite.js",
             "js/maps-substance.js",
             "js/lines-death.js",
             "js/lines-fent.js",
             "js/lines-bsas.js",
-            // "js/blocks-substance-pie.js",
             "js/blocks-bar.js",
             "js/blocks-gender.js",
             "js/bars-age.js",
             "js/bars-race.js",
+	    "js/video.js"
 
         ])
         .pipe(sourcemaps.init())
