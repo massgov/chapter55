@@ -77,7 +77,7 @@ var Vis = (function(d3) {
 
             })
             .attr('class', function(d) {
-		return d.properties.TOWN.toLowerCase() + ' bsasmap';
+        return d.properties.TOWN.toLowerCase() + ' bsasmap';
             })
             .on('mouseenter', function(d, i) {
                 notify('.' + d.properties.TOWN.toLowerCase(), 'select');
@@ -98,7 +98,7 @@ var Vis = (function(d3) {
                     town_value = d3.format("%,.2f")(data.values[geoData[0].properties.TOWN]);
                 } else {
                     //console.log(data.values[geoData[0].properties.TOWN])
-		    town_value = "N/A";
+            town_value = "N/A";
                 };
 
                 //console.log(town_value);
@@ -111,7 +111,7 @@ var Vis = (function(d3) {
                 //     self.node().parentNode.parentNode.getElementsByTagName('p2')[0].innerHTML = "";
                 //     d3.selectAll('#treatmentMaps_maps path').style({ 'fill-opacity': 1 }).style("stroke", "white").style("stroke-width", "0.0px");
                 self.node().parentNode.parentNode.getElementsByClassName('selection-label')[0].innerHTML = "";
-		d3.selectAll('path.bsasmap').style({
+        d3.selectAll('path.bsasmap').style({
                     'fill-opacity': 1
                 }).style("stroke", "white").style("stroke-width", "0.0px");
             })
@@ -149,7 +149,7 @@ var Vis = (function(d3) {
         legendData.push({
             d: -9999,
             r: '#d1d1d1',
-	    s: 'N/A*'
+        s: 'N/A*'
         });
         var i;
         for (i = 0; i < scale.domain().length; i++) {
