@@ -717,13 +717,13 @@ new InitPxVideo({
     "debug": true
 });
 
-// new InitPxVideo({
-//     "videoId": "governor",
-//     "captionsOnDefault": false,
-//     "seekInterval": 20,
-//     "videoTitle": "Governor Baker",
-//     "debug": true
-// });
+new InitPxVideo({
+    "videoId": "governor",
+    "captionsOnDefault": false,
+    "seekInterval": 20,
+    "videoTitle": "Governor Baker",
+    "debug": true
+});
 
 
 new InitPxVideo({
