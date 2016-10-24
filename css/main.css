@@ -1014,6 +1014,7 @@
   background-size: cover; }
 
 .module.parallax h1 {
+  font-family: "Helvetica Neue", "Source Sans Pro", "Helvetica", "Arial", sans-serif;
   font-size: 38px;
   line-height: 1;
   font-weight: 700;
