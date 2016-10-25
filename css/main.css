@@ -945,11 +945,6 @@
   font-size: 2.5em;
   padding: 1em 0 2em; }
 
-.placeholder {
-  font-size: 12px;
-  color: #5a707a;
-  font-style: italic; }
-
 /* ============================================================
   Nav
 ============================================================ */
@@ -1202,6 +1197,13 @@ footer {
   color: #ffffff;
   padding: 30px;
   background-color: #455A64; }
+  footer a {
+    color: #ffffff; }
+    footer a:active, footer a:visited {
+      color: #ffffff; }
+    footer a:hover, footer a:focus {
+      color: #ffffff;
+      font-style: underline; }
 
 .sources-section {
   background: #333333;
