@@ -1198,17 +1198,24 @@ footer {
   padding: 30px;
   background-color: #455A64; }
   footer a {
-    color: #ffffff; }
+    color: #ffffff;
+    text-decoration: underline; }
     footer a:active, footer a:visited {
       color: #ffffff; }
     footer a:hover, footer a:focus {
-      color: #ffffff;
-      font-style: underline; }
+      color: #ffffff; }
 
 .sources-section {
-  background: #333333;
   color: #ffffff;
-  padding: 5em 0; }
+  padding: 30px;
+  background-color: #000000; }
+  .sources-section a {
+    color: #ffffff;
+    text-decoration: underline; }
+    .sources-section a:active, .sources-section a:visited {
+      color: #ffffff; }
+    .sources-section a:hover, .sources-section a:focus {
+      color: #ffffff; }
 
 .page-scroll sup {
   font-size: 60%;
@@ -1220,4 +1227,4 @@ footer {
   transition: background 250ms ease-in-out; }
 
 .sources-section li:target {
-  background: rgba(255, 255, 255, 0.1); }
+  background: rgba(255, 255, 255, 0.3); }

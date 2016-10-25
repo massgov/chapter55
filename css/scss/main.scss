@@ -337,9 +337,10 @@ video {
     max-width: 150px;
 }
 
-footer {
+@mixin dark-view {
     a {
         color: $color-white;
+        text-decoration:underline;
         &:active,
         &:visited {
             color: $color-white;
@@ -347,18 +348,20 @@ footer {
         &:hover,
         &:focus {
             color: $color-white;
-            font-style: underline;
         }
     }
     color: $color-white;
     padding: 30px;
+}
+
+footer {
+    @include dark-view;
     background-color: $color-gray-dark;
 }
 
 .sources-section {
-    background: #333333;
-    color: #ffffff;
-    padding: 5em 0;
+    @include dark-view;
+    background-color: $color-black;
 }
 
 .page-scroll sup {
@@ -372,5 +375,5 @@ footer {
 }
 
 .sources-section li:target {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255,255,255,0.3);
 }
