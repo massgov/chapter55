@@ -439,9 +439,9 @@
 
     function toTitle(key) {
         var titleLookup = {
-            percentOpiodDeaths: 'Percent of Opioid Deaths among All Deaths',
-            deathRate: 'Opioid Death Rate per 100,000 People per Year',
-            numberOpioidDeaths: 'Number of Opioid Deaths from 2013 to 2014'
+            percentOpiodDeaths: 'Percent of Opioid-related Deaths Among All Deaths',
+            deathRate: 'Opioid-related Death Rate per 100,000 People per Year',
+            numberOpioidDeaths: 'Number of Opioid-related Deaths from 2013 to 2014'
         };
         return titleLookup[key];
     }

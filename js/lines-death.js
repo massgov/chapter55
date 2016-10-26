@@ -70,7 +70,7 @@
         .attr("y", -dimensions.margin.left)
         .attr("dy", "1em")
         .attr("class", "vis-y-axis-label")
-        .text("Age-Adjusted Opioid Death Rate per 100,000 People");
+        .text("Age-Adjusted Opioid-related Death Rate per 100,000 People");
 
 
     var $lines_death_ma_label = $lines_death.append("text")
