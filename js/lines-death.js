@@ -70,7 +70,7 @@
         .attr("y", -dimensions.margin.left)
         .attr("dy", "1em")
         .attr("class", "vis-y-axis-label")
-        .text("Age-Adjusted Opioid Death Rate per 100,000 People");
+        .text("Age-Adjusted Opioid-related Death Rate per 100,000 People");
 
 
     var $lines_death_ma_label = $lines_death.append("text")
@@ -271,10 +271,10 @@
         .attr("class", "focus")
         .classed("hidden", true);
 
-    $lines_death
-        .on("mouseover", mouseoverFunc)
-        .on("mouseout", mouseoutFunc)
-        .on("mousemove", mousemoveFunc);
+    // $lines_death
+    //     .on("mouseover", mouseoverFunc)
+    //     .on("mouseout", mouseoutFunc)
+    //     .on("mousemove", mousemoveFunc);
 
     function mouseoutFunc() {
 
