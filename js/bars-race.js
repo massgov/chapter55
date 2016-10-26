@@ -32,19 +32,19 @@ $(document).ready(function() {
     var y = d3.scale.linear()
         .range([height, 0]);
 
-    var min2014 = [18.8, 22.0, 5.5, 12.4] 
+    var min2014 = [18.8, 22.0, 5.5, 12.4]
     var max2014 = [20.9, 24.7, 18.5, 18.3]
     var min2015 = [22.2, 26.0, 7.4, 15.7]
-    var max2015 = [24.5, 29.0, 21.9, 21.9] 
+    var max2015 = [24.5, 29.0, 21.9, 21.9]
 
     var errorBarArea2014all = d3.svg.area()
     var errorBarArea2015all = d3.svg.area()
     var errorBarArea2014white = d3.svg.area()
-    var errorBarArea2015white = d3.svg.area()  
+    var errorBarArea2015white = d3.svg.area()
     var errorBarArea2014black = d3.svg.area()
     var errorBarArea2015black = d3.svg.area()
     var errorBarArea2014hisp = d3.svg.area()
-    var errorBarArea2015hisp = d3.svg.area() 
+    var errorBarArea2015hisp = d3.svg.area()
 
     var errorBars2014all;
     var errorBars2015all;
@@ -53,7 +53,7 @@ $(document).ready(function() {
     var errorBars2014black;
     var errorBars2015black;
     var errorBars2014hisp;
-    var errorBars2015hisp;        
+    var errorBars2015hisp;
 
     var xAxis_bars = d3.svg.axis()
         .scale(x0)
@@ -186,6 +186,7 @@ $(document).ready(function() {
         .attr("width", 18)
         .attr("height", 18)
         .style("fill", color);
+    
 
     var legendText = legend.append("text")
         .attr("x", width - 24)
@@ -195,50 +196,143 @@ $(document).ready(function() {
         .text(function(d) {
             return d;
         });
-   
 
-    errorBarArea2014all 
-        .x(function(d) {return x0('All')+x1.rangeBand()/2; }) 
-        .y0(function(d) {return y(min2014[0]); }) 
-        .y1(function(d) {return y(max2014[0]); }) 
-        .interpolate("linear");
-    errorBarArea2015all 
-        .x(function(d) {return x0('All')+x1.rangeBand()/2+x1.rangeBand(); }) 
-        .y0(function(d) {return y(min2015[0]); }) 
-        .y1(function(d) {return y(max2015[0]); }) 
-        .interpolate("linear");
-    errorBarArea2014white 
-        .x(function(d) {return x0('White non-Hispanic')+x1.rangeBand()/2; }) 
-        .y0(function(d) {return y(min2014[1]); }) 
-        .y1(function(d) {return y(max2014[1]); }) 
-        .interpolate("linear");
-    errorBarArea2015white 
-        .x(function(d) {return x0('White non-Hispanic')+x1.rangeBand()/2+x1.rangeBand(); }) 
-        .y0(function(d) {return y(min2015[1]); }) 
-        .y1(function(d) {return y(max2015[1]); }) 
-        .interpolate("linear");
-    errorBarArea2014black 
-        .x(function(d) {return x0('Black non-Hispanic')+x1.rangeBand()/2; }) 
-        .y0(function(d) {return y(min2014[2]); }) 
-        .y1(function(d) {return y(max2014[2]); }) 
-        .interpolate("linear");
-    errorBarArea2015black 
-        .x(function(d) {return x0('Black non-Hispanic')+x1.rangeBand()/2+x1.rangeBand(); }) 
-        .y0(function(d) {return y(min2015[2]); }) 
-        .y1(function(d) {return y(max2015[2]); }) 
-        .interpolate("linear");
-    errorBarArea2014hisp 
-        .x(function(d) {return x0('Hispanic')+x1.rangeBand()/2; }) 
-        .y0(function(d) {return y(min2014[3]); }) 
-        .y1(function(d) {return y(max2014[3]); }) 
-        .interpolate("linear");
-    errorBarArea2015hisp 
-        .x(function(d) {return x0('Hispanic')+x1.rangeBand()/2+x1.rangeBand(); }) 
-        .y0(function(d) {return y(min2015[3]); }) 
-        .y1(function(d) {return y(max2015[3]); }) 
-        .interpolate("linear");
+    var $legend = $svg.append("g");
+    var $item = $legend.append("g");
+    var seriesColors = ["#0071bc"];
+     var seriesLineStrokes = ["1.5px"];
+     var seriesLineDash = ["0,0,0,0"];
+
+    function renderLegend() {
+
+
+      var legendItems = [
+        "ConfInt"
+      ];
+      var legendItemsTranslate = [
+        "Confidence Interval"
+      ];
+      $legend.attr("class", "vis-legend").attr("transform", "translate("+(width-(margin.right*10))+",0)");
+      var lineHeight = 15;
+      // var seriesColors = ["#ffffff", "#b71c1c", "#0071bc", "#ffffff"];
+      // var seriesLineStrokes = ["1.5px", "3.5px", "3.5px", "2px"];
+      // var seriesLineDash = ["10,10,10,10", "0,0,0,0", "0,0,0,0", "2,6,0,0"];
+
+      legendItems.forEach(function(item, i) {
+      $item = $legend.append("g")
+          .attr("class", "legend-item-"+item)
+          .attr("transform", "translate(0,"+(i*lineHeight)+")");
+
+        $item.append("svg:line")
+          .attr("class", "legend-item-"+item)
+          .attr("x1", 133)
+          .attr("y1", 37)
+          .attr("x2", 150)
+          .attr("y2", 37)
+          .style("stroke", seriesColors[i])
+          .style("stroke-dasharray", seriesLineDash[i])
+          .style("stroke-width", seriesLineStrokes[i]);
+
+        $item.append("text")
+          .attr("class", "legend-item-"+item)
+          .attr("x", 40)
+          .attr("y", 40)
+          .text(legendItemsTranslate[i]);
+      });
+    }
 
     
+
+    errorBarArea2014all
+        .x(function(d) {
+            return x0('All') + x1.rangeBand() / 2;
+        })
+        .y0(function(d) {
+            return y(min2014[0]);
+        })
+        .y1(function(d) {
+            return y(max2014[0]);
+        })
+        .interpolate("linear");
+    errorBarArea2015all
+        .x(function(d) {
+            return x0('All') + x1.rangeBand() / 2 + x1.rangeBand();
+        })
+        .y0(function(d) {
+            return y(min2015[0]);
+        })
+        .y1(function(d) {
+            return y(max2015[0]);
+        })
+        .interpolate("linear");
+    errorBarArea2014white
+        .x(function(d) {
+            return x0('White non-Hispanic') + x1.rangeBand() / 2;
+        })
+        .y0(function(d) {
+            return y(min2014[1]);
+        })
+        .y1(function(d) {
+            return y(max2014[1]);
+        })
+        .interpolate("linear");
+    errorBarArea2015white
+        .x(function(d) {
+            return x0('White non-Hispanic') + x1.rangeBand() / 2 + x1.rangeBand();
+        })
+        .y0(function(d) {
+            return y(min2015[1]);
+        })
+        .y1(function(d) {
+            return y(max2015[1]);
+        })
+        .interpolate("linear");
+    errorBarArea2014black
+        .x(function(d) {
+            return x0('Black non-Hispanic') + x1.rangeBand() / 2;
+        })
+        .y0(function(d) {
+            return y(min2014[2]);
+        })
+        .y1(function(d) {
+            return y(max2014[2]);
+        })
+        .interpolate("linear");
+    errorBarArea2015black
+        .x(function(d) {
+            return x0('Black non-Hispanic') + x1.rangeBand() / 2 + x1.rangeBand();
+        })
+        .y0(function(d) {
+            return y(min2015[2]);
+        })
+        .y1(function(d) {
+            return y(max2015[2]);
+        })
+        .interpolate("linear");
+    errorBarArea2014hisp
+        .x(function(d) {
+            return x0('Hispanic') + x1.rangeBand() / 2;
+        })
+        .y0(function(d) {
+            return y(min2014[3]);
+        })
+        .y1(function(d) {
+            return y(max2014[3]);
+        })
+        .interpolate("linear");
+    errorBarArea2015hisp
+        .x(function(d) {
+            return x0('Hispanic') + x1.rangeBand() / 2 + x1.rangeBand();
+        })
+        .y0(function(d) {
+            return y(min2015[3]);
+        })
+        .y1(function(d) {
+            return y(max2015[3]);
+        })
+        .interpolate("linear");
+
+
     //var errorBarSVG = d3.select("#race_ethnicity_chart").append("svg")
     errorBars2014all = $bars_race.append("g").selectAll("path").data(dataset);
     errorBars2015all = $bars_race.append("g").selectAll("path").data(dataset);
@@ -261,31 +355,47 @@ $(document).ready(function() {
 
     //
     errorBars2014all
-        .attr("d", function(d){return errorBarArea2014all([d]);}) 
+        .attr("d", function(d) {
+            return errorBarArea2014all([d]);
+        })
         .attr("class", "bars_race_error");
     errorBars2015all
-        .attr("d", function(d){return errorBarArea2015all([d]);})
-        .attr("class", "bars_race_error"); 
+        .attr("d", function(d) {
+            return errorBarArea2015all([d]);
+        })
+        .attr("class", "bars_race_error");
     errorBars2014white
-        .attr("d", function(d){return errorBarArea2014white([d]);}) 
-        .attr("class", "bars_race_error");    
+        .attr("d", function(d) {
+            return errorBarArea2014white([d]);
+        })
+        .attr("class", "bars_race_error");
     errorBars2015white
-        .attr("d", function(d){return errorBarArea2015white([d]);})
-        .attr("class", "bars_race_error"); 
+        .attr("d", function(d) {
+            return errorBarArea2015white([d]);
+        })
+        .attr("class", "bars_race_error");
     errorBars2014black
-        .attr("d", function(d){return errorBarArea2014black([d]);}) 
-        .attr("class", "bars_race_error");    
+        .attr("d", function(d) {
+            return errorBarArea2014black([d]);
+        })
+        .attr("class", "bars_race_error");
     errorBars2015black
-        .attr("d", function(d){return errorBarArea2015black([d]);})
-        .attr("class", "bars_race_error"); 
+        .attr("d", function(d) {
+            return errorBarArea2015black([d]);
+        })
+        .attr("class", "bars_race_error");
     errorBars2014hisp
-        .attr("d", function(d){return errorBarArea2014hisp([d]);}) 
-        .attr("class", "bars_race_error");    
+        .attr("d", function(d) {
+            return errorBarArea2014hisp([d]);
+        })
+        .attr("class", "bars_race_error");
     errorBars2015hisp
-        .attr("d", function(d){return errorBarArea2015hisp([d]);})
-        .attr("class", "bars_race_error"); 
+        .attr("d", function(d) {
+            return errorBarArea2015hisp([d]);
+        })
+        .attr("class", "bars_race_error");
 
-    
+
 
     function wrap(text, width) {
         text.each(function() {
@@ -314,7 +424,7 @@ $(document).ready(function() {
 
     function render() {
         updateWidth();
-
+        $legend.attr("class", "vis-legend").attr("transform", "translate("+(width-margin.right*10)+",0)");
         x1.rangeRoundBands([0, x0.rangeBand()]);
 
         x0.rangeRoundBands([0, width], .1);
@@ -332,7 +442,7 @@ $(document).ready(function() {
             .call(wrap, x0.rangeBand());
 
         yAxis.call(yAxis_bars);
-        yAxisLabel.attr("x", -height/2);
+        yAxisLabel.attr("x", -height / 2);
         legendRect.attr("x", width - 18);
         legendText.attr("x", width - 24);
 
@@ -357,63 +467,127 @@ $(document).ready(function() {
             });
 
 
-    errorBarArea2014all 
-        .x(function(d) {return x0('All')+x1.rangeBand()/2; }) 
-        .y0(function(d) {return y(min2014[0]); }) 
-        .y1(function(d) {return y(max2014[0]); }) 
-        .interpolate("linear");
-    errorBarArea2015all 
-        .x(function(d) {return x0('All')+x1.rangeBand()/2+x1.rangeBand(); }) 
-        .y0(function(d) {return y(min2015[0]); }) 
-        .y1(function(d) {return y(max2015[0]); }) 
-        .interpolate("linear");
-    errorBarArea2014white 
-        .x(function(d) {return x0('White non-Hispanic')+x1.rangeBand()/2; }) 
-        .y0(function(d) {return y(min2014[1]); }) 
-        .y1(function(d) {return y(max2014[1]); }) 
-        .interpolate("linear");
-    errorBarArea2015white 
-        .x(function(d) {return x0('White non-Hispanic')+x1.rangeBand()/2+x1.rangeBand(); }) 
-        .y0(function(d) {return y(min2015[1]); }) 
-        .y1(function(d) {return y(max2015[1]); }) 
-        .interpolate("linear");
-    errorBarArea2014black 
-        .x(function(d) {return x0('Black non-Hispanic')+x1.rangeBand()/2; }) 
-        .y0(function(d) {return y(min2014[2]); }) 
-        .y1(function(d) {return y(max2014[2]); }) 
-        .interpolate("linear");
-    errorBarArea2015black 
-        .x(function(d) {return x0('Black non-Hispanic')+x1.rangeBand()/2+x1.rangeBand(); }) 
-        .y0(function(d) {return y(min2015[2]); }) 
-        .y1(function(d) {return y(max2015[2]); }) 
-        .interpolate("linear");
-    errorBarArea2014hisp 
-        .x(function(d) {return x0('Hispanic')+x1.rangeBand()/2; }) 
-        .y0(function(d) {return y(min2014[3]); }) 
-        .y1(function(d) {return y(max2014[3]); }) 
-        .interpolate("linear");
-    errorBarArea2015hisp 
-        .x(function(d) {return x0('Hispanic')+x1.rangeBand()/2+x1.rangeBand(); }) 
-        .y0(function(d) {return y(min2015[3]); }) 
-        .y1(function(d) {return y(max2015[3]); }) 
-        .interpolate("linear");
+        errorBarArea2014all
+            .x(function(d) {
+                return x0('All') + x1.rangeBand() / 2;
+            })
+            .y0(function(d) {
+                return y(min2014[0]);
+            })
+            .y1(function(d) {
+                return y(max2014[0]);
+            })
+            .interpolate("linear");
+        errorBarArea2015all
+            .x(function(d) {
+                return x0('All') + x1.rangeBand() / 2 + x1.rangeBand();
+            })
+            .y0(function(d) {
+                return y(min2015[0]);
+            })
+            .y1(function(d) {
+                return y(max2015[0]);
+            })
+            .interpolate("linear");
+        errorBarArea2014white
+            .x(function(d) {
+                return x0('White non-Hispanic') + x1.rangeBand() / 2;
+            })
+            .y0(function(d) {
+                return y(min2014[1]);
+            })
+            .y1(function(d) {
+                return y(max2014[1]);
+            })
+            .interpolate("linear");
+        errorBarArea2015white
+            .x(function(d) {
+                return x0('White non-Hispanic') + x1.rangeBand() / 2 + x1.rangeBand();
+            })
+            .y0(function(d) {
+                return y(min2015[1]);
+            })
+            .y1(function(d) {
+                return y(max2015[1]);
+            })
+            .interpolate("linear");
+        errorBarArea2014black
+            .x(function(d) {
+                return x0('Black non-Hispanic') + x1.rangeBand() / 2;
+            })
+            .y0(function(d) {
+                return y(min2014[2]);
+            })
+            .y1(function(d) {
+                return y(max2014[2]);
+            })
+            .interpolate("linear");
+        errorBarArea2015black
+            .x(function(d) {
+                return x0('Black non-Hispanic') + x1.rangeBand() / 2 + x1.rangeBand();
+            })
+            .y0(function(d) {
+                return y(min2015[2]);
+            })
+            .y1(function(d) {
+                return y(max2015[2]);
+            })
+            .interpolate("linear");
+        errorBarArea2014hisp
+            .x(function(d) {
+                return x0('Hispanic') + x1.rangeBand() / 2;
+            })
+            .y0(function(d) {
+                return y(min2014[3]);
+            })
+            .y1(function(d) {
+                return y(max2014[3]);
+            })
+            .interpolate("linear");
+        errorBarArea2015hisp
+            .x(function(d) {
+                return x0('Hispanic') + x1.rangeBand() / 2 + x1.rangeBand();
+            })
+            .y0(function(d) {
+                return y(min2015[3]);
+            })
+            .y1(function(d) {
+                return y(max2015[3]);
+            })
+            .interpolate("linear");
 
-    errorBars2014all
-        .attr("d", function(d){return errorBarArea2014all([d]); });
-    errorBars2015all
-        .attr("d", function(d){return errorBarArea2015all([d]); }); 
-    errorBars2014white
-        .attr("d", function(d){return errorBarArea2014white([d]); });    
-    errorBars2015white
-        .attr("d", function(d){return errorBarArea2015white([d]); }); 
-    errorBars2014black
-        .attr("d", function(d){return errorBarArea2014black([d]); });    
-    errorBars2015black
-        .attr("d", function(d){return errorBarArea2015black([d]); }); 
-    errorBars2014hisp
-        .attr("d", function(d){return errorBarArea2014hisp([d]); });    
-    errorBars2015hisp
-        .attr("d", function(d){return errorBarArea2015hisp([d]); }); 
+        errorBars2014all
+            .attr("d", function(d) {
+                return errorBarArea2014all([d]);
+            });
+        errorBars2015all
+            .attr("d", function(d) {
+                return errorBarArea2015all([d]);
+            });
+        errorBars2014white
+            .attr("d", function(d) {
+                return errorBarArea2014white([d]);
+            });
+        errorBars2015white
+            .attr("d", function(d) {
+                return errorBarArea2015white([d]);
+            });
+        errorBars2014black
+            .attr("d", function(d) {
+                return errorBarArea2014black([d]);
+            });
+        errorBars2015black
+            .attr("d", function(d) {
+                return errorBarArea2015black([d]);
+            });
+        errorBars2014hisp
+            .attr("d", function(d) {
+                return errorBarArea2014hisp([d]);
+            });
+        errorBars2015hisp
+            .attr("d", function(d) {
+                return errorBarArea2015hisp([d]);
+            });
 
     }
 
@@ -439,5 +613,6 @@ $(document).ready(function() {
 
     }
     render();
+    renderLegend();
     window.addEventListener('resize', render);
 });
