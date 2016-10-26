@@ -271,10 +271,10 @@
         .attr("class", "focus")
         .classed("hidden", true);
 
-    $lines_death
-        .on("mouseover", mouseoverFunc)
-        .on("mouseout", mouseoutFunc)
-        .on("mousemove", mousemoveFunc);
+    // $lines_death
+    //     .on("mouseover", mouseoverFunc)
+    //     .on("mouseout", mouseoutFunc)
+    //     .on("mousemove", mousemoveFunc);
 
     function mouseoutFunc() {
 
