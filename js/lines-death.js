@@ -25,6 +25,7 @@
     var UnitedStates = ["USA"];
 
     var lines;
+    //var lines_hit_area;
 
 
     // Setup
@@ -53,7 +54,7 @@
 
     var $lines_death_x_axis_label = $lines_death_x_axis
         .append("text")
-        .attr("x", (dimensions.width - dimensions.margin.left)/2)
+        .attr("x", (dimensions.width - dimensions.margin.left) / 2)
         .attr("y", dimensions.margin.bottom)
         .attr("dy", "1em")
         .attr("class", "vis-x-axis-label")
@@ -66,7 +67,7 @@
 
     var $lines_death_y_axis_label = $lines_death_y_axis
         .append("text")
-        .attr("x", -(dimensions.height/2))
+        .attr("x", -(dimensions.height / 2))
         .attr("y", -dimensions.margin.left)
         .attr("dy", "1em")
         .attr("class", "vis-y-axis-label")
@@ -89,12 +90,18 @@
         .style("text-anchor", "start")
         .text("USA");
 
+
+    //defines a function to be used to append the title to the tooltip.  you can set how you want it to display here.
+    //var maketip = function(d) {
+    //    var tip = '<p class="tip3">' + d.name + '<p class="tip1">' + NumbType(d.value) + '</p> <p class="tip3">' + formatDate(d.date) + '</p>';
+    //    return tip;
+    //}
     // add a tooltip to the page - not to the svg itself!
-    var tooltip_death = d3.select("#deathLines")
-        .append("div")
-        .attr("class", "vis-tooltip hidden");
+    var tooltip_death = d3.select("#deathLines").append("div").attr("class", "vis-tooltip hidden");
 
-
+    var focus = $lines_death.append("g")
+        .attr("class", "focus")
+        .classed("hidden", true);
 
 
 
@@ -104,12 +111,13 @@
         render();
         // bindEvents();
         window.addEventListener('resize', render);
+
     });
 
 
     function setupData(data) {
         var years = d3.keys(data[0]).slice(0, 65);
-         //Create a new, empty array to hold our restructured dataset
+        //Create a new, empty array to hold our restructured dataset
         var dataset = [];
 
         //Loop once for each row in data
@@ -183,13 +191,28 @@
                     return false;
                 }
             });
+
+        // var lines_hit_area = groups.selectAll("path")
+        //     .data(function(d) { // because there's a group with data already...
+        //         return [d.rates]; // it has to be an array for the line function
+        //     })
+        //     .enter()
+        //     .append("path")
+        //     .attr("class", "line-death")
+        //     .attr("style", "stroke:transparent;stroke-width:10px")
+        //     .style("fill", "none");
+
+            d3.selectAll("g.lines-death")
+            .on("mouseover", mouseoverFunc)
+            .on("mouseout", mouseoutFunc)
+            .on("mousemove", mousemoveFunc);
     }
 
 
 
     function updateDimensions() {
         dimensions.width = rootNode.clientWidth;
-        if(dimensions.width < 500) {
+        if (dimensions.width < 500) {
             dimensions.margin.left = 30;
         } else {
             dimensions.margin.left = 50;
@@ -207,7 +230,7 @@
         $lines_death.attr('width', dimensions.width);
 
         xScale.range([dimensions.margin.left, dimensions.width - dimensions.margin.right - dimensions.margin.left]);
-        yScale.range([dimensions.margin.top, dimensions.height - dimensions.margin.bottom -dimensions.margin.top]);
+        yScale.range([dimensions.margin.top, dimensions.height - dimensions.margin.bottom - dimensions.margin.top]);
 
         //Configure axis generators
         xAxis_death.scale(xScale)
@@ -223,12 +246,12 @@
             .innerTickSize([8]);
 
         $lines_death_x_axis_label
-            .attr("x", (dimensions.width - dimensions.margin.left)/2);
+            .attr("x", (dimensions.width - dimensions.margin.left) / 2);
 
         $lines_death_y_axis_label
             .attr("y", -dimensions.margin.left);
 
-        if(dimensions.width < 500) {
+        if (dimensions.width < 500) {
             $lines_death_y_axis
                 .attr("transform", "translate(" + dimensions.margin.left + "," + (0) + ')');
         } else {
@@ -265,56 +288,60 @@
             .attr("y", yScale(10.0) - 6);
 
         lines.attr("d", line_death);
+
+       // lines_hit_area.attr("d", line_death);
+
+        focus.append("circle")
+            .style("stroke-width", 1)
+            .attr("r", 6)
+            .attr('pointer-events', 'none');
+
+
+        
+
     }
 
-    var focus = $lines_death.append("g")
-        .attr("class", "focus")
-        .classed("hidden", true);
 
-    $lines_death
-        .on("mouseover", mouseoverFunc)
-        .on("mouseout", mouseoutFunc)
-        .on("mousemove", mousemoveFunc);
 
     function mouseoutFunc() {
-
-        //d3.selectAll("path.line-death").classed("unfocused", false).classed("focused", false);
-        tooltip_death.classed("hidden", true);
+        d3.selectAll("path.line").classed("unfocused", false).classed("focused", false);
+        d3.selectAll("path.point").classed("unfocused", false).classed("focused", false).attr("d", d3.svg.symbol().type("circle").size(15)).style("fill-opacity", "1");
+        tooltip_death.classed("hidden", true); // this sets it to invisible!
+        focus.classed("hidden", true);
     }
+
     function mouseoverFunc(d, i) {
 
-        //d3.selectAll("path.line-death").classed("unfocused", true);
+        d3.selectAll("path.line").classed("unfocused", true);
+        d3.selectAll("path.point").classed("unfocused", true).attr("d", d3.svg.symbol().type("circle").size(10)).style("fill-opacity", "0");
+        d3.select(this).select("path.line").classed("unfocused", false).classed("focused", true);
 
-        //d3.select(this).select("path.line-death").classed("unfocused", false).classed("focused", true);
-        //d3.select(this).select("path.point").classed("unfocused", false).classed("focused", true).attr("d", d3.svg.symbol().type("circle").size(0));
         var x0 = d3.mouse(this)[0];
         var y0 = d3.mouse(this)[1];
-        //console.log(y0);
         var y1 = yScale.invert(y0);
         var percentVal = d3.format(".1f")(y1)
 
         tooltip_death.classed("hidden", false)
-        .html(percentVal);
-        //console.log(d.rates[i]);
-        //console.log(d3.select(this).select("path.point"));
-        //focus.classed("hidden", false);
+            .html(percentVal);
+        focus.classed("hidden", false);
     }
+
+    var coordinates = [0, 0];
 
     function mousemoveFunc(d) {
 
-        //console.log("events", d3.event.offsetX, d3.event.layerY/2);
-        //console.log("d3.events", d3.event);
         var x0 = d3.mouse(this)[0];
         var y0 = d3.mouse(this)[1]
         var y1 = yScale.invert(y0);
+        var x1 = xScale.invert(x0)
+        //console.log(x1)
+
         var percentVal = d3.format(".1f")(y1);
 
-       //focus.attr("transform", "translate(" + x0 + "," + y0 + ")");
-
-
+        focus.attr("transform", "translate(" + x0 + "," + y0 + ")");
 
         tooltip_death
-            .style("top", (d3.event.offsetY+20) + "px")
+            .style("top", (d3.event.offsetY + 20) + "px")
             .style("left", (d3.event.offsetX) + "px")
             .html(percentVal);
     }
@@ -352,5 +379,3 @@
     // }
 
 })();
-
-
