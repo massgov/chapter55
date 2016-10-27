@@ -241,7 +241,7 @@
     	.attr("y", -44)
     	.attr("dy", "1em")
     	.attr("class", "vis-y-axis-label")
-    	.text("Percent of Opioid Deaths");
+    	.text("Percent of Opioid-related Deaths");
       //.html("<sup>1</sup>");
 
     var series = $lines_fent.selectAll(".series")
