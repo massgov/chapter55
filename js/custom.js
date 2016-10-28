@@ -178,6 +178,7 @@ $('li').each(function() {
 })
 
 //bold footnote on in text num click
+//onclick="BoldText(document.getElementById(&quot;footnote-1&quot;));"
 
 var currElem = null; //will hold the element that is bold now
 
