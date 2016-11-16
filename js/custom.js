@@ -138,7 +138,7 @@ $(function() {
             if (val == '1/12') {
                 $('.svg-studyperiod').attr("opacity", 0);
                 $('.svg-onemonth').attr("opacity", 1);
-                $('#odInfographic_details').html('Only about '+ '<strong>1 in 12</strong>' +' people who died from opioids in 2013 and 2014 had an active opioid prescription a month before they died')
+                $('#odInfographic_details').html('Only about '+ '<strong>1 in 12</strong>' +' people who died from opioids in 2013 and 2014 had an active opioid prescription in the month before they died')
             } else {
                 $('.svg-studyperiod').attr("opacity", 1);
                 $('#odInfographic_details').html('About '+ '<strong>8 in 12</strong>' +' people who died from opioids in 2013 and 2014 had an opioid prescription at some point from 2011–2014')
