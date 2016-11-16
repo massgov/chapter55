@@ -453,7 +453,7 @@
             "Only Heroin",
             "Only Methadone"
         ];
-        $legend.attr("class", "vis-legend").attr("transform", "translate(" + (width - (margin.right * 10)) + ",0)");
+        $legend.attr("class", "vis-legend").attr("transform", "translate(" + (width - (margin.right +100)) + ",0)");
         var lineHeight = 15;
         // var seriesColors = ["#ffffff", "#b71c1c", "#0071bc", "#ffffff"];
         // var seriesLineStrokes = ["1.5px", "3.5px", "3.5px", "2px"];
