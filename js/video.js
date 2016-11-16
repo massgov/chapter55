@@ -327,6 +327,7 @@ function InitPxVideo(options) {
     obj.seekInterval = options.seekInterval;
 
     // Get the elements for the controls
+    obj.video = obj.container.getElementsByTagName('video')[0];
     obj.btnPlay = obj.container.getElementsByClassName('px-video-play')[0];
     obj.btnPause = obj.container.getElementsByClassName('px-video-pause')[0];
     obj.btnRestart = obj.container.getElementsByClassName('px-video-restart')[0];
@@ -353,6 +354,25 @@ function InitPxVideo(options) {
     if (obj.movie.textTracks) {
         obj.isTextTracks = true;
     }
+
+
+
+    obj.movie.addEventListener("ended", resetVideo, false);
+
+    function resetVideo() {
+        // resets the video element by resetting the source
+        //obj.video.src = obj.video.src;
+        obj.video.src = obj.container.getElementsByTagName('source')[0].getAttribute("src");
+        if (!obj.isTextTracks) {
+            obj.subcount = 0;
+        }
+        obj.movie.currentTime = 0;
+        obj.movie.pause();
+        obj.btnPlay.className = "px-video-play px-video-show-inline";
+        obj.btnPause.className = "px-video-pause hide";
+       
+    }
+
 
     // Play
     obj.btnPlay.addEventListener('click', function() {
@@ -714,7 +734,7 @@ new InitPxVideo({
     "captionsOnDefault": false,
     "seekInterval": 10,
     "videoTitle": "Dr Lukas",
-    "debug": true
+    // "debug": true
 });
 
 new InitPxVideo({
@@ -722,7 +742,7 @@ new InitPxVideo({
     "captionsOnDefault": false,
     "seekInterval": 20,
     "videoTitle": "Governor Baker",
-    "debug": true
+    // "debug": true
 });
 
 
@@ -739,7 +759,7 @@ new InitPxVideo({
     "captionsOnDefault": false,
     "seekInterval": 10,
     "videoTitle": "Cotto",
-    "debug": true
+    // "debug": true
 });
 
 new InitPxVideo({
@@ -747,5 +767,5 @@ new InitPxVideo({
     "captionsOnDefault": false,
     "seekInterval": 10,
     "videoTitle": "Sue",
-    "debug": true
+    // "debug": true
 });

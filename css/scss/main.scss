@@ -108,7 +108,7 @@
 .module.parallax-1 {
     padding: 0;
     margin: auto;
-    background-color: $color-black;
+    background-color: #111111;
 }
 
 .module.parallax-2 {
@@ -248,7 +248,7 @@ video {
     background-color: $color-gray-lightest;
     border: 1px solid darken($color-gray-lightest, 8%);
     color: $color-black;
-    padding: 19px;
+    padding: 17px;
     border-radius: 2px;
     box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
     .h3-sm {

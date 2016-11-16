@@ -943,7 +943,7 @@
 .px-video-captions.js-fullscreen-captions {
   min-height: 3.5em;
   font-size: 2.5em;
-  padding: 1em 0 2em; }
+  padding: 1em 0 1em; }
 
 /* ============================================================
   Nav
@@ -1020,7 +1020,7 @@
 .module.parallax-1 {
   padding: 0;
   margin: auto;
-  background-color: #000000; }
+  background-color: #111111; }
 
 .module.parallax-2 {
   /*  color: $color-black;*/
@@ -1123,7 +1123,7 @@ video {
   background-color: #ECEFF1;
   border: 1px solid #d5dbe0;
   color: #000000;
-  padding: 19px;
+  padding: 17px;
   border-radius: 2px;
   box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1); }
   .callout .h3-sm {
