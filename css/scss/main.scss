@@ -17,34 +17,6 @@
   Nav
 ============================================================ */
 
-.h1-sm {
-    font-size: 30px;
-}
-
-#alert {
-    color: yellow;
-    top: 0;
-    position: absolute;
-}
-
-#navbar-main {
-    /* Added `.affix-top` class css when the element is top */
-    &.affixed-top {
-        background: $color-black;
-    }
-    //Added `.affix` class css when the element is >= 170px (Look: line 8 html)
-    &.affix {
-        background: gray;
-        top: 0;
-        left: 0;
-        right: 0;
-    }
-    /* Added `.affix-bottom` class css when the element is footer */
-    &.affix-bottom {
-        background: red;
-    }
-}
-
 .navbar-inverse {
     background-color: $color-primary-darker;
     border-color: $color-black;
@@ -108,7 +80,7 @@
 .module.parallax-1 {
     padding: 0;
     margin: auto;
-    background-color: #111111;
+    background-color: $color-black;
 }
 
 .module.parallax-2 {

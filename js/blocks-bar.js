@@ -154,16 +154,16 @@ $(document).ready(function() {
         $(".btn-time").removeClass('disableClick disabled');
         switch (sub) {
             case 0:
-                substance = prescription;
-                break;
-            case 1:
                 substance = heroin;
                 break;
-            case 2:
+            case 1:
                 substance = fentanyl;
                 break;
-            case 3:
+            case 2:
                 substance = both;
+                break;
+            case 3:
+                substance = prescription;
                 break;
             case 4:
                 substance = methadone;
