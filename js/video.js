@@ -198,7 +198,11 @@ function InitPxVideo(options) {
     }
 
     // If smartphone or tablet, stop customization as video (and captions in latest devices) are handled natively
-    obj.isSmartphoneOrTablet = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+    // obj.isSmartphoneOrTablet = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+    // if (obj.isSmartphoneOrTablet) {
+    //     return false;
+    // }
+    obj.isSmartphoneOrTablet = /webOS|iPhone|iPad|iPod/i.test(navigator.userAgent);
     if (obj.isSmartphoneOrTablet) {
         return false;
     }
