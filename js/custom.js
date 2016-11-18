@@ -157,7 +157,7 @@ $(function() {
 
 
 // Fix widows (no words on own line at the end of a <p>)
-$('p, .sources-section li').each(function() {
+$('p, .sources-section li, .tab-pane li').each(function() {
     var innerHTML = $(this).html();
     var words = innerHTML.trim().split(' ');
     if(words.length > 2) {
