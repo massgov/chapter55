@@ -1027,6 +1027,10 @@
   text-decoration: none;
   cursor: text;
   color: #000000; }
+  .controls-video:hover, .controls-video:focus {
+    text-decoration: none;
+    cursor: text;
+    color: #000000; }
 
 @media all and (min-width: 600px) {
   .module p {

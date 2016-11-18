@@ -126,6 +126,10 @@
 
 .controls-video {
     @include no-hover;
+    &:hover,
+    &:focus {
+        @include no-hover;
+    }
 }
 
 @mixin hide-vid-controls {
