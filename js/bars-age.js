@@ -26,7 +26,7 @@
         .text("Age")
         .attr("class", "vis-x-axis-label")
         .style("text-anchor", "start")
-        .attr("y", 10)
+        .attr("y", 25)
         .attr("x", 10);
 
     var chart_title = $bars_age.append('text');

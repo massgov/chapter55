@@ -59,12 +59,12 @@ $(document).ready(collapseNavbar);
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
         event.preventDefault();
-	var href = $(this).attr('href');
+    var href = $(this).attr('href');
         $('html, body').stop().animate({
-	    scrollTop: $(href).offset().top
-	}, 750, function() {
-	    window.location.hash = href;
-	});
+        scrollTop: $(href).offset().top
+    }, 750, function() {
+        window.location.hash = href;
+    });
         event.preventDefault();
     });
 });
@@ -157,7 +157,7 @@ $(function() {
 
 
 // Fix widows (no words on own line at the end of a <p>)
-$('p').each(function() {
+$('p, .sources-section li, .tab-pane li').each(function() {
     var innerHTML = $(this).html();
     var words = innerHTML.trim().split(' ');
     if(words.length > 2) {
@@ -167,15 +167,6 @@ $('p').each(function() {
     }
 })
 
-$('li').each(function() {
-    var innerHTML = $(this).html();
-    var words = innerHTML.trim().split(' ');
-    if(words.length > 2) {
-        var potentialWidow = words[words.length-1];
-        var newWords = words.slice(0,-1).join(' ');
-        $(this).html(newWords+'&nbsp;'+potentialWidow);
-    }
-})
 
 //bold footnote on in text num click
 //onclick="BoldText(document.getElementById(&quot;footnote-1&quot;));"
