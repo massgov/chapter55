@@ -198,7 +198,11 @@ function InitPxVideo(options) {
     }
 
     // If smartphone or tablet, stop customization as video (and captions in latest devices) are handled natively
-    obj.isSmartphoneOrTablet = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+    // obj.isSmartphoneOrTablet = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+    // if (obj.isSmartphoneOrTablet) {
+    //     return false;
+    // }
+    obj.isSmartphoneOrTablet = /webOS|iPhone|iPad|iPod/i.test(navigator.userAgent);
     if (obj.isSmartphoneOrTablet) {
         return false;
     }
@@ -370,7 +374,7 @@ function InitPxVideo(options) {
         obj.movie.pause();
         obj.btnPlay.className = "px-video-play px-video-show-inline";
         obj.btnPause.className = "px-video-pause hide";
-       
+
     }
 
 
@@ -383,19 +387,21 @@ function InitPxVideo(options) {
     }, false);
 
     // Play by in-text controlls
-    $('.js-play-video').click(function(e) {
-        var $target = $(e.target).data('target');
-        console.log($target);
-        var which_container = document.getElementById($target);
-        var which_video = which_container.getElementsByTagName('video')[0];
-        var which_btnPlay = which_container.getElementsByClassName('px-video-play')[0];
-        var which_btnPause = which_container.getElementsByClassName('px-video-pause')[0];
-        which_video.play();
-        which_btnPlay.className = "px-video-play hide";
-        which_btnPause.className = "px-video-pause px-video-show-inline";
+    if ($(window).width() > 991) {
+        // Disable on mobile
+        $('.js-play-video').click(function(e) {
+            var $target = $(e.target).data('target');
+            console.log($target);
+            var which_container = document.getElementById($target);
+            var which_video = which_container.getElementsByTagName('video')[0];
+            var which_btnPlay = which_container.getElementsByClassName('px-video-play')[0];
+            var which_btnPause = which_container.getElementsByClassName('px-video-pause')[0];
+            which_video.play();
+            which_btnPlay.className = "px-video-play hide";
+            which_btnPause.className = "px-video-pause px-video-show-inline";
 
-    });
-
+        });
+    };
 
     // Pause
     obj.btnPause.addEventListener('click', function() {

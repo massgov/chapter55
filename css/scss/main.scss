@@ -17,34 +17,6 @@
   Nav
 ============================================================ */
 
-.h1-sm {
-    font-size: 30px;
-}
-
-#alert {
-    color: yellow;
-    top: 0;
-    position: absolute;
-}
-
-#navbar-main {
-    /* Added `.affix-top` class css when the element is top */
-    &.affixed-top {
-        background: $color-black;
-    }
-    //Added `.affix` class css when the element is >= 170px (Look: line 8 html)
-    &.affix {
-        background: gray;
-        top: 0;
-        left: 0;
-        right: 0;
-    }
-    /* Added `.affix-bottom` class css when the element is footer */
-    &.affix-bottom {
-        background: red;
-    }
-}
-
 .navbar-inverse {
     background-color: $color-primary-darker;
     border-color: $color-black;
@@ -108,7 +80,7 @@
 .module.parallax-1 {
     padding: 0;
     margin: auto;
-    background-color: #111111;
+    background-color: $color-black;
 }
 
 .module.parallax-2 {
@@ -140,10 +112,55 @@
     font-size: 23px;
 }
 
+//intext controls 
+.controls {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@mixin no-hover {
+    text-decoration: none;
+    cursor: text;
+    color: $color-black;
+}
+
+.controls-video {
+    @include no-hover;
+    &:hover,
+    &:focus {
+        @include no-hover;
+    }
+}
+
+@mixin hide-vid-controls {
+    .controls-video {
+        @include no-hover;
+        &:hover,
+        &:focus {
+            @include no-hover;
+        }
+    }
+}
+
+@mixin show-vid-controls {
+    .controls-video {
+        text-decoration: underline;
+        cursor: pointer;
+        color: #337ab7;
+        &:hover,
+        &:focus {
+            cursor: pointer;
+            text-decoration: underline;
+            color: #23527c;
+        }
+    }
+}
+
 @media all and (min-width: 600px) {
     .module p {
         font-size: 20px;
     }
+    @include hide-vid-controls;
 }
 
 @media all and (min-width: 768px) {
@@ -161,6 +178,7 @@
     .neg-space-col-md {
         margin-top: -30px;
     }
+    @include hide-vid-controls;
 }
 
 @media all and (min-width: 991px) {
@@ -174,7 +192,7 @@
         font-size: 28px;
     }
     #current-section {
-        display: none;
+        display: auto;
     }
     .neg-space-col-md {
         margin-top: -30px;
@@ -189,6 +207,7 @@
         height: 100px;
         width: 100%;
     }
+    @include show-vid-controls;
 }
 
 @media all and (min-width: 1440px) {
@@ -214,6 +233,7 @@
         height: 100px;
         width: 100%;
     }
+    @include show-vid-controls;
 }
 
 .wrapper {
@@ -340,7 +360,7 @@ video {
 @mixin dark-view {
     a {
         color: $color-white;
-        text-decoration:underline;
+        text-decoration: underline;
         &:active,
         &:visited {
             color: $color-white;
@@ -375,5 +395,5 @@ footer {
 }
 
 .sources-section li:target {
-    background: rgba(255,255,255,0.3);
+    background: rgba(255, 255, 255, 0.3);
 }
