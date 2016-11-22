@@ -61,20 +61,19 @@
 }
 
 .module.parallax {
+    h1 {
+        font-family: $font-sans;
+        font-size: 38px;
+        line-height: 1;
+        font-weight: 700;
+        text-align: left;
+        text-transform: uppercase;
+        text-shadow: 0 0 10px $color-white;
+    }
     color: $color-white;
     padding: 50px 0;
     background-position: center bottom;
     background-size: cover;
-}
-
-.module.parallax h1 {
-    font-family: $font-sans;
-    font-size: 38px;
-    line-height: 1;
-    font-weight: 700;
-    text-align: left;
-    text-transform: uppercase;
-    text-shadow: 0 0 10px $color-white;
 }
 
 .module.parallax-1 {
@@ -84,6 +83,8 @@
 }
 
 .module.parallax-2 {
+    padding: 15px 0;
+    font-size: 20px;
     /*  color: $color-black;*/
     background-image: url("../img/addiction.png");
 }
@@ -157,6 +158,9 @@
 }
 
 @media all and (min-width: 600px) {
+    .module.parallax h1 {
+        font-size: 40px;
+    }
     .module p {
         font-size: 20px;
     }
@@ -166,6 +170,11 @@
 @media all and (min-width: 768px) {
     .module.parallax h1 {
         font-size: 80px;
+    }
+    .module.parallax-2 {
+        h1 {
+            font-size: 60px;
+        }
     }
     .navbar-text {
         float: left;
@@ -183,10 +192,15 @@
 
 @media all and (min-width: 991px) {
     .module.parallax {
+        h1 {
+            font-size: 80px;
+        }
         padding: 150px 0;
     }
-    .module.parallax h1 {
-        font-size: 80px;
+    .module.parallax-2 {
+        h1 {
+            font-size: 60px;
+        }
     }
     .module h2 {
         font-size: 28px;
@@ -211,11 +225,16 @@
 }
 
 @media all and (min-width: 1440px) {
-    .module.parallax h1 {
-        font-size: 100px;
-    }
     .module.parallax {
-        padding: 220px 0;
+        h1 {
+            font-size: 100px;
+        }
+        padding: 200px 0;
+    }
+    .module.parallax-2 {
+        h1 {
+            font-size: 80px;
+        }
     }
     #current-section {
         display: none;

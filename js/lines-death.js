@@ -202,7 +202,7 @@
         //     .attr("style", "stroke:transparent;stroke-width:10px")
         //     .style("fill", "none");
 
-            d3.selectAll("g.lines-death")
+        d3.selectAll("g.lines-death")
             .on("mouseover", mouseoverFunc)
             .on("mouseout", mouseoutFunc)
             .on("mousemove", mousemoveFunc);
@@ -289,7 +289,7 @@
 
         lines.attr("d", line_death);
 
-       // lines_hit_area.attr("d", line_death);
+        // lines_hit_area.attr("d", line_death);
 
         focus.append("circle")
             .style("stroke-width", 1)
@@ -297,7 +297,7 @@
             .attr('pointer-events', 'none');
 
 
-        
+
 
     }
 
@@ -333,18 +333,24 @@
         var y0 = d3.mouse(this)[1]
         var y1 = yScale.invert(y0);
         var x1 = xScale.invert(x0)
-        //console.log(x1)
+            //console.log(x1)
 
         var percentVal = d3.format(".1f")(y1);
 
         focus.attr("transform", "translate(" + x0 + "," + y0 + ")");
 
-        tooltip_death
-            .style("top", (d3.event.offsetY + 20) + "px")
-            .style("left", (d3.event.offsetX) + "px")
-            .html(percentVal);
+        if (dimensions.width < 555) {
+            tooltip_death
+                .style("top", (d3.event.offsetY + 60) + "px")
+                .style("left", (d3.event.offsetX) + "px")
+                .html(percentVal);
+        } else {
+            tooltip_death
+                .style("top", (d3.event.offsetY + 30) + "px")
+                .style("left", (d3.event.offsetX) + "px")
+                .html(percentVal);
+        }
     }
-
     // function bindEvents() {
     //     d3.selectAll("g.lines-death")
     //         .on("mouseover", mouseoverFunc)
