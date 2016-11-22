@@ -57,7 +57,7 @@ var Vis = (function(d3) {
                 }
             })
             .attr('class', 'vis-title')
-            .style('padding-bottom', "3%");
+            .style('padding-bottom', "9%");
 
 
 
@@ -107,14 +107,27 @@ var Vis = (function(d3) {
             .on('select', function(self) {
                 var geoData = self.data();
                 var town_value
+                var count_value
 
-                if (data.values[geoData[0].properties.TOWN] > 0) {
+                if (data.values[geoData[0].properties.TOWN] > 0 && data.population[geoData[0].properties.TOWN] == 1) {
+                    count_value = data.population[geoData[0].properties.TOWN];
                     town_value = d3.format(".1f")(data.values[geoData[0].properties.TOWN]);
-                } else { town_value = "0"; }
+                    self.node().parentNode.parentNode.getElementsByClassName('selection-label')[0].innerHTML = (geoData[0].properties.TOWN_1  + "<br> Five-year death count: " + count_value + "<br> Death rate per 100,000 people: " + town_value);
+                } 
+                else if (data.values[geoData[0].properties.TOWN] > 0 && data.population[geoData[0].properties.TOWN] > 1) {
+                    count_value = data.population[geoData[0].properties.TOWN];
+                    town_value = d3.format(".1f")(data.values[geoData[0].properties.TOWN]);
+                    self.node().parentNode.parentNode.getElementsByClassName('selection-label')[0].innerHTML = (geoData[0].properties.TOWN_1  + "<br> Five-year death count: " + count_value + "<br> Death rate per 100,000 people: " + town_value);
+                } 
+                else { 
+                    town_value = "0";
+                    count_value = "0";
+                    self.node().parentNode.parentNode.getElementsByClassName('selection-label')[0].innerHTML = (geoData[0].properties.TOWN_1  + "<br> Five-year death count: " + count_value + "<br> Death rate per 100,000 people: " + town_value);
+                     }
 
                 //console.log(town_value);
 
-                self.node().parentNode.parentNode.getElementsByClassName('selection-label')[0].innerHTML = (geoData[0].properties.TOWN_1 + "<br>" + town_value) + " per 100,000";
+                
                 d3.select((self.node())).style('fill-opacity', 0.4).style("stroke", "white").style("stroke-width", "1.5px");
             })
             .on('unselect', function(self) {
