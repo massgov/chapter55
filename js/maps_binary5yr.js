@@ -22,12 +22,12 @@ var Vis = (function(d3) {
         .attr("width", width)
         .attr("height", height);
 
-    var colors_5yr = ["#d3d3d3", "#9ecae1", "#6baed6", "#2171b5", "#084594"];
+    //var colors_5yr = ["#f1f1f1", "#d3d3d3", "#9ecae1", "#6baed6", "#2171b5", "#084594"];
 
     var path = d3.geo.path().projection(projection),
-        palette = d3.scale.threshold().domain([0.1, 2.1, 6.1, 17.1, Infinity])
-        //.range(["#d3d3d3", '#db8d8d', '#c54949', "#b71c1c", '#801313']);
-        .range(colors_5yr);
+        palette = d3.scale.threshold().domain([-0.1, 0.1, 2.1, 6.1, 17.1, Infinity])
+        .range(["#f1f1f1", "#d3d3d3", "#9ecae1", "#6baed6", "#2171b5", "#084594"]);
+        //.range(colors_5yr);
 
 
 
@@ -57,7 +57,8 @@ var Vis = (function(d3) {
                 }
             })
             .attr('class', 'vis-title')
-            .style('padding-bottom', "9%");
+            .style('padding-bottom', "44%")
+            .style('padding-left', "14%");
 
 
 
@@ -72,6 +73,7 @@ var Vis = (function(d3) {
             .attr("preserveAspectRatio", "xMinYMin meet")
             .attr("viewBox", "0 0 " + width + " " + height)
             //class to make it responsive
+            .style('padding-top', "2%")
             .classed("svg-content-responsive", true);
 
         $maps_sub.selectAll('path')
@@ -119,9 +121,14 @@ var Vis = (function(d3) {
                     town_value = d3.format(".1f")(data.values[geoData[0].properties.TOWN]);
                     self.node().parentNode.parentNode.getElementsByClassName('selection-label')[0].innerHTML = (geoData[0].properties.TOWN_1  + "<br> Five-year death count: " + count_value + "<br> Death rate per 100,000 people: " + town_value);
                 } 
-                else { 
+                else if (data.values[geoData[0].properties.TOWN] == 0 && data.population[geoData[0].properties.TOWN] == 0) { 
                     town_value = "0";
                     count_value = "0";
+                    self.node().parentNode.parentNode.getElementsByClassName('selection-label')[0].innerHTML = (geoData[0].properties.TOWN_1  + "<br> Five-year death count: " + count_value + "<br> Death rate per 100,000 people: " + town_value);
+                     }
+                else if (data.values[geoData[0].properties.TOWN] < 0 && data.population[geoData[0].properties.TOWN] > 0) { 
+                    town_value = "N/A";
+                    count_value = data.population[geoData[0].properties.TOWN];
                     self.node().parentNode.parentNode.getElementsByClassName('selection-label')[0].innerHTML = (geoData[0].properties.TOWN_1  + "<br> Five-year death count: " + count_value + "<br> Death rate per 100,000 people: " + town_value);
                      }
 
@@ -148,9 +155,14 @@ var Vis = (function(d3) {
 
     }
 
+    //var opChgScale = d3.scale.threshold().domain([0, 0.1, 0.15, 0.35, 0.6, 1.00]).range(['#d0d1e6','#a6bddb','#67a9cf','#3690c0','#02818a','#016450'])
+    //opChgScale.domainStrings = function() {
+    //    return (['0%', '>0-14%', '>14-24%', '>24-33%', '>33-46%', '>46-100%'
+    //    ]);
+    //};
     var opChgScale = d3.scale.threshold().domain([0.1, 2.1, 6.1, 17.1, Infinity])
-        //.range(["#d3d3d3", '#db8d8d', '#c54949', "#b71c1c", '#801313'])
-        .range(colors_5yr);
+        .range(["#d3d3d3", "#9ecae1", "#6baed6", "#2171b5", "#084594"]);
+        //.range(colors_5yr);
     opChgScale.domainStrings = function() {
         return (['0', '>0-2.1', '>2.1-6.1', '>6.1-17.1', '>17.1']);
     };
@@ -173,18 +185,21 @@ var Vis = (function(d3) {
 
         // Create data array.
         var legendData = [];
-        // legendData.push({
-        //     d: -9999,
-        //     r: '#f1f1f1',
-        //     s: 'N/A*'
-        // });
-        for (var i = 0; i < scale.domain().length; i++) {
+        legendData.push({
+            d: -9999,
+            r: '#f1f1f1',
+        s: 'N/A'
+        });
+        var i;
+        for (i = 0; i < scale.domain().length; i++) {
             legendData.push({
                 d: scale.domain()[i],
                 r: scale.range()[i],
                 s: scale.domainStrings()[i]
             });
         }
+
+
         var unitWidth = 100 / legendData.length;
 
         $maps_sub_legends.selectAll("rect")

@@ -24,7 +24,7 @@ var Vis = (function(d3) {
 
     var path = d3.geo.path().projection(projection),
         palette = d3.scale.threshold().domain([-0.1, 0.01, 0.14, 0.24, 0.33, 0.46, 1.1])
-        .range(['#d1d1d1','#d0d1e6','#a6bddb','#67a9cf','#3690c0','#02818a','#016450']);
+        .range(['#dbdbdb','#BCBEDC','#91ADD3','#67a9cf','#3690c0','#02818a','#016450']);
 
 
 
@@ -125,7 +125,7 @@ var Vis = (function(d3) {
 
     }
 
-    var opChgScale = d3.scale.threshold().domain([0, 0.1, 0.15, 0.35, 0.6, 1.00]).range(['#d0d1e6','#a6bddb','#67a9cf','#3690c0','#02818a','#016450'])
+    var opChgScale = d3.scale.threshold().domain([0, 0.1, 0.15, 0.35, 0.6, 1.00]).range(['#BCBEDC','#91ADD3','#67a9cf','#3690c0','#02818a','#016450'])
     opChgScale.domainStrings = function() {
         return (['0%', '>0-14%', '>14-24%', '>24-33%', '>33-46%', '>46-100%'
         ]);
@@ -148,8 +148,8 @@ var Vis = (function(d3) {
         var legendData = [];
         legendData.push({
             d: -9999,
-            r: '#d1d1d1',
-        s: 'N/A*'
+            r: '#dbdbdb',
+        s: 'N/A'
         });
         var i;
         for (i = 0; i < scale.domain().length; i++) {
