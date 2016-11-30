@@ -22,7 +22,7 @@
     stroke: $color-primary;
     stroke-width: 2.5px;
     stroke-opacity: 100%;
-    stroke-dasharray: 0, 0;
+    stroke-dasharray: none;
 }
 
 .unfocused {
@@ -33,7 +33,7 @@
 .focused {
     stroke-width: 4px !important;
     stroke-opacity: 100%;
-    stroke-dasharray: 0, 0, 0, 0 !important;
+    stroke-dasharray: none !important;
 }
 
 .MDG {

@@ -324,7 +324,7 @@
   stroke: #0071bc;
   stroke-width: 2.5px;
   stroke-opacity: 100%;
-  stroke-dasharray: 0, 0; }
+  stroke-dasharray: none; }
 
 .unfocused {
   stroke-opacity: 20% !important;
@@ -333,7 +333,7 @@
 .focused {
   stroke-width: 4px !important;
   stroke-opacity: 100%;
-  stroke-dasharray: 0, 0, 0, 0 !important; }
+  stroke-dasharray: none !important; }
 
 .MDG {
   stroke: #2A2A2A;
@@ -359,7 +359,7 @@
 .focused {
   stroke-width: 4px !important;
   stroke-opacity: 100%;
-  stroke-dasharray: 0, 0, 0, 0 !important; }
+  stroke-dasharray: none !important; }
 
 .focus circle {
   fill: #ffffff;
