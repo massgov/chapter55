@@ -75,7 +75,7 @@
 
     var seriesColors = ["#333333", "#b71c1c", "#0071bc", "#333333"];
     var seriesLineStrokes = ["1.5px", "3.5px", "3.5px", "2px"];
-    var seriesLineDash = ["10,10,10,10", "0,0,0,0", "0,0,0,0", "2,6,0,0"];
+    var seriesLineDash = ["10,10,10,10", "", "", "2,6,0,0"];
     var seriesPointShapes = ["circle", "circle", "circle", "circle"];
     var seriesPointWidth = ["1px", "1.5px", "1.5px", "1px"];
     var seriesPointFill = ["#a50f15", "#08519c", "#636363", "#636363"];
@@ -374,7 +374,7 @@
 
 
 
-    function render() {
+    function renderLinesFent() {
         updateWidth(rootNode.clientWidth);
 
         x.rangePoints([0, width]);
@@ -478,16 +478,17 @@
                 .attr("class", "legend-item-" + item)
                 .attr("x", 40)
                 .attr("y", 10)
-                .html(legendItemsTranslate[i]);
+                //.html(legendItemsTranslate[i])
+                .text(legendItemsTranslate[i]);
                 // .append(footenote_19);
         });
     }
 
 
-    render();
+    renderLinesFent();
     renderLegend();
 
-    window.addEventListener('resize', render);
+    window.addEventListener('resize', renderLinesFent);
     //window.addEventListener('resize', renderLegend);
 
 
