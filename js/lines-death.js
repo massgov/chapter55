@@ -108,9 +108,9 @@
     // Actually do stuff.
     d3.csv("js/data/death_states.csv", function(data) {
         setupData(data);
-        render();
+        renderLinesDeath();
         // bindEvents();
-        window.addEventListener('resize', render);
+        window.addEventListener('resize', renderLinesDeath);
 
     });
 
@@ -224,7 +224,7 @@
 
 
 
-    function render() {
+    function renderLinesDeath() {
         updateDimensions();
 
         $lines_death.attr('width', dimensions.width);
