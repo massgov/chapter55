@@ -2,3 +2,12 @@ node_modules
 
 js/dist/main.js
 js/dist/main.js.map
+js/dist/main.js.orig
+js/dist/vendor.js
+js/dist/vendor.js.map
+
+.sass-cache
+.sass-cache/*
+
+css/scss/main.css
+css/scss/main.css.map
