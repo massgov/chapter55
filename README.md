@@ -10,7 +10,7 @@ This repository contains code and assets for an online, interactive visualizatio
 
 To run the server, you'll need [Node.js](https://nodejs.org/en/download/) installed.
 
-#### Build the server and the front-end
+### Build the server and the front-end
 
 0. Clone the repo from Github by using the command line or repo's website on Github. On the right side of the repo's page, there is a button labeled "Clone in Desktop"
 
@@ -25,7 +25,7 @@ $ cd chapter55
 $ npm install
 $ gulp
 ```
-#### Collaboration
+### Collaboration
 To collaborate or contribute to this repo, instead of directly cloning from `git@github.com:massgov/chapter55.git`, we encourage contributors to:
 
 0. Fork this repo to their own github account using the "Fork" button at the top right
@@ -44,7 +44,7 @@ To collaborate or contribute to this repo, instead of directly cloning from `git
 
 >The file `js/vendor/d3.min.js` is from [D3](https://d3js.org/), copyright Mike Bostock under the [MIT license](https://github.com/d3/d3/blob/master/LICENSE)
 
->The files in `js/vendor/d3.tip.js` are from [D3-tip](http://labratrevenge.com/d3-tip/), copyright Justin Palmer under the [MIT license](https://github.com/Caged/d3-tip/blob/master/LICENSE)
+>The file `js/vendor/d3.tip.js` is from [D3-tip](http://labratrevenge.com/d3-tip/), copyright Justin Palmer under the [MIT license](https://github.com/Caged/d3-tip/blob/master/LICENSE)
 
 >The file `js/vendor/colorbrewer.js` is from [Colorbrewer 2.0](http://colorbrewer2.org) by Cynthia Brewer
 
