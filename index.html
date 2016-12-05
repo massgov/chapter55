@@ -33,6 +33,20 @@
         s.parentNode.insertBefore(ga, s);
     })();
     </script>
+    <!-- Facebook Open-graph metadata -->
+    <meta property="og:title" content="Chapter 55 Data Visualization" />
+    <meta property="og:description" content="There is a deadly #OpioidEpidemic in Massachusetts. View the interactive #Chapter55 report to find out what’s causing this public health crisis and what can be done to solve it." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.mass.gov/chapter55" />
+    <meta property="fb:admins" content="1266533259" />
+    <meta property="og:image" content="http://www.mass.gov/chapter55/img/chapter55-cover.jpg" />
+    <!-- Twitter card metadata -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@massgov" />
+    <meta name="twitter:title" content="Chapter 55 Data Visualization" />
+    <meta name="twitter:description" content="A data visualization of findings from the Chapter 55 report" />
+    <meta name="twitter:creator" content="@iamclairesun" />
+    <meta name="twitter:image" content="http://www.mass.gov/chapter55/img/chapter55-cover.jpg" />
 </head>
 
 <body>
@@ -50,6 +64,22 @@
                         <div class="col-xs-12 col-md-6 neg-space-col-md">
                             <h1><span class="h1-sm">The Massachusetts<br /></span>Opioid Epidemic</h1>
                             <h2>A data visualization of findings from the Chapter 55 report</h2>
+                            <!-- Social Media Buttons BEGIN-->
+                            <div style="padding-bottom: 5px;">
+                                <!-- Facebook -->
+                                <div class="fb-share-button" style="vertical-align: top;" data-href="http://www.mass.gov/chapter55" data-layout="button_count">
+                                </div>
+                                <!-- Twitter -->
+                                <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Learn%20about%20the%20#MA%20#OpioidEpidemic%20and%20what’s%20being%20done%20to%20stop%20it%20with%20the%20interactive%20#Chapter55%20report">Tweet</a>
+                                <!-- Linkedin -->
+                                <script src="//platform.linkedin.com/in.js" type="text/javascript">
+                                lang: en_US
+                                </script>
+                                <script type="IN/Share" data-url="http://www.mass.gov/chapter55" data-counter="right"></script>
+                                <!-- Github -->
+                                <a class="github-button" href="https://github.com/massgov/chapter55" data-count-href="/massgov/chapter55/watchers" data-count-api="/repos/massgov/chapter55#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch massgov/chapter55 on GitHub">Watch</a>
+                            </div>
+                            <!-- Social Media Buttons END -->
                         </div>
                     </div>
                 </div>
@@ -748,6 +778,38 @@
     <!-- /#wrapper -->
     <!-- js -->
     <script src="js/dist/main.js"></script>
+    <!-- facebook -->
+    <script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=873502176006096";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- twitter -->
+    <script>
+    window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+
+        t._e = [];
+        t.ready = function(f) {
+            t._e.push(f);
+        };
+
+        return t;
+    }(document, "script", "twitter-wjs"));
+    </script>
+    <!-- github -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 
 </html>
