@@ -40,8 +40,6 @@ To collaborate or contribute to this repo, instead of directly cloning from `git
 
 >The files `js/vendor/bootstrap.js` and `css/bootstrap.css` are from [Boostrap](http://getbootstrap.com), copyright Twitter under the [MIT license](https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
->The file `js/vendor/video.js` is modified from the [Accessible HTML5 Video Player](https://github.com/paypal/accessible-html5-video-player) by the Paypal Accessibility Team, copyright PayPal under the [BSD license](https://github.com/paypal/accessible-html5-video-player/blob/master/LICENSE.md)
-
 >The file `js/vendor/d3.min.js` is from [D3](https://d3js.org/), copyright Mike Bostock under the [MIT license](https://github.com/d3/d3/blob/master/LICENSE)
 
 >The file `js/vendor/d3.tip.js` is from [D3-tip](http://labratrevenge.com/d3-tip/), copyright Justin Palmer under the [MIT license](https://github.com/Caged/d3-tip/blob/master/LICENSE)
@@ -66,5 +64,3 @@ To collaborate or contribute to this repo, instead of directly cloning from `git
 > This project is in the public domain within the United States, and copyright and related rights in the work worldwide are waived through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
 >
 > All contributions to this project will be released under the CC0 dedication. By submitting a pull request, you are agreeing to comply with this waiver of copyright interest.
-
-
