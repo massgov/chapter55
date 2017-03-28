@@ -40,7 +40,7 @@ gulp.task('javascript', function() {
             "js/blocks-gender.js",
             "js/bars-age.js",
             "js/bars-race.js",
-	    "js/video.js"
+	    "js/youtube.js"
 
         ])
         .pipe(sourcemaps.init())
